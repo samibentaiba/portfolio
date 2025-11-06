@@ -123,7 +123,10 @@ export function useResume() {
           body: formData,
         });
 
-        if (!res.ok) throw new Error("PDF conversion failed");
+        if (!res.ok) {
+          const errorData = await res.json();
+          throw new Error(errorData.error || "PDF conversion failed");
+        }
 
         const pdfBlob = await res.blob();
         const url = URL.createObjectURL(pdfBlob);
