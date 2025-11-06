@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
-import { promisify } from "util";
-import libre from "libreoffice-convert";
+import ConvertAPI from 'convertapi';
 
-const convertAsync = promisify<Buffer, string, undefined, Buffer>(libre.convert);
+// Authenticate with your secret from https://www.convertapi.com/a
+const convertApi = new ConvertAPI(process.env.CONVERTAPI_SECRET || '');
 
 export async function POST(req: NextRequest) {
   try {
@@ -16,7 +16,14 @@ export async function POST(req: NextRequest) {
     const arrayBuffer = await file.arrayBuffer();
     const docxBuffer = Buffer.from(arrayBuffer);
 
-    const pdfBuffer = await convertAsync(docxBuffer, ".pdf", undefined);
+    const result = await convertApi.convert('pdf', { File: docxBuffer }, 'docx');
+
+    if (!result || !result.file) {
+        throw new Error('Conversion failed');
+    }
+
+    const pdfArrayBuffer = await fetch(result.file.url).then(res => res.arrayBuffer());
+    const pdfBuffer = Buffer.from(pdfArrayBuffer);
 
     return new NextResponse(pdfBuffer, {
       status: 200,
