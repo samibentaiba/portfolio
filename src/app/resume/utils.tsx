@@ -1,9 +1,10 @@
-import { Separator } from "@/components/ui/separator"
-import type { ReactNode } from "react"
+import { Separator } from "@/components/ui/separator";
+import type { ReactNode } from "react";
 
+// Component for rendering resume sections with title and separator
 interface ResumeSectionProps {
-  title?: string
-  children: ReactNode
+  title?: string;
+  children: ReactNode;
 }
 
 export function ResumeSection({ title, children }: ResumeSectionProps) {
@@ -13,5 +14,5 @@ export function ResumeSection({ title, children }: ResumeSectionProps) {
       <Separator />
       <div className="space-y-4">{children}</div>
     </section>
-  )
+  );
 }
