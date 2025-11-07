@@ -1,8 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import ConvertAPI from 'convertapi';
-
-// Authenticate with your secret from https://www.convertapi.com/a
-const convertApi = new ConvertAPI(process.env.CONVERTAPI_SECRET || '');
+import mammoth from "mammoth";
+import puppeteer from "puppeteer";
 
 export async function POST(req: NextRequest) {
   try {
@@ -16,16 +14,29 @@ export async function POST(req: NextRequest) {
     const arrayBuffer = await file.arrayBuffer();
     const docxBuffer = Buffer.from(arrayBuffer);
 
-    const result = await convertApi.convert('pdf', { File: docxBuffer }, 'docx');
+    const { value: html } = await mammoth.convertToHtml({
+      buffer: docxBuffer,
+    });
 
-    if (!result || !result.file) {
-        throw new Error('Conversion failed');
-    }
+    const browser = await puppeteer.launch({
+      headless: true,
+      args: ["--no-sandbox", "--disable-setuid-sandbox"],
+    });
+    const page = await browser.newPage();
 
-    const pdfArrayBuffer = await fetch(result.file.url).then(res => res.arrayBuffer());
-    const pdfBuffer = Buffer.from(pdfArrayBuffer);
+    await page.setContent(html, { waitUntil: "networkidle0" });
 
-    return new NextResponse(pdfBuffer, {
+    const pdfBuffer = await page.pdf({
+      format: "A4",
+      printBackground: true,
+    });
+
+    await browser.close();
+
+    const pdfArrayBuffer = Uint8Array.from(pdfBuffer).buffer;
+    const pdfBlob = new Blob([pdfArrayBuffer], { type: "application/pdf" });
+
+    return new NextResponse(pdfBlob, {
       status: 200,
       headers: {
         "Content-Type": "application/pdf",
