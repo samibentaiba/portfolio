@@ -30,7 +30,10 @@ export async function POST(req: NextRequest) {
     // Clean up temporary files
     await fs.unlink(inputFilePath);
 
-    return new NextResponse(pdfBuffer, {
+    // Convert Buffer to Uint8Array for NextResponse
+    const pdfBytes = new Uint8Array(pdfBuffer);
+
+    return new NextResponse(pdfBytes, {
       status: 200,
       headers: {
         "Content-Type": "application/pdf",
@@ -43,4 +46,3 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: message }, { status: 500 });
   }
 }
-
