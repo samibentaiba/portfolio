@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-import mammoth from "mammoth";
-import puppeteer from "puppeteer";
+import { promises as fs } from "fs";
+import path from "path";
+import { convertDocxToPdf } from "@/lib/convertDocxToPdf";
 
 export async function POST(req: NextRequest) {
   try {
@@ -14,29 +15,22 @@ export async function POST(req: NextRequest) {
     const arrayBuffer = await file.arrayBuffer();
     const docxBuffer = Buffer.from(arrayBuffer);
 
-    const { value: html } = await mammoth.convertToHtml({
-      buffer: docxBuffer,
-    });
+    // Create a temporary directory or use a known temp location
+    const tempDir = path.join(process.cwd(), "tmp");
+    await fs.mkdir(tempDir, { recursive: true });
 
-    const browser = await puppeteer.launch({
-      headless: true,
-      args: ["--no-sandbox", "--disable-setuid-sandbox"],
-    });
-    const page = await browser.newPage();
+    const inputFilePath = path.join(tempDir, `${file.name}`);
 
-    await page.setContent(html, { waitUntil: "networkidle0" });
+    // Write the DOCX buffer to a temporary file
+    await fs.writeFile(inputFilePath, docxBuffer);
 
-    const pdfBuffer = await page.pdf({
-      format: "A4",
-      printBackground: true,
-    });
+    // Convert DOCX to PDF using libreoffice-convert
+    const pdfBuffer = await convertDocxToPdf(inputFilePath);
 
-    await browser.close();
+    // Clean up temporary files
+    await fs.unlink(inputFilePath);
 
-    const pdfArrayBuffer = Uint8Array.from(pdfBuffer).buffer;
-    const pdfBlob = new Blob([pdfArrayBuffer], { type: "application/pdf" });
-
-    return new NextResponse(pdfBlob, {
+    return new NextResponse(pdfBuffer, {
       status: 200,
       headers: {
         "Content-Type": "application/pdf",
@@ -49,3 +43,4 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: message }, { status: 500 });
   }
 }
+
