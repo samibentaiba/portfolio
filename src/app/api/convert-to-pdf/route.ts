@@ -1,9 +1,8 @@
-import { NextRequest, NextResponse } from "next/server";
-import { promises as fs } from "fs";
-import path from "path";
-import { convertDocxToPdf } from "@/lib/convertDocxToPdf";
+import { NextResponse } from "next/server";
 
-export async function POST(req: NextRequest) {
+export const runtime = "nodejs";
+
+export async function POST(req: Request) {
   try {
     const formData = await req.formData();
     const file = formData.get("file") as File;
@@ -12,37 +11,41 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "No file uploaded" }, { status: 400 });
     }
 
-    const arrayBuffer = await file.arrayBuffer();
-    const docxBuffer = Buffer.from(arrayBuffer);
+    // Build form for external server
+    const externalFormData = new FormData();
+    externalFormData.append("file", file);
 
-    // Create a temporary directory or use a known temp location
-    const tempDir = path.join(process.cwd(), "tmp");
-    await fs.mkdir(tempDir, { recursive: true });
+    // Prepare server URL and key
+    const serverUrl = process.env.CONVERTER_SERVER_URL || "http://localhost:3001";
+    const apiKey = process.env.API_KEY;
 
-    const inputFilePath = path.join(tempDir, `${file.name}`);
+    console.log("➡️ Sending to:", `${serverUrl}/api/convert-to-pdf`);
+    console.log("🔑 Using API Key:", apiKey?.slice(0, 8) + "...");
 
-    // Write the DOCX buffer to a temporary file
-    await fs.writeFile(inputFilePath, docxBuffer);
+    // Send to your Express conversion server
+    const response = await fetch(`${serverUrl}/api/convert-to-pdf`, {
+      method: "POST",
+      headers: {
+        "x-api-key": apiKey || "",
+      },
+      body: externalFormData,
+    });
 
-    // Convert DOCX to PDF using libreoffice-convert
-    const pdfBuffer = await convertDocxToPdf(inputFilePath);
+    if (!response.ok) {
+      const text = await response.text();
+      throw new Error(`Server error: ${text}`);
+    }
 
-    // Clean up temporary files
-    await fs.unlink(inputFilePath);
-
-    // Convert Buffer to Uint8Array for NextResponse
-    const pdfBytes = new Uint8Array(pdfBuffer);
-
-    return new NextResponse(pdfBytes, {
-      status: 200,
+    // Return the PDF file
+    const pdfBuffer = await response.arrayBuffer();
+    return new NextResponse(pdfBuffer, {
       headers: {
         "Content-Type": "application/pdf",
-        "Content-Disposition": "attachment; filename=resume.pdf",
+        "Content-Disposition": "attachment; filename=converted.pdf",
       },
     });
-  } catch (err: unknown) {
-    console.error("PDF conversion error:", err);
-    const message = err instanceof Error ? err.message : "Conversion failed";
-    return NextResponse.json({ error: message }, { status: 500 });
+  } catch (error: unknown) {
+    console.error("Error in conversion route:", error);
+    return NextResponse.json({ error: error }, { status: 500 });
   }
 }
