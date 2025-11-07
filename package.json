@@ -6,7 +6,9 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate-resumes": "tsx scripts/generate-resumes.ts",
+    "prebuild": "npm run generate-resumes"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
@@ -79,6 +81,7 @@
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
+        "tsx": "^4.7.0",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",

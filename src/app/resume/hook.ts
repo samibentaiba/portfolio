@@ -52,7 +52,8 @@ export function useResume() {
     language,
   ]);
 
-  const generateAndDownload = async (format: "docx" | "pdf") => {
+  // Generate DOCX on-demand (keeps original functionality)
+  const generateDocx = async () => {
     setIsGenerating(true);
     try {
       const skillsData = skills.map((group) => ({
@@ -111,35 +112,23 @@ export function useResume() {
       });
 
       const blob = await Packer.toBlob(doc);
-
-      if (format === "docx") {
-        saveAs(blob, `resume_${language}.docx`);
-      } else {
-        const formData = new FormData();
-        formData.append("file", blob, "resume.docx");
-
-        const res = await fetch("/api/convert-to-pdf", {
-          method: "POST",
-          body: formData,
-        });
-
-        if (!res.ok) {
-          const errorData = await res.json();
-          throw new Error(errorData.error || "PDF conversion failed");
-        }
-
-        const pdfBlob = await res.blob();
-        const url = URL.createObjectURL(pdfBlob);
-        const link = document.createElement("a");
-        link.href = url;
-        link.download = `resume_${language}.pdf`;
-        link.click();
-      }
+      saveAs(blob, `resume_${language}.docx`);
     } catch (error) {
-      console.error(`Error generating ${format.toUpperCase()}:`, error);
+      console.error("Error generating DOCX:", error);
     } finally {
       setIsGenerating(false);
     }
+  };
+
+  // Download pre-generated static PDF
+  const downloadStaticPdf = () => {
+    const pdfPath = `/resume.${language}.pdf`;
+    const link = document.createElement('a');
+    link.href = pdfPath;
+    link.download = `resume_${language}.pdf`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return {
@@ -150,8 +139,8 @@ export function useResume() {
     isGenerating,
     educations,
     personal,
-    handleDownload: () => generateAndDownload("docx"),
-    handleDownloadPdf: () => generateAndDownload("pdf"),
+    handleDownload: generateDocx, // DOCX generation on-demand
+    handleDownloadPdf: downloadStaticPdf, // Static PDF download
   };
 }
 
