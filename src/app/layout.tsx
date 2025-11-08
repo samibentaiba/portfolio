@@ -13,9 +13,84 @@ import { ScrollHandler } from "@/components/scroll-handler";
 import { BackgroundProvider } from "./background-provider";
 
 export const metadata: Metadata = {
-  title: "Portfolio | Developer",
+  title: {
+    default: "Sami Bentaiba | Software Engineer",
+    template: "%s | Sami Bentaiba",
+  },
   description:
-    "Personal portfolio website showcasing skills, experiences, and projects",
+    "I'm a passionate and fast-learning software engineer and student who, within one year, has mastered full-stack web development using both JavaScript , Java and PHP. Currently, I'm expanding my skills into desktop and mobile application development, along with a deep focus on building software services across multiple platforms. My drive to continuously learn and adapt allows me to tackle new technologies quickly and effectively.",
+  keywords: [
+    "Sami Bentaiba",
+    "Software Engineer",
+    "Full-stack Developer",
+    "Web Developer",
+    "Portfolio",
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Node.js",
+  ],
+  authors: [{ name: "Sami Bentaiba" }],
+  creator: "Sami Bentaiba",
+  publisher: "Sami Bentaiba",
+  alternates: {
+    canonical: "https://bentaidev.netlify.app",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  icons: {
+    icon: "/favicon.ico",
+  },
+  metadataBase: new URL("https://bentaidev.netlify.app"),
+  openGraph: {
+    title: "Sami Bentaiba | Software Engineer",
+    description:
+      "Personal portfolio website showcasing skills, experiences, and projects.",
+    url: "https://bentaidev.netlify.app",
+    siteName: "Sami Bentaiba",
+    type: "website",
+    locale: "en_US",
+    emails: "samibentaiba25@gmail.com",
+    phoneNumbers: "+213 656 73 98 96",
+    countryName: "Algeria",
+    images: [
+      {
+        url: "https://bentaidev.netlify.app/Metadata%20Placeholder.png",
+        width: 1200,
+        height: 630,
+        alt: "Sami Bentaiba's Portfolio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sami Bentaiba | Software Engineer",
+    description:
+      "Personal portfolio website showcasing skills, experiences, and projects.",
+    images: [
+      {
+        url: "https://bentaidev.netlify.app/Metadata%20Placeholder.png",
+        width: 1200,
+        height: 630,
+        alt: "Sami Bentaiba's Portfolio",
+      },
+    ],
+  },
+};
+
+export const viewport = {
+  colorScheme: "dark",
 };
 
 export default function RootLayout({
@@ -25,6 +100,59 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "WebPage",
+                  "@id": "https://bentaidev.netlify.app/#webpage",
+                  url: "https://bentaidev.netlify.app/",
+                  name: "Sami Bentaiba | Software Engineer",
+                  isPartOf: {
+                    "@id": "https://bentaidev.netlify.app/#website",
+                  },
+                  primaryImageOfPage: {
+                    "@type": "ImageObject",
+                    url: "https://bentaidev.netlify.app/Metadata%20Placeholder.png",
+                  },
+                  description:
+                    "Personal portfolio website showcasing skills, experiences, and projects.",
+                  inLanguage: "en-US",
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": "https://bentaidev.netlify.app/#website",
+                  url: "https://bentaidev.netlify.app/",
+                  name: "Sami Bentaiba",
+                  description:
+                    "Personal portfolio website showcasing skills, experiences, and projects.",
+                  publisher: {
+                    "@id": "https://bentaidev.netlify.app/#organization",
+                  },
+                  inLanguage: "en-US",
+                },
+                {
+                  "@type": "Person",
+                  "@id": "https://bentaidev.netlify.app/#person",
+                  name: "Sami Bentaiba",
+                  url: "https://bentaidev.netlify.app/",
+                  "sameAs": [
+                    "https://www.linkedin.com/in/samibentaiba",
+                    "https://github.com/samibentaiba"
+                  ],
+                  "jobTitle": "Software Engineer",
+                  "email": "samibentaiba25@gmail.com",
+                  "telephone": "+213 656 73 98 96"
+                }
+              ],
+            }),
+          }}
+        />
+      </head>
       <body className={`${interSans.className}`} cz-shortcut-listen="true">
         <ThemeProvider
           attribute="class"
