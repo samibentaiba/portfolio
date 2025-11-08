@@ -50,6 +50,6 @@ export function formatPdfProjects(
   return projects.map((proj: Project) => ({
     title: proj.title,
     technologies: proj.technologies,
-    personalExperience: proj.personalExperience,
+    personalExperience: proj.personalExperience || "",
   }));
 }

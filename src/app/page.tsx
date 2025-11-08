@@ -4,7 +4,7 @@ import { Projects } from "@/components/projects";
 import { Contact } from "@/components/contact"
 import Hero from "@/components/hero";
 
-export default function Home() {
+export default async function Home() {
   return (
     <main  className="flex flex-col items-center justify-center w-full">
       <Hero />

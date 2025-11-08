@@ -137,7 +137,7 @@ function ResumeContent({
                     {project.timeline} · {project.technologies.join(", ")}
                   </p>
                   <p className="text-sm">{project.description}</p>
-                  {project.collaborators?.length > 0 && (
+                  {project.collaborators && project.collaborators?.length > 0 && (
                     <p className="text-xs text-muted-foreground">
                       {t("projects.collaborators") || "Collaborators"}:{" "}
                       {project.collaborators.join(", ")}

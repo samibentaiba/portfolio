@@ -43,6 +43,7 @@
     "@types/file-saver": "^2.0.7",
     "@types/pdfkit": "^0.13.9",
     "blob-stream": "^0.1.3",
+    "cheerio": "^1.1.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
@@ -80,13 +81,14 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
+    "@types/cheerio": "^1.0.0",
     "@types/node": "^20",
-        "tsx": "^4.7.0",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.3.1",
     "tailwindcss": "^4",
+    "tsx": "^4.7.0",
     "tw-animate-css": "^1.2.9",
     "typescript": "^5"
   },

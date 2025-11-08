@@ -27,7 +27,7 @@ export default function ProjectPage() {
   }, [params, getProjectsData]);
 
   if (!project) {
-    return <div className="container py-8">Loading...</div>;
+    return null;
   }
 
   return (
@@ -120,17 +120,17 @@ export default function ProjectPage() {
                   <Users className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" />{" "}
                   {t("projects.collaborators")}
                 </h3>
-                {project.collaborators.length > 0 ? (
+                {project.collaborators && project.collaborators.length > 0 ? (
                   <ul className="text-muted-foreground">
                     {project.collaborators.map(
                       (collaborator: string, index: number) => (
                         <li key={index}>{collaborator}</li>
-                      )
+                      ),
                     )}
                   </ul>
                 ) : (
                   <p className="text-muted-foreground">
-                    {t("projects.soloProject")}
+                    {t('projects.soloProject')}
                   </p>
                 )}
               </div>

@@ -24,19 +24,29 @@ export interface Experience {
   projects: string[];
 }
 
+// types.ts
+
+// ... other interfaces (Skill, Experience, etc.)
+
 export interface Project {
+  slug: string; // Required for navigation
+  fetchUrl?: string; // The URL to fetch metadata from
+  
+  // These are now optional, they can be fetched or manually set
   title: string;
-  slug: string;
-  shortDescription: string;
-  description: string;
+  shortDescription?: string;
+  description?: string;
   image?: string;
-  technologies: string[];
-  timeline: string;
+  
+  // These are optional and can be added manually
+  technologies: string[]; // Keep this, user can add manually
+  timeline?: string;
   liveUrl?: string;
   githubUrl?: string;
-  personalExperience: string;
-  collaborators: string[];
+  personalExperience?: string;
+  collaborators?: string[];
 }
+
 export interface Education {
   degree: string;
   institution: string;

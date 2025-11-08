@@ -132,21 +132,29 @@ export const createProjectsSection = (
   t: TranslateFunction
 ): Paragraph[] => {
   const projectParagraphs = projects.map((project) => {
+    const technologies =
+      project.technologies && project.technologies.length > 0
+        ? ` (${project.technologies.join(", ")})`
+        : "";
     return [
       new Paragraph({
         children: [
           new TextRun({ text: `${project.title}`, bold: true }),
-          new TextRun({ text: ` (${project.technologies})` }),
-          new TextRun({ text: `: ${project.personalExperience}` }),
+          new TextRun({ text: technologies }),
+          new TextRun({
+            text: project.personalExperience
+              ? `: ${project.personalExperience}`
+              : "",
+          }),
         ],
         spacing: { before: 200 },
       }),
       new Paragraph({
-        children: [new TextRun({ text: project.liveUrl })],
+        children: [new TextRun({ text: project.liveUrl || "" })],
         spacing: { before: 50, after: 50 },
       }),
       new Paragraph({
-        children: [new TextRun({ text: project.githubUrl })],
+        children: [new TextRun({ text: project.githubUrl || "" })],
         spacing: { before: 50, after: 50 },
       }),
     ];
