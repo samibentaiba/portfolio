@@ -63,6 +63,8 @@ export const metadata: Metadata = {
       "Personal portfolio website showcasing skills, experiences, and projects.",
     url: "https://itc-hub.vercel.app",
     siteName: "Bentaidev",
+    phoneNumbers: "+213656739896",
+    countryName: "USA",
     type: "website",
     locale: "en_US",
     emails: "samibentaiba25@gmail.com",
