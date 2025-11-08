@@ -13,10 +13,10 @@ import { ScrollHandler } from "@/components/scroll-handler";
 import { BackgroundProvider } from "./background-provider";
 
 // Define your base URL - update this with your actual domain
-const BASE_URL = "https://bentaidev.vercel.app";
+
 
 export const metadata: Metadata = {
-  metadataBase: new URL(BASE_URL), // This is crucial for relative URLs
+  metadataBase: new URL("https://bentaidev.vercel.app"), // This is crucial for relative URLs
   title: {
     default: "Sami Bentaiba | Software Engineer",
     template: "%s | Sami Bentaiba",
@@ -55,46 +55,47 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: "/favicon.ico",
-    apple: "/metadata-placeholder.png",
+    apple: {url:"/logo.svg"},
   },
   openGraph: {
     title: "Sami Bentaiba | Software Engineer",
     description:
       "Personal portfolio website showcasing skills, experiences, and projects.",
-    url: BASE_URL,
-    siteName: "Sami Bentaiba",
+    url: "https://itc-hub.vercel.app",
+    siteName: "Bentaidev",
     type: "website",
     locale: "en_US",
     emails: "samibentaiba25@gmail.com",
     images: [
       {
-        url: `${BASE_URL}/metadata-placeholder.png`, // Absolute URL
+        url: "https://bentaidev.vercel.app/metadata-placeholder.png", // Absolute URL
+        alt: "Sami Bentaibas Portfolio",
         width: 1200,
         height: 630,
-        alt: "Sami Bentaiba's Portfolio",
       },
       {
-        url: `${BASE_URL}/logo.svg`, // Absolute URL
+        url: "https://bentaidev.vercel.app/logo.svg", // Absolute URL
+        alt: "Bentaidev Logo",
         width: 500,
         height: 500,
-        alt: "Bentaidev Logo",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
+    creator: "@bentaiba_sami",
     title: "Sami Bentaiba | Software Engineer",
     description:
       "Personal portfolio website showcasing skills, experiences, and projects.",
     images: [
       {
-        url: `${BASE_URL}/metadata-placeholder.png`, // Absolute URL
+        url: "https://bentaidev.vercel.app/metadata-placeholder.png", // Absolute URL
         width: 1200,
         height: 630,
         alt: "Sami Bentaiba's Portfolio",
       },
       {
-        url: `${BASE_URL}/logo.svg`, // Absolute URL
+        url: "https://bentaidev.vercel.app/logo.svg", // Absolute URL
         width: 500,
         height: 500,
         alt: "Bentaidev Logo",
@@ -123,15 +124,15 @@ export default function RootLayout({
               "@graph": [
                 {
                   "@type": "WebPage",
-                  "@id": `${BASE_URL}/#webpage`,
-                  "url": `${BASE_URL}/`,
+                  "@id": "https://bentaidev.vercel.app/#webpage",
+                  "url": "https://bentaidev.vercel.app/",
                   "name": "Sami Bentaiba | Software Engineer",
                   "isPartOf": {
-                    "@id": `${BASE_URL}/#website`,
+                    "@id": "https://bentaidev.vercel.app/#website",
                   },
                   "primaryImageOfPage": {
                     "@type": "ImageObject",
-                    "url": `${BASE_URL}/metadata-placeholder.png`,
+                    "url": "https://bentaidev.vercel.app/metadata-placeholder.png",
                   },
                   "description":
                     "Personal portfolio website showcasing skills, experiences, and projects.",
@@ -139,21 +140,21 @@ export default function RootLayout({
                 },
                 {
                   "@type": "WebSite",
-                  "@id": `${BASE_URL}/#website`,
-                  "url": `${BASE_URL}/`,
+                  "@id": "https://bentaidev.vercel.app/#website",
+                  "url": "https://bentaidev.vercel.app/",
                   "name": "Sami Bentaiba",
                   "description":
                     "Personal portfolio website showcasing skills, experiences, and projects.",
                   "publisher": {
-                    "@id": `${BASE_URL}/#organization`,
+                    "@id": "https://bentaidev.vercel.app/#organization",
                   },
                   "inLanguage": "en-US",
                 },
                 {
                   "@type": "Person",
-                  "@id": `${BASE_URL}/#person`,
+                  "@id": "https://bentaidev.vercel.app/#person",
                   "name": "Sami Bentaiba",
-                  "url": `${BASE_URL}/`,
+                  "url": "https://bentaidev.vercel.app/",
                   "sameAs": [
                     "https://github.com/samibentaiba",
                     "https://www.linkedin.com/in/sami-bentaiba",
