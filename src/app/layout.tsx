@@ -52,7 +52,7 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
     apple: {
-      url: "https://bentaidev.vercel.app/metadata-placeholder.png",
+      url: "/metadata-placeholder.png",
     },
   },
   metadataBase: new URL("https://bentaidev.vercel.app"),
@@ -65,16 +65,15 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     emails: "samibentaiba25@gmail.com",
-    phoneNumbers: "+213 656 73 98 96",
     images: [
       {
-        url: "https://bentaidev.vercel.app/metadata-placeholder.png",
+        url: "/metadata-placeholder.png",
         width: 1200,
         height: 630,
         alt: "Sami Bentaiba's Portfolio",
       },
       {
-        url: "https://bentaidev.vercel.app/logo.svg",
+        url: "/logo.svg",
         width: 500,
         height: 500,
         alt: "Bentaidev Logo",
@@ -88,13 +87,13 @@ export const metadata: Metadata = {
       "Personal portfolio website showcasing skills, experiences, and projects.",
     images: [
       {
-        url: "https://bentaidev.vercel.app/metadata-placeholder.png",
+        url: "/metadata-placeholder.png",
         width: 1200,
         height: 630,
         alt: "Sami Bentaiba's Portfolio",
       },
       {
-        url: "https://bentaidev.vercel.app/logo.svg",
+        url: "/logo.svg",
         width: 500,
         height: 500,
         alt: "Bentaidev Logo",
@@ -131,7 +130,7 @@ export default function RootLayout({
                   },
                   "primaryImageOfPage": {
                     "@type": "ImageObject",
-                    "url": "https://bentaidev.vercel.app/metadata-placeholder.png",
+                    "url": "/metadata-placeholder.png",
                   },
                   "description":
                     "Personal portfolio website showcasing skills, experiences, and projects.",
@@ -155,8 +154,10 @@ export default function RootLayout({
                   "name": "Sami Bentaiba",
                   "url": "https://bentaidev.vercel.app/",
                   "sameAs": [
-                    "https://www.linkedin.com/in/samibentaiba",
                     "https://github.com/samibentaiba",
+                    "https://www.linkedin.com/in/sami-bentaiba",
+                    "https://twitter.com/samibentaiba",
+                    "https://www.instagram.com/sami.bentaiba"
                   ],
                   "jobTitle": "Software Engineer",
                   "email": "samibentaiba25@gmail.com",
