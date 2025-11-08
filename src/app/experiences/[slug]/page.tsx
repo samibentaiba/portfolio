@@ -34,10 +34,9 @@ export async function generateMetadata({
       url: `https://bentaidev.vercel.app/experiences/${params.slug}`,
       siteName: "Bentaidev",
       type: "website",
-      locale: "en_US",
       images: [
         {
-          url: "https://bentaidev.vercel.app/bentaidev-1200x630-149kb.png",
+          url: "https://bentaidev.vercel.app/bentaidev-og-image.png",
           width: 1200,
           height: 630,
           alt: title,
@@ -52,7 +51,7 @@ export async function generateMetadata({
       description,
       images: [
         {
-          url: "https://bentaidev.vercel.app/bentaidev-1200x630-149kb.png",
+          url: "https://bentaidev.vercel.app/bentaidev-og-image.png",
           width: 1200,
           height: 630,
           alt: title,

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "https://bentaidev.vercel.app/Bentaidev 1200x630 149kb.png",
+        url: "https://bentaidev.vercel.app/bentaidev-og-image.png",
         width: 1200,
         height: 630,
         alt: `${personalData.name}'s Portfolio`,
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description: personalData.summary,
     images: [
       {
-        url: "https://bentaidev.vercel.app/Bentaidev 1200x630 149kb.png",
+        url: "https://bentaidev.vercel.app/bentaidev-og-image.png",
         width: 1200,
         height: 630,
         alt: `${personalData.name}'s Portfolio`,

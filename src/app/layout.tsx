@@ -64,8 +64,7 @@ export const metadata: Metadata = {
     countryName: "Algeria",
     images: [
       {
-        url: "https://bentaidev.vercel.app/bentaidev-1200x630-149kb.png",
-        width: 1200,
+                            url: "https://bentaidev.vercel.app/bentaidev-og-image.png",        width: 1200,
         height: 630,
         alt: "Sami Bentaiba's Portfolio",
       },
@@ -79,14 +78,14 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@bentaiba_sami",
-    creator: "@bentaiba_sami",
     title: "Sami Bentaiba | Software Engineer",
     description:
       "Personal portfolio website showcasing skills, experiences, and projects.",
+    creator: "@bentaiba_sami",
+    site: "@bentaiba_sami",
     images: [
       {
-        url: "https://bentaidev.vercel.app/bentaidev-1200x630-149kb.png",
+        url: "https://bentaidev.vercel.app/bentaidev-og-image.png",
         width: 1200,
         height: 630,
         alt: "Sami Bentaiba's Portfolio",
@@ -129,7 +128,7 @@ export default function RootLayout({
                   },
                   primaryImageOfPage: {
                     "@type": "ImageObject",
-                    url: "https://bentaidev.vercel.app/bentaidev-1200x630-149kb.png",
+                  url: "https://bentaidev.vercel.app/bentaidev-og-image.png",
                   },
                   description:
                     "Personal portfolio website showcasing skills, experiences, and projects.",
