@@ -64,15 +64,15 @@ export const metadata: Metadata = {
     countryName: "Algeria",
     images: [
       {
-        url: "https://bentaidev.vercel.app/BENTAIDEV%20Home.png",
+        url: "https://bentaidev.vercel.app/bentaidev-1200x630-149kb.png",
         width: 1200,
         height: 630,
         alt: "Sami Bentaiba's Portfolio",
       },
       {
         url: "https://bentaidev.vercel.app/logo.svg",
-        width: 800,
-        height: 600,
+        width: 150,
+        height: 150,
         alt: "Bentaidev Logo",
       },
     ],
@@ -86,15 +86,15 @@ export const metadata: Metadata = {
       "Personal portfolio website showcasing skills, experiences, and projects.",
     images: [
       {
-        url: "https://bentaidev.vercel.app/BENTAIDEV%20Home.png",
+        url: "https://bentaidev.vercel.app/bentaidev-1200x630-149kb.png",
         width: 1200,
         height: 630,
         alt: "Sami Bentaiba's Portfolio",
       },
       {
         url: "https://bentaidev.vercel.app/logo.svg",
-        width: 800,
-        height: 600,
+        width: 150,
+        height: 150,
         alt: "Bentaidev Logo",
       },
     ],
@@ -107,9 +107,9 @@ export const viewport = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -129,7 +129,7 @@ export default function RootLayout({
                   },
                   primaryImageOfPage: {
                     "@type": "ImageObject",
-                    url: "https://bentaidev.vercel.app/BENTAIDEV%20Home.png",
+                    url: "https://bentaidev.vercel.app/bentaidev-1200x630-149kb.png",
                   },
                   description:
                     "Personal portfolio website showcasing skills, experiences, and projects.",

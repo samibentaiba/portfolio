@@ -1,4 +1,42 @@
 import HomeClient from "./client";
+import { Metadata } from "next";
+import personalData from "@/data/personal.json";
+
+export const metadata: Metadata = {
+  title: `${personalData.name} | ${personalData.job}`,
+  description: personalData.summary,
+  openGraph: {
+    title: `${personalData.name} | ${personalData.job}`,
+    description: personalData.summary,
+    url: "https://bentaidev.vercel.app",
+    siteName: personalData.name,
+    type: "website",
+    locale: "en_US",
+    images: [
+      {
+        url: "https://bentaidev.vercel.app/Bentaidev 1200x630 149kb.png",
+        width: 1200,
+        height: 630,
+        alt: `${personalData.name}'s Portfolio`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@bentaiba_sami", // Assuming this is a fixed Twitter handle
+    creator: "@bentaiba_sami", // Assuming this is a fixed Twitter handle
+    title: `${personalData.name} | ${personalData.job}`,
+    description: personalData.summary,
+    images: [
+      {
+        url: "https://bentaidev.vercel.app/Bentaidev 1200x630 149kb.png",
+        width: 1200,
+        height: 630,
+        alt: `${personalData.name}'s Portfolio`,
+      },
+    ],
+  },
+};
 
 export default function Home() {
   return <HomeClient />;
