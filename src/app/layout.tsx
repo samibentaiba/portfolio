@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: "%s | Sami Bentaiba",
   },
   description:
-    "I'm a passionate and fast-learning software engineer and student who, within one year, has mastered full-stack web development using both JavaScript , Java and PHP. Currently, I'm expanding my skills into desktop and mobile application development, along with a deep focus on building software services across multiple platforms. My drive to continuously learn and adapt allows me to tackle new technologies quickly and effectively.",
+    "I'm a passionate and fast-learning software engineer and student who, within 3 years, has mastered full-stack web development using both JavaScript , Java and PHP. Currently, I'm expanding my skills into desktop and mobile application development, along with a deep focus on building software services across multiple platforms. My drive to continuously learn and adapt allows me to tackle new technologies quickly and effectively.",
   keywords: [
     "Sami Bentaiba",
     "Software Engineer",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
     apple: {
-      url: "/logo.svg",
+      url: "https://bentaidev.vercel.app/metadata-placeholder.png",
     },
   },
   metadataBase: new URL("https://bentaidev.vercel.app"),
