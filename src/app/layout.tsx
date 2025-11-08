@@ -64,7 +64,8 @@ export const metadata: Metadata = {
     countryName: "Algeria",
     images: [
       {
-                            url: "https://bentaidev.vercel.app/bentaidev-og-image.png",        width: 1200,
+        url: "https://bentaidev.vercel.app/bentaidev-og-image.png",
+        width: 1200,
         height: 630,
         alt: "Sami Bentaiba's Portfolio",
       },
