@@ -1,5 +1,5 @@
 import { Skeleton } from "@/components/ui/skeleton";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent,CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function Loading() {
   return (
@@ -8,18 +8,12 @@ export default function Loading() {
         <div className="mb-6 sm:mb-8">
           <Skeleton className="h-6 w-48 mb-4" />
           <Skeleton className="h-10 w-3/4 mb-2" />
-          <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4">
-            <Skeleton className="h-6 w-16" />
-            <Skeleton className="h-6 w-20" />
-            <Skeleton className="h-6 w-12" />
+          <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-muted-foreground text-xs sm:text-sm">
+            <Skeleton className="h-4 w-24" />
+            <Skeleton className="h-4 w-16" />
+            <Skeleton className="h-4 w-32" />
+            <Skeleton className="h-4 w-24" />
           </div>
-        </div>
-
-        <Skeleton className="relative aspect-video overflow-hidden rounded-lg mb-6 sm:mb-8 w-full h-64" />
-
-        <div className="flex flex-wrap gap-3 sm:gap-4 mb-6 sm:mb-8">
-          <Skeleton className="h-10 w-32" />
-          <Skeleton className="h-10 w-32" />
         </div>
 
         <Card className="mb-6 sm:mb-8">
@@ -39,15 +33,15 @@ export default function Loading() {
               <CardTitle className="text-lg sm:text-xl">
                 <Skeleton className="h-6 w-1/3" />
               </CardTitle>
+              <CardDescription className="text-xs sm:text-sm">
+                <Skeleton className="h-4 w-1/2" />
+              </CardDescription>
             </CardHeader>
-            <CardContent className="px-4 pb-4 sm:px-6 sm:pb-6 pt-0 space-y-3 sm:space-y-4 text-xs sm:text-sm">
-              <div>
-                <Skeleton className="h-4 w-1/2 mb-1" />
-                <Skeleton className="h-4 w-full" />
-              </div>
-              <div>
-                <Skeleton className="h-4 w-1/2 mb-1" />
-                <Skeleton className="h-4 w-full" />
+            <CardContent className="px-4 pb-4 sm:px-6 sm:pb-6 pt-0">
+              <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                <Skeleton className="h-6 w-16" />
+                <Skeleton className="h-6 w-20" />
+                <Skeleton className="h-6 w-12" />
               </div>
             </CardContent>
           </Card>
@@ -57,9 +51,16 @@ export default function Loading() {
               <CardTitle className="text-lg sm:text-xl">
                 <Skeleton className="h-6 w-1/3" />
               </CardTitle>
+              <CardDescription className="text-xs sm:text-sm">
+                <Skeleton className="h-4 w-1/2" />
+              </CardDescription>
             </CardHeader>
             <CardContent className="px-4 pb-4 sm:px-6 sm:pb-6 pt-0">
-              <Skeleton className="h-20 w-full" />
+              <ul className="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-2 text-xs sm:text-sm">
+                <Skeleton className="h-4 w-full" />
+                <Skeleton className="h-4 w-full" />
+                <Skeleton className="h-4 w-full" />
+              </ul>
             </CardContent>
           </Card>
         </div>

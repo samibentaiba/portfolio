@@ -1,16 +1,11 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { LanguageProvider } from "@/components/language-provider";
-import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
-import { ThemeProvider } from "@/components/theme-provider";
 const interSans = Inter({
   variable: "--font-inter-sans",
   subsets: ["latin"],
 });
-import { ScrollHandler } from "@/components/scroll-handler";
-import { BackgroundProvider } from "./background-provider";
+import { Wrapper } from "./wrapper";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://bentaidev.vercel.app"),
@@ -127,49 +122,49 @@ export default function RootLayout({
                 {
                   "@type": "WebPage",
                   "@id": "https://bentaidev.vercel.app/#webpage",
-                  "url": "https://bentaidev.vercel.app/",
-                  "name": "Sami Bentaiba | Software Engineer",
-                  "isPartOf": {
+                  url: "https://bentaidev.vercel.app/",
+                  name: "Sami Bentaiba | Software Engineer",
+                  isPartOf: {
                     "@id": "https://bentaidev.vercel.app/#website",
                   },
-                  "primaryImageOfPage": {
+                  primaryImageOfPage: {
                     "@type": "ImageObject",
-                    "url": "https://bentaidev.vercel.app/BENTAIDEV%20Home.png",
+                    url: "https://bentaidev.vercel.app/BENTAIDEV%20Home.png",
                   },
-                  "description":
+                  description:
                     "Personal portfolio website showcasing skills, experiences, and projects.",
-                  "inLanguage": "en-US",
+                  inLanguage: "en-US",
                 },
                 {
                   "@type": "WebSite",
                   "@id": "https://bentaidev.vercel.app/#website",
-                  "url": "https://bentaidev.vercel.app/",
-                  "name": "Sami Bentaiba",
-                  "description":
+                  url: "https://bentaidev.vercel.app/",
+                  name: "Sami Bentaiba",
+                  description:
                     "Personal portfolio website showcasing skills, experiences, and projects.",
-                  "publisher": {
+                  publisher: {
                     "@id": "https://bentaidev.vercel.app/#person",
                   },
-                  "inLanguage": "en-US",
+                  inLanguage: "en-US",
                 },
                 {
                   "@type": "Person",
                   "@id": "https://bentaidev.vercel.app/#person",
-                  "name": "Sami Bentaiba",
-                  "url": "https://bentaidev.vercel.app/",
-                  "image": {
+                  name: "Sami Bentaiba",
+                  url: "https://bentaidev.vercel.app/",
+                  image: {
                     "@type": "ImageObject",
-                    "url": "https://bentaidev.vercel.app/logo.svg"
+                    url: "https://bentaidev.vercel.app/logo.svg",
                   },
-                  "sameAs": [
+                  sameAs: [
                     "https://github.com/samibentaiba",
                     "https://www.linkedin.com/in/sami-bentaiba",
                     "https://twitter.com/bentaiba_sami",
-                    "https://www.instagram.com/sami.bentaiba"
+                    "https://www.instagram.com/sami.bentaiba",
                   ],
-                  "jobTitle": "Software Engineer",
-                  "email": "samibentaiba25@gmail.com",
-                  "telephone": "+213656739896",
+                  jobTitle: "Software Engineer",
+                  email: "samibentaiba25@gmail.com",
+                  telephone: "+213656739896",
                 },
               ],
             }),
@@ -177,25 +172,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${interSans.className}`} cz-shortcut-listen="true">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <BackgroundProvider>
-            <LanguageProvider>
-              <div className="flex flex-col min-h-screen">
-                <Header />
-                <div id="/" className="flex-1 py-8">
-                  {children}
-                </div>
-                <Footer />
-                <ScrollHandler />
-              </div>
-            </LanguageProvider>
-          </BackgroundProvider>
-        </ThemeProvider>
+        <Wrapper>{children}</Wrapper>
       </body>
     </html>
   );
