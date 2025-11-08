@@ -4,10 +4,10 @@ import personalData from "@/data/personal.json";
 
 export const metadata: Metadata = {
   title: `${personalData.name} | ${personalData.job}`,
-  description: personalData.summary,
+  description: personalData.description,
   openGraph: {
     title: `${personalData.name} | ${personalData.job}`,
-    description: personalData.summary,
+    description: personalData.description,
     url: "https://bentaidev.vercel.app",
     siteName: personalData.name,
     type: "website",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     site: "@bentaiba_sami", // Assuming this is a fixed Twitter handle
     creator: "@bentaiba_sami", // Assuming this is a fixed Twitter handle
     title: `${personalData.name} | ${personalData.job}`,
-    description: personalData.summary,
+    description: personalData.description,
     images: [
       {
         url: "https://bentaidev.vercel.app/bentaidev-og-image.png",

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import personalData from "@/data/personal.json";
 import "./globals.css";
 const interSans = Inter({
   variable: "--font-inter-sans",
@@ -13,8 +14,7 @@ export const metadata: Metadata = {
     default: "Sami Bentaiba | Software Engineer",
     template: "%s | Sami Bentaiba",
   },
-  description:
-    "I'm a passionate and fast-learning software engineer and student who, within 3 years, has mastered full-stack web development using both JavaScript, Java and PHP. Currently, I'm expanding my skills into desktop and mobile application development, along with a deep focus on building software services across multiple platforms.",
+  description: personalData.description,
   keywords: [
     "Sami Bentaiba",
     "Software Engineer",

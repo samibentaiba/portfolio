@@ -62,6 +62,7 @@ export interface Personal {
   linkedin: string;
   github: string;
   job: string;
+  description: string;
   summary: string;
 }
 

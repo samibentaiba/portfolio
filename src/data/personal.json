@@ -3,9 +3,10 @@
   "email": "samibentaiba25@gmail.com",
   "phone": "+213 656 73 98 96",
   "location": "Blida, Algeria",
-  "website": "https://bentaidev.netlify.app",
+  "website": "https://bentaidev.vercel.app",
   "linkedin": "https://www.linkedin.com/in/samibentaiba",
   "github": "https://github.com/samibentaiba",
   "job": "Software Engineer",
-  "summary": "I'm a passionate and fast-learning software engineer and student who, within one year, has mastered full-stack web development using both JavaScript , Java and PHP. Currently, I'm expanding my skills into desktop and mobile application development, along with a deep focus on building software services across multiple platforms. My drive to continuously learn and adapt allows me to tackle new technologies quickly and effectively."
+  "description": "Versatile software engineer, evolving from computer science student to project architect and team lead. Skilled in full-stack development, software architecture, and maintaining high-performance systems.",
+  "summary": "I'm a software engineer who evolved from a computer science student into a full-stack developer, then into a software architect and team lead. My journey has taken me through every stage of software creation — from learning computer fundamentals, algorithms, and system design, to mastering multiple programming languages and building complete software solutions. As an architect, I learned to design and implement scalable patterns and system plans, and as an operator, I developed workflows and maintenance strategies to ensure long-term software quality. Through this continuous growth, I’ve become a software engineer capable of planning, creating, and improving entire systems — bridging the gap between development, architecture, and operational excellence."
 }

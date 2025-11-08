@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   const title = `${experience.role} at ${experience.company} | Sami Bentaiba's Portfolio`;
-  const description = experience.summary;
+  const description = experience.description;
 
   return {
     title,

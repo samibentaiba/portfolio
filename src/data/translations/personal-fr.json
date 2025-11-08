@@ -1,12 +1,12 @@
 {
-    "name": "Sami Bentaiba",
-    "email": "samibentaiba25@gmail.com",
-    "phone": "+213 656 73 98 96",
-    "location": "Blida, Algérie",
-    "website": "https://bentaidev.netlify.app",
-    "linkedin": "https://www.linkedin.com/in/samibentaiba",
-    "github": "https://github.com/samibentaiba",
-    "job": "Ingénieur Logiciel",
-    "summary":"Je suis un ingénieur logiciel passionné et apprenant rapide, actuellement étudiant. En l’espace d’un an, j’ai acquis une maîtrise du développement web full-stack avec JavaScript ,Java et PHP. Aujourd’hui, je poursuis mon apprentissage dans le développement d'applications desktop et mobiles, ainsi que dans la création de services logiciels pour diverses plateformes. Ma capacité à apprendre rapidement et à m’adapter me permet de maîtriser de nouvelles technologies de manière efficace."
-  }
-  
+  "name": "Sami Bentaiba",
+  "email": "samibentaiba25@gmail.com",
+  "phone": "+213 656 73 98 96",
+  "location": "Blida, Algérie",
+  "website": "https://bentaidev.vercel.app",
+  "linkedin": "https://www.linkedin.com/in/samibentaiba",
+  "github": "https://github.com/samibentaiba",
+  "job": "Ingénieur Logiciel",
+  "description": "Ingénieur logiciel polyvalent, passé de l’étude de l’informatique à la conception et la direction de projets. Expert en développement full-stack, architecture logicielle et maintenance de systèmes performants.",
+  "summary": "Je suis un ingénieur logiciel ayant évolué d’un étudiant en informatique à un développeur full-stack, puis vers un architecte logiciel et chef d’équipe. Mon parcours m’a conduit à travers toutes les étapes de la création logicielle — de l’apprentissage des fondamentaux de l’informatique, des algorithmes et de la conception des systèmes, à la maîtrise de plusieurs langages de programmation et à la réalisation de solutions logicielles complètes. En tant qu’architecte, j’ai appris à concevoir et à mettre en œuvre des modèles et des plans systèmes évolutifs, et en tant qu’opérateur, j’ai développé des workflows et des stratégies de maintenance pour assurer la qualité et la durabilité des logiciels. Grâce à cette évolution continue, je suis devenu un ingénieur logiciel capable de planifier, créer et améliorer des systèmes complets — reliant le développement, l’architecture et l’excellence opérationnelle."
+}
