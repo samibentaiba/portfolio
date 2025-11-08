@@ -13,27 +13,29 @@ import { ScrollHandler } from "@/components/scroll-handler";
 import { BackgroundProvider } from "./background-provider";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://bentaidev.vercel.app"),
   title: {
-    default: "ITC Hub",
-    template: "%s | ITC Hub",
+    default: "Sami Bentaiba | Software Engineer",
+    template: "%s | Sami Bentaiba",
   },
-  description: "A modern workspace platform for the Information Technology Community",
+  description:
+    "I'm a passionate and fast-learning software engineer and student who, within 3 years, has mastered full-stack web development using both JavaScript, Java and PHP. Currently, I'm expanding my skills into desktop and mobile application development, along with a deep focus on building software services across multiple platforms.",
   keywords: [
-    "ITC Hub",
-    "Information Technology Community",
-    "Workspace",
-    "Platform",
-    "Community",
-    "IT",
-    "Tech",
-    "Collaboration",
-    "Productivity",
+    "Sami Bentaiba",
+    "Software Engineer",
+    "Full-stack Developer",
+    "Web Developer",
+    "Portfolio",
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Node.js",
   ],
-  authors: [{ name: "ITC Hub Team" }],
-  creator: "ITC Hub Team",
-  publisher: "ITC Hub Team",
+  authors: [{ name: "Sami Bentaiba" }],
+  creator: "Sami Bentaiba",
+  publisher: "Sami Bentaiba",
   alternates: {
-    canonical: "https://itc-hub.vercel.app",
+    canonical: "https://bentaidev.vercel.app",
   },
   robots: {
     index: true,
@@ -51,71 +53,59 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
     apple: {
-      url: "/ITC HUB Logo.svg",
+      url: "/logo.svg",
     },
   },
-  metadataBase: new URL('https://itc-hub.vercel.app'),
-
   openGraph: {
-    title: "ITC Hub",
-    description: "A modern workspace platform for the Information Technology Community",
-    url: "https://itc-hub.vercel.app",
-    siteName: "ITC Hub",
+    title: "Sami Bentaiba | Software Engineer",
+    description:
+      "Personal portfolio website showcasing skills, experiences, and projects.",
+    url: "https://bentaidev.vercel.app",
+    siteName: "Bentaidev",
     type: "website",
     locale: "en_US",
-    emails: "contact@itc-hub.vercel.app",
-    phoneNumbers: "+1234567890",
-    faxNumbers: "+1234567899",
-    countryName: "USA",
-    determiner: "the",
+    emails: "samibentaiba25@gmail.com",
+    phoneNumbers: "+213656739896",
+    countryName: "Algeria",
     images: [
       {
-        url: "https://itc-hub.vercel.app/ITC%20HUB%20Home.png",
+        url: "https://bentaidev.vercel.app/BENTAIDEV%20Home.png",
         width: 1200,
         height: 630,
-        alt: "ITC Hub Home Page",
+        alt: "Sami Bentaiba's Portfolio",
       },
       {
-        url: "https://itc-hub.vercel.app/ITC%20HUB%20Logo.svg",
+        url: "https://bentaidev.vercel.app/logo.svg",
         width: 800,
         height: 600,
-        alt: "ITC Hub Logo",
-      },
-    ],
-    videos: [
-      {
-        url: "https://itc-hub.vercel.app/video.mp4",
-        secureUrl: "https://itc-hub.vercel.app/video.mp4",
-        type: "video/mp4",
-        width: 1280,
-        height: 720,
+        alt: "Bentaidev Logo",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    site: "@itc_hub",
-    siteId: "1234567890",
-    creator: "@itc_hub",
-    creatorId: "1234567890",
-    title: "ITC Hub",
-    description: "A modern workspace platform for the Information Technology Community",
+    site: "@bentaiba_sami",
+    creator: "@bentaiba_sami",
+    title: "Sami Bentaiba | Software Engineer",
+    description:
+      "Personal portfolio website showcasing skills, experiences, and projects.",
     images: [
       {
-        url: "https://itc-hub.vercel.app/ITC%20HUB%20Home.png",
+        url: "https://bentaidev.vercel.app/BENTAIDEV%20Home.png",
         width: 1200,
         height: 630,
-        alt: "ITC Hub Home Page",
+        alt: "Sami Bentaiba's Portfolio",
       },
       {
-        url: "https://itc-hub.vercel.app/ITC%20HUB%20Logo.svg",
+        url: "https://bentaidev.vercel.app/logo.svg",
         width: 800,
         height: 600,
-        alt: "ITC Hub Logo",
+        alt: "Bentaidev Logo",
       },
     ],
   },
-}
+};
+
 export const viewport = {
   colorScheme: "dark",
 };
@@ -136,52 +126,52 @@ export default function RootLayout({
               "@graph": [
                 {
                   "@type": "WebPage",
-                  "@id": "https://itc-hub.vercel.app/#webpage",
-                  "url": "https://itc-hub.vercel.app/",
-                  "name": "ITC Hub",
+                  "@id": "https://bentaidev.vercel.app/#webpage",
+                  "url": "https://bentaidev.vercel.app/",
+                  "name": "Sami Bentaiba | Software Engineer",
                   "isPartOf": {
-                    "@id": "https://itc-hub.vercel.app/#website"
+                    "@id": "https://bentaidev.vercel.app/#website",
                   },
                   "primaryImageOfPage": {
                     "@type": "ImageObject",
-                    "url": "https://itc-hub.vercel.app/ITC%20HUB%20Home.png"
+                    "url": "https://bentaidev.vercel.app/BENTAIDEV%20Home.png",
                   },
-                  "description": "A modern workspace platform for the Information Technology Community",
-                  "inLanguage": "en-US"
+                  "description":
+                    "Personal portfolio website showcasing skills, experiences, and projects.",
+                  "inLanguage": "en-US",
                 },
                 {
                   "@type": "WebSite",
-                  "@id": "https://itc-hub.vercel.app/#website",
-                  "url": "https://itc-hub.vercel.app/",
-                  "name": "ITC Hub",
-                  "description": "A modern workspace platform for the Information Technology Community",
+                  "@id": "https://bentaidev.vercel.app/#website",
+                  "url": "https://bentaidev.vercel.app/",
+                  "name": "Sami Bentaiba",
+                  "description":
+                    "Personal portfolio website showcasing skills, experiences, and projects.",
                   "publisher": {
-                    "@id": "https://itc-hub.vercel.app/#organization"
+                    "@id": "https://bentaidev.vercel.app/#person",
                   },
-                  "inLanguage": "en-US"
+                  "inLanguage": "en-US",
                 },
                 {
-                  "@type": "Organization",
-                  "@id": "https://itc-hub.vercel.app/#organization",
-                  "name": "ITC Hub",
-                  "url": "https://itc-hub.vercel.app/",
-                  "logo": {
+                  "@type": "Person",
+                  "@id": "https://bentaidev.vercel.app/#person",
+                  "name": "Sami Bentaiba",
+                  "url": "https://bentaidev.vercel.app/",
+                  "image": {
                     "@type": "ImageObject",
-                    "url": "https://itc-hub.vercel.app/ITC%20HUB%20Logo.svg"
+                    "url": "https://bentaidev.vercel.app/logo.svg"
                   },
                   "sameAs": [
-                    "https://twitter.com/itc_hub",
-                    "https://www.linkedin.com/company/itc-hub"
+                    "https://github.com/samibentaiba",
+                    "https://www.linkedin.com/in/sami-bentaiba",
+                    "https://twitter.com/bentaiba_sami",
+                    "https://www.instagram.com/sami.bentaiba"
                   ],
-                  "contactPoint": {
-                    "@type": "ContactPoint",
-                    "telephone": "+1-800-555-1212",
-                    "contactType": "customer service",
-                    "areaServed": "US",
-                    "availableLanguage": ["English"]
-                  }
-                }
-              ]
+                  "jobTitle": "Software Engineer",
+                  "email": "samibentaiba25@gmail.com",
+                  "telephone": "+213656739896",
+                },
+              ],
             }),
           }}
         />
