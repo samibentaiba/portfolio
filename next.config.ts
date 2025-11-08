@@ -10,14 +10,24 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/**', // Allow any path on this host
       },
-      // --- Add this block ---
       {
         protocol: 'https',
         hostname: 'itc-hub.vercel.app',
         port: '',
         pathname: '/**', // Allow any path on this host
       },
-      // ---------------------
+            {
+        protocol: 'https',
+        hostname: 'bentaidev.vercel.app',
+        port: '',
+        pathname: '/**', // Allow any path on this host
+      },
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+        port: '3000',
+        pathname: '/**', // Allow any path on this host
+      },
     ],
   },
 };
