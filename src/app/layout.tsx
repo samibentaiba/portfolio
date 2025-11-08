@@ -63,13 +63,18 @@ export const metadata: Metadata = {
     locale: "en_US",
     emails: "samibentaiba25@gmail.com",
     phoneNumbers: "+213 656 73 98 96",
-    countryName: "Algeria",
     images: [
       {
-        url: "https://bentaidev.vercel.app/Metadata%20Placeholder.png",
+        url: "https://bentaidev.vercel.app/metadata-placeholder.png",
         width: 1200,
         height: 630,
         alt: "Sami Bentaiba's Portfolio",
+      },
+      {
+        url: "https://bentaidev.vercel.app/logo.svg",
+        width: 500,
+        height: 500,
+        alt: "Bentaidev Logo",
       },
     ],
   },
@@ -80,10 +85,16 @@ export const metadata: Metadata = {
       "Personal portfolio website showcasing skills, experiences, and projects.",
     images: [
       {
-        url: "https://bentaidev.vercel.app/Metadata%20Placeholder.png",
+        url: "https://bentaidev.vercel.app/metadata-placeholder.png",
         width: 1200,
         height: 630,
         alt: "Sami Bentaiba's Portfolio",
+      },
+      {
+        url: "https://bentaidev.vercel.app/logo.svg",
+        width: 500,
+        height: 500,
+        alt: "Bentaidev Logo",
       },
     ],
   },
@@ -110,44 +121,44 @@ export default function RootLayout({
                 {
                   "@type": "WebPage",
                   "@id": "https://bentaidev.vercel.app/#webpage",
-                  url: "https://bentaidev.vercel.app/",
-                  name: "Sami Bentaiba | Software Engineer",
-                  isPartOf: {
+                  "url": "https://bentaidev.vercel.app/",
+                  "name": "Sami Bentaiba | Software Engineer",
+                  "isPartOf": {
                     "@id": "https://bentaidev.vercel.app/#website",
                   },
-                  primaryImageOfPage: {
+                  "primaryImageOfPage": {
                     "@type": "ImageObject",
-                    url: "https://bentaidev.vercel.app/Metadata%20Placeholder.png",
+                    "url": "https://bentaidev.vercel.app/metadata-placeholder.png",
                   },
-                  description:
+                  "description":
                     "Personal portfolio website showcasing skills, experiences, and projects.",
-                  inLanguage: "en-US",
+                  "inLanguage": "en-US",
                 },
                 {
                   "@type": "WebSite",
                   "@id": "https://bentaidev.vercel.app/#website",
-                  url: "https://bentaidev.vercel.app/",
-                  name: "Sami Bentaiba",
-                  description:
+                  "url": "https://bentaidev.vercel.app/",
+                  "name": "Sami Bentaiba",
+                  "description":
                     "Personal portfolio website showcasing skills, experiences, and projects.",
-                  publisher: {
+                  "publisher": {
                     "@id": "https://bentaidev.vercel.app/#organization",
                   },
-                  inLanguage: "en-US",
+                  "inLanguage": "en-US",
                 },
                 {
                   "@type": "Person",
                   "@id": "https://bentaidev.vercel.app/#person",
-                  name: "Sami Bentaiba",
-                  url: "https://bentaidev.vercel.app/",
+                  "name": "Sami Bentaiba",
+                  "url": "https://bentaidev.vercel.app/",
                   "sameAs": [
                     "https://www.linkedin.com/in/samibentaiba",
-                    "https://github.com/samibentaiba"
+                    "https://github.com/samibentaiba",
                   ],
                   "jobTitle": "Software Engineer",
                   "email": "samibentaiba25@gmail.com",
-                  "telephone": "+213 656 73 98 96"
-                }
+                  "telephone": "+213 656 73 98 96",
+                },
               ],
             }),
           }}
