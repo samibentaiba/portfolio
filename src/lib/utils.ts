@@ -14,3 +14,8 @@ export function getAllUniqueTechnologies(): string[] {
   const uniqueTechnologies = Array.from(new Set(allTechnologies));
   return uniqueTechnologies.sort();
 }
+
+export type Props = {
+  params: Promise<{ slug: string }>;
+};
+

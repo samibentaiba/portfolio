@@ -1,6 +1,8 @@
 import ExperienceClient from "./client";
 import experiencesData from "@/data/experiences.json";
 import { Metadata } from "next";
+import { Props } from "@/lib/utils";
+
 
 export async function generateStaticParams() {
   return experiencesData.map((experience) => ({
@@ -8,13 +10,14 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}): Promise<Metadata> {
+// Update the function signature to use Props type
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  // Add this line to await the params
+  const { slug } = await params;
+
+  // Update this line to use slug instead of params.slug
   const experience = experiencesData.find(
-    (experience) => experience.slug === params.slug
+    (experience) => experience.slug === slug
   );
 
   if (!experience) {
@@ -27,11 +30,18 @@ export async function generateMetadata({
   return {
     title,
     description,
-    keywords: [...experience.skills, experience.role, experience.company, "Sami Bentaiba", "Portfolio"],
+    keywords: [
+      ...experience.skills,
+      experience.role,
+      experience.company,
+      "Sami Bentaiba",
+      "Portfolio",
+    ],
     openGraph: {
       title,
       description,
-      url: `https://bentaidev.vercel.app/experiences/${params.slug}`,
+      // Update this line to use slug instead of params.slug
+      url: `https://bentaidev.vercel.app/experiences/${slug}`,
       siteName: "Bentaidev",
       type: "website",
       images: [

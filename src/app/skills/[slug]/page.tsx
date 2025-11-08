@@ -1,5 +1,6 @@
+// src/app/skills/[slug]/page.tsx
 import SkillClient from "./client";
-import { getAllUniqueTechnologies } from "@/lib/utils";
+import { getAllUniqueTechnologies,Props } from "@/lib/utils";
 import { Metadata } from "next";
 
 export async function generateStaticParams() {
@@ -9,12 +10,10 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}): Promise<Metadata> {
-  const skillName = params.slug
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+
+  const skillName = slug
     .split("-")
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
@@ -25,11 +24,17 @@ export async function generateMetadata({
   return {
     title,
     description,
-    keywords: [skillName, "Sami Bentaiba", "Portfolio", "Projects", "Experiences"],
+    keywords: [
+      skillName,
+      "Sami Bentaiba",
+      "Portfolio",
+      "Projects",
+      "Experiences",
+    ],
     openGraph: {
       title,
       description,
-      url: `https://bentaidev.vercel.app/skills/${params.slug}`,
+      url: `https://bentaidev.vercel.app/skills/${slug}`,
       siteName: "Bentaidev",
       type: "website",
       images: [

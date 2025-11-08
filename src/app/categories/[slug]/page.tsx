@@ -1,6 +1,8 @@
+// src/app/categories/[slug]/page.tsx
 import CategoryClient from "./client";
-import { getAllUniqueTechnologies } from "@/lib/utils";
+import { getAllUniqueTechnologies, Props } from "@/lib/utils";
 import { Metadata } from "next";
+
 
 export async function generateStaticParams() {
   const technologies = getAllUniqueTechnologies();
@@ -9,12 +11,10 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}): Promise<Metadata> {
-  const categoryName = params.slug
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+
+  const categoryName = slug
     .split("-")
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
@@ -25,11 +25,17 @@ export async function generateMetadata({
   return {
     title,
     description,
-    keywords: [categoryName, "Sami Bentaiba", "Portfolio", "Projects", "Experiences"],
+    keywords: [
+      categoryName,
+      "Sami Bentaiba",
+      "Portfolio",
+      "Projects",
+      "Experiences",
+    ],
     openGraph: {
       title,
       description,
-      url: `https://bentaidev.vercel.app/categories/${params.slug}`,
+      url: `https://bentaidev.vercel.app/categories/${slug}`,
       siteName: "Bentaidev",
       type: "website",
       images: [
