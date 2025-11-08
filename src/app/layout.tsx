@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   creator: "Sami Bentaiba",
   publisher: "Sami Bentaiba",
   alternates: {
-    canonical: "https://bentaidev.netlify.app",
+    canonical: "https://bentaidev.vercel.app",
   },
   robots: {
     index: true,
@@ -52,12 +52,12 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
   },
-  metadataBase: new URL("https://bentaidev.netlify.app"),
+  metadataBase: new URL("https://bentaidev.vercel.app"),
   openGraph: {
     title: "Sami Bentaiba | Software Engineer",
     description:
       "Personal portfolio website showcasing skills, experiences, and projects.",
-    url: "https://bentaidev.netlify.app",
+    url: "https://bentaidev.vercel.app",
     siteName: "Sami Bentaiba",
     type: "website",
     locale: "en_US",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     countryName: "Algeria",
     images: [
       {
-        url: "https://bentaidev.netlify.app/Metadata%20Placeholder.png",
+        url: "https://bentaidev.vercel.app/Metadata%20Placeholder.png",
         width: 1200,
         height: 630,
         alt: "Sami Bentaiba's Portfolio",
@@ -80,7 +80,7 @@ export const metadata: Metadata = {
       "Personal portfolio website showcasing skills, experiences, and projects.",
     images: [
       {
-        url: "https://bentaidev.netlify.app/Metadata%20Placeholder.png",
+        url: "https://bentaidev.vercel.app/Metadata%20Placeholder.png",
         width: 1200,
         height: 630,
         alt: "Sami Bentaiba's Portfolio",
@@ -109,15 +109,15 @@ export default function RootLayout({
               "@graph": [
                 {
                   "@type": "WebPage",
-                  "@id": "https://bentaidev.netlify.app/#webpage",
-                  url: "https://bentaidev.netlify.app/",
+                  "@id": "https://bentaidev.vercel.app/#webpage",
+                  url: "https://bentaidev.vercel.app/",
                   name: "Sami Bentaiba | Software Engineer",
                   isPartOf: {
-                    "@id": "https://bentaidev.netlify.app/#website",
+                    "@id": "https://bentaidev.vercel.app/#website",
                   },
                   primaryImageOfPage: {
                     "@type": "ImageObject",
-                    url: "https://bentaidev.netlify.app/Metadata%20Placeholder.png",
+                    url: "https://bentaidev.vercel.app/Metadata%20Placeholder.png",
                   },
                   description:
                     "Personal portfolio website showcasing skills, experiences, and projects.",
@@ -125,21 +125,21 @@ export default function RootLayout({
                 },
                 {
                   "@type": "WebSite",
-                  "@id": "https://bentaidev.netlify.app/#website",
-                  url: "https://bentaidev.netlify.app/",
+                  "@id": "https://bentaidev.vercel.app/#website",
+                  url: "https://bentaidev.vercel.app/",
                   name: "Sami Bentaiba",
                   description:
                     "Personal portfolio website showcasing skills, experiences, and projects.",
                   publisher: {
-                    "@id": "https://bentaidev.netlify.app/#organization",
+                    "@id": "https://bentaidev.vercel.app/#organization",
                   },
                   inLanguage: "en-US",
                 },
                 {
                   "@type": "Person",
-                  "@id": "https://bentaidev.netlify.app/#person",
+                  "@id": "https://bentaidev.vercel.app/#person",
                   name: "Sami Bentaiba",
-                  url: "https://bentaidev.netlify.app/",
+                  url: "https://bentaidev.vercel.app/",
                   "sameAs": [
                     "https://www.linkedin.com/in/samibentaiba",
                     "https://github.com/samibentaiba"
