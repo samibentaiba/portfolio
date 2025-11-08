@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     emails: "samibentaiba25@gmail.com",
     images: [
       {
-        url: "https://bentaidev.vercel.app/metadata-placeholder.png", // Absolute URL
+        url: "https://bentaidev.vercel.app/BENTAIDEV%20Home.png", // Absolute URL
         alt: "Sami Bentaibas Portfolio",
         width: 1200,
         height: 630,
@@ -91,7 +91,7 @@ export const metadata: Metadata = {
       "Personal portfolio website showcasing skills, experiences, and projects.",
     images: [
       {
-        url: "https://bentaidev.vercel.app/metadata-placeholder.png", // Absolute URL
+        url: "https://bentaidev.vercel.app/BENTAIDEV%20Home.png", // Absolute URL
         width: 1200,
         height: 630,
         alt: "Sami Bentaiba's Portfolio",
@@ -134,7 +134,7 @@ export default function RootLayout({
                   },
                   "primaryImageOfPage": {
                     "@type": "ImageObject",
-                    "url": "https://bentaidev.vercel.app/metadata-placeholder.png",
+                    "url": "https://bentaidev.vercel.app/BENTAIDEV%20Home.png",
                   },
                   "description":
                     "Personal portfolio website showcasing skills, experiences, and projects.",
