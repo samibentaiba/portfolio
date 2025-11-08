@@ -1,58 +1,14 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { notFound, useParams } from "next/navigation";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
-import { useLanguage } from "@/components/language-provider";
-import { Project, Skill, SkillCategory } from "@/types";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { useSkillData } from "./hook";
 
 export default function SkillClient() {
-  const params = useParams();
-  const { t, getSkillsData, getProjectsData } = useLanguage();
-  const [skill, setSkill] = useState<Skill>();
-  const [category, setCategory] = useState<SkillCategory>();
-  const [relatedProjects, setRelatedProjects] = useState<Project[]>([]);
+  const { t, skill, category, relatedProjects, loading } = useSkillData();
 
-  useEffect(() => {
-    const slug = params?.slug as string;
-    let foundSkill = null;
-    let foundCategory = null;
-
-    // Find the skill and its category
-    for (const cat of getSkillsData()) {
-      const skillFound = cat.items.find((s: Skill) => s.slug === slug);
-      if (skillFound) {
-        foundSkill = skillFound;
-        foundCategory = cat;
-        break;
-      }
-    }
-
-    if (foundSkill && foundCategory) {
-      setSkill(foundSkill);
-      setCategory(foundCategory);
-
-      // Find related projects
-      const projects = getProjectsData().filter((project) =>
-        project.technologies.some(
-          (tech: string) => tech.toLowerCase() === foundSkill.name.toLowerCase()
-        )
-      );
-      setRelatedProjects(projects);
-    } else if (getSkillsData().length > 0) {
-      notFound();
-    }
-  }, [params, getSkillsData, getProjectsData]);
-
-  if (!skill || !category) {
+  if (loading || !skill || !category) {
     return <div className="container py-8">Loading...</div>;
   }
 
@@ -61,10 +17,7 @@ export default function SkillClient() {
       <div className="max-w-4xl mx-auto">
         <div className="mb-6 sm:mb-8">
           <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-4">
-            <Link
-              href="/#skills"
-              className="text-primary hover:underline text-sm sm:text-base"
-            >
+            <Link href="/#skills" className="text-primary hover:underline text-sm sm:text-base">
               ← {t("skills.backToSkills")}
             </Link>
             <Link
@@ -74,9 +27,8 @@ export default function SkillClient() {
               {t("skills.viewCategory")} {category.category}
             </Link>
           </div>
-          <h1 className="text-2xl sm:text-4xl font-bold mb-1 sm:mb-2">
-            {skill.name}
-          </h1>
+
+          <h1 className="text-2xl sm:text-4xl font-bold mb-1 sm:mb-2">{skill.name}</h1>
           <p className="text-sm sm:text-base text-muted-foreground">
             {category.category} • {skill.experience}
           </p>
@@ -84,9 +36,7 @@ export default function SkillClient() {
 
         <Card className="mb-6 sm:mb-8">
           <CardHeader className="p-4 sm:p-6">
-            <CardTitle className="text-lg sm:text-xl">
-              {t("skills.description")}
-            </CardTitle>
+            <CardTitle className="text-lg sm:text-xl">{t("skills.description")}</CardTitle>
           </CardHeader>
           <CardContent className="px-4 pb-4 sm:px-6 sm:pb-6 pt-0">
             <p className="text-sm sm:text-base">{skill.description}</p>
@@ -96,9 +46,7 @@ export default function SkillClient() {
         {relatedProjects.length > 0 && (
           <Card>
             <CardHeader className="p-4 sm:p-6">
-              <CardTitle className="text-lg sm:text-xl">
-                {t("skills.projectsUsing")}
-              </CardTitle>
+              <CardTitle className="text-lg sm:text-xl">{t("skills.projectsUsing")}</CardTitle>
               <CardDescription className="text-xs sm:text-sm">
                 {t("skills.projectsApplied")} {skill.name}
               </CardDescription>
@@ -108,9 +56,7 @@ export default function SkillClient() {
                 {relatedProjects.map((project) => (
                   <Link href={`/projects/${project.slug}`} key={project.slug}>
                     <div className="p-3 sm:p-4 border rounded-lg hover:bg-muted transition-colors">
-                      <h3 className="font-medium mb-0.5 sm:mb-1 text-sm sm:text-base">
-                        {project.title}
-                      </h3>
+                      <h3 className="font-medium mb-0.5 sm:mb-1 text-sm sm:text-base">{project.title}</h3>
                       <p className="text-xs sm:text-sm text-muted-foreground mb-2 line-clamp-2">
                         {project.shortDescription}
                       </p>
@@ -124,9 +70,7 @@ export default function SkillClient() {
                                 : "secondary"
                             }
                             className={`text-xs ${
-                              tech.toLowerCase() === skill.name.toLowerCase()
-                                ? ""
-                                : "bg-muted"
+                              tech.toLowerCase() === skill.name.toLowerCase() ? "" : "bg-muted"
                             }`}
                           >
                             {tech}
