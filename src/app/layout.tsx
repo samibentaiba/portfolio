@@ -51,6 +51,9 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: "/favicon.ico",
+    apple: {
+      url: "/logo.svg",
+    },
   },
   metadataBase: new URL("https://bentaidev.vercel.app"),
   openGraph: {
