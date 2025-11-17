@@ -42,8 +42,8 @@ const TimelineFilters = memo(function TimelineFilters({
               key={branch.id}
               onClick={() => onToggleBranch(branch.id)}
               className={`px-3 py-1.5 rounded text-xs font-medium transition-all ${visibleBranches.has(branch.id)
-                  ? 'bg-primary/10 text-foreground border border-primary/20'
-                  : 'bg-muted text-muted-foreground border border-border opacity-50'
+                ? 'bg-primary/10 text-foreground border border-primary/20'
+                : 'bg-muted text-muted-foreground border border-border opacity-50'
                 }`}
               aria-pressed={visibleBranches.has(branch.id)}
             >
@@ -69,8 +69,8 @@ const TimelineFilters = memo(function TimelineFilters({
               key={size}
               onClick={() => onToggleSize(size)}
               className={`px-3 py-1.5 rounded text-xs font-medium transition-all capitalize ${sizeFilter.has(size)
-                  ? 'bg-primary/10 text-foreground border border-primary/20'
-                  : 'bg-muted text-muted-foreground border border-border opacity-50'
+                ? 'bg-primary/10 text-foreground border border-primary/20'
+                : 'bg-muted text-muted-foreground border border-border opacity-50'
                 }`}
               aria-pressed={sizeFilter.has(size)}
             >
@@ -173,6 +173,7 @@ const TimelineVisualization = memo(function TimelineVisualization({
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
+
   // Calculate positions
   const { svgWidth, svgHeight, branchYPositions, pointPositions } = useMemo(() => {
     const allXPositions = new Set<number>();
@@ -422,6 +423,20 @@ const TimelineVisualization = memo(function TimelineVisualization({
 
   return (
     <div className="overflow-x-auto pb-4 relative">
+      {isMobile && clickedPoint && (
+        <div className="mb-4 text-center">
+          <button
+            onClick={() => {
+              setClickedPoint(null);
+              onPointHover(null);
+            }}
+            className="text-xs px-3 py-1.5 bg-muted hover:bg-muted/80 rounded-md transition-colors"
+          >
+            Close Info
+          </button>
+        </div>
+      )}
+
       <svg width={svgWidth} height={svgHeight} className="min-w-full">
         {adjustedBranches.map(branch => (
           <g key={`lines-${branch.id}`}>{renderBranchLines(branch)}</g>
@@ -440,6 +455,7 @@ const TimelineVisualization = memo(function TimelineVisualization({
           point={hoveredPointData.point}
           position={hoveredPointData.position}
           color={hoveredPointData.color}
+          isMobile={isMobile}
         />
       )}
     </div>
