@@ -42,8 +42,8 @@ const TimelineFilters = memo(function TimelineFilters({
               key={branch.id}
               onClick={() => onToggleBranch(branch.id)}
               className={`px-3 py-1.5 rounded text-xs font-medium transition-all ${visibleBranches.has(branch.id)
-                ? 'bg-primary/10 text-foreground border border-primary/20'
-                : 'bg-muted text-muted-foreground border border-border opacity-50'
+                  ? 'bg-primary/10 text-foreground border border-primary/20'
+                  : 'bg-muted text-muted-foreground border border-border opacity-50'
                 }`}
               aria-pressed={visibleBranches.has(branch.id)}
             >
@@ -69,8 +69,8 @@ const TimelineFilters = memo(function TimelineFilters({
               key={size}
               onClick={() => onToggleSize(size)}
               className={`px-3 py-1.5 rounded text-xs font-medium transition-all capitalize ${sizeFilter.has(size)
-                ? 'bg-primary/10 text-foreground border border-primary/20'
-                : 'bg-muted text-muted-foreground border border-border opacity-50'
+                  ? 'bg-primary/10 text-foreground border border-primary/20'
+                  : 'bg-muted text-muted-foreground border border-border opacity-50'
                 }`}
               aria-pressed={sizeFilter.has(size)}
             >
@@ -97,20 +97,34 @@ const Tooltip = memo(function Tooltip({
   point,
   position,
   color,
+  isMobile,
 }: {
   point: CareerPoint;
   position: { x: number; y: number };
   color: string;
+  isMobile: boolean;
 }) {
+  // Adjust tooltip position for mobile to prevent overflow
+  const tooltipStyle = useMemo(() => {
+    if (isMobile) {
+      return {
+        left: '50%',
+        top: `${position.y - 80}px`,
+        transform: 'translateX(-50%)',
+      };
+    }
+    return {
+      left: `${position.x + 20}px`,
+      top: `${position.y - 40}px`,
+    };
+  }, [position, isMobile]);
+
   return (
     <div
       className="absolute pointer-events-none z-[9999]"
-      style={{
-        left: `${position.x + 20}px`,
-        top: `${position.y - 40}px`,
-      }}
+      style={tooltipStyle}
     >
-      <div className="bg-popover text-popover-foreground p-3 rounded-lg shadow-xl border border-border min-w-[200px] max-w-[250px]">
+      <div className="bg-popover text-popover-foreground p-3 rounded-lg shadow-xl border border-border min-w-[200px] max-w-[280px] sm:max-w-[250px]">
         <div className="flex items-start gap-2">
           <div
             className="w-2 h-2 rounded-full mt-1 flex-shrink-0"
@@ -147,6 +161,18 @@ const TimelineVisualization = memo(function TimelineVisualization({
   onBranchHover: (id: string | null) => void;
   onLinkHover: (id: string | null) => void;
 }) {
+  // Detect if mobile
+  const [isMobile, setIsMobile] = useState(false);
+  const [clickedPoint, setClickedPoint] = useState<string | null>(null);
+
+  React.useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
   // Calculate positions
   const { svgWidth, svgHeight, branchYPositions, pointPositions } = useMemo(() => {
     const allXPositions = new Set<number>();
@@ -285,7 +311,7 @@ const TimelineVisualization = memo(function TimelineVisualization({
     return lines;
   }, [adjustedBranches, pointPositions, hoveredLink, hoveredPoint, onLinkHover]);
 
-  // Render points without inline tooltips
+  // Render points with touch support for mobile
   const renderPoints = useCallback((branch: CareerBranch) => {
     const branchY = branchYPositions[branch.id];
 
@@ -293,22 +319,52 @@ const TimelineVisualization = memo(function TimelineVisualization({
       const x = 60 + point.x * CELL_WIDTH;
       const y = branchY;
       const radius = getNodeRadius(point.milestone.size);
-      const isHovered = hoveredPoint === point.id;
+      const isHovered = hoveredPoint === point.id || clickedPoint === point.id;
       const isHoveredBranch = hoveredBranch === branch.id;
+
+      // Larger touch area for mobile
+      const touchRadius = isMobile ? radius + 10 : radius;
 
       return (
         <g
           key={point.id}
           onMouseEnter={() => {
-            onPointHover(point.id);
-            onBranchHover(branch.id);
+            if (!isMobile) {
+              onPointHover(point.id);
+              onBranchHover(branch.id);
+            }
           }}
           onMouseLeave={() => {
-            onPointHover(null);
-            onBranchHover(null);
+            if (!isMobile) {
+              onPointHover(null);
+              onBranchHover(null);
+            }
+          }}
+          onClick={() => {
+            if (isMobile) {
+              if (clickedPoint === point.id) {
+                setClickedPoint(null);
+                onPointHover(null);
+              } else {
+                setClickedPoint(point.id);
+                onPointHover(point.id);
+                onBranchHover(branch.id);
+              }
+            }
           }}
           className="cursor-pointer"
         >
+          {/* Larger invisible touch target for mobile */}
+          {isMobile && (
+            <circle
+              cx={x}
+              cy={y}
+              r={touchRadius}
+              fill="transparent"
+              className="cursor-pointer"
+            />
+          )}
+
           {isHovered && (
             <circle
               cx={x}
@@ -348,7 +404,7 @@ const TimelineVisualization = memo(function TimelineVisualization({
         </g>
       );
     });
-  }, [branchYPositions, hoveredPoint, hoveredBranch, onPointHover, onBranchHover]);
+  }, [branchYPositions, hoveredPoint, hoveredBranch, clickedPoint, isMobile, onPointHover, onBranchHover]);
 
   // Find hovered point data for tooltip
   const hoveredPointData = useMemo(() => {
