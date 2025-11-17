@@ -60,11 +60,12 @@
   },
   "resume": {
     "download": "Download PDF",
+    "downloadpdf": "Dwonload as .pdf",
     "downloadDocx": "Download as .docx",
     "print": "Print",
     "generating": "Generating...",
     "at": "at",
-    "education": "education",
+    "education": "Education",
     "summary": "Summary"
   },
   "categories": {

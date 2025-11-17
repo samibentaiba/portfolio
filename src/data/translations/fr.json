@@ -60,6 +60,7 @@
   },
   "resume": {
     "download": "Télécharger PDF",
+    "downloadpdf": "Télécharger en .pdf",
     "downloadDocx": "Télécharger en .docx",
     "print": "Imprimer",
     "generating": "Génération en cours...",
