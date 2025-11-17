@@ -123,5 +123,14 @@
   },
   "footer": {
     "rights": "All rights reserved."
+  },
+  "careerTimeline": {
+    "title": "Career Timeline",
+    "subtitle": "Hover over milestones to see details. Node sizes represent importance.",
+    "showBranches": "Show Branches",
+    "filterBySize": "Filter by Size",
+    "small": "Small",
+    "medium": "Medium",
+    "large": "Large"
   }
 }

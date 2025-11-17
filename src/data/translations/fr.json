@@ -123,5 +123,14 @@
   },
   "footer": {
     "rights": "Tous droits réservés."
+  },
+  "careerTimeline": {
+    "title": "Chronologie de Carrière",
+    "subtitle": "Survolez les jalons pour voir les détails. La taille des nœuds représente l'importance.",
+    "showBranches": "Afficher les Branches",
+    "filterBySize": "Filtrer par Taille",
+    "small": "Petit",
+    "medium": "Moyen",
+    "large": "Grand"
   }
 }

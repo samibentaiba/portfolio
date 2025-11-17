@@ -16,6 +16,8 @@ import enPersonal from "@/data/personal.json";
 import frPersonal from "@/data/translations/personal-fr.json";
 import enFunFacts from "@/data/fun-facts.json";
 import frFunFacts from "@/data/translations/fun-facts-fr.json";
+import enCareerTimeline from "@/data/career-timeline.json";
+import frCareerTimeline from "@/data/translations/career-timeline-fr.json";
 import {
   Experience,
   FunFact,
@@ -23,6 +25,7 @@ import {
   SkillCategory,
   Education,
   Personal,
+  CareerTimelineData,
 } from "@/types";
 
 type Language = "en" | "fr";
@@ -36,6 +39,7 @@ type LanguageContextType = {
   getExperiencesData: () => Experience[];
   getProjectsData: () => Project[];
   getEducationsData: () => Education[];
+  getCareerTimelineData: () => CareerTimelineData;
   getPersonalData: () => Personal;
   getFunFactsData: () => FunFact[];
 };
@@ -99,6 +103,9 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const getFunFactsData = (): FunFact[] =>
     (language === "fr" ? frFunFacts : enFunFacts) as FunFact[];
 
+  const getCareerTimelineData = (): CareerTimelineData =>
+    (language === "fr" ? frCareerTimeline : enCareerTimeline) as CareerTimelineData;
+
   return (
     <LanguageContext.Provider
       value={{
@@ -112,6 +119,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
         getExperiencesData,
         getProjectsData,
         getEducationsData,
+        getCareerTimelineData,
         getPersonalData,
         getFunFactsData,
       }}

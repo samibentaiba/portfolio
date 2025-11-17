@@ -1,0 +1,233 @@
+{
+  "branches": [
+    {
+      "id": "main-career",
+      "name": "Parcours Professionnel Principal",
+      "color": "#00d4ff",
+      "points": [
+        {
+          "id": "c1",
+          "x": 0,
+          "branch": "main-career",
+          "milestone": {
+            "id": "c1",
+            "title": "Premier Emploi",
+            "description": "Début en tant que Développeur Junior chez TechCorp",
+            "size": "large",
+            "type": "job",
+            "date": "Jan 2020"
+          },
+          "linkedTo": [
+            {
+              "targetId": "os1"
+            },
+            {
+              "targetId": "sk1"
+            }
+          ]
+        },
+        {
+          "id": "c2",
+          "x": 1,
+          "branch": "main-career",
+          "milestone": {
+            "id": "c2",
+            "title": "Promotion au Niveau Intermédiaire",
+            "description": "Prise en charge de projets plus complexes",
+            "size": "medium",
+            "type": "achievement",
+            "date": "Juin 2020"
+          },
+          "linkedTo": [
+            {
+              "targetId": "os2"
+            },
+            {
+              "targetId": "sp1"
+            }
+          ]
+        },
+        {
+          "id": "c3",
+          "x": 2,
+          "branch": "main-career",
+          "milestone": {
+            "id": "c3",
+            "title": "Direction de Projet Backend",
+            "description": "Architecture de microservices",
+            "size": "large",
+            "type": "project",
+            "date": "Déc 2020"
+          },
+          "linkedTo": [
+            {
+              "targetId": "sp1"
+            },
+            {
+              "targetId": "sk1"
+            }
+          ]
+        },
+        {
+          "id": "c4",
+          "x": 4,
+          "branch": "main-career",
+          "milestone": {
+            "id": "c4",
+            "title": "Développeur Senior",
+            "description": "Responsabilités de chef d'équipe",
+            "size": "large",
+            "type": "achievement",
+            "date": "Sep 2021"
+          },
+          "linkedTo": [
+            {
+              "targetId": "sp2"
+            },
+            {
+              "targetId": "sk2"
+            },
+            {
+              "targetId": "os3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "open-source",
+      "name": "Open Source",
+      "color": "#ff006e",
+      "points": [
+        {
+          "id": "os1",
+          "x": 0,
+          "branch": "open-source",
+          "milestone": {
+            "id": "os1",
+            "title": "Première Contribution",
+            "description": "Contribution à la bibliothèque React",
+            "size": "small",
+            "type": "project",
+            "date": "Fév 2020"
+          }
+        },
+        {
+          "id": "os2",
+          "x": 2,
+          "branch": "open-source",
+          "milestone": {
+            "id": "os2",
+            "title": "Devenu Mainteneur",
+            "description": "Accepté comme mainteneur principal",
+            "size": "large",
+            "type": "achievement",
+            "date": "Août 2020"
+          }
+        },
+        {
+          "id": "os3",
+          "x": 4,
+          "branch": "open-source",
+          "milestone": {
+            "id": "os3",
+            "title": "1k Étoiles",
+            "description": "Projet personnel a gagné en popularité",
+            "size": "large",
+            "type": "achievement",
+            "date": "Juin 2021"
+          },
+          "linkedTo": [
+            {
+              "targetId": "sp2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "speaking",
+      "name": "Conférences & Présentations",
+      "color": "#7209b7",
+      "points": [
+        {
+          "id": "sp1",
+          "x": 1,
+          "branch": "speaking",
+          "milestone": {
+            "id": "sp1",
+            "title": "Première Présentation",
+            "description": "Présentation locale sur React",
+            "size": "small",
+            "type": "achievement",
+            "date": "Mai 2020"
+          }
+        },
+        {
+          "id": "sp2",
+          "x": 3,
+          "branch": "speaking",
+          "milestone": {
+            "id": "sp2",
+            "title": "Conférencier",
+            "description": "Conférence React sur l'optimisation des performances",
+            "size": "large",
+            "type": "achievement",
+            "date": "Oct 2021"
+          },
+          "linkedTo": [
+            {
+              "targetId": "sk2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "skills",
+      "name": "Développement de Compétences",
+      "color": "#3a0ca3",
+      "points": [
+        {
+          "id": "sk1",
+          "x": 1,
+          "branch": "skills",
+          "milestone": {
+            "id": "sk1",
+            "title": "Maîtrise de TypeScript",
+            "description": "Cours avancé TypeScript terminé",
+            "size": "medium",
+            "type": "skill",
+            "date": "Avr 2020"
+          }
+        },
+        {
+          "id": "sk2",
+          "x": 3,
+          "branch": "skills",
+          "milestone": {
+            "id": "sk2",
+            "title": "Certification AWS",
+            "description": "Certification AWS Solutions Architect",
+            "size": "large",
+            "type": "skill",
+            "date": "Sep 2021"
+          }
+        },
+        {
+          "id": "sk3",
+          "x": 5,
+          "branch": "skills",
+          "milestone": {
+            "id": "sk3",
+            "title": "Fondamentaux DevOps",
+            "description": "Maîtrise des pipelines CI/CD",
+            "size": "medium",
+            "type": "skill",
+            "date": "Fév 2022"
+          }
+        }
+      ]
+    }
+  ]
+}

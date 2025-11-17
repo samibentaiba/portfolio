@@ -31,13 +31,13 @@ export interface Experience {
 export interface Project {
   slug: string; // Required for navigation
   fetchUrl?: string; // The URL to fetch metadata from
-  
+
   // These are now optional, they can be fetched or manually set
   title: string;
   shortDescription?: string;
   description?: string;
   image?: string;
-  
+
   // These are optional and can be added manually
   technologies: string[]; // Keep this, user can add manually
   timeline?: string;
@@ -69,4 +69,40 @@ export interface Personal {
 export interface FunFact {
   category: string;
   text: string;
+}
+
+// ============================================
+// 3. UPDATE: src/types/index.ts (Add these types)
+// ============================================
+export interface CareerMilestone {
+  id: string;
+  title: string;
+  description: string;
+  size: 'small' | 'medium' | 'large';
+  type: 'achievement' | 'job' | 'project' | 'skill';
+  date?: string;
+}
+
+export interface CareerLink {
+  targetId: string;
+  type?: 'merge';
+}
+
+export interface CareerPoint {
+  id: string;
+  x: number;
+  branch: string;
+  milestone: CareerMilestone;
+  linkedTo?: CareerLink[];
+}
+
+export interface CareerBranch {
+  id: string;
+  name: string;
+  color: string;
+  points: CareerPoint[];
+}
+
+export interface CareerTimelineData {
+  branches: CareerBranch[];
 }
