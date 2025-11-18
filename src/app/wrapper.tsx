@@ -18,6 +18,13 @@ import { ThemeProvider } from "@/components/theme-provider";
 import Link from "next/link";
 import { LuGithub } from "react-icons/lu";
 import { LuLinkedin } from "react-icons/lu";
+import { useRTL } from "@/hooks/use-rtl";
+
+// RTL wrapper component
+function RTLWrapper({ children }: { children: React.ReactNode }) {
+  useRTL();
+  return <>{children}</>;
+}
 
 export function Wrapper({ children }: { children: React.ReactNode }) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -37,7 +44,6 @@ export function Wrapper({ children }: { children: React.ReactNode }) {
 
     setCanvasSize();
 
-    // Function to update current foreground color from CSS
     const updateColor = () => {
       const newColor =
         getComputedStyle(document.documentElement)
@@ -48,7 +54,6 @@ export function Wrapper({ children }: { children: React.ReactNode }) {
 
     updateColor();
 
-    // Observe theme/class changes to detect foreground updates
     const observer = new MutationObserver(() => {
       updateColor();
     });
@@ -137,14 +142,16 @@ export function Wrapper({ children }: { children: React.ReactNode }) {
           className="relative z-10"
         >
           <LanguageProvider>
-            <div className="flex flex-col min-h-screen">
-              <Header />
-              <div id="/" className="flex-1 py-8">
-                {children}
+            <RTLWrapper>
+              <div className="flex flex-col min-h-screen">
+                <Header />
+                <div id="/" className="flex-1 py-8">
+                  {children}
+                </div>
+                <Footer />
+                <ScrollHandler />
               </div>
-              <Footer />
-              <ScrollHandler />
-            </div>
+            </RTLWrapper>
           </LanguageProvider>
         </motion.div>
       </div>
@@ -157,6 +164,7 @@ function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { t } = useLanguage();
   const { scrollToSection } = useScroll();
+  const { isRtl } = useRTL();
 
   const buttonRef = useRef<HTMLButtonElement>(null);
   const toggleMobileMenu = () => {
@@ -171,7 +179,7 @@ function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 w-full border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/80 flex flex-col items-center justify-center">
       <div className="flex w-full max-w-[1920px] h-14 sm:h-16 md:h-18 items-center px-3 sm:px-4 md:px-6 justify-between">
-        <div className="flex items-center gap-1 sm:gap-2">
+        <div className={cn("flex items-center gap-1 sm:gap-2")}>
           <button
             onClick={() => handleNavClick("/")}
             className="cursor-pointer"
@@ -181,7 +189,7 @@ function Header() {
           </button>
 
           {/* Desktop navigation */}
-          <nav className="hidden md:flex gap-3 md:gap-6 ml-3 md:ml-6">
+          <nav className={cn("hidden md:flex gap-3 md:gap-6 ml-3 md:ml-6", isRtl && "flex-row-reverse mr-3 md:mr-6 ml-0")}>
             <button
               onClick={() => handleNavClick("skills")}
               className={cn(
@@ -221,7 +229,7 @@ function Header() {
           </nav>
         </div>
 
-        <div className="flex items-center gap-1 sm:gap-2">
+        <div className={cn("flex items-center gap-1 sm:gap-2", isRtl && "flex-row-reverse")}>
           <ThemeToggle />
           <LanguageToggle />
 
@@ -254,9 +262,10 @@ function Header() {
 }
 
 const BentaidevLogo = () => {
+  const { isRtl } = useRTL();
   return (
     <div className="inline-flex items-center justify-center">
-      <div className="text-2xl font-bold tracking-wider flex items-center">
+      <div className={cn("text-2xl font-bold tracking-wider flex items-center", isRtl && "flex-row-reverse")}>
         <span className="bg-foreground text-background rounded flex items-center justify-center h-6 w-0 mr-1 pr-[11] pl-[13]">
           B
         </span>
@@ -268,14 +277,15 @@ const BentaidevLogo = () => {
 
 function Footer() {
   const { t } = useLanguage();
+  const { isRtl } = useRTL();
 
   return (
     <footer className="w-full hidden md:flex items-center justify-center border-t py-6 md:py-0">
-      <div className="container flex flex-col items-center justify-between gap-4 md:h-16 md:flex-row px-4 sm:px-6">
+      <div className={cn("container flex flex-col items-center justify-between gap-4 md:h-16 md:flex-row px-4 sm:px-6", isRtl && "md:flex-row-reverse")}>
         <p className="text-xs sm:text-sm text-muted-foreground text-center md:text-left">
           © {new Date().getFullYear()} Sami Bentaiba. {t("footer.rights")}
         </p>
-        <div className="flex items-center gap-4">
+        <div className={cn("flex items-center gap-4", isRtl && "flex-row-reverse")}>
           <Link
             href="https://github.com"
             target="_blank"
@@ -304,31 +314,20 @@ function ScrollHandler() {
   const pathname = usePathname();
 
   useEffect(() => {
-    // Only run this on the home page
     if (pathname !== "/") return;
 
-    // Check if there's a hash in the URL
     if (window.location.hash) {
-      // Get the element ID from the hash
       const id = window.location.hash.substring(1);
       const element = document.getElementById(id);
 
-      // If the element exists, scroll to it after a short delay
-      // The delay ensures the page has fully loaded
       if (element) {
         setTimeout(() => {
-          // Get the header height to offset the scroll position
           const headerHeight =
             document.querySelector("header")?.offsetHeight || 0;
-
-          // Calculate the element's position relative to the viewport
           const elementPosition = element.getBoundingClientRect().top;
-
-          // Calculate the absolute position by adding the current scroll position
           const offsetPosition =
             elementPosition + window.pageYOffset - headerHeight;
 
-          // Scroll to the element with the calculated offset
           window.scrollTo({
             top: offsetPosition,
             behavior: "smooth",

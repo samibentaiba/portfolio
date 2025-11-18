@@ -112,6 +112,96 @@
   --sidebar-ring: oklch(0.552 0.016 285.938);
 }
 
+
+/* Add this to the end of src/app/globals.css */
+
+/* RTL Support */
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] .text-left {
+  text-align: right !important;
+}
+
+[dir="rtl"] .text-right {
+  text-align: left !important;
+}
+
+/* Flip margins and paddings for RTL */
+[dir="rtl"] .ml-1 { margin-right: 0.25rem; margin-left: 0; }
+[dir="rtl"] .ml-2 { margin-right: 0.5rem; margin-left: 0; }
+[dir="rtl"] .ml-3 { margin-right: 0.75rem; margin-left: 0; }
+[dir="rtl"] .ml-4 { margin-right: 1rem; margin-left: 0; }
+[dir="rtl"] .ml-6 { margin-right: 1.5rem; margin-left: 0; }
+
+[dir="rtl"] .mr-1 { margin-left: 0.25rem; margin-right: 0; }
+[dir="rtl"] .mr-2 { margin-left: 0.5rem; margin-right: 0; }
+[dir="rtl"] .mr-4 { margin-left: 1rem; margin-right: 0; }
+
+[dir="rtl"] .pl-4 { padding-right: 1rem; padding-left: 0; }
+[dir="rtl"] .pl-5 { padding-right: 1.25rem; padding-left: 0; }
+[dir="rtl"] .pr-3 { padding-left: 0.75rem; padding-right: 0; }
+
+/* Flip flex directions for RTL */
+[dir="rtl"] .flex-row {
+  flex-direction: row-reverse;
+}
+
+/* Flip icon positions */
+[dir="rtl"] svg {
+  transform: scaleX(-1);
+}
+
+/* Don't flip these specific icons */
+[dir="rtl"] .lucide-external-link,
+[dir="rtl"] .lucide-github {
+  transform: none;
+}
+
+/* Card and Badge alignment */
+[dir="rtl"] .card,
+[dir="rtl"] .badge {
+  text-align: right;
+}
+
+/* Dropdown menus */
+[dir="rtl"] [role="menu"],
+[dir="rtl"] .dropdown-menu {
+  text-align: right;
+}
+
+/* Forms */
+[dir="rtl"] input,
+[dir="rtl"] textarea,
+[dir="rtl"] select {
+  text-align: right;
+}
+
+/* Lists */
+[dir="rtl"] ul,
+[dir="rtl"] ol {
+  padding-right: 1.5rem;
+  padding-left: 0;
+}
+
+/* Navigation */
+[dir="rtl"] nav {
+  direction: rtl;
+}
+
+/* Timeline specific */
+[dir="rtl"] .career-timeline {
+  direction: rtl;
+}
+
+/* Keep code blocks LTR */
+[dir="rtl"] code,
+[dir="rtl"] pre {
+  direction: ltr;
+  text-align: left;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -120,7 +210,10 @@
     @apply bg-background text-foreground;
   }
 }
+
 .main-content {
   height: 100vh;
   overflow-y: auto;
 }
+
+
