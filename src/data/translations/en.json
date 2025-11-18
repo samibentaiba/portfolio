@@ -60,7 +60,7 @@
   },
   "resume": {
     "download": "Download PDF",
-    "downloadpdf": "Dwonload as .pdf",
+    "downloadPdf": "Dwonload as .pdf",
     "downloadDocx": "Download as .docx",
     "print": "Print",
     "generating": "Generating...",
