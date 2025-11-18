@@ -1,21 +1,8 @@
 import { useEffect, useState, useRef } from "react";
 import { saveAs } from "file-saver";
-import {
-  Document,
-  Packer,
-  Paragraph,
-  TextRun,
-  HeadingLevel,
-  AlignmentType,
-} from "docx";
+import { Packer } from "docx";
 import { useLanguage } from "@/components/language-provider";
-import {
-  createSummarySection,
-  createSkillsSection,
-  createExperienceSection,
-  createProjectsSection,
-  createEducationSection,
-} from "@/lib/docx-generator";
+import { generateResumeDoc } from "@/lib/resume-generator";
 import type { ReactElement } from "react";
 import {
   Experience,
@@ -63,72 +50,7 @@ export function useResume() {
   const generateDocx = async () => {
     setIsGenerating(true);
     try {
-      const skillsData = skills.map((group) => ({
-        category: group.category,
-        items: group.items.map((item) => ({
-          name: item.name,
-          experience: item.experience,
-          description: item.description,
-        })),
-      }));
-
-      const doc = new Document({
-        sections: [
-          {
-            properties: {},
-            children: [
-              new Paragraph({
-                children: [
-                  new TextRun({
-                    text: personal?.name || "",
-                    bold: true,
-                    size: 32,
-                  }),
-                ],
-
-                spacing: { after: 200 },
-                alignment:
-                  language === "ar" ? AlignmentType.RIGHT : AlignmentType.LEFT,
-                heading: HeadingLevel.TITLE,
-              }),
-              new Paragraph({
-                children: [
-                  new TextRun(
-                    `${personal?.email ?? ""} · ${personal?.phone ?? ""}`
-                  ),
-                ],
-                spacing: { after: 100 },
-                alignment:
-                  language === "ar" ? AlignmentType.RIGHT : AlignmentType.LEFT,
-              }),
-              new Paragraph({
-                children: [new TextRun(`${personal?.website ?? ""}`)],
-                spacing: { after: 100 },
-                alignment:
-                  language === "ar" ? AlignmentType.RIGHT : AlignmentType.LEFT,
-              }),
-              new Paragraph({
-                children: [new TextRun(`${personal?.github ?? ""}`)],
-                spacing: { after: 100 },
-                alignment:
-                  language === "ar" ? AlignmentType.RIGHT : AlignmentType.LEFT,
-              }),
-              new Paragraph({
-                children: [new TextRun(`${personal?.linkedin ?? ""}`)],
-                spacing: { after: 400 },
-                alignment:
-                  language === "ar" ? AlignmentType.RIGHT : AlignmentType.LEFT,
-              }),
-              ...createSummarySection(personal, t, language === "ar"),
-              ...createSkillsSection(skillsData, t, language === "ar"),
-              ...createExperienceSection(experiences, t, language === "ar"),
-              ...createProjectsSection(projects, t, language === "ar"),
-              ...createEducationSection(educations, t, language === "ar"),
-            ],
-          },
-        ],
-      });
-
+      const doc = generateResumeDoc(personal, skills, experiences, projects, educations, t, language);
       const blob = await Packer.toBlob(doc);
       saveAs(blob, `resume_${language}.docx`);
     } catch (error) {

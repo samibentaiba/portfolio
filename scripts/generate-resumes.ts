@@ -7,16 +7,9 @@
 
 import fs from 'fs';
 import path from 'path';
-import { Document, Packer, Paragraph, TextRun, HeadingLevel, AlignmentType } from 'docx';
-import {
-  createSummarySection,
-  createSkillsSection,
-  createExperienceSection,
-  createProjectsSection,
-  createEducationSection,
-} from '../src/lib/docx-generator';
+import { Packer } from 'docx';
+import { generateResumeDoc } from '../src/lib/resume-generator';
 import { convertDocxToPdf } from '../src/lib/convertDocxToPdf';
-import type { SkillCategory } from '../src/types';
 
 // Import your data
 import { 
@@ -68,91 +61,8 @@ async function generateResume(language: 'en' | 'fr' | 'ar') {
   const projects = getProjectsData(language);
   const educations = getEducationsData(language);
 
-  // Transform skills data with proper typing
-  const skillsData = skills.map((group: SkillCategory) => ({
-    category: group.category,
-    items: group.items.map((item) => ({
-      name: item.name,
-      experience: item.experience,
-      description: item.description,
-    })),
-  }));
-
-  const isRtl = language === 'ar';
-
   // Create DOCX document
-  const doc = new Document({
-    sections: [
-      {
-        properties: {},
-        children: [
-          // Name
-          new Paragraph({
-            alignment: isRtl ? AlignmentType.RIGHT : AlignmentType.LEFT,
-            children: [
-              new TextRun({
-                text: personal?.name || '',
-                bold: true,
-                size: 32,
-              }),
-            ],
-            spacing: { after: 200 },
-            heading: HeadingLevel.TITLE,
-            
-          }),
-          // Email and Phone
-          new Paragraph({
-            alignment: isRtl ? AlignmentType.RIGHT : AlignmentType.LEFT,
-            children: [
-              new TextRun({
-                text: `${personal?.email ?? ''} · ${personal?.phone ?? ''}`,
-              }),
-            ],
-            spacing: { after: 100 },
-            
-          }),
-          // Website
-          new Paragraph({
-            alignment: isRtl ? AlignmentType.RIGHT : AlignmentType.LEFT,
-            children: [
-              new TextRun({
-                text: `${personal?.website ?? ''}`,
-              }),
-            ],
-            spacing: { after: 100 },
-            
-          }),
-          // GitHub
-          new Paragraph({
-            alignment: isRtl ? AlignmentType.RIGHT : AlignmentType.LEFT,
-            children: [
-              new TextRun({
-                text: `${personal?.github ?? ''}`,
-              }),
-            ],
-            spacing: { after: 100 },
-            
-          }),
-          // LinkedIn
-          new Paragraph({
-            alignment: isRtl ? AlignmentType.RIGHT : AlignmentType.LEFT,
-            children: [
-              new TextRun({
-                text: `${personal?.linkedin ?? ''}`,
-              }),
-            ],
-            spacing: { after: 400 },
-            
-          }),
-          ...createSummarySection(personal, translate, isRtl),
-          ...createSkillsSection(skillsData, translate, isRtl),
-          ...createExperienceSection(experiences, translate, isRtl),
-          ...createProjectsSection(projects, translate, isRtl),
-          ...createEducationSection(educations, translate, isRtl),
-        ],
-      },
-    ],
-  });
+  const doc = generateResumeDoc(personal, skills, experiences, projects, educations, translate, language);
 
   // Generate DOCX buffer
   const docxBuffer = await Packer.toBuffer(doc);
