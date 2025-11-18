@@ -1,6 +1,13 @@
 import { useEffect, useState, useRef } from "react";
 import { saveAs } from "file-saver";
-import { Document, Packer, Paragraph, TextRun, HeadingLevel } from "docx";
+import {
+  Document,
+  Packer,
+  Paragraph,
+  TextRun,
+  HeadingLevel,
+  AlignmentType,
+} from "docx";
 import { useLanguage } from "@/components/language-provider";
 import {
   createSummarySection,
@@ -78,7 +85,10 @@ export function useResume() {
                     size: 32,
                   }),
                 ],
+
                 spacing: { after: 200 },
+                alignment:
+                  language === "ar" ? AlignmentType.RIGHT : AlignmentType.LEFT,
                 heading: HeadingLevel.TITLE,
               }),
               new Paragraph({
@@ -88,18 +98,26 @@ export function useResume() {
                   ),
                 ],
                 spacing: { after: 100 },
+                alignment:
+                  language === "ar" ? AlignmentType.RIGHT : AlignmentType.LEFT,
               }),
               new Paragraph({
                 children: [new TextRun(`${personal?.website ?? ""}`)],
                 spacing: { after: 100 },
+                alignment:
+                  language === "ar" ? AlignmentType.RIGHT : AlignmentType.LEFT,
               }),
               new Paragraph({
                 children: [new TextRun(`${personal?.github ?? ""}`)],
                 spacing: { after: 100 },
+                alignment:
+                  language === "ar" ? AlignmentType.RIGHT : AlignmentType.LEFT,
               }),
               new Paragraph({
                 children: [new TextRun(`${personal?.linkedin ?? ""}`)],
                 spacing: { after: 400 },
+                alignment:
+                  language === "ar" ? AlignmentType.RIGHT : AlignmentType.LEFT,
               }),
               ...createSummarySection(personal, t, language === "ar"),
               ...createSkillsSection(skillsData, t, language === "ar"),
@@ -123,7 +141,7 @@ export function useResume() {
   // Download pre-generated static PDF
   const downloadStaticPdf = () => {
     const pdfPath = `/resume.${language}.pdf`;
-    const link = document.createElement('a');
+    const link = document.createElement("a");
     link.href = pdfPath;
     link.download = `resume_${language}.pdf`;
     document.body.appendChild(link);
@@ -150,7 +168,10 @@ interface UsePaginationProps {
   pageHeight: number;
 }
 
-export function useResumePagination({ content, pageHeight }: UsePaginationProps) {
+export function useResumePagination({
+  content,
+  pageHeight,
+}: UsePaginationProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const measureRef = useRef<HTMLDivElement>(null);
   const [pages, setPages] = useState<ReactElement[][]>([]);
@@ -172,7 +193,9 @@ export function useResumePagination({ content, pageHeight }: UsePaginationProps)
       const elementTop = rect.top;
       const elementHeight = rect.height;
 
-      const relativeTop = elementTop - (measureRef.current as HTMLDivElement).getBoundingClientRect().top;
+      const relativeTop =
+        elementTop -
+        (measureRef.current as HTMLDivElement).getBoundingClientRect().top;
 
       if (relativeTop + elementHeight > pageBottom) {
         pagesArray.push(currentPageContent);

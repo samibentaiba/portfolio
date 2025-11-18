@@ -1,7 +1,7 @@
 #!/usr/bin/env tsx
 
 /**
- * Script to generate static PDF resumes for both French and English
+ * Script to generate static PDF resumes for English, French, and Arabic
  * Run with: npm run generate-resumes
  */
 
@@ -44,11 +44,11 @@ const translations: Record<string, Record<string, string>> = {
     'educations.title': 'Formation',
   },
   ar: {
-    'resume.summary': 'ملخص',
-    'skills.title': 'مهارات',
-    'experiences.title': 'خبرة',
-    'projects.title': 'مشاريع',
-    'educations.title': 'تعليم',
+    'resume.summary': 'الملخص',
+    'skills.title': 'المهارات',
+    'experiences.title': 'الخبرات',
+    'projects.title': 'المشاريع',
+    'educations.title': 'التعليم',
   },
 };
 
@@ -86,6 +86,7 @@ async function generateResume(language: 'en' | 'fr' | 'ar') {
       {
         properties: {},
         children: [
+          // Name
           new Paragraph({
             alignment: isRtl ? AlignmentType.RIGHT : AlignmentType.LEFT,
             children: [
@@ -97,7 +98,9 @@ async function generateResume(language: 'en' | 'fr' | 'ar') {
             ],
             spacing: { after: 200 },
             heading: HeadingLevel.TITLE,
+            
           }),
+          // Email and Phone
           new Paragraph({
             alignment: isRtl ? AlignmentType.RIGHT : AlignmentType.LEFT,
             children: [
@@ -106,7 +109,9 @@ async function generateResume(language: 'en' | 'fr' | 'ar') {
               }),
             ],
             spacing: { after: 100 },
+            
           }),
+          // Website
           new Paragraph({
             alignment: isRtl ? AlignmentType.RIGHT : AlignmentType.LEFT,
             children: [
@@ -115,7 +120,9 @@ async function generateResume(language: 'en' | 'fr' | 'ar') {
               }),
             ],
             spacing: { after: 100 },
+            
           }),
+          // GitHub
           new Paragraph({
             alignment: isRtl ? AlignmentType.RIGHT : AlignmentType.LEFT,
             children: [
@@ -124,7 +131,9 @@ async function generateResume(language: 'en' | 'fr' | 'ar') {
               }),
             ],
             spacing: { after: 100 },
+            
           }),
+          // LinkedIn
           new Paragraph({
             alignment: isRtl ? AlignmentType.RIGHT : AlignmentType.LEFT,
             children: [
@@ -133,6 +142,7 @@ async function generateResume(language: 'en' | 'fr' | 'ar') {
               }),
             ],
             spacing: { after: 400 },
+            
           }),
           ...createSummarySection(personal, translate, isRtl),
           ...createSkillsSection(skillsData, translate, isRtl),
