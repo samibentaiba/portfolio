@@ -1,138 +1,138 @@
 {
   "navigation": {
-    "skills": "Skills",
-    "experiences": "Experiences",
-    "projects": "Projects",
-    "contact": "contact me",
-    "backToHome": "Back to Home",
-    "next": "Next",
-    "previous": "Previous",
-    "of": "of",
-    "title": "title",
-    "experience": "Experience",
-    "live": "Live"
+    "skills": "المهارات",
+    "experiences": "الخبرات",
+    "projects": "المشاريع",
+    "contact": "اتصل بي",
+    "backToHome": "العودة إلى الصفحة الرئيسية",
+    "next": "التالي",
+    "previous": "السابق",
+    "of": "من",
+    "title": "العنوان",
+    "experience": "الخبرة",
+    "live": "مباشر"
   },
   "hero": {
-    "viewProjects": "View Projects",
-    "contactMe": "Contact Me",
-    "resume": "Resume"
+    "viewProjects": "عرض المشاريع",
+    "contactMe": "اتصل بي",
+    "resume": "السيرة الذاتية"
   },
   "skills": {
-    "title": "Skills",
-    "subtitle": "Technologies and tools I work with",
-    "learnMore": "Learn more about",
-    "backToSkills": "Back to Skills",
-    "viewCategory": "View Category",
-    "description": "Description",
-    "projectsUsing": "Projects Using This Skill",
-    "projectsApplied": "Projects where I've applied",
-    "clickToView": "Click to view details"
+    "title": "المهارات",
+    "subtitle": "التقنيات والأدوات التي أعمل بها",
+    "learnMore": "معرفة المزيد عن",
+    "backToSkills": "العودة إلى المهارات",
+    "viewCategory": "عرض الفئة",
+    "description": "الوصف",
+    "projectsUsing": "المشاريع التي تستخدم هذه المهارة",
+    "projectsApplied": "المشاريع التي طبقت فيها",
+    "clickToView": "انقر لعرض التفاصيل"
   },
   "experiences": {
-    "title": "Experiences",
-    "subtitle": "My professional journey and roles",
-    "backToExperiences": "Back to Experiences",
-    "roleDescription": "Role Description",
-    "skillsUsed": "Skills Used",
-    "skillsApplied": "Technical and soft skills applied in this role",
-    "projects": "Projects",
-    "keyProjects": "Key projects completed during this period"
+    "title": "الخبرات",
+    "subtitle": "رحلتي المهنية وأدواري",
+    "backToExperiences": "العودة إلى الخبرات",
+    "roleDescription": "وصف الدور",
+    "skillsUsed": "المهارات المستخدمة",
+    "skillsApplied": "المهارات التقنية والشخصية المطبقة في هذا الدور",
+    "projects": "المشاريع",
+    "keyProjects": "المشاريع الرئيسية المنجزة خلال هذه الفترة"
   },
   "projects": {
-    "title": "Projects",
-    "subtitle": "Showcasing my work and contributions",
-    "backToProjects": "Back to Projects",
-    "viewLive": "View Live Site",
-    "viewCode": "View Code",
-    "description": "Description",
-    "projectDetails": "Project Details",
-    "timeline": "Timeline",
-    "collaborators": "Collaborators",
-    "soloProject": "Solo project",
-    "personalExperience": "Personal Experience"
+    "title": "المشاريع",
+    "subtitle": "عرض أعمالي ومساهماتي",
+    "backToProjects": "العودة إلى المشاريع",
+    "viewLive": "عرض الموقع المباشر",
+    "viewCode": "عرض الكود",
+    "description": "الوصف",
+    "projectDetails": "تفاصيل المشروع",
+    "timeline": "الجدول الزمني",
+    "collaborators": "المتعاونون",
+    "soloProject": "مشروع فردي",
+    "personalExperience": "التجربة الشخصية"
   },
   "educations": {
-    "title": "Education",
-    "degree": "Degree",
-    "institution": "Institution",
-    "startYear": "start year",
-    "endYear": "end year"
+    "title": "التعليم",
+    "degree": "الدرجة العلمية",
+    "institution": "المؤسسة",
+    "startYear": "سنة البداية",
+    "endYear": "سنة النهاية"
   },
   "resume": {
-    "download": "Download PDF",
-    "downloadPdf": "Dwonload as .pdf",
-    "downloadDocx": "Download as .docx",
-    "print": "Print",
-    "generating": "Generating...",
-    "at": "at",
-    "education": "Education",
-    "summary": "Summary"
+    "download": "تحميل PDF",
+    "downloadPdf": "تحميل بصيغة .pdf",
+    "downloadDocx": "تحميل بصيغة .docx",
+    "print": "طباعة",
+    "generating": "جارٍ الإنشاء...",
+    "at": "في",
+    "education": "التعليم",
+    "summary": "الملخص"
   },
   "categories": {
-    "overview": "Overview",
-    "skillsInCategory": "Skills in this category"
+    "overview": "نظرة عامة",
+    "skillsInCategory": "المهارات في هذه الفئة"
   },
   "contact": {
-    "title": "Contact Me",
-    "subtitle": "Have a project in mind? Let's work together to bring your ideas to life.",
+    "title": "اتصل بي",
+    "subtitle": "هل لديك مشروع في ذهنك؟ دعنا نعمل معًا لتحقيق أفكارك.",
     "form": {
-      "title": "Send Me a Message",
-      "description": "Fill out the form below and I'll get back to you as soon as possible.",
-      "firstName": "First Name",
-      "firstNamePlaceholder": "Enter your first name",
-      "lastName": "Last Name",
-      "lastNamePlaceholder": "Enter your last name",
-      "email": "Email",
-      "emailPlaceholder": "Enter your email",
-      "phone": "Phone Number",
-      "phonePlaceholder": "Enter your phone number",
-      "projectName": "Project Name",
-      "projectNamePlaceholder": "Enter your project name",
-      "message": "Message",
-      "messagePlaceholder": "Tell me about your project...",
-      "messageDescription": "Please provide details about your project and requirements.",
-      "submit": "Send Message",
-      "sending": "Sending..."
+      "title": "أرسل لي رسالة",
+      "description": "املأ النموذج أدناه وسأعود إليك في أقرب وقت ممكن.",
+      "firstName": "الاسم الأول",
+      "firstNamePlaceholder": "أدخل اسمك الأول",
+      "lastName": "اسم العائلة",
+      "lastNamePlaceholder": "أدخل اسم عائلتك",
+      "email": "البريد الإلكتروني",
+      "emailPlaceholder": "أدخل بريدك الإلكتروني",
+      "phone": "رقم الهاتف",
+      "phonePlaceholder": "أدخل رقم هاتفك",
+      "projectName": "اسم المشروع",
+      "projectNamePlaceholder": "أدخل اسم مشروعك",
+      "message": "الرسالة",
+      "messagePlaceholder": "أخبرني عن مشروعك...",
+      "messageDescription": "يرجى تقديم تفاصيل حول مشروعك ومتطلباتك.",
+      "submit": "إرسال الرسالة",
+      "sending": "جارٍ الإرسال..."
     },
     "validation": {
-      "firstNameRequired": "First name is required",
-      "lastNameRequired": "Last name is required",
-      "emailValid": "Please enter a valid email address",
-      "phoneRequired": "Phone number is required",
-      "projectRequired": "Project name is required",
-      "messageLength": "Message must be at least 10 characters"
+      "firstNameRequired": "الاسم الأول مطلوب",
+      "lastNameRequired": "اسم العائلة مطلوب",
+      "emailValid": "يرجى إدخال عنوان بريد إلكتروني صحيح",
+      "phoneRequired": "رقم الهاتف مطلوب",
+      "projectRequired": "اسم المشروع مطلوب",
+      "messageLength": "يجب أن تكون الرسالة 10 أحرف على الأقل"
     },
     "success": {
-      "title": "Message sent!",
-      "description": "Thank you for your message. I'll get back to you soon."
+      "title": "تم إرسال الرسالة!",
+      "description": "شكرًا لك على رسالتك. سأعود إليك قريبًا."
     },
     "error": {
-      "title": "Something went wrong",
-      "description": "Your message couldn't be sent. Please try again later."
+      "title": "حدث خطأ ما",
+      "description": "لم يتم إرسال رسالتك. يرجى المحاولة مرة أخرى لاحقًا."
     },
     "info": {
-      "title": "Contact Information",
-      "description": "Feel free to reach out through any of these channels.",
-      "email": "Email",
-      "phone": "Phone",
-      "location": "Location",
-      "hours": "Working Hours"
+      "title": "معلومات الاتصال",
+      "description": "لا تتردد في التواصل من خلال أي من هذه القنوات.",
+      "email": "البريد الإلكتروني",
+      "phone": "الهاتف",
+      "location": "الموقع",
+      "hours": "ساعات العمل"
     },
     "response": {
-      "title": "Response Time",
-      "description": "I typically respond to inquiries within 24-48 hours during business days. For urgent matters, please indicate in your message."
+      "title": "وقت الاستجابة",
+      "description": "عادةً ما أرد على الاستفسارات في غضون 24-48 ساعة خلال أيام العمل. للأمور العاجلة، يرجى الإشارة إلى ذلك في رسالتك."
     }
   },
   "footer": {
-    "rights": "All rights reserved."
+    "rights": "جميع الحقوق محفوظة."
   },
   "careerTimeline": {
-    "title": "Career Timeline",
-    "subtitle": "Hover over milestones to see details. Node sizes represent importance.",
-    "showBranches": "Show Branches",
-    "filterBySize": "Filter by Size",
-    "small": "Small",
-    "medium": "Medium",
-    "large": "Large"
+    "title": "الجدول الزمني للمسيرة المهنية",
+    "subtitle": "مرر الماوس فوق المعالم لرؤية التفاصيل. أحجام العقد تمثل الأهمية.",
+    "showBranches": "عرض الفروع",
+    "filterBySize": "تصفية حسب الحجم",
+    "small": "صغير",
+    "medium": "متوسط",
+    "large": "كبير"
   }
 }

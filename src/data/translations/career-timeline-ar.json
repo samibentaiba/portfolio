@@ -2,7 +2,7 @@
   "branches": [
     {
       "id": "main-career",
-      "name": "Main Career Path",
+      "name": "المسار المهني الرئيسي",
       "color": "#00d4ff",
       "points": [
         {
@@ -11,11 +11,11 @@
           "branch": "main-career",
           "milestone": {
             "id": "c1",
-            "title": "First Job",
-            "description": "Started as Junior Developer at TechCorp",
+            "title": "الوظيفة الأولى",
+            "description": "بدأت كمطور مبتدئ في TechCorp",
             "size": "large",
             "type": "job",
-            "date": "Jan 2020"
+            "date": "يناير 2020"
           },
           "linkedTo": [
             {
@@ -32,11 +32,11 @@
           "branch": "main-career",
           "milestone": {
             "id": "c2",
-            "title": "Promotion to Mid-Level",
-            "description": "Took on more complex projects",
+            "title": "الترقية إلى المستوى المتوسط",
+            "description": "تولي مشاريع أكثر تعقيدًا",
             "size": "medium",
             "type": "achievement",
-            "date": "Jun 2020"
+            "date": "يونيو 2020"
           },
           "linkedTo": [
             {
@@ -53,11 +53,11 @@
           "branch": "main-career",
           "milestone": {
             "id": "c3",
-            "title": "Led Backend Project",
-            "description": "Architected microservices",
+            "title": "قيادة مشروع الواجهة الخلفية",
+            "description": "تصميم بنية الخدمات الصغيرة",
             "size": "large",
             "type": "project",
-            "date": "Dec 2020"
+            "date": "ديسمبر 2020"
           },
           "linkedTo": [
             {
@@ -74,11 +74,11 @@
           "branch": "main-career",
           "milestone": {
             "id": "c4",
-            "title": "Senior Developer",
-            "description": "Team lead responsibilities",
+            "title": "مطور أول",
+            "description": "مسؤوليات قيادة الفريق",
             "size": "large",
             "type": "achievement",
-            "date": "Sep 2021"
+            "date": "سبتمبر 2021"
           },
           "linkedTo": [
             {
@@ -96,7 +96,7 @@
     },
     {
       "id": "open-source",
-      "name": "Open Source",
+      "name": "المصادر المفتوحة",
       "color": "#ff006e",
       "points": [
         {
@@ -105,11 +105,11 @@
           "branch": "open-source",
           "milestone": {
             "id": "os1",
-            "title": "First Contribution",
-            "description": "Contributed to React library",
+            "title": "أول مساهمة",
+            "description": "المساهمة في مكتبة React",
             "size": "small",
             "type": "project",
-            "date": "Feb 2020"
+            "date": "فبراير 2020"
           }
         },
         {
@@ -118,11 +118,11 @@
           "branch": "open-source",
           "milestone": {
             "id": "os2",
-            "title": "Became Maintainer",
-            "description": "Accepted as core maintainer",
+            "title": "أصبحت مشرفًا",
+            "description": "تم قبولي كمشرف أساسي",
             "size": "large",
             "type": "achievement",
-            "date": "Aug 2020"
+            "date": "أغسطس 2020"
           }
         },
         {
@@ -131,11 +131,11 @@
           "branch": "open-source",
           "milestone": {
             "id": "os3",
-            "title": "1k Stars",
-            "description": "Personal project gained traction",
+            "title": "1000 نجمة",
+            "description": "المشروع الشخصي حظي بانتشار واسع",
             "size": "large",
             "type": "achievement",
-            "date": "Jun 2021"
+            "date": "يونيو 2021"
           },
           "linkedTo": [
             {
@@ -147,7 +147,7 @@
     },
     {
       "id": "speaking",
-      "name": "Speaking & Conferences",
+      "name": "التحدث والمؤتمرات",
       "color": "#7209b7",
       "points": [
         {
@@ -156,11 +156,11 @@
           "branch": "speaking",
           "milestone": {
             "id": "sp1",
-            "title": "First Talk",
-            "description": "Local meetup presentation on React",
+            "title": "أول محاضرة",
+            "description": "عرض تقديمي محلي حول React",
             "size": "small",
             "type": "achievement",
-            "date": "May 2020"
+            "date": "مايو 2020"
           }
         },
         {
@@ -169,11 +169,11 @@
           "branch": "speaking",
           "milestone": {
             "id": "sp2",
-            "title": "Conference Speaker",
-            "description": "React Conf talk on performance optimization",
+            "title": "متحدث في مؤتمر",
+            "description": "محاضرة في React Conf حول تحسين الأداء",
             "size": "large",
             "type": "achievement",
-            "date": "Oct 2021"
+            "date": "أكتوبر 2021"
           },
           "linkedTo": [
             {
@@ -185,7 +185,7 @@
     },
     {
       "id": "skills",
-      "name": "Skills Development",
+      "name": "تطوير المهارات",
       "color": "#3a0ca3",
       "points": [
         {
@@ -194,11 +194,11 @@
           "branch": "skills",
           "milestone": {
             "id": "sk1",
-            "title": "TypeScript Mastery",
-            "description": "Completed advanced TypeScript course",
+            "title": "إتقان TypeScript",
+            "description": "إكمال دورة TypeScript المتقدمة",
             "size": "medium",
             "type": "skill",
-            "date": "Apr 2020"
+            "date": "أبريل 2020"
           }
         },
         {
@@ -207,11 +207,11 @@
           "branch": "skills",
           "milestone": {
             "id": "sk2",
-            "title": "AWS Certification",
-            "description": "AWS Solutions Architect certification",
+            "title": "شهادة AWS",
+            "description": "شهادة AWS Solutions Architect",
             "size": "large",
             "type": "skill",
-            "date": "Sep 2021"
+            "date": "سبتمبر 2021"
           }
         },
         {
@@ -220,11 +220,11 @@
           "branch": "skills",
           "milestone": {
             "id": "sk3",
-            "title": "DevOps Fundamentals",
-            "description": "Mastered CI/CD pipelines",
+            "title": "أساسيات DevOps",
+            "description": "إتقان خطوط CI/CD",
             "size": "medium",
             "type": "skill",
-            "date": "Feb 2022"
+            "date": "فبراير 2022"
           }
         }
       ]

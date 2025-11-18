@@ -1,9 +1,9 @@
 [
   {
-    "title": "E-commerce Platform",
+    "title": "منصة التجارة الإلكترونية",
     "slug": "ecommerce-platform",
-    "shortDescription": "A full-featured online store with payment processing",
-    "description": "A modern e-commerce platform built with Next.js, featuring product listings, a shopping cart, user authentication, and Stripe integration for payments.",
+    "shortDescription": "متجر إلكتروني متكامل مع معالجة المدفوعات",
+    "description": "منصة تجارة إلكترونية حديثة مبنية باستخدام Next.js، تتضمن قوائم المنتجات وعربة التسوق ومصادقة المستخدم وتكامل Stripe للمدفوعات.",
     "image": "/placeholder.svg?height=400&width=800",
     "technologies": [
       "Next.js",
@@ -12,18 +12,18 @@
       "Tailwind CSS",
       "Stripe"
     ],
-    "timeline": "3 months (Jan 2023 - Mar 2023)",
+    "timeline": "3 أشهر (يناير 2023 - مارس 2023)",
     "liveUrl": "https://example-ecommerce.vercel.app",
     "githubUrl": "https://github.com/samibentaiba/ecommerce",
-    "personalExperience": "Building this e-commerce platform was a great experience in integrating third-party APIs like Stripe and managing global state for the shopping cart. I focused on creating a clean, responsive UI and a secure checkout process.",
+    "personalExperience": "كان بناء منصة التجارة الإلكترونية هذه تجربة رائعة في دمج واجهات برمجة التطبيقات التابعة لجهات خارجية مثل Stripe وإدارة الحالة العامة لعربة التسوق. ركزت على إنشاء واجهة مستخدم نظيفة ومتجاوبة وعملية دفع آمنة.",
     "collaborators": []
   },
   {
     "slug": "itc-hub",
     "fetchUrl": "https://itc-hub.vercel.app",
-    "title": "ITC Hub",
-    "shortDescription": "An internal platform to streamline communication, project management, and collaboration.",
-    "description": "A comprehensive, internal platform built to manage departments, teams, a full ticketing system, and an event calendar. Features a role-based user management system (Admin, Manager, User), secure authentication, and a notification system to foster an organized and efficient workflow.",
+    "title": "مركز ITC",
+    "shortDescription": "منصة داخلية لتبسيط التواصل وإدارة المشاريع والتعاون.",
+    "description": "منصة داخلية شاملة مصممة لإدارة الأقسام والفرق ونظام تذاكر كامل وتقويم الأحداث. تتميز بنظام إدارة مستخدمين قائم على الأدوار (مسؤول، مدير، مستخدم)، ومصادقة آمنة، ونظام إشعارات لتعزيز سير العمل المنظم والفعال.",
     "image": "https://itc-hub.vercel.app/ITC%20HUB%20Home.png",
     "technologies": [
       "Next.js",
@@ -39,28 +39,28 @@
       "Nodemailer",
       "Recharts"
     ],
-    "timeline": "4 months (Jun 2024 - Sep 2024)",
+    "timeline": "4 أشهر (يونيو 2024 - سبتمبر 2024)",
     "liveUrl": "https://itc-hub.vercel.app",
     "githubUrl": "https://github.com/samibentaiba/itc-hub",
-    "personalExperience": "Developing ITC Hub was a deep dive into full-stack Next.js development. The biggest challenge was designing the relational database schema with Prisma to handle complex relationships between users, departments, teams, and tickets. Implementing role-based access control (RBAC) with Next-Auth was a critical feature to ensure data security. This project solidified my skills in building secure, scalable, and data-intensive web applications.",
+    "personalExperience": "كان تطوير مركز ITC غوصًا عميقًا في تطوير Next.js الكامل. كان التحدي الأكبر هو تصميم مخطط قاعدة البيانات العلائقية مع Prisma للتعامل مع العلاقات المعقدة بين المستخدمين والأقسام والفرق والتذاكر. كان تنفيذ التحكم في الوصول على أساس الدور (RBAC) مع Next-Auth ميزة حاسمة لضمان أمان البيانات. عزز هذا المشروع مهاراتي في بناء تطبيقات ويب آمنة وقابلة للتوسع وكثيفة البيانات.",
     "collaborators": []
   },
   {
     "slug": "ishowoff",
     "fetchUrl": "https://github.com/samibentaiba/ishowoff",
     "title": "iShowOff",
-    "shortDescription": "A Go-based command-line tool for displaying system information.",
-    "description": "iShowOff is a lightweight, cross-platform CLI tool written in Go. It fetches and displays key system information, such as OS, CPU, memory, and disk usage, in a clean, formatted output. The project was an exploration into Go, system-level programming, and GitHub Actions for automated cross-platform builds.",
+    "shortDescription": "أداة سطر أوامر مبنية على Go لعرض معلومات النظام.",
+    "description": "iShowOff هي أداة CLI خفيفة الوزن ومتعددة المنصات مكتوبة بلغة Go. تجلب وتعرض معلومات النظام الرئيسية، مثل نظام التشغيل والمعالج والذاكرة واستخدام القرص، في مخرجات نظيفة ومنسقة. كان المشروع استكشافًا في Go والبرمجة على مستوى النظام و GitHub Actions لبناء عبر المنصات الآلي.",
     "image": "/placeholder.svg?height=400&width=800",
     "technologies": [
       "Go",
       "GitHub Actions",
       "CLI"
     ],
-    "timeline": "1 month (Apr 2024)",
+    "timeline": "شهر واحد (أبريل 2024)",
     "liveUrl": null,
     "githubUrl": "https://github.com/samibentaiba/ishowoff",
-    "personalExperience": "This was my first major project in Go. I learned a lot about handling OS-specific APIs, managing dependencies in Go, and setting up a CI/CD pipeline with GitHub Actions to compile and release binaries for Windows, macOS, and Linux.",
+    "personalExperience": "كان هذا أول مشروع رئيسي لي في Go. تعلمت الكثير عن التعامل مع واجهات برمجة التطبيقات الخاصة بنظام التشغيل، وإدارة التبعيات في Go، وإعداد خط أنابيب CI/CD مع GitHub Actions لتجميع وإصدار الملفات الثنائية لـ Windows و macOS و Linux.",
     "collaborators": []
   }
 ]

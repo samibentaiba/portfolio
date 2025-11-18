@@ -93,7 +93,6 @@ async function generateResume(language: 'en' | 'fr' | 'ar') {
                 text: personal?.name || '',
                 bold: true,
                 size: 32,
-                rightToLeft: isRtl,
               }),
             ],
             spacing: { after: 200 },
@@ -104,7 +103,6 @@ async function generateResume(language: 'en' | 'fr' | 'ar') {
             children: [
               new TextRun({
                 text: `${personal?.email ?? ''} · ${personal?.phone ?? ''}`,
-                rightToLeft: isRtl,
               }),
             ],
             spacing: { after: 100 },
@@ -114,7 +112,6 @@ async function generateResume(language: 'en' | 'fr' | 'ar') {
             children: [
               new TextRun({
                 text: `${personal?.website ?? ''}`,
-                rightToLeft: isRtl,
               }),
             ],
             spacing: { after: 100 },
@@ -124,7 +121,6 @@ async function generateResume(language: 'en' | 'fr' | 'ar') {
             children: [
               new TextRun({
                 text: `${personal?.github ?? ''}`,
-                rightToLeft: isRtl,
               }),
             ],
             spacing: { after: 100 },
@@ -134,7 +130,6 @@ async function generateResume(language: 'en' | 'fr' | 'ar') {
             children: [
               new TextRun({
                 text: `${personal?.linkedin ?? ''}`,
-                rightToLeft: isRtl,
               }),
             ],
             spacing: { after: 400 },

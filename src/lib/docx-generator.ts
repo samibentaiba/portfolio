@@ -15,12 +15,12 @@ export const createSummarySection = (
         text: `${t("resume.summary")}` || "Summary:",
         bold: true,
         size: 26,
-        rightToLeft: isRtl,
       }),
     ],
     spacing: { before: 100, after: 200 },
     heading: HeadingLevel.HEADING_1,
     alignment: isRtl ? AlignmentType.RIGHT : AlignmentType.LEFT,
+    bidirectional: isRtl,
   }),
   new Paragraph({
     children: [
@@ -28,16 +28,17 @@ export const createSummarySection = (
         text: `${personal?.job}` || "Summary:",
         bold: true,
         size: 16,
-        rightToLeft: isRtl,
       }),
     ],
     spacing: { before: 100, after: 100 },
     alignment: isRtl ? AlignmentType.RIGHT : AlignmentType.LEFT,
+    bidirectional: isRtl,
   }),
   new Paragraph({
-    children: [new TextRun({ text: personal?.summary, rightToLeft: isRtl })],
+    children: [new TextRun({ text: personal?.summary })],
     spacing: { after: 200 },
     alignment: isRtl ? AlignmentType.RIGHT : AlignmentType.LEFT,
+    bidirectional: isRtl,
   }),
 ];
 
@@ -56,12 +57,12 @@ export const createSkillsSection = (
           text: group.category,
           bold: true,
           size: 20,
-          rightToLeft: isRtl,
         }),
       ],
       spacing: { before: 400, after: 200 },
       heading: HeadingLevel.HEADING_1,
       alignment: isRtl ? AlignmentType.RIGHT : AlignmentType.LEFT,
+      bidirectional: isRtl,
     }),
     ...group.items.map(
       (item) =>
@@ -70,12 +71,12 @@ export const createSkillsSection = (
             new TextRun({
               text: `${item.name} (${item.experience})`,
               bold: true,
-              rightToLeft: isRtl,
             }),
-            new TextRun({ text: `: ${item.description}`, rightToLeft: isRtl }),
+            new TextRun({ text: `: ${item.description}` }),
           ],
           spacing: { before: 200, after: 100 },
           alignment: isRtl ? AlignmentType.RIGHT : AlignmentType.LEFT,
+          bidirectional: isRtl,
         })
     ),
   ]);
@@ -87,12 +88,12 @@ export const createSkillsSection = (
           text: t("skills.title") || "Skills:",
           bold: true,
           size: 26,
-          rightToLeft: isRtl,
         }),
       ],
       spacing: { before: 400, after: 200 },
       heading: HeadingLevel.HEADING_1,
       alignment: isRtl ? AlignmentType.RIGHT : AlignmentType.LEFT,
+      bidirectional: isRtl,
     }),
     ...skillsParagraphs.flat(),
   ];
@@ -105,25 +106,29 @@ export const createExperienceSection = (
 ) => {
   const experienceParagraphs = experiences.flatMap((exp) => [
     new Paragraph({
-      children: [new TextRun({ text: exp.role, bold: true, rightToLeft: isRtl })],
+      children: [new TextRun({ text: exp.role, bold: true })],
       spacing: { before: 200 },
       alignment: isRtl ? AlignmentType.RIGHT : AlignmentType.LEFT,
+      bidirectional: isRtl,
     }),
     new Paragraph({
-      children: [new TextRun({ text: `${exp.company}`, italics: true, rightToLeft: isRtl })],
+      children: [new TextRun({ text: `${exp.company}`, italics: true })],
       alignment: isRtl ? AlignmentType.RIGHT : AlignmentType.LEFT,
+      bidirectional: isRtl,
     }),
     new Paragraph({
-      children: [new TextRun({ text: `${exp.period} · ${exp.location}`, rightToLeft: isRtl })],
+      children: [new TextRun({ text: `${exp.period} · ${exp.location}` })],
       spacing: { after: 100 },
       alignment: isRtl ? AlignmentType.RIGHT : AlignmentType.LEFT,
+      bidirectional: isRtl,
     }),
     ...exp.projects.slice(0, 3).map(
       (project: string) =>
         new Paragraph({
-          children: [new TextRun({ text: `• ${project}`, rightToLeft: isRtl })],
+          children: [new TextRun({ text: `• ${project}` })],
           spacing: { before: 80 },
           alignment: isRtl ? AlignmentType.RIGHT : AlignmentType.LEFT,
+          bidirectional: isRtl,
         })
     ),
   ]);
@@ -135,12 +140,12 @@ export const createExperienceSection = (
           text: t("experiences.title") || "Experience:",
           bold: true,
           size: 26,
-          rightToLeft: isRtl,
         }),
       ],
       spacing: { before: 400, after: 200 },
       heading: HeadingLevel.HEADING_1,
       alignment: isRtl ? AlignmentType.RIGHT : AlignmentType.LEFT,
+      bidirectional: isRtl,
     }),
     ...experienceParagraphs,
   ];
@@ -159,27 +164,29 @@ export const createProjectsSection = (
     return [
       new Paragraph({
         children: [
-          new TextRun({ text: `${project.title}`, bold: true, rightToLeft: isRtl }),
-          new TextRun({ text: technologies, rightToLeft: isRtl }),
+          new TextRun({ text: `${project.title}`, bold: true }),
+          new TextRun({ text: technologies }),
           new TextRun({
             text: project.personalExperience
               ? `: ${project.personalExperience}`
               : "",
-            rightToLeft: isRtl,
           }),
         ],
         spacing: { before: 200 },
         alignment: isRtl ? AlignmentType.RIGHT : AlignmentType.LEFT,
+        bidirectional: isRtl,
       }),
       new Paragraph({
-        children: [new TextRun({ text: project.liveUrl || "", rightToLeft: isRtl })],
+        children: [new TextRun({ text: project.liveUrl || "" })],
         spacing: { before: 50, after: 50 },
         alignment: isRtl ? AlignmentType.RIGHT : AlignmentType.LEFT,
+        bidirectional: isRtl,
       }),
       new Paragraph({
-        children: [new TextRun({ text: project.githubUrl || "", rightToLeft: isRtl })],
+        children: [new TextRun({ text: project.githubUrl || "" })],
         spacing: { before: 50, after: 50 },
         alignment: isRtl ? AlignmentType.RIGHT : AlignmentType.LEFT,
+        bidirectional: isRtl,
       }),
     ];
   });
@@ -191,12 +198,12 @@ export const createProjectsSection = (
           text: t("projects.title") || "Projects:",
           bold: true,
           size: 26,
-          rightToLeft: isRtl,
         }),
       ],
       spacing: { before: 400, after: 200 },
       heading: HeadingLevel.HEADING_1,
       alignment: isRtl ? AlignmentType.RIGHT : AlignmentType.LEFT,
+      bidirectional: isRtl,
     }),
     ...projectParagraphs.flat(),
   ];
@@ -211,14 +218,14 @@ export const createEducationSection = (
     return [
       new Paragraph({
         children: [
-          new TextRun({ text: `${education.degree}`, bold: true, rightToLeft: isRtl }),
+          new TextRun({ text: `${education.degree}`, bold: true }),
           new TextRun({
             text: ` (${education.institution}, ${education.startYear}-${education.endYear})`,
-            rightToLeft: isRtl,
           }),
         ],
         spacing: { before: 200 },
         alignment: isRtl ? AlignmentType.RIGHT : AlignmentType.LEFT,
+        bidirectional: isRtl,
       }),
     ];
   });
@@ -230,12 +237,12 @@ export const createEducationSection = (
           text: t("educations.title") || "Educations:",
           bold: true,
           size: 26,
-          rightToLeft: isRtl,
         }),
       ],
       spacing: { before: 400, after: 200 },
       heading: HeadingLevel.HEADING_1,
       alignment: isRtl ? AlignmentType.RIGHT : AlignmentType.LEFT,
+      bidirectional: isRtl,
     }),
     ...educationParagraphs.flat(),
   ];

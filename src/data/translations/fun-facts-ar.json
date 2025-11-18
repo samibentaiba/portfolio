@@ -1,62 +1,62 @@
 [
   {
-    "category": "Coding Humor",
-    "text": "Why do programmers prefer dark mode? Because light attracts bugs!"
+    "category": "فكاهة البرمجة",
+    "text": "لماذا يفضل المبرمجون الوضع الداكن؟ لأن الضوء يجذب الأخطاء!"
   },
   {
-    "category": "Tech History",
-    "text": "The first computer virus was created in 1983 and was called the 'Elk Cloner'."
+    "category": "تاريخ التقنية",
+    "text": "تم إنشاء أول فيروس كمبيوتر في عام 1983 وكان يسمى 'Elk Cloner'."
   },
   {
-    "category": "Programming Fact",
-    "text": "The first programmer in history was a woman named Ada Lovelace, who wrote the first algorithm for Charles Babbage's Analytical Engine in the 1840s."
+    "category": "حقيقة برمجية",
+    "text": "كانت أول مبرمجة في التاريخ امرأة تدعى Ada Lovelace، التي كتبت الخوارزمية الأولى لمحرك تحليلي تشارلز باباج في أربعينيات القرن التاسع عشر."
   },
   {
-    "category": "Web Trivia",
-    "text": "The first website ever created is still online! You can visit it at info.cern.ch."
+    "category": "معلومة عن الويب",
+    "text": "أول موقع ويب تم إنشاؤه لا يزال متاحًا على الإنترنت! يمكنك زيارته على info.cern.ch."
   },
   {
-    "category": "Coding Humor",
-    "text": "A SQL query walks into a bar, walks up to two tables and asks, 'Can I join you?'"
+    "category": "فكاهة البرمجة",
+    "text": "دخل استعلام SQL إلى حانة، اقترب من طاولتين وسأل: 'هل يمكنني الانضمام إليكما؟'"
   },
   {
-    "category": "Tech History",
-    "text": "The term 'bug' to describe a computer glitch originated in 1947 when Grace Hopper found a moth causing problems in the Harvard Mark II computer."
+    "category": "تاريخ التقنية",
+    "text": "نشأ مصطلح 'bug' لوصف خلل في الكمبيوتر في عام 1947 عندما وجدت Grace Hopper عثة تسبب مشاكل في كمبيوتر Harvard Mark II."
   },
   {
-    "category": "Programming Fact",
-    "text": "JavaScript was created in just 10 days by Brendan Eich in 1995."
+    "category": "حقيقة برمجية",
+    "text": "تم إنشاء JavaScript في 10 أيام فقط بواسطة Brendan Eich في عام 1995."
   },
   {
-    "category": "Web Trivia",
-    "text": "The average webpage size in 1995 was 14KB. Today, it's over 2MB!"
+    "category": "معلومة عن الويب",
+    "text": "كان متوسط حجم صفحة الويب في عام 1995 هو 14 كيلوبايت. اليوم، يتجاوز 2 ميجابايت!"
   },
   {
-    "category": "Coding Humor",
-    "text": "Why do Java developers wear glasses? Because they don't C#!"
+    "category": "فكاهة البرمجة",
+    "text": "لماذا يرتدي مطورو Java نظارات؟ لأنهم لا يرون C#!"
   },
   {
-    "category": "Tech History",
-    "text": "The first computer mouse was made of wood and invented by Doug Engelbart in 1964."
+    "category": "تاريخ التقنية",
+    "text": "كانت أول فأرة كمبيوتر مصنوعة من الخشب واخترعها Doug Engelbart في عام 1964."
   },
   {
-    "category": "Programming Fact",
-    "text": "There are approximately 700 programming languages in use today."
+    "category": "حقيقة برمجية",
+    "text": "هناك حوالي 700 لغة برمجة قيد الاستخدام اليوم."
   },
   {
-    "category": "Web Trivia",
-    "text": "The most expensive domain name ever sold was Cars.com for $872 million."
+    "category": "معلومة عن الويب",
+    "text": "أغلى اسم نطاق تم بيعه على الإطلاق كان Cars.com مقابل 872 مليون دولار."
   },
   {
-    "category": "Coding Humor",
-    "text": "There are 10 types of people in the world: those who understand binary and those who don't."
+    "category": "فكاهة البرمجة",
+    "text": "هناك 10 أنواع من الأشخاص في العالم: أولئك الذين يفهمون النظام الثنائي وأولئك الذين لا يفهمونه."
   },
   {
-    "category": "Tech History",
-    "text": "The first tweet was sent by Jack Dorsey on March 21, 2006. It said 'just setting up my twttr'."
+    "category": "تاريخ التقنية",
+    "text": "تم إرسال أول تغريدة بواسطة Jack Dorsey في 21 مارس 2006. قالت 'just setting up my twttr'."
   },
   {
-    "category": "Programming Fact",
-    "text": "The most popular programming language, JavaScript, was originally developed in just 10 days."
+    "category": "حقيقة برمجية",
+    "text": "لغة البرمجة الأكثر شهرة، JavaScript، تم تطويرها في الأصل في 10 أيام فقط."
   }
 ]

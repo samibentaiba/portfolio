@@ -1,13 +1,13 @@
 [
   {
-    "role": "Senior Frontend Developer",
-    "company": "Tech Innovations Inc.",
+    "role": "مطور واجهات أمامية أول",
+    "company": "شركة الابتكارات التقنية",
     "slug": "senior-frontend-developer",
-    "type": "Full-time",
-    "period": "Jan 2022 - Present",
-    "location": "Remote",
-    "summary": "Leading frontend development for a SaaS platform with over 50,000 users.",
-    "description": "As a Senior Frontend Developer at Tech Innovations, I lead the development of our flagship SaaS product, focusing on creating intuitive user interfaces and optimizing performance.\n\nI collaborate with designers, product managers, and backend developers to implement new features and improve existing ones. I've introduced TypeScript and modern React patterns to our codebase, resulting in a 40% reduction in frontend bugs.\n\nI also mentor junior developers and contribute to architectural decisions that shape the future of our product.",
+    "type": "دوام كامل",
+    "period": "يناير 2022 - الحاضر",
+    "location": "عن بعد",
+    "summary": "قيادة تطوير الواجهات الأمامية لمنصة SaaS بأكثر من 50,000 مستخدم.",
+    "description": "بصفتي مطور واجهات أمامية أول في شركة الابتكارات التقنية، أقود تطوير منتجنا الرئيسي SaaS، مع التركيز على إنشاء واجهات مستخدم بديهية وتحسين الأداء.\n\nأتعاون مع المصممين ومديري المنتجات ومطوري الواجهات الخلفية لتنفيذ ميزات جديدة وتحسين الميزات الموجودة. لقد قدمت TypeScript وأنماط React الحديثة إلى قاعدة التعليمات البرمجية لدينا، مما أدى إلى انخفاض بنسبة 40٪ في أخطاء الواجهة الأمامية.\n\nأقوم أيضًا بتوجيه المطورين المبتدئين والمساهمة في القرارات المعمارية التي تشكل مستقبل منتجنا.",
     "skills": [
       "React",
       "TypeScript",
@@ -16,69 +16,68 @@
       "Jest",
       "Cypress",
       "CI/CD",
-      "Team Leadership",
-      "Code Reviews",
-      "Mentoring"
+      "قيادة الفريق",
+      "مراجعة الأكواد",
+      "التوجيه"
     ],
     "projects": [
-      "Redesigned the dashboard UI, improving user engagement by 25%",
-      "Implemented a new authentication system with SSO support",
-      "Created a component library used across multiple products",
-      "Optimized application performance, reducing load time by 40%"
+      "إعادة تصميم واجهة لوحة التحكم، وتحسين تفاعل المستخدمين بنسبة 25٪",
+      "تنفيذ نظام مصادقة جديد مع دعم SSO",
+      "إنشاء مكتبة مكونات تستخدم عبر منتجات متعددة",
+      "تحسين أداء التطبيق، وتقليل وقت التحميل بنسبة 40٪"
     ]
   },
   {
-    "role": "Frontend Developer",
-    "company": "WebSolutions Co.",
+    "role": "مطور واجهات أمامية",
+    "company": "شركة حلول الويب",
     "slug": "frontend-developer",
-    "type": "Full-time",
-    "period": "Mar 2020 - Dec 2021",
-    "location": "New York, NY",
-    "summary": "Developed responsive web applications for clients across various industries.",
-    "description": "As a Frontend Developer at WebSolutions, I was responsible for building responsive and accessible web applications for clients in finance, healthcare, and e-commerce sectors.\n\nI worked in an agile team of 6 developers, participating in sprint planning, daily stand-ups, and retrospectives. I implemented pixel-perfect designs using React and styled-components, ensuring cross-browser compatibility and responsive layouts.\n\nI also collaborated with backend developers to integrate RESTful APIs and optimize data fetching strategies.",
+    "type": "دوام كامل",
+    "period": "مارس 2020 - ديسمبر 2021",
+    "location": "نيويورك، نيويورك",
+    "summary": "تطوير تطبيقات ويب متجاوبة للعملاء عبر مختلف الصناعات.",
+    "description": "بصفتي مطور واجهات أمامية في شركة حلول الويب، كنت مسؤولاً عن بناء تطبيقات ويب متجاوبة وسهلة الوصول للعملاء في قطاعات المالية والرعاية الصحية والتجارة الإلكترونية.\n\nعملت في فريق رشيق مكون من 6 مطورين، شاركت في تخطيط السبرينت والاجتماعات اليومية والاستعراضات الرجعية. نفذت تصاميم دقيقة للغاية باستخدام React و styled-components، مما يضمن التوافق عبر المتصفحات والتخطيطات المتجاوبة.\n\nتعاونت أيضًا مع مطوري الواجهات الخلفية لدمج واجهات برمجة التطبيقات RESTful وتحسين استراتيجيات جلب البيانات.",
     "skills": [
       "React",
       "JavaScript",
       "CSS/SCSS",
       "HTML5",
-      "REST APIs",
+      "واجهات برمجة REST",
       "Git",
-      "Agile Methodology",
-      "Cross-browser Testing",
-      "Responsive Design"
+      "منهجية Agile",
+      "اختبار متعدد المتصفحات",
+      "التصميم المتجاوب"
     ],
     "projects": [
-      "Built an e-commerce platform for a fashion retailer",
-      "Developed a patient portal for a healthcare provider",
-      "Created an interactive dashboard for a financial services company",
-      "Implemented a booking system for a hospitality client"
+      "بناء منصة تجارة إلكترونية لبائع تجزئة للأزياء",
+      "تطوير بوابة مرضى لمقدم رعاية صحية",
+      "إنشاء لوحة تحكم تفاعلية لشركة خدمات مالية",
+      "تنفيذ نظام حجز لعميل ضيافة"
     ]
   },
   {
-    "role": "Web Development Intern",
-    "company": "Digital Creatives",
+    "role": "متدرب تطوير ويب",
+    "company": "المبدعون الرقميون",
     "slug": "web-development-intern",
-    "type": "Internship",
-    "period": "Jun 2019 - Feb 2020",
-    "location": "Boston, MA",
-    "summary": "Assisted in developing websites and web applications for small businesses.",
-    "description": "As a Web Development Intern at Digital Creatives, I assisted the development team in building websites and web applications for small businesses and startups.\n\nI was responsible for implementing responsive layouts using HTML, CSS, and JavaScript, and maintaining existing client websites. I also participated in client meetings to understand requirements and present progress updates.\n\nThis internship provided me with valuable experience in a professional development environment and improved my technical and communication skills.",
+    "type": "تدريب",
+    "period": "يونيو 2019 - فبراير 2020",
+    "location": "بوسطن، ماساتشوستس",
+    "summary": "المساعدة في تطوير مواقع الويب وتطبيقات الويب للشركات الصغيرة.",
+    "description": "بصفتي متدرب تطوير ويب في المبدعون الرقميون، ساعدت فريق التطوير في بناء مواقع الويب وتطبيقات الويب للشركات الصغيرة والشركات الناشئة.\n\nكنت مسؤولاً عن تنفيذ تخطيطات متجاوبة باستخدام HTML و CSS و JavaScript، وصيانة مواقع العملاء الحالية. شاركت أيضًا في اجتماعات العملاء لفهم المتطلبات وتقديم تحديثات التقدم.\n\nوفر لي هذا التدريب خبرة قيمة في بيئة تطوير احترافية وحسنت مهاراتي التقنية والتواصلية.",
     "skills": [
       "HTML",
       "CSS",
       "JavaScript",
       "WordPress",
-      "Responsive Design",
-      "Client Communication",
-      "Time Management",
-      "Problem Solving"
+      "التصميم المتجاوب",
+      "التواصل مع العملاء",
+      "إدارة الوقت",
+      "حل المشكلات"
     ],
     "projects": [
-      "Developed a portfolio website for a local photographer",
-      "Created a WordPress site for a restaurant with online ordering capabilities",
-      "Assisted in building a landing page for a mobile app startup",
-      "Maintained and updated content for multiple client websites"
+      "تطوير موقع معرض أعمال لمصور محلي",
+      "إنشاء موقع WordPress لمطعم مع قدرات الطلب عبر الإنترنت",
+      "المساعدة في بناء صفحة هبوط لشركة ناشئة للتطبيقات المحمولة",
+      "صيانة وتحديث المحتوى لمواقع عملاء متعددة"
     ]
   }
-  
 ]
