@@ -1,0 +1,62 @@
+[
+  {
+    "category": "Coding Humor",
+    "text": "Why do programmers prefer dark mode? Because light attracts bugs!"
+  },
+  {
+    "category": "Tech History",
+    "text": "The first computer virus was created in 1983 and was called the 'Elk Cloner'."
+  },
+  {
+    "category": "Programming Fact",
+    "text": "The first programmer in history was a woman named Ada Lovelace, who wrote the first algorithm for Charles Babbage's Analytical Engine in the 1840s."
+  },
+  {
+    "category": "Web Trivia",
+    "text": "The first website ever created is still online! You can visit it at info.cern.ch."
+  },
+  {
+    "category": "Coding Humor",
+    "text": "A SQL query walks into a bar, walks up to two tables and asks, 'Can I join you?'"
+  },
+  {
+    "category": "Tech History",
+    "text": "The term 'bug' to describe a computer glitch originated in 1947 when Grace Hopper found a moth causing problems in the Harvard Mark II computer."
+  },
+  {
+    "category": "Programming Fact",
+    "text": "JavaScript was created in just 10 days by Brendan Eich in 1995."
+  },
+  {
+    "category": "Web Trivia",
+    "text": "The average webpage size in 1995 was 14KB. Today, it's over 2MB!"
+  },
+  {
+    "category": "Coding Humor",
+    "text": "Why do Java developers wear glasses? Because they don't C#!"
+  },
+  {
+    "category": "Tech History",
+    "text": "The first computer mouse was made of wood and invented by Doug Engelbart in 1964."
+  },
+  {
+    "category": "Programming Fact",
+    "text": "There are approximately 700 programming languages in use today."
+  },
+  {
+    "category": "Web Trivia",
+    "text": "The most expensive domain name ever sold was Cars.com for $872 million."
+  },
+  {
+    "category": "Coding Humor",
+    "text": "There are 10 types of people in the world: those who understand binary and those who don't."
+  },
+  {
+    "category": "Tech History",
+    "text": "The first tweet was sent by Jack Dorsey on March 21, 2006. It said 'just setting up my twttr'."
+  },
+  {
+    "category": "Programming Fact",
+    "text": "The most popular programming language, JavaScript, was originally developed in just 10 days."
+  }
+]

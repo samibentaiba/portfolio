@@ -12,6 +12,7 @@ import { useLanguage } from "@/components/language-provider";
 const languages = [
   { code: "en", name: "English" },
   { code: "fr", name: "Français" },
+  { code: "ar", name: "العربية" },
 ];
 
 export function LanguageToggle() {
@@ -28,7 +29,7 @@ export function LanguageToggle() {
         {languages.map((lang) => (
           <DropdownMenuItem
             key={lang.code}
-            onClick={() => setLanguage(lang.code as "en" | "fr")}
+            onClick={() => setLanguage(lang.code as "en" | "fr" | "ar")}
             className={
               language === lang.code
                 ? "bg-sidebar-ring/50 hover:bg-secondary"

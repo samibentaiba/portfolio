@@ -1,0 +1,84 @@
+[
+  {
+    "role": "Senior Frontend Developer",
+    "company": "Tech Innovations Inc.",
+    "slug": "senior-frontend-developer",
+    "type": "Full-time",
+    "period": "Jan 2022 - Present",
+    "location": "Remote",
+    "summary": "Leading frontend development for a SaaS platform with over 50,000 users.",
+    "description": "As a Senior Frontend Developer at Tech Innovations, I lead the development of our flagship SaaS product, focusing on creating intuitive user interfaces and optimizing performance.\n\nI collaborate with designers, product managers, and backend developers to implement new features and improve existing ones. I've introduced TypeScript and modern React patterns to our codebase, resulting in a 40% reduction in frontend bugs.\n\nI also mentor junior developers and contribute to architectural decisions that shape the future of our product.",
+    "skills": [
+      "React",
+      "TypeScript",
+      "Next.js",
+      "Redux",
+      "Jest",
+      "Cypress",
+      "CI/CD",
+      "Team Leadership",
+      "Code Reviews",
+      "Mentoring"
+    ],
+    "projects": [
+      "Redesigned the dashboard UI, improving user engagement by 25%",
+      "Implemented a new authentication system with SSO support",
+      "Created a component library used across multiple products",
+      "Optimized application performance, reducing load time by 40%"
+    ]
+  },
+  {
+    "role": "Frontend Developer",
+    "company": "WebSolutions Co.",
+    "slug": "frontend-developer",
+    "type": "Full-time",
+    "period": "Mar 2020 - Dec 2021",
+    "location": "New York, NY",
+    "summary": "Developed responsive web applications for clients across various industries.",
+    "description": "As a Frontend Developer at WebSolutions, I was responsible for building responsive and accessible web applications for clients in finance, healthcare, and e-commerce sectors.\n\nI worked in an agile team of 6 developers, participating in sprint planning, daily stand-ups, and retrospectives. I implemented pixel-perfect designs using React and styled-components, ensuring cross-browser compatibility and responsive layouts.\n\nI also collaborated with backend developers to integrate RESTful APIs and optimize data fetching strategies.",
+    "skills": [
+      "React",
+      "JavaScript",
+      "CSS/SCSS",
+      "HTML5",
+      "REST APIs",
+      "Git",
+      "Agile Methodology",
+      "Cross-browser Testing",
+      "Responsive Design"
+    ],
+    "projects": [
+      "Built an e-commerce platform for a fashion retailer",
+      "Developed a patient portal for a healthcare provider",
+      "Created an interactive dashboard for a financial services company",
+      "Implemented a booking system for a hospitality client"
+    ]
+  },
+  {
+    "role": "Web Development Intern",
+    "company": "Digital Creatives",
+    "slug": "web-development-intern",
+    "type": "Internship",
+    "period": "Jun 2019 - Feb 2020",
+    "location": "Boston, MA",
+    "summary": "Assisted in developing websites and web applications for small businesses.",
+    "description": "As a Web Development Intern at Digital Creatives, I assisted the development team in building websites and web applications for small businesses and startups.\n\nI was responsible for implementing responsive layouts using HTML, CSS, and JavaScript, and maintaining existing client websites. I also participated in client meetings to understand requirements and present progress updates.\n\nThis internship provided me with valuable experience in a professional development environment and improved my technical and communication skills.",
+    "skills": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "WordPress",
+      "Responsive Design",
+      "Client Communication",
+      "Time Management",
+      "Problem Solving"
+    ],
+    "projects": [
+      "Developed a portfolio website for a local photographer",
+      "Created a WordPress site for a restaurant with online ordering capabilities",
+      "Assisted in building a landing page for a mobile app startup",
+      "Maintained and updated content for multiple client websites"
+    ]
+  }
+  
+]

@@ -1,0 +1,233 @@
+{
+  "branches": [
+    {
+      "id": "main-career",
+      "name": "Main Career Path",
+      "color": "#00d4ff",
+      "points": [
+        {
+          "id": "c1",
+          "x": 0,
+          "branch": "main-career",
+          "milestone": {
+            "id": "c1",
+            "title": "First Job",
+            "description": "Started as Junior Developer at TechCorp",
+            "size": "large",
+            "type": "job",
+            "date": "Jan 2020"
+          },
+          "linkedTo": [
+            {
+              "targetId": "os1"
+            },
+            {
+              "targetId": "sk1"
+            }
+          ]
+        },
+        {
+          "id": "c2",
+          "x": 1,
+          "branch": "main-career",
+          "milestone": {
+            "id": "c2",
+            "title": "Promotion to Mid-Level",
+            "description": "Took on more complex projects",
+            "size": "medium",
+            "type": "achievement",
+            "date": "Jun 2020"
+          },
+          "linkedTo": [
+            {
+              "targetId": "os2"
+            },
+            {
+              "targetId": "sp1"
+            }
+          ]
+        },
+        {
+          "id": "c3",
+          "x": 2,
+          "branch": "main-career",
+          "milestone": {
+            "id": "c3",
+            "title": "Led Backend Project",
+            "description": "Architected microservices",
+            "size": "large",
+            "type": "project",
+            "date": "Dec 2020"
+          },
+          "linkedTo": [
+            {
+              "targetId": "sp1"
+            },
+            {
+              "targetId": "sk1"
+            }
+          ]
+        },
+        {
+          "id": "c4",
+          "x": 4,
+          "branch": "main-career",
+          "milestone": {
+            "id": "c4",
+            "title": "Senior Developer",
+            "description": "Team lead responsibilities",
+            "size": "large",
+            "type": "achievement",
+            "date": "Sep 2021"
+          },
+          "linkedTo": [
+            {
+              "targetId": "sp2"
+            },
+            {
+              "targetId": "sk2"
+            },
+            {
+              "targetId": "os3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "open-source",
+      "name": "Open Source",
+      "color": "#ff006e",
+      "points": [
+        {
+          "id": "os1",
+          "x": 0,
+          "branch": "open-source",
+          "milestone": {
+            "id": "os1",
+            "title": "First Contribution",
+            "description": "Contributed to React library",
+            "size": "small",
+            "type": "project",
+            "date": "Feb 2020"
+          }
+        },
+        {
+          "id": "os2",
+          "x": 2,
+          "branch": "open-source",
+          "milestone": {
+            "id": "os2",
+            "title": "Became Maintainer",
+            "description": "Accepted as core maintainer",
+            "size": "large",
+            "type": "achievement",
+            "date": "Aug 2020"
+          }
+        },
+        {
+          "id": "os3",
+          "x": 4,
+          "branch": "open-source",
+          "milestone": {
+            "id": "os3",
+            "title": "1k Stars",
+            "description": "Personal project gained traction",
+            "size": "large",
+            "type": "achievement",
+            "date": "Jun 2021"
+          },
+          "linkedTo": [
+            {
+              "targetId": "sp2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "speaking",
+      "name": "Speaking & Conferences",
+      "color": "#7209b7",
+      "points": [
+        {
+          "id": "sp1",
+          "x": 1,
+          "branch": "speaking",
+          "milestone": {
+            "id": "sp1",
+            "title": "First Talk",
+            "description": "Local meetup presentation on React",
+            "size": "small",
+            "type": "achievement",
+            "date": "May 2020"
+          }
+        },
+        {
+          "id": "sp2",
+          "x": 3,
+          "branch": "speaking",
+          "milestone": {
+            "id": "sp2",
+            "title": "Conference Speaker",
+            "description": "React Conf talk on performance optimization",
+            "size": "large",
+            "type": "achievement",
+            "date": "Oct 2021"
+          },
+          "linkedTo": [
+            {
+              "targetId": "sk2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "skills",
+      "name": "Skills Development",
+      "color": "#3a0ca3",
+      "points": [
+        {
+          "id": "sk1",
+          "x": 1,
+          "branch": "skills",
+          "milestone": {
+            "id": "sk1",
+            "title": "TypeScript Mastery",
+            "description": "Completed advanced TypeScript course",
+            "size": "medium",
+            "type": "skill",
+            "date": "Apr 2020"
+          }
+        },
+        {
+          "id": "sk2",
+          "x": 3,
+          "branch": "skills",
+          "milestone": {
+            "id": "sk2",
+            "title": "AWS Certification",
+            "description": "AWS Solutions Architect certification",
+            "size": "large",
+            "type": "skill",
+            "date": "Sep 2021"
+          }
+        },
+        {
+          "id": "sk3",
+          "x": 5,
+          "branch": "skills",
+          "milestone": {
+            "id": "sk3",
+            "title": "DevOps Fundamentals",
+            "description": "Mastered CI/CD pipelines",
+            "size": "medium",
+            "type": "skill",
+            "date": "Feb 2022"
+          }
+        }
+      ]
+    }
+  ]
+}

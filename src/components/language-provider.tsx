@@ -4,20 +4,28 @@ import { createContext, useContext, useEffect, useState } from "react";
 import { useLocalStorage } from "@/hooks/use-local-storage";
 import enTranslations from "@/data/translations/en.json";
 import frTranslations from "@/data/translations/fr.json";
+import arTranslations from "@/data/translations/ar.json";
 import enSkills from "@/data/skills.json";
 import frSkills from "@/data/translations/skills-fr.json";
+import arSkills from "@/data/translations/skills-ar.json";
 import enExperiences from "@/data/experiences.json";
 import frExperiences from "@/data/translations/experiences-fr.json";
+import arExperiences from "@/data/translations/experiences-ar.json";
 import enProjects from "@/data/projects.json";
 import frProjects from "@/data/translations/projects-fr.json";
+import arProjects from "@/data/translations/projects-ar.json";
 import enEducations from "@/data/educations.json";
 import frEducations from "@/data/translations/educations-fr.json";
+import arEducations from "@/data/translations/educations-ar.json";
 import enPersonal from "@/data/personal.json";
 import frPersonal from "@/data/translations/personal-fr.json";
+import arPersonal from "@/data/translations/personal-ar.json";
 import enFunFacts from "@/data/fun-facts.json";
 import frFunFacts from "@/data/translations/fun-facts-fr.json";
+import arFunFacts from "@/data/translations/fun-facts-ar.json";
 import enCareerTimeline from "@/data/career-timeline.json";
 import frCareerTimeline from "@/data/translations/career-timeline-fr.json";
+import arCareerTimeline from "@/data/translations/career-timeline-ar.json";
 import {
   Experience,
   FunFact,
@@ -28,7 +36,7 @@ import {
   CareerTimelineData,
 } from "@/types";
 
-type Language = "en" | "fr";
+type Language = "en" | "fr" | "ar";
 type StoredLanguage = Language | "system";
 
 type LanguageContextType = {
@@ -60,7 +68,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     setIsClient(true);
     if (storedLanguage === "system") {
       const browserLanguage = navigator.language.split("-")[0];
-      setLanguage(browserLanguage === "fr" ? "fr" : "en");
+      setLanguage(browserLanguage === "fr" ? "fr" : browserLanguage === "ar" ? "ar" : "en");
     } else {
       setLanguage(storedLanguage);
     }
@@ -71,7 +79,11 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const t = (key: string): string => {
     const keys = key.split(".");
     const translations: Record<string, unknown> =
-      language === "fr" ? frTranslations : enTranslations;
+      language === "fr"
+        ? frTranslations
+        : language === "ar"
+        ? arTranslations
+        : enTranslations;
 
     let result: unknown = translations;
     for (const k of keys) {
@@ -86,25 +98,53 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   };
 
   const getSkillsData = (): SkillCategory[] =>
-    (language === "fr" ? frSkills : enSkills) as SkillCategory[];
+    (language === "fr"
+      ? frSkills
+      : language === "ar"
+      ? arSkills
+      : enSkills) as SkillCategory[];
 
   const getExperiencesData = (): Experience[] =>
-    (language === "fr" ? frExperiences : enExperiences) as Experience[];
+    (language === "fr"
+      ? frExperiences
+      : language === "ar"
+      ? arExperiences
+      : enExperiences) as Experience[];
 
   const getProjectsData = (): Project[] =>
-    (language === "fr" ? frProjects : enProjects) as Project[];
+    (language === "fr"
+      ? frProjects
+      : language === "ar"
+      ? arProjects
+      : enProjects) as Project[];
 
   const getEducationsData = (): Education[] =>
-    (language === "fr" ? frEducations : enEducations) as Education[];
+    (language === "fr"
+      ? frEducations
+      : language === "ar"
+      ? arEducations
+      : enEducations) as Education[];
 
   const getPersonalData = (): Personal =>
-    (language === "fr" ? frPersonal : enPersonal) as Personal;
+    (language === "fr"
+      ? frPersonal
+      : language === "ar"
+      ? arPersonal
+      : enPersonal) as Personal;
 
   const getFunFactsData = (): FunFact[] =>
-    (language === "fr" ? frFunFacts : enFunFacts) as FunFact[];
+    (language === "fr"
+      ? frFunFacts
+      : language === "ar"
+      ? arFunFacts
+      : enFunFacts) as FunFact[];
 
   const getCareerTimelineData = (): CareerTimelineData =>
-    (language === "fr" ? frCareerTimeline : enCareerTimeline) as CareerTimelineData;
+    (language === "fr"
+      ? frCareerTimeline
+      : language === "ar"
+      ? arCareerTimeline
+      : enCareerTimeline) as CareerTimelineData;
 
   return (
     <LanguageContext.Provider

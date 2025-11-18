@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate-resumes": "tsx scripts/generate-resumes.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",

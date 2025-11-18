@@ -7,7 +7,7 @@
 
 import fs from 'fs';
 import path from 'path';
-import { Document, Packer, Paragraph, TextRun, HeadingLevel } from 'docx';
+import { Document, Packer, Paragraph, TextRun, HeadingLevel, AlignmentType } from 'docx';
 import {
   createSummarySection,
   createSkillsSection,
@@ -43,13 +43,20 @@ const translations: Record<string, Record<string, string>> = {
     'projects.title': 'Projets',
     'educations.title': 'Formation',
   },
+  ar: {
+    'resume.summary': 'ملخص',
+    'skills.title': 'مهارات',
+    'experiences.title': 'خبرة',
+    'projects.title': 'مشاريع',
+    'educations.title': 'تعليم',
+  },
 };
 
 const t = (language: string) => (key: string) => {
   return translations[language]?.[key] || key;
 };
 
-async function generateResume(language: 'en' | 'fr') {
+async function generateResume(language: 'en' | 'fr' | 'ar') {
   console.log(`Generating ${language.toUpperCase()} resume...`);
 
   const translate = t(language);
@@ -71,6 +78,8 @@ async function generateResume(language: 'en' | 'fr') {
     })),
   }));
 
+  const isRtl = language === 'ar';
+
   // Create DOCX document
   const doc = new Document({
     sections: [
@@ -78,39 +87,63 @@ async function generateResume(language: 'en' | 'fr') {
         properties: {},
         children: [
           new Paragraph({
+            alignment: isRtl ? AlignmentType.RIGHT : AlignmentType.LEFT,
             children: [
               new TextRun({
                 text: personal?.name || '',
                 bold: true,
                 size: 32,
+                rightToLeft: isRtl,
               }),
             ],
             spacing: { after: 200 },
             heading: HeadingLevel.TITLE,
           }),
           new Paragraph({
+            alignment: isRtl ? AlignmentType.RIGHT : AlignmentType.LEFT,
             children: [
-              new TextRun(`${personal?.email ?? ''} · ${personal?.phone ?? ''}`),
+              new TextRun({
+                text: `${personal?.email ?? ''} · ${personal?.phone ?? ''}`,
+                rightToLeft: isRtl,
+              }),
             ],
             spacing: { after: 100 },
           }),
           new Paragraph({
-            children: [new TextRun(`${personal?.website ?? ''}`)],
+            alignment: isRtl ? AlignmentType.RIGHT : AlignmentType.LEFT,
+            children: [
+              new TextRun({
+                text: `${personal?.website ?? ''}`,
+                rightToLeft: isRtl,
+              }),
+            ],
             spacing: { after: 100 },
           }),
           new Paragraph({
-            children: [new TextRun(`${personal?.github ?? ''}`)],
+            alignment: isRtl ? AlignmentType.RIGHT : AlignmentType.LEFT,
+            children: [
+              new TextRun({
+                text: `${personal?.github ?? ''}`,
+                rightToLeft: isRtl,
+              }),
+            ],
             spacing: { after: 100 },
           }),
           new Paragraph({
-            children: [new TextRun(`${personal?.linkedin ?? ''}`)],
+            alignment: isRtl ? AlignmentType.RIGHT : AlignmentType.LEFT,
+            children: [
+              new TextRun({
+                text: `${personal?.linkedin ?? ''}`,
+                rightToLeft: isRtl,
+              }),
+            ],
             spacing: { after: 400 },
           }),
-          ...createSummarySection(personal, translate),
-          ...createSkillsSection(skillsData, translate),
-          ...createExperienceSection(experiences, translate),
-          ...createProjectsSection(projects, translate),
-          ...createEducationSection(educations, translate),
+          ...createSummarySection(personal, translate, isRtl),
+          ...createSkillsSection(skillsData, translate, isRtl),
+          ...createExperienceSection(experiences, translate, isRtl),
+          ...createProjectsSection(projects, translate, isRtl),
+          ...createEducationSection(educations, translate, isRtl),
         ],
       },
     ],
@@ -152,14 +185,16 @@ async function main() {
   try {
     console.log('Starting resume generation...\n');
 
-    // Generate both language versions
+    // Generate all language versions
     await generateResume('en');
     await generateResume('fr');
+    await generateResume('ar');
 
     console.log('\n✅ All resumes generated successfully!');
     console.log('Files created:');
     console.log('  - public/resume.en.pdf');
     console.log('  - public/resume.fr.pdf');
+    console.log('  - public/resume.ar.pdf');
   } catch (error) {
     console.error('❌ Error generating resumes:', error);
     process.exit(1);

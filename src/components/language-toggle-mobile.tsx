@@ -6,6 +6,7 @@ import { Check, Globe } from "lucide-react"
 const languages = [
   { code: "en", name: "English" },
   { code: "fr", name: "Français" },
+  { code: "ar", name: "العربية" },
 ]
 
 export function LanguageToggleMobile() {
@@ -21,7 +22,7 @@ export function LanguageToggleMobile() {
         {languages.map((lang) => (
           <button
             key={lang.code}
-            onClick={() => setLanguage(lang.code as "en" | "fr")}
+            onClick={() => setLanguage(lang.code as "en" | "fr" | "ar")}
             className={`flex items-center justify-between px-2 py-1 rounded text-sm text-left hover:bg-accent ${
               language === lang.code ? "bg-muted font-medium" : ""
             }`}
