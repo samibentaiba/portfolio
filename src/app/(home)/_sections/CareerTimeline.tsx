@@ -8,7 +8,7 @@ import { CareerBranch, CareerPoint } from "@/types";
 
 // Constants
 const CELL_WIDTH = 100;
-const LANE_HEIGHT = 80;
+const LANE_HEIGHT = 100;
 
 // Helper function
 const getNodeRadius = (size: 'small' | 'medium' | 'large'): number => {
@@ -437,7 +437,7 @@ const TimelineVisualization = memo(function TimelineVisualization({
         </div>
       )}
 
-      <svg width={svgWidth} height={svgHeight} className="min-w-full do-not-flip-me">
+      <svg width={svgWidth+100} height={svgHeight} className="min-w-full do-not-flip-me">
         {adjustedBranches.map(branch => (
           <g key={`lines-${branch.id}`}>{renderBranchLines(branch)}</g>
         ))}
