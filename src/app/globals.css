@@ -153,6 +153,10 @@
   transform: scaleX(-1);
 }
 
+[dir="rtl"] .do-not-flip-me {
+  transform: none !important;
+}
+
 /* Don't flip these specific icons */
 [dir="rtl"] .lucide-external-link,
 [dir="rtl"] .lucide-github {

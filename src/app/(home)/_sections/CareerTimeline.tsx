@@ -437,7 +437,7 @@ const TimelineVisualization = memo(function TimelineVisualization({
         </div>
       )}
 
-      <svg width={svgWidth} height={svgHeight} className="min-w-full">
+      <svg width={svgWidth} height={svgHeight} className="min-w-full do-not-flip-me">
         {adjustedBranches.map(branch => (
           <g key={`lines-${branch.id}`}>{renderBranchLines(branch)}</g>
         ))}
@@ -574,7 +574,7 @@ const CareerTimeline = memo(function CareerTimeline({
   }, []);
 
   return (
-    <Card className="overflow-hidden">
+    <Card className="overflow-hidden " >
       <CardContent className="p-4 sm:p-6">
         <TimelineFilters
           branches={branches}
@@ -584,7 +584,7 @@ const CareerTimeline = memo(function CareerTimeline({
           onToggleSize={handleToggleSize}
           t={t}
         />
-
+      <div dir="ltr">
         <TimelineVisualization
           adjustedBranches={adjustedBranches}
           hoveredPoint={hoveredPoint}
@@ -596,6 +596,7 @@ const CareerTimeline = memo(function CareerTimeline({
         />
 
         <TimelineLegend branches={branches} t={t} />
+      </div>
       </CardContent>
     </Card>
   );
@@ -611,8 +612,9 @@ export default function CareerTimelineSection() {
       id="career-timeline"
       className="w-full scroll-mt-16 px-4 sm:px-0"
       aria-labelledby="career-timeline-heading"
+      
     >
-      <div className="space-y-6">
+      <div className="space-y-6" >
         <div>
           <h2
             id="career-timeline-heading"
