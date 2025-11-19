@@ -1,7 +1,7 @@
 "use client";
 
-import { Moon } from "lucide-react";
-import { Sun } from "lucide-react";
+import { Moon, Sun, Laptop } from "lucide-react";
+import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -9,34 +9,56 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useThemeToggle } from "@/hooks/use-theme-toggle";
+import { useLanguage } from "@/components/language-provider";
 
 export function ThemeToggle() {
-  const { theme = "system", handleThemeChange } = useThemeToggle();
+  const { setTheme, theme } = useTheme();
+  const { t } = useLanguage();
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className="hidden md:flex lg:flex" asChild>
-        <Button variant="outline" size="icon">
-          <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-          <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-          <span className="sr-only">Toggle theme</span>
+      <DropdownMenuTrigger asChild>
+        <Button variant="outline" size="icon" aria-label={t("theme.toggle")}>
+          <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+          <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+          <span className="sr-only">{t("theme.toggle")}</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        {["light", "dark", "system"].map((t) => (
-          <DropdownMenuItem
-            key={t}
-            onClick={() => handleThemeChange(t)}
-            className={
-              theme === t
-                ? "bg-sidebar-ring/50 hover:bg-secondary"
-                : "hover:bg-accent"
-            }
-          >
-            {t[0].toUpperCase() + t.slice(1)}
-          </DropdownMenuItem>
-        ))}
+        <DropdownMenuItem
+          onClick={() => setTheme("light")}
+          className={
+            theme === "light"
+              ? "bg-sidebar-ring/50 hover:bg-secondary"
+              : "hover:bg-accent"
+          }
+        >
+          <Sun className="mr-2 h-4 w-4" />
+          <span>{t("theme.light")}</span>
+        </DropdownMenuItem>
+        <DropdownMenuItem
+          onClick={() => setTheme("dark")}
+          className={
+            theme === "dark"
+              ? "bg-sidebar-ring/50 hover:bg-secondary"
+              : "hover:bg-accent"
+          }
+        >
+          <Moon className="mr-2 h-4 w-4" />
+          <span>{t("theme.dark")}</span>
+        </DropdownMenuItem>
+        <DropdownMenuItem
+          onClick={() => setTheme("system")}
+          className={
+            theme === "system"
+              ? "bg-sidebar-ring/50 hover:bg-secondary"
+              : "hover:bg-accent"
+          }
+        >
+          <Laptop className="h-4 w-4" />
+
+          <span>{t("theme.system")}</span>
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );

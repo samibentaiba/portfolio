@@ -1,9 +1,10 @@
 "use client";
 
-import {  useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { useScroll } from "@/hooks/use-scroll";
+import { useLanguage } from "@/components/language-provider";
 import { LanguageToggleMobile } from "@/components/language-toggle-mobile";
 import { ThemeToggleMobile } from "@/components/theme-toggle-mobile";
 import { Separator } from "@/components/ui/separator";
@@ -14,7 +15,7 @@ import Link from "next/link";
 interface MenuDropProps {
   mobileMenuOpen: boolean;
   setMobileMenuOpen: (state: boolean) => void;
-  buttonRef: React.RefObject<HTMLButtonElement | null>; // ← fix here
+  buttonRef: React.RefObject<HTMLButtonElement | null>;
 }
 
 export const MenuDrop: React.FC<MenuDropProps> = ({
@@ -24,6 +25,7 @@ export const MenuDrop: React.FC<MenuDropProps> = ({
 }) => {
   const pathname = usePathname();
   const { scrollToSection } = useScroll();
+  const { t } = useLanguage();
   const menuRef = useRef<HTMLDivElement>(null);
 
   const handleNavClick = (section: string) => {
@@ -33,7 +35,6 @@ export const MenuDrop: React.FC<MenuDropProps> = ({
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-
       if (
         mobileMenuOpen &&
         menuRef.current &&
@@ -67,7 +68,7 @@ export const MenuDrop: React.FC<MenuDropProps> = ({
                 pathname === "/#skills" && "text-foreground"
               )}
             >
-              Skills
+              {t("navigation.skills")}
             </button>
             <button
               onClick={() => handleNavClick("experiences")}
@@ -76,7 +77,7 @@ export const MenuDrop: React.FC<MenuDropProps> = ({
                 pathname === "/#experiences" && "text-foreground"
               )}
             >
-              Experiences
+              {t("navigation.experiences")}
             </button>
             <button
               onClick={() => handleNavClick("projects")}
@@ -85,7 +86,7 @@ export const MenuDrop: React.FC<MenuDropProps> = ({
                 pathname === "/#projects" && "text-foreground"
               )}
             >
-              Projects
+              {t("navigation.projects")}
             </button>
             <button
               onClick={() => handleNavClick("contact")}
@@ -94,7 +95,7 @@ export const MenuDrop: React.FC<MenuDropProps> = ({
                 pathname === "/#contact" && "text-foreground"
               )}
             >
-              Contact
+              {t("navigation.contact")}
             </button>
           </nav>
 
@@ -110,7 +111,7 @@ export const MenuDrop: React.FC<MenuDropProps> = ({
           <footer className="w-full flex items-center justify-center py-6 md:py-0">
             <div className="container flex flex-col items-center justify-between gap-4 md:h-16 md:flex-row px-4 sm:px-6">
               <p className="text-xs sm:text-sm text-muted-foreground text-center md:text-left">
-                © {new Date().getFullYear()} Sami Bentaiba. All rights reserved.
+                © {new Date().getFullYear()} Sami Bentaiba. {t("footer.rights")}
               </p>
               <div className="flex items-center gap-4">
                 <Link

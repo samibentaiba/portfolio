@@ -134,6 +134,13 @@
     "small": "صغير",
     "medium": "متوسط",
     "large": "كبير",
-    "backtofilters": "ارجع"
+    "backtofilters": "العودة إلى المرشحات"
+  },
+  "theme": {
+    "title": "المظهر",
+    "toggle": "تبديل المظهر",
+    "light": "فاتح",
+    "dark": "داكن",
+    "system": "النظام"
   }
 }

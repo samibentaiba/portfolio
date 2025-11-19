@@ -135,5 +135,12 @@
     "medium": "Medium",
     "large": "Large",
     "backtofilters": "back to filters"
+  },
+  "theme": {
+    "title": "Theme",
+    "toggle": "Toggle theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
   }
 }

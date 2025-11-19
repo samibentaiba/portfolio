@@ -134,6 +134,13 @@
     "small": "Petit",
     "medium": "Moyen",
     "large": "Grand",
-    "backtofilters": "retour aux filtres"
+    "backtofilters": "Retour aux filtres"
+  },
+  "theme": {
+    "title": "Thème",
+    "toggle": "Changer le thème",
+    "light": "Clair",
+    "dark": "Sombre",
+    "system": "Système"
   }
 }
