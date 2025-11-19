@@ -106,6 +106,7 @@ const MobilePointDetails = memo(function MobilePointDetails({
   color: string;
   onClose: () => void;
 }) {
+  const { t } = useLanguage();
   return (
     <div className="mb-6 p-3 sm:p-4 bg-muted/50 rounded-lg animate-in fade-in slide-in-from-top duration-300">
       <button
@@ -125,7 +126,7 @@ const MobilePointDetails = memo(function MobilePointDetails({
         >
           <path d="m15 18-6-6 6-6" />
         </svg>
-        Back to filters
+        {t("careerTimeline.backtofilters")}
       </button>
 
       <div className="flex items-start gap-3">

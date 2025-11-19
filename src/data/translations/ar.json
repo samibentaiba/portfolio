@@ -133,6 +133,7 @@
     "filterBySize": "تصفية حسب الحجم",
     "small": "صغير",
     "medium": "متوسط",
-    "large": "كبير"
+    "large": "كبير",
+    "backtofilters": "ارجع"
   }
 }

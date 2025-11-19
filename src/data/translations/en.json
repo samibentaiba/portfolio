@@ -133,6 +133,7 @@
     "filterBySize": "Filter by Size",
     "small": "Small",
     "medium": "Medium",
-    "large": "Large"
+    "large": "Large",
+    "backtofilters": "back to filters"
   }
 }
