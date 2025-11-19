@@ -7,7 +7,7 @@ import { useLanguage } from "@/components/language-provider";
 import { CareerBranch, CareerPoint } from "@/types";
 
 // Constants
-const CELL_WIDTH = 100;
+const CELL_WIDTH = 120;
 const LANE_HEIGHT = 100;
 
 // Helper function
@@ -16,14 +16,15 @@ const getNodeRadius = (size: 'small' | 'medium' | 'large'): number => {
   return sizeMap[size];
 };
 
-// Filters Component
+// Filters Component with improved mobile UX
 const TimelineFilters = memo(function TimelineFilters({
   branches,
   visibleBranches,
   sizeFilter,
   onToggleBranch,
   onToggleSize,
-  t
+  t,
+  isMobile
 }: {
   branches: CareerBranch[];
   visibleBranches: Set<string>;
@@ -31,19 +32,21 @@ const TimelineFilters = memo(function TimelineFilters({
   onToggleBranch: (id: string) => void;
   onToggleSize: (size: string) => void;
   t: (key: string) => string;
+  isMobile: boolean;
 }) {
   return (
-    <div className="flex flex-col gap-4 mb-6 p-4 bg-muted/50 rounded-lg">
+    <div className="flex flex-col gap-4 mb-6 p-3 sm:p-4 bg-muted/50 rounded-lg">
       <div>
         <h3 className="text-sm font-semibold mb-3">{t("careerTimeline.showBranches")}</h3>
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap gap-2 sm:gap-3">
           {branches.map(branch => (
             <button
               key={branch.id}
               onClick={() => onToggleBranch(branch.id)}
-              className={`px-3 py-1.5 rounded text-xs font-medium transition-all ${visibleBranches.has(branch.id)
-                ? 'bg-primary/10 text-foreground border border-primary/20'
-                : 'bg-muted text-muted-foreground border border-border opacity-50'
+              className={`px-3 sm:px-4 py-2 sm:py-1.5 rounded text-xs font-medium transition-all ${isMobile ? 'min-h-[44px]' : ''
+                } ${visibleBranches.has(branch.id)
+                  ? 'bg-primary/10 text-foreground border border-primary/20'
+                  : 'bg-muted text-muted-foreground border border-border opacity-50'
                 }`}
               aria-pressed={visibleBranches.has(branch.id)}
             >
@@ -63,14 +66,15 @@ const TimelineFilters = memo(function TimelineFilters({
 
       <div>
         <h3 className="text-sm font-semibold mb-3">{t("careerTimeline.filterBySize")}</h3>
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap gap-2 sm:gap-3">
           {(['small', 'medium', 'large'] as const).map(size => (
             <button
               key={size}
               onClick={() => onToggleSize(size)}
-              className={`px-3 py-1.5 rounded text-xs font-medium transition-all capitalize ${sizeFilter.has(size)
-                ? 'bg-primary/10 text-foreground border border-primary/20'
-                : 'bg-muted text-muted-foreground border border-border opacity-50'
+              className={`px-3 sm:px-4 py-2 sm:py-1.5 rounded text-xs font-medium transition-all capitalize ${isMobile ? 'min-h-[44px]' : ''
+                } ${sizeFilter.has(size)
+                  ? 'bg-primary/10 text-foreground border border-primary/20'
+                  : 'bg-muted text-muted-foreground border border-border opacity-50'
                 }`}
               aria-pressed={sizeFilter.has(size)}
             >
@@ -92,39 +96,79 @@ const TimelineFilters = memo(function TimelineFilters({
   );
 });
 
-// Tooltip Component (rendered outside SVG)
-const Tooltip = memo(function Tooltip({
+// Mobile Bottom Sheet Tooltip
+const MobileBottomSheet = memo(function MobileBottomSheet({
+  point,
+  color,
+  onClose,
+}: {
+  point: CareerPoint;
+  color: string;
+  onClose: () => void;
+}) {
+  return (
+    <>
+      {/* Backdrop */}
+      <div
+        className="fixed inset-0 bg-black/50 z-[100] animate-in fade-in duration-200"
+        onClick={onClose}
+      />
+
+      {/* Bottom Sheet */}
+      <div className="fixed bottom-0 left-0 right-0 z-[101] bg-popover text-popover-foreground rounded-t-2xl shadow-2xl border-t border-border animate-in slide-in-from-bottom duration-300">
+        <div className="p-4">
+          {/* Handle */}
+          <div className="flex justify-center mb-3">
+            <div className="w-12 h-1 bg-muted-foreground/30 rounded-full" />
+          </div>
+
+          {/* Content */}
+          <div className="flex items-start gap-3 mb-4">
+            <div
+              className="w-3 h-3 rounded-full mt-1 flex-shrink-0"
+              style={{ backgroundColor: color, boxShadow: `0 0 8px ${color}` }}
+            />
+            <div className="flex-1">
+              <h4 className="font-semibold text-base mb-2 leading-tight">{point.milestone.title}</h4>
+              <p className="text-sm text-muted-foreground mb-2 leading-relaxed">{point.milestone.description}</p>
+              {point.milestone.date && (
+                <p className="text-sm text-muted-foreground font-medium">{point.milestone.date}</p>
+              )}
+            </div>
+          </div>
+
+          {/* Close Button */}
+          <button
+            onClick={onClose}
+            className="w-full py-3 px-4 bg-muted hover:bg-muted/80 rounded-lg transition-colors font-medium text-sm"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </>
+  );
+});
+
+// Desktop Tooltip Component
+const DesktopTooltip = memo(function DesktopTooltip({
   point,
   position,
   color,
-  isMobile,
 }: {
   point: CareerPoint;
   position: { x: number; y: number };
   color: string;
-  isMobile: boolean;
 }) {
-  // Adjust tooltip position for mobile to prevent overflow
-  const tooltipStyle = useMemo(() => {
-    if (isMobile) {
-      return {
-        left: '50%',
-        top: `${position.y - 80}px`,
-        transform: 'translateX(-50%)',
-      };
-    }
-    return {
-      left: `${position.x + 20}px`,
-      top: `${position.y - 40}px`,
-    };
-  }, [position, isMobile]);
-
   return (
     <div
       className="absolute pointer-events-none z-[9999]"
-      style={tooltipStyle}
+      style={{
+        left: `${position.x + 20}px`,
+        top: `${position.y - 40}px`,
+      }}
     >
-      <div className="bg-popover text-popover-foreground p-3 rounded-lg shadow-xl border border-border min-w-[200px] max-w-[280px] sm:max-w-[250px]">
+      <div className="bg-popover text-popover-foreground p-3 rounded-lg shadow-xl border border-border min-w-[200px] max-w-[250px]">
         <div className="flex items-start gap-2">
           <div
             className="w-2 h-2 rounded-full mt-1 flex-shrink-0"
@@ -232,12 +276,12 @@ const TimelineVisualization = memo(function TimelineVisualization({
           strokeWidth={isHovered ? 3 : 2}
           opacity={isHovered ? 1 : 0.6}
           className="transition-all duration-200"
-          onMouseEnter={() => onBranchHover(branch.id)}
-          onMouseLeave={() => onBranchHover(null)}
+          onMouseEnter={() => !isMobile && onBranchHover(branch.id)}
+          onMouseLeave={() => !isMobile && onBranchHover(null)}
         />
       );
     });
-  }, [branchYPositions, hoveredBranch, onBranchHover]);
+  }, [branchYPositions, hoveredBranch, onBranchHover, isMobile]);
 
   // Render connections
   const renderConnections = useCallback(() => {
@@ -300,9 +344,9 @@ const TimelineVisualization = memo(function TimelineVisualization({
                 filter: isHovered ? `drop-shadow(0 0 8px ${branch.color})` : 'none',
                 transition: 'all 200ms ease',
               }}
-              className="cursor-pointer"
-              onMouseEnter={() => onLinkHover(linkKey)}
-              onMouseLeave={() => onLinkHover(null)}
+              className={isMobile ? '' : 'cursor-pointer'}
+              onMouseEnter={() => !isMobile && onLinkHover(linkKey)}
+              onMouseLeave={() => !isMobile && onLinkHover(null)}
             />
           );
         });
@@ -310,9 +354,9 @@ const TimelineVisualization = memo(function TimelineVisualization({
     });
 
     return lines;
-  }, [adjustedBranches, pointPositions, hoveredLink, hoveredPoint, onLinkHover]);
+  }, [adjustedBranches, pointPositions, hoveredLink, hoveredPoint, onLinkHover, isMobile]);
 
-  // Render points with touch support for mobile
+  // Render points with enhanced mobile support
   const renderPoints = useCallback((branch: CareerBranch) => {
     const branchY = branchYPositions[branch.id];
 
@@ -323,8 +367,8 @@ const TimelineVisualization = memo(function TimelineVisualization({
       const isHovered = hoveredPoint === point.id || clickedPoint === point.id;
       const isHoveredBranch = hoveredBranch === branch.id;
 
-      // Larger touch area for mobile
-      const touchRadius = isMobile ? radius + 10 : radius;
+      // Larger touch area for mobile (44x44px minimum)
+      const touchRadius = isMobile ? Math.max(22, radius + 10) : radius;
 
       return (
         <g
@@ -407,7 +451,7 @@ const TimelineVisualization = memo(function TimelineVisualization({
     });
   }, [branchYPositions, hoveredPoint, hoveredBranch, clickedPoint, isMobile, onPointHover, onBranchHover]);
 
-  // Find hovered point data for tooltip
+  // Find hovered point data
   const hoveredPointData = useMemo(() => {
     if (!hoveredPoint) return null;
 
@@ -421,75 +465,96 @@ const TimelineVisualization = memo(function TimelineVisualization({
     return null;
   }, [hoveredPoint, adjustedBranches, pointPositions]);
 
+  const handleCloseBottomSheet = useCallback(() => {
+    setClickedPoint(null);
+    onPointHover(null);
+    onBranchHover(null);
+  }, [onPointHover, onBranchHover]);
+
   return (
-    <div className="overflow-x-auto pb-4 relative">
-      {isMobile && clickedPoint && (
-        <div className="mb-4 text-center">
-          <button
-            onClick={() => {
-              setClickedPoint(null);
-              onPointHover(null);
-            }}
-            className="text-xs px-3 py-1.5 bg-muted hover:bg-muted/80 rounded-md transition-colors"
-          >
-            Close Info
-          </button>
+    <div className="relative">
+      {/* Scroll indicator for mobile */}
+      {isMobile && (
+        <div className="mb-3 text-center">
+          <p className="text-xs text-muted-foreground">
+            ← Scroll horizontally • Tap points for details →
+          </p>
         </div>
       )}
 
-      <svg width={svgWidth+100} height={svgHeight} className="min-w-full do-not-flip-me">
-        {adjustedBranches.map(branch => (
-          <g key={`lines-${branch.id}`}>{renderBranchLines(branch)}</g>
-        ))}
+      <div className="overflow-x-auto pb-4 relative">
+        <svg
+          width={svgWidth + 100}
+          height={svgHeight}
+          className="min-w-full do-not-flip-me"
+          style={{ touchAction: 'pan-x pan-y' }}
+        >
+          {adjustedBranches.map(branch => (
+            <g key={`lines-${branch.id}`}>{renderBranchLines(branch)}</g>
+          ))}
 
-        <g>{renderConnections()}</g>
+          <g>{renderConnections()}</g>
 
-        {adjustedBranches.map(branch => (
-          <g key={`points-${branch.id}`}>{renderPoints(branch)}</g>
-        ))}
-      </svg>
+          {adjustedBranches.map(branch => (
+            <g key={`points-${branch.id}`}>{renderPoints(branch)}</g>
+          ))}
+        </svg>
 
-      {/* Render tooltip outside SVG */}
-      {hoveredPointData && (
-        <Tooltip
+        {/* Desktop tooltip */}
+        {!isMobile && hoveredPointData && (
+          <DesktopTooltip
+            point={hoveredPointData.point}
+            position={hoveredPointData.position}
+            color={hoveredPointData.color}
+          />
+        )}
+      </div>
+
+      {/* Mobile bottom sheet */}
+      {isMobile && hoveredPointData && (
+        <MobileBottomSheet
           point={hoveredPointData.point}
-          position={hoveredPointData.position}
           color={hoveredPointData.color}
-          isMobile={isMobile}
+          onClose={handleCloseBottomSheet}
         />
       )}
     </div>
   );
 });
 
-// Legend Component
+// Legend Component with improved mobile layout
 const TimelineLegend = memo(function TimelineLegend({
   branches,
-  t
+  t,
+  isMobile
 }: {
   branches: CareerBranch[];
   t: (key: string) => string;
+  isMobile: boolean;
 }) {
   return (
-    <div className="flex flex-wrap gap-6 mt-6 justify-center text-sm text-muted-foreground">
-      {branches.map(branch => (
-        <div key={branch.id} className="flex items-center gap-2">
-          <div
-            className="w-2.5 h-2.5 rounded-full"
-            style={{
-              backgroundColor: branch.color,
-              boxShadow: `0 0 8px ${branch.color}`,
-            }}
-            aria-hidden="true"
-          />
-          <span className="text-xs font-medium">{branch.name}</span>
-        </div>
-      ))}
-      <div className="border-l border-border pl-6 flex gap-4 flex-wrap">
+    <div className={`flex flex-col ${isMobile ? 'gap-4' : 'sm:flex-row'} flex-wrap gap-4 sm:gap-6 mt-6 justify-center text-sm text-muted-foreground`}>
+      <div className="flex flex-wrap gap-3 sm:gap-4 justify-center">
+        {branches.map(branch => (
+          <div key={branch.id} className="flex items-center gap-2">
+            <div
+              className="w-2.5 h-2.5 rounded-full flex-shrink-0"
+              style={{
+                backgroundColor: branch.color,
+                boxShadow: `0 0 8px ${branch.color}`,
+              }}
+              aria-hidden="true"
+            />
+            <span className="text-xs font-medium">{branch.name}</span>
+          </div>
+        ))}
+      </div>
+
+      <div className={`${isMobile ? 'border-t pt-3' : 'border-l pl-6'} border-border flex gap-3 sm:gap-4 flex-wrap justify-center`}>
         {(['small', 'medium', 'large'] as const).map(size => (
           <div key={size} className="flex items-center gap-2">
             <div
-              className="rounded-full bg-muted-foreground"
+              className="rounded-full bg-muted-foreground flex-shrink-0"
               style={{
                 width: size === 'small' ? '6px' : size === 'medium' ? '8px' : '12px',
                 height: size === 'small' ? '6px' : size === 'medium' ? '8px' : '12px',
@@ -520,6 +585,16 @@ const CareerTimeline = memo(function CareerTimeline({
   const [sizeFilter, setSizeFilter] = useState<Set<string>>(
     () => new Set(['small', 'medium', 'large'])
   );
+  const [isMobile, setIsMobile] = useState(false);
+
+  React.useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // Assign unique X positions to avoid overlaps
   const assignUniqueXPositions = useCallback((inputBranches: CareerBranch[]) => {
@@ -574,8 +649,8 @@ const CareerTimeline = memo(function CareerTimeline({
   }, []);
 
   return (
-    <Card className="overflow-hidden " >
-      <CardContent className="p-4 sm:p-6">
+    <Card className="overflow-hidden">
+      <CardContent className="p-3 sm:p-6">
         <TimelineFilters
           branches={branches}
           visibleBranches={visibleBranches}
@@ -583,20 +658,22 @@ const CareerTimeline = memo(function CareerTimeline({
           onToggleBranch={handleToggleBranch}
           onToggleSize={handleToggleSize}
           t={t}
-        />
-      <div dir="ltr">
-        <TimelineVisualization
-          adjustedBranches={adjustedBranches}
-          hoveredPoint={hoveredPoint}
-          hoveredBranch={hoveredBranch}
-          hoveredLink={hoveredLink}
-          onPointHover={setHoveredPoint}
-          onBranchHover={setHoveredBranch}
-          onLinkHover={setHoveredLink}
+          isMobile={isMobile}
         />
 
-        <TimelineLegend branches={branches} t={t} />
-      </div>
+        <div dir="ltr">
+          <TimelineVisualization
+            adjustedBranches={adjustedBranches}
+            hoveredPoint={hoveredPoint}
+            hoveredBranch={hoveredBranch}
+            hoveredLink={hoveredLink}
+            onPointHover={setHoveredPoint}
+            onBranchHover={setHoveredBranch}
+            onLinkHover={setHoveredLink}
+          />
+
+          <TimelineLegend branches={branches} t={t} isMobile={isMobile} />
+        </div>
       </CardContent>
     </Card>
   );
@@ -612,9 +689,8 @@ export default function CareerTimelineSection() {
       id="career-timeline"
       className="w-full scroll-mt-16 px-4 sm:px-0"
       aria-labelledby="career-timeline-heading"
-      
     >
-      <div className="space-y-6" >
+      <div className="space-y-6">
         <div>
           <h2
             id="career-timeline-heading"
