@@ -7,7 +7,7 @@ import { useLanguage } from "@/components/language-provider";
 import { CareerBranch, CareerPoint } from "@/types";
 
 // Constants
-const CELL_WIDTH = 120;
+const CELL_WIDTH = 100;
 const LANE_HEIGHT = 100;
 
 // Helper function
@@ -96,8 +96,8 @@ const TimelineFilters = memo(function TimelineFilters({
   );
 });
 
-// Mobile Bottom Sheet Tooltip
-const MobileBottomSheet = memo(function MobileBottomSheet({
+// Mobile Point Details (replaces filters on mobile)
+const MobilePointDetails = memo(function MobilePointDetails({
   point,
   color,
   onClose,
@@ -107,46 +107,60 @@ const MobileBottomSheet = memo(function MobileBottomSheet({
   onClose: () => void;
 }) {
   return (
-    <>
-      {/* Backdrop */}
-      <div
-        className="fixed inset-0 bg-black/50 z-[100] animate-in fade-in duration-200"
+    <div className="mb-6 p-3 sm:p-4 bg-muted/50 rounded-lg animate-in fade-in slide-in-from-top duration-300">
+      <button
         onClick={onClose}
-      />
+        className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-4"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="m15 18-6-6 6-6" />
+        </svg>
+        Back to filters
+      </button>
 
-      {/* Bottom Sheet */}
-      <div className="fixed bottom-0 left-0 right-0 z-[101] bg-popover text-popover-foreground rounded-t-2xl shadow-2xl border-t border-border animate-in slide-in-from-bottom duration-300">
-        <div className="p-4">
-          {/* Handle */}
-          <div className="flex justify-center mb-3">
-            <div className="w-12 h-1 bg-muted-foreground/30 rounded-full" />
-          </div>
-
-          {/* Content */}
-          <div className="flex items-start gap-3 mb-4">
-            <div
-              className="w-3 h-3 rounded-full mt-1 flex-shrink-0"
-              style={{ backgroundColor: color, boxShadow: `0 0 8px ${color}` }}
-            />
-            <div className="flex-1">
-              <h4 className="font-semibold text-base mb-2 leading-tight">{point.milestone.title}</h4>
-              <p className="text-sm text-muted-foreground mb-2 leading-relaxed">{point.milestone.description}</p>
-              {point.milestone.date && (
-                <p className="text-sm text-muted-foreground font-medium">{point.milestone.date}</p>
-              )}
+      <div className="flex items-start gap-3">
+        <div
+          className="w-4 h-4 rounded-full mt-1 flex-shrink-0"
+          style={{ backgroundColor: color, boxShadow: `0 0 10px ${color}` }}
+        />
+        <div className="flex-1">
+          <h3 className="font-semibold text-lg mb-2 leading-tight">{point.milestone.title}</h3>
+          <p className="text-sm text-muted-foreground mb-3 leading-relaxed">{point.milestone.description}</p>
+          {point.milestone.date && (
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-background/50 rounded-md border border-border">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="text-muted-foreground"
+              >
+                <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
+                <line x1="16" x2="16" y1="2" y2="6" />
+                <line x1="8" x2="8" y1="2" y2="6" />
+                <line x1="3" x2="21" y1="10" y2="10" />
+              </svg>
+              <p className="text-sm text-muted-foreground font-medium">{point.milestone.date}</p>
             </div>
-          </div>
-
-          {/* Close Button */}
-          <button
-            onClick={onClose}
-            className="w-full py-3 px-4 bg-muted hover:bg-muted/80 rounded-lg transition-colors font-medium text-sm"
-          >
-            Close
-          </button>
+          )}
         </div>
       </div>
-    </>
+    </div>
   );
 });
 
@@ -623,6 +637,19 @@ const CareerTimeline = memo(function CareerTimeline({
       }));
   }, [branches, visibleBranches, sizeFilter, assignUniqueXPositions]);
 
+  // Find hovered point data
+  const hoveredPointData = useMemo(() => {
+    if (!hoveredPoint) return null;
+
+    for (const branch of adjustedBranches) {
+      const point = branch.points.find(p => p.id === hoveredPoint);
+      if (point) {
+        return { point, color: branch.color };
+      }
+    }
+    return null;
+  }, [hoveredPoint, adjustedBranches]);
+
   // Toggle handlers
   const handleToggleBranch = useCallback((branchId: string) => {
     setVisibleBranches(prev => {
@@ -651,15 +678,30 @@ const CareerTimeline = memo(function CareerTimeline({
   return (
     <Card className="overflow-hidden">
       <CardContent className="p-3 sm:p-6">
-        <TimelineFilters
-          branches={branches}
-          visibleBranches={visibleBranches}
-          sizeFilter={sizeFilter}
-          onToggleBranch={handleToggleBranch}
-          onToggleSize={handleToggleSize}
-          t={t}
-          isMobile={isMobile}
-        />
+        {/* Show filters on desktop OR on mobile when no point is selected */}
+        {(!isMobile || !hoveredPoint) && (
+          <TimelineFilters
+            branches={branches}
+            visibleBranches={visibleBranches}
+            sizeFilter={sizeFilter}
+            onToggleBranch={handleToggleBranch}
+            onToggleSize={handleToggleSize}
+            t={t}
+            isMobile={isMobile}
+          />
+        )}
+
+        {/* Show point details on mobile when a point is selected */}
+        {isMobile && hoveredPoint && hoveredPointData && (
+          <MobilePointDetails
+            point={hoveredPointData.point}
+            color={hoveredPointData.color}
+            onClose={() => {
+              setHoveredPoint(null);
+              setHoveredBranch(null);
+            }}
+          />
+        )}
 
         <div dir="ltr">
           <TimelineVisualization
