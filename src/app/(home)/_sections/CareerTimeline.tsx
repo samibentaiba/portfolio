@@ -479,12 +479,6 @@ const TimelineVisualization = memo(function TimelineVisualization({
     return null;
   }, [hoveredPoint, adjustedBranches, pointPositions]);
 
-  const handleCloseBottomSheet = useCallback(() => {
-    setClickedPoint(null);
-    onPointHover(null);
-    onBranchHover(null);
-  }, [onPointHover, onBranchHover]);
-
   return (
     <div className="relative">
       {/* Scroll indicator for mobile */}
@@ -514,7 +508,7 @@ const TimelineVisualization = memo(function TimelineVisualization({
           ))}
         </svg>
 
-        {/* Desktop tooltip */}
+        {/* Desktop tooltip only */}
         {!isMobile && hoveredPointData && (
           <DesktopTooltip
             point={hoveredPointData.point}
@@ -523,15 +517,6 @@ const TimelineVisualization = memo(function TimelineVisualization({
           />
         )}
       </div>
-
-      {/* Mobile bottom sheet */}
-      {isMobile && hoveredPointData && (
-        <MobileBottomSheet
-          point={hoveredPointData.point}
-          color={hoveredPointData.color}
-          onClose={handleCloseBottomSheet}
-        />
-      )}
     </div>
   );
 });
