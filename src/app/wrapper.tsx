@@ -287,7 +287,7 @@ function Footer() {
         </p>
         <div className={cn("flex items-center gap-4", isRtl && "flex-row-reverse")}>
           <Link
-            href="https://github.com"
+            href={t("personals.github")}
             target="_blank"
             rel="noreferrer"
             className="text-muted-foreground hover:text-foreground"
@@ -296,7 +296,7 @@ function Footer() {
             <span className="sr-only">GitHub</span>
           </Link>
           <Link
-            href="https://linkedin.com"
+            href={t("personals.linkedin")}
             target="_blank"
             rel="noreferrer"
             className="text-muted-foreground hover:text-foreground"

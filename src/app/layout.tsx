@@ -129,7 +129,7 @@ export default function RootLayout({
                   },
                   primaryImageOfPage: {
                     "@type": "ImageObject",
-                  url: "https://bentaidev.vercel.app/bentaidev-og-image.png",
+                    url: "https://bentaidev.vercel.app/bentaidev-og-image.png",
                   },
                   description:
                     "Personal portfolio website showcasing skills, experiences, and projects.",
@@ -158,9 +158,9 @@ export default function RootLayout({
                   },
                   sameAs: [
                     "https://github.com/samibentaiba",
-                    "https://www.linkedin.com/in/sami-bentaiba",
+                    "https://www.linkedin.com/in/samibentaiba",
                     "https://twitter.com/bentaiba_sami",
-                    "https://www.instagram.com/sami.bentaiba",
+                    "https://www.instagram.com/bentaidev",
                   ],
                   jobTitle: "Software Engineer",
                   email: "samibentaiba25@gmail.com",
