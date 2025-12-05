@@ -1,5 +1,47 @@
 [
   {
+    "slug": "algis",
+    "title": "Algis",
+    "shortDescription": "نظام إدارة زراعية لوزارة الفلاحة الجزائرية.",
+    "description": "Algis هو نظام إدارة زراعية شامل مصمم للديوان الوطني للتنمية الفلاحية (وزارة الفلاحة والتنمية الريفية). يقوم برقمنة وتبسيط إدارة وحدات الإنتاج الفلاحي (UAPs) عبر الجزائر، من خلال توحيد بيانات Excel المتفرقة في قاعدة بيانات علائقية مع التحكم في الوصول على أساس الأدوار، وتتبع الثروة الحيوانية، وإدارة المعدات، وتحليلات الإنتاج. يستخدم PostgreSQL للنسخ المستضافة و SQLite للتطوير المحلي. يتم اقتراح ترقية مؤسسية محتملة باستخدام Rust و MySQL و HTMX و jQuery للعميل.",
+    "image": "/placeholder.svg?height=400&width=800",
+    "technologies": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Prisma",
+      "PostgreSQL",
+      "NextAuth",
+      "Tailwind CSS"
+    ],
+    "timeline": "مستمر (2024 - الآن)",
+    "liveUrl": "https://algis-preview.vercel.app",
+    "githubUrl": null,
+    "personalExperience": "كان العمل على Algis لعميل في القطاع الزراعي تجربة مجزية. يتضمن المشروع نمذجة بيانات معقدة مع Prisma للتعامل مع وحدات الإنتاج الفلاحي والثروة الحيوانية والآلات والمحاصيل وعلاقاتها. أقوم ببناء لوحة تحكم حديثة كاملة تستبدل سير العمل اليدوي المستند إلى Excel بتطبيق ويب ديناميكي يتميز بالمصادقة والتحكم في الوصول على أساس الأدوار. المستودع خاص بسبب شروط خدمة العميل.",
+    "collaborators": []
+  },
+  {
+    "slug": "c-studio",
+    "fetchUrl": "https://github.com/samibentaiba/c-studio",
+    "title": "C-Studio",
+    "shortDescription": "بيئة تطوير متكاملة للغة C بدون إعداد مسبق لنظام Windows مع مترجم مدمج.",
+    "description": "C-Studio هي بيئة تطوير متكاملة حديثة وخفيفة الوزن مصممة للمبتدئين والطلاب الذين يتعلمون لغة C. تلغي صداع تثبيت المترجمات وتكوين المسارات من خلال تضمين سلسلة أدوات MinGW المحمولة مباشرة في التطبيق. تشمل الميزات: إعداد صفري، مترجم مدمج، واجهة مستخدم حديثة بمظهر داكن، تجميع وتشغيل فوري، ودعم كامل للطرفية التفاعلية لدوال scanf والإدخال.",
+    "image": "https://raw.githubusercontent.com/samibentaiba/c-studio/master/public/readme.png",
+    "technologies": [
+      "Electron",
+      "TypeScript",
+      "React",
+      "MinGW-w64",
+      "Node.js"
+    ],
+    "timeline": "شهرين (أكتوبر 2024 - ديسمبر 2024)",
+    "liveUrl": null,
+    "downloadUrl": "https://github.com/samibentaiba/c-studio/releases/download/v1.3.0/c-studio-win32-x64-1.3.0.zip",
+    "githubUrl": "https://github.com/samibentaiba/c-studio",
+    "personalExperience": "كان بناء C-Studio رحلة مثيرة في تطوير تطبيقات سطح المكتب باستخدام Electron. كان التحدي الأكبر هو تجميع مترجم MinGW وضمان عمله بسلاسة دون أي إعداد للنظام. ركزت على إنشاء تجربة سهلة الاستخدام للمبتدئين الذين يتعلمون برمجة C، مع ميزات مثل التجميع الفوري ودعم الطرفية التفاعلية.",
+    "collaborators": []
+  },
+  {
     "title": "منصة التجارة الإلكترونية",
     "slug": "ecommerce-platform",
     "shortDescription": "متجر إلكتروني متكامل مع معالجة المدفوعات",
@@ -49,18 +91,18 @@
     "slug": "ishowoff",
     "fetchUrl": "https://github.com/samibentaiba/ishowoff",
     "title": "iShowOff",
-    "shortDescription": "أداة سطر أوامر مبنية على Go لعرض معلومات النظام.",
-    "description": "iShowOff هي أداة CLI خفيفة الوزن ومتعددة المنصات مكتوبة بلغة Go. تجلب وتعرض معلومات النظام الرئيسية، مثل نظام التشغيل والمعالج والذاكرة واستخدام القرص، في مخرجات نظيفة ومنسقة. كان المشروع استكشافًا في Go والبرمجة على مستوى النظام و GitHub Actions لبناء عبر المنصات الآلي.",
-    "image": "/placeholder.svg?height=400&width=800",
+    "shortDescription": "أداة CLI مفرنكة لعرض آخر مشاريعي على ملف GitHub الشخصي.",
+    "description": "iShowOff هي نسخة مفرنكة من أداة CLI قمت بتخصيصها لعرض آخر مشاريعي على ملف README الخاص بحسابي على GitHub (github.com/samibentaiba/samibentaiba). من خلال هذا المشروع، تعلمت كيفية استخدام GitHub Actions بفعالية لسير العمل الآلي وخطوط أنابيب CI/CD.",
+    "image": "https://github.com/samibentaiba/ishowoff/raw/main/images/ishowspeed.jpg",
     "technologies": [
-      "Go",
+      "Rust",
       "GitHub Actions",
-      "CLI"
+      "CI/CD"
     ],
     "timeline": "شهر واحد (أبريل 2024)",
     "liveUrl": null,
     "githubUrl": "https://github.com/samibentaiba/ishowoff",
-    "personalExperience": "كان هذا أول مشروع رئيسي لي في Go. تعلمت الكثير عن التعامل مع واجهات برمجة التطبيقات الخاصة بنظام التشغيل، وإدارة التبعيات في Go، وإعداد خط أنابيب CI/CD مع GitHub Actions لتجميع وإصدار الملفات الثنائية لـ Windows و macOS و Linux.",
+    "personalExperience": "كانت هذه تجربة تعليمية قيّمة مع GitHub Actions. من خلال تفرنك وتخصيص هذا المشروع، اكتسبت خبرة عملية في خطوط أنابيب CI/CD والإصدارات الآلية ودمج المحتوى الديناميكي في ملف README الخاص بحسابي على GitHub.",
     "collaborators": []
   }
 ]

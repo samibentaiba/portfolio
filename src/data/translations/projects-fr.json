@@ -1,5 +1,47 @@
 [
   {
+    "slug": "algis",
+    "title": "Algis",
+    "shortDescription": "Système de gestion agricole pour le Ministère de l'Agriculture algérien.",
+    "description": "Algis est un système de gestion agricole complet conçu pour l'Office National du Développement Agricole (Ministère de l'Agriculture et du Développement Rural). Il numérise et rationalise la gestion des Unités de Production Agricole (UAP) à travers l'Algérie, en centralisant les données Excel dispersées dans une base de données relationnelle avec contrôle d'accès basé sur les rôles, suivi du bétail, gestion des équipements et analyses de production. Utilise PostgreSQL pour les versions hébergées et SQLite pour le développement local. Une mise à niveau entreprise potentielle utilisant Rust, MySQL, HTMX et jQuery est proposée au client.",
+    "image": "/placeholder.svg?height=400&width=800",
+    "technologies": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Prisma",
+      "PostgreSQL",
+      "NextAuth",
+      "Tailwind CSS"
+    ],
+    "timeline": "En cours (2024 - Présent)",
+    "liveUrl": "https://algis-preview.vercel.app",
+    "githubUrl": null,
+    "personalExperience": "Travailler sur Algis pour un client du secteur agricole a été une expérience enrichissante. Le projet implique une modélisation de données complexe avec Prisma pour gérer les UAP, le bétail, les machines, les cultures et leurs relations. Je construis un tableau de bord moderne full-stack qui remplace les flux de travail manuels basés sur Excel par une application web dynamique avec authentification et contrôle d'accès basé sur les rôles. Le dépôt est privé en raison des conditions de service du client.",
+    "collaborators": []
+  },
+  {
+    "slug": "c-studio",
+    "fetchUrl": "https://github.com/samibentaiba/c-studio",
+    "title": "C-Studio",
+    "shortDescription": "IDE C sans configuration pour Windows avec compilateur intégré.",
+    "description": "C-Studio est un IDE moderne et léger conçu pour les débutants et les étudiants apprenant le C. Il élimine les tracas d'installation des compilateurs et de configuration des chemins en intégrant directement une chaîne d'outils MinGW portable dans l'application. Les fonctionnalités incluent: zéro configuration, compilateur intégré, interface moderne avec thème sombre, compilation et exécution instantanées, et support terminal interactif complet pour scanf et les fonctions d'entrée.",
+    "image": "https://raw.githubusercontent.com/samibentaiba/c-studio/master/public/readme.png",
+    "technologies": [
+      "Electron",
+      "TypeScript",
+      "React",
+      "MinGW-w64",
+      "Node.js"
+    ],
+    "timeline": "2 mois (Oct 2024 - Déc 2024)",
+    "liveUrl": null,
+    "downloadUrl": "https://github.com/samibentaiba/c-studio/releases/download/v1.3.0/c-studio-win32-x64-1.3.0.zip",
+    "githubUrl": "https://github.com/samibentaiba/c-studio",
+    "personalExperience": "Construire C-Studio a été un voyage passionnant dans le développement d'applications de bureau avec Electron. Le plus grand défi était d'intégrer le compilateur MinGW et de s'assurer qu'il fonctionne parfaitement sans aucune configuration système. Je me suis concentré sur la création d'une expérience conviviale pour les débutants apprenant la programmation C, avec des fonctionnalités comme la compilation instantanée et le support du terminal interactif.",
+    "collaborators": []
+  },
+  {
     "title": "Plateforme E-commerce",
     "slug": "ecommerce-platform",
     "shortDescription": "Une boutique en ligne complète avec traitement des paiements",
@@ -49,18 +91,18 @@
     "slug": "ishowoff",
     "fetchUrl": "https://github.com/samibentaiba/ishowoff",
     "title": "iShowOff",
-    "shortDescription": "Un outil en ligne de commande basé sur Go pour afficher les informations système.",
-    "description": "iShowOff est un outil CLI multiplateforme léger écrit en Go. Il récupère et affiche les informations système clés, telles que le système d'exploitation, le processeur, la mémoire et l'utilisation du disque, dans une sortie propre et formatée. Le projet était une exploration de Go, de la programmation au niveau système et des GitHub Actions pour les builds multiplateformes automatisés.",
-    "image": "/placeholder.svg?height=400&width=800",
+    "shortDescription": "Un outil CLI forké pour afficher mes derniers projets sur mon profil GitHub.",
+    "description": "iShowOff est un fork d'un outil CLI que j'ai personnalisé pour afficher mes derniers projets en cours sur le README de mon profil GitHub (github.com/samibentaiba/samibentaiba). Grâce à ce projet, j'ai appris à utiliser efficacement GitHub Actions pour les workflows automatisés et les pipelines CI/CD.",
+    "image": "https://github.com/samibentaiba/ishowoff/raw/main/images/ishowspeed.jpg",
     "technologies": [
-      "Go",
+      "Rust",
       "GitHub Actions",
-      "CLI"
+      "CI/CD"
     ],
     "timeline": "1 mois (Avr 2024)",
     "liveUrl": null,
     "githubUrl": "https://github.com/samibentaiba/ishowoff",
-    "personalExperience": "C'était mon premier projet majeur en Go. J'ai beaucoup appris sur la gestion des API spécifiques au système d'exploitation, la gestion des dépendances en Go et la configuration d'un pipeline CI/CD avec GitHub Actions pour compiler et publier des binaires pour Windows, macOS et Linux.",
+    "personalExperience": "Ce fut une expérience d'apprentissage précieuse avec GitHub Actions. En forkant et en personnalisant ce projet, j'ai acquis une expérience pratique des pipelines CI/CD, des releases automatisées, et de l'intégration de contenu dynamique dans le README de mon profil GitHub.",
     "collaborators": []
   }
 ]

@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { LuGithub } from "react-icons/lu";
-import { ExternalLink } from "lucide-react";
+import { Download, ExternalLink } from "lucide-react";
 
 import {
   useProjectsData,
@@ -105,6 +105,16 @@ const ProjectCard = memo(function ProjectCard({
     [project.githubUrl]
   );
 
+  const handleDownloadClick = useCallback(
+    (e: React.MouseEvent) => {
+      e.stopPropagation();
+      if (project.downloadUrl) {
+        window.open(project.downloadUrl, "_blank", "noopener,noreferrer");
+      }
+    },
+    [project.downloadUrl]
+  );
+
   return (
     <Card className="overflow-hidden transition-all hover:shadow-md h-full flex flex-col">
       <div className="relative aspect-video overflow-hidden cursor-pointer">
@@ -146,6 +156,16 @@ const ProjectCard = memo(function ProjectCard({
           >
             <ExternalLink className="mr-1 h-3 w-3" aria-hidden="true" />
             {t("navigation.live")}
+          </button>
+        )}
+        {project.downloadUrl && (
+          <button
+            onClick={handleDownloadClick}
+            className="text-xs sm:text-sm text-muted-foreground hover:text-foreground flex items-center transition-colors"
+            aria-label={`Download ${project.title}`}
+          >
+            <Download className="mr-1 h-3 w-3" aria-hidden="true" />
+            {t("projects.download")}
           </button>
         )}
         {project.githubUrl && (

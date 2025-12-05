@@ -12,6 +12,18 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
+        hostname: 'raw.githubusercontent.com',
+        port: '',
+        pathname: '/**', // Allow any path on this host
+      },
+      {
+        protocol: 'https',
+        hostname: 'github.com',
+        port: '',
+        pathname: '/**', // Allow any path on this host
+      },
+      {
+        protocol: 'https',
         hostname: 'itc-hub.vercel.app',
         port: '',
         pathname: '/**', // Allow any path on this host

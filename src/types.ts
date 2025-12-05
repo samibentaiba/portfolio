@@ -42,6 +42,7 @@ export interface Project {
   technologies: string[]; // Keep this, user can add manually
   timeline?: string;
   liveUrl?: string;
+  downloadUrl?: string; // Download link for desktop apps/releases
   githubUrl?: string;
   personalExperience?: string;
   collaborators?: string[];

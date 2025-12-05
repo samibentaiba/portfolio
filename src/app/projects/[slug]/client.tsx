@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { Calendar, ExternalLink, Github, Users } from "lucide-react";
+import { Calendar, Download, ExternalLink, Github, Users } from "lucide-react";
 import { useLanguage } from "@/components/language-provider";
 import { Skill } from "@/components/skill";
 import { useProject } from "./hook";
@@ -56,6 +56,17 @@ export default function ProjectClient() {
             >
               <Button className="gap-2 w-full sm:w-auto">
                 <ExternalLink className="h-4 w-4" /> {t("projects.viewLive")}
+              </Button>
+            </a>
+          )}
+          {project.downloadUrl && (
+            <a
+              href={project.downloadUrl}
+              download
+              className="w-full sm:w-auto"
+            >
+              <Button className="gap-2 w-full sm:w-auto">
+                <Download className="h-4 w-4" /> {t("projects.download")}
               </Button>
             </a>
           )}
