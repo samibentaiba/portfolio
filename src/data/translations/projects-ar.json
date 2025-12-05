@@ -42,25 +42,6 @@
     "collaborators": []
   },
   {
-    "title": "منصة التجارة الإلكترونية",
-    "slug": "ecommerce-platform",
-    "shortDescription": "متجر إلكتروني متكامل مع معالجة المدفوعات",
-    "description": "منصة تجارة إلكترونية حديثة مبنية باستخدام Next.js، تتضمن قوائم المنتجات وعربة التسوق ومصادقة المستخدم وتكامل Stripe للمدفوعات.",
-    "image": "/placeholder.svg?height=400&width=800",
-    "technologies": [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "Stripe"
-    ],
-    "timeline": "3 أشهر (يناير 2023 - مارس 2023)",
-    "liveUrl": "https://example-ecommerce.vercel.app",
-    "githubUrl": "https://github.com/samibentaiba/ecommerce",
-    "personalExperience": "كان بناء منصة التجارة الإلكترونية هذه تجربة رائعة في دمج واجهات برمجة التطبيقات التابعة لجهات خارجية مثل Stripe وإدارة الحالة العامة لعربة التسوق. ركزت على إنشاء واجهة مستخدم نظيفة ومتجاوبة وعملية دفع آمنة.",
-    "collaborators": []
-  },
-  {
     "slug": "itc-hub",
     "fetchUrl": "https://itc-hub.vercel.app",
     "title": "مركز ITC",
@@ -85,6 +66,135 @@
     "liveUrl": "https://itc-hub.vercel.app",
     "githubUrl": "https://github.com/samibentaiba/itc-hub",
     "personalExperience": "كان تطوير مركز ITC غوصًا عميقًا في تطوير Next.js الكامل. كان التحدي الأكبر هو تصميم مخطط قاعدة البيانات العلائقية مع Prisma للتعامل مع العلاقات المعقدة بين المستخدمين والأقسام والفرق والتذاكر. كان تنفيذ التحكم في الوصول على أساس الدور (RBAC) مع Next-Auth ميزة حاسمة لضمان أمان البيانات. عزز هذا المشروع مهاراتي في بناء تطبيقات ويب آمنة وقابلة للتوسع وكثيفة البيانات.",
+    "collaborators": []
+  },
+  {
+    "slug": "remdani-dental",
+    "fetchUrl": "https://github.com/ismail-devmaster/finalProjectFe",
+    "title": "مركز رمداني لطب الأسنان",
+    "shortDescription": "موقع إلكتروني لمركز رمداني لطب الأسنان.",
+    "description": "موقع إلكتروني احترافي لمركز رمداني لطب الأسنان، يعرض الخدمات وأعضاء الفريق وشهادات المرضى. توفر المنصة واجهة سهلة الاستخدام للمرضى للتعرف على رعاية الأسنان والاتصال بالعيادة.",
+    "image": "/placeholder.svg?height=400&width=800",
+    "technologies": [
+      "React",
+      "Node.js",
+      "Tailwind CSS"
+    ],
+    "timeline": "2024",
+    "liveUrl": "https://ramdani.vercel.app",
+    "githubUrl": "https://github.com/ismail-devmaster/finalProjectFe",
+    "personalExperience": "تعاونت كمطور واجهة أمامية في هذا المشروع، وعملت بشكل وثيق مع مطور الخلفية وقائد النشر. ساهمت أيضًا في تطوير الخلفية بالتزامات صغيرة، واكتسبت خبرة في المكدس الكامل.",
+    "collaborators": ["إسماعيل (Backend)", "زين الدين (Deployment)"]
+  },
+  {
+    "slug": "sunrise-energy",
+    "fetchUrl": "https://github.com/samibentaiba/sunrise-energy",
+    "title": "Sunrise Energy",
+    "shortDescription": "منصة حلول الطاقة المتجددة (معاينة للعميل).",
+    "description": "منصة ويب حديثة مصممة لشركة طاقة متجددة. يخدم هذا المشروع كمعاينة للعميل لإظهار إمكانات التواجد الرقمي في قطاع الطاقة. يتميز بتصميم نظيف وصديق للبيئة ويعرض الخدمات والحلول.",
+    "image": "/placeholder.svg?height=400&width=800",
+    "technologies": [
+      "Next.js",
+      "TypeScript",
+      "Prisma",
+      "Tailwind CSS"
+    ],
+    "timeline": "شهر واحد (2024)",
+    "liveUrl": "https://sunrise-energy.vercel.app",
+    "githubUrl": "https://github.com/samibentaiba/sunrise-energy",
+    "personalExperience": "سمح لي هذا المشروع بالتركيز على إنشاء واجهة احترافية وجذابة بصريًا لعميل مؤسسي. استخدمت Next.js للأداء وتحسين محركات البحث، مما يضمن أن الموقع سريع وسهل الاكتشاف.",
+    "collaborators": []
+  },
+  {
+    "slug": "ai-horizons",
+    "fetchUrl": "https://github.com/samibentaiba/AiHorizons",
+    "title": "AiHorizons",
+    "shortDescription": "منصة مؤتمرات وفعاليات الذكاء الاصطناعي.",
+    "description": "منصة ديناميكية لمؤتمر الذكاء الاصطناعي، تتميز بجداول الفعاليات، وملفات تعريف المتحدثين، والتسجيل. كان هذا المشروع تحديًا للتطوير السريع، حيث تم تسليمه في 3 أيام فقط.",
+    "image": "/placeholder.svg?height=400&width=800",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Vite"
+    ],
+    "timeline": "3 أيام (2025)",
+    "liveUrl": "https://ai-horizons.netlify.app",
+    "githubUrl": "https://github.com/samibentaiba/AiHorizons",
+    "personalExperience": "كان هذا مشروعًا عالي الكثافة حيث تعاونت بشكل وثيق مع مطور خلفية ومصمم واجهة مستخدم/تجربة مستخدم لتقديم منتج مصقول في إطار زمني قصير جدًا. اختبر هذا قدرتي على العمل تحت الضغط والتنسيق بفعالية مع فريق.",
+    "collaborators": ["رؤوف روبو (Backend)", "لؤي دراجي (UI/UX)"]
+  },
+  {
+    "slug": "itc-talks",
+    "fetchUrl": "https://github.com/samibentaiba/itc-talks",
+    "title": "ITC Talks",
+    "shortDescription": "منصة فعاليات لمحادثات وعروض ITC.",
+    "description": "منصة مخصصة لاستضافة وإدارة محادثات ITC. توفر مساحة للمتحدثين لمشاركة معرفتهم وللحضور لاكتشاف الفعاليات القادمة.",
+    "image": "/placeholder.svg?height=400&width=800",
+    "technologies": [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "timeline": "مستمر (2025)",
+    "liveUrl": "https://itc-talks.vercel.app",
+    "githubUrl": "https://github.com/samibentaiba/itc-talks",
+    "personalExperience": "تعاونت مع مصمم واجهة مستخدم/تجربة مستخدم لإحياء رؤية ITC Talks. ركزت على إنشاء تجربة مستخدم جذابة وتدفق سلس لإدارة المحتوى.",
+    "collaborators": ["لؤي دراجي (UI/UX)"]
+  },
+  {
+    "slug": "itc-programming",
+    "fetchUrl": "https://github.com/samibentaiba/ITCP",
+    "title": "ITCP",
+    "shortDescription": "الموقع الرسمي لنادي البرمجة ITC.",
+    "description": "الموقع الرسمي لنادي البرمجة ITC، مصمم لعرض أنشطة النادي والفعاليات والموارد للأعضاء. جهد تعاوني لبناء مركز مجتمعي.",
+    "image": "/placeholder.svg?height=400&width=800",
+    "technologies": [
+      "React",
+      "Vite",
+      "CSS"
+    ],
+    "timeline": "2024",
+    "liveUrl": "https://itc-programming.netlify.app",
+    "githubUrl": "https://github.com/samibentaiba/ITCP",
+    "personalExperience": "عملت كمطور واجهة أمامية في فريق مع مطور خلفية ومصمم واجهة مستخدم/تجربة مستخدم. عزز هذا المشروع مهاراتي في العمل الجماعي وقدرتي على دمج مكونات الواجهة الأمامية مع واجهات برمجة التطبيقات الخلفية.",
+    "collaborators": ["محمد ربوح (Backend)", "لؤي دراجي (UI/UX)"]
+  },
+  {
+    "slug": "cse-hub",
+    "fetchUrl": "https://github.com/samibentaiba/cse-hub",
+    "title": "CSE Hub",
+    "shortDescription": "موقع النادي العلمي للمدرسة الوطنية العليا للإعلام الآلي (CSE).",
+    "description": "مركز رئيسي للنادي العلمي (CSE)، يوفر معلومات حول النادي وأقسامه وفعالياته. كان هذا أول مشروع لي كمهندس برمجيات.",
+    "image": "/placeholder.svg?height=400&width=800",
+    "technologies": [
+      "React",
+      "Vite"
+    ],
+    "timeline": "2024",
+    "liveUrl": "https://cse-hub.netlify.app/home",
+    "githubUrl": "https://github.com/samibentaiba/cse-hub",
+    "personalExperience": "أول مشروع مهم لي كمطور واجهة أمامية. تعاونت مع مصمم واجهة مستخدم/تجربة مستخدم لترجمة التصاميم إلى كود، مما وضع الأساس لمسيرتي المهنية في هندسة البرمجيات.",
+    "collaborators": ["لؤي دراجي (UI/UX)"]
+  },
+  {
+    "slug": "h2-springboot",
+    "fetchUrl": "https://github.com/samibentaiba/H2-SpringBoot",
+    "title": "Microservices & DevOps",
+    "shortDescription": "خدمات مصغرة Spring Boot مع قاعدة بيانات H2.",
+    "description": "مشروع تقني يوضح تنفيذ بنية الخدمات المصغرة باستخدام Spring Boot وقاعدة بيانات H2. يركز على منطق الخلفية، واستمرار البيانات، وممارسات DevOps.",
+    "image": "/placeholder.svg?height=400&width=800",
+    "technologies": [
+      "Java",
+      "Spring Boot",
+      "Angular",
+      "H2 Database",
+      "Microservices"
+    ],
+    "timeline": "2025",
+    "liveUrl": null,
+    "githubUrl": "https://github.com/samibentaiba/H2-SpringBoot",
+    "personalExperience": "وسعت مجموعة مهاراتي إلى الخلفية و DevOps من خلال العمل مع Java Spring Boot والخدمات المصغرة. أعطاني هذا المشروع فهمًا أعمق للبنية الكاملة وإدارة قواعد البيانات.",
     "collaborators": []
   },
   {

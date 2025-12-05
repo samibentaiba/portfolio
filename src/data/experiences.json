@@ -1,84 +1,59 @@
 [
   {
-    "role": "Senior Frontend Developer",
-    "company": "Tech Innovations Inc.",
-    "slug": "senior-frontend-developer",
-    "type": "Full-time",
-    "period": "Jan 2022 - Present",
+    "role": "Full Stack Developer",
+    "company": "ITC",
+    "slug": "itc-developer",
+    "type": "Contract",
+    "period": "Jun 2024 - Sep 2024",
     "location": "Remote",
-    "summary": "Leading frontend development for a SaaS platform with over 50,000 users.",
-    "description": "As a Senior Frontend Developer at Tech Innovations, I lead the development of our flagship SaaS product, focusing on creating intuitive user interfaces and optimizing performance.\n\nI collaborate with designers, product managers, and backend developers to implement new features and improve existing ones. I've introduced TypeScript and modern React patterns to our codebase, resulting in a 40% reduction in frontend bugs.\n\nI also mentor junior developers and contribute to architectural decisions that shape the future of our product.",
+    "summary": "Developed 'ITC Hub', a comprehensive internal platform for department and team management.",
+    "description": "Designed and built 'ITC Hub', an internal tool to streamline communication and project management. I was responsible for the full-stack development using Next.js and TypeScript. Key achievements include designing a complex relational database schema with Prisma, implementing Role-Based Access Control (RBAC) with Next-Auth for secure user management, and creating a responsive UI with Tailwind CSS.",
     "skills": [
-      "React",
-      "TypeScript",
       "Next.js",
-      "Redux",
-      "Jest",
-      "Cypress",
-      "CI/CD",
-      "Team Leadership",
-      "Code Reviews",
-      "Mentoring"
+      "TypeScript",
+      "Prisma",
+      "PostgreSQL",
+      "Next-Auth",
+      "Tailwind CSS",
+      "System Design"
     ],
     "projects": [
-      "Redesigned the dashboard UI, improving user engagement by 25%",
-      "Implemented a new authentication system with SSO support",
-      "Created a component library used across multiple products",
-      "Optimized application performance, reducing load time by 40%"
+      "ITC Hub - Internal communication and management platform"
     ]
   },
   {
-    "role": "Frontend Developer",
-    "company": "WebSolutions Co.",
-    "slug": "frontend-developer",
+    "role": "Junior Software Engineer",
+    "company": "Self-employed/Freelance",
+    "slug": "junior-software-engineer",
     "type": "Full-time",
-    "period": "Mar 2020 - Dec 2021",
-    "location": "New York, NY",
-    "summary": "Developed responsive web applications for clients across various industries.",
-    "description": "As a Frontend Developer at WebSolutions, I was responsible for building responsive and accessible web applications for clients in finance, healthcare, and e-commerce sectors.\n\nI worked in an agile team of 6 developers, participating in sprint planning, daily stand-ups, and retrospectives. I implemented pixel-perfect designs using React and styled-components, ensuring cross-browser compatibility and responsive layouts.\n\nI also collaborated with backend developers to integrate RESTful APIs and optimize data fetching strategies.",
+    "period": "2023 - Present",
+    "location": "Remote",
+    "summary": "Developing web and desktop applications, focusing on full-stack JavaScript/TypeScript and exploring Rust.",
+    "description": "As a Junior Software Engineer, I am developing various projects, including a portfolio website, the C-Studio IDE, and the Algis agricultural management system for a client. My focus is on using modern web technologies like Next.js, React, TypeScript, and Node.js, along with Prisma for database management. I am also gaining experience with Rust through projects like iShowOff and exploring software architecture and package management.",
     "skills": [
+      "TypeScript",
+      "JavaScript",
       "React",
-      "JavaScript",
-      "CSS/SCSS",
-      "HTML5",
-      "REST APIs",
+      "Next.js",
+      "Node.js",
+      "Prisma",
+      "PostgreSQL",
+      "SQLite",
+      "Electron",
+      "Rust",
       "Git",
-      "Agile Methodology",
-      "Cross-browser Testing",
-      "Responsive Design"
-    ],
-    "projects": [
-      "Built an e-commerce platform for a fashion retailer",
-      "Developed a patient portal for a healthcare provider",
-      "Created an interactive dashboard for a financial services company",
-      "Implemented a booking system for a hospitality client"
-    ]
-  },
-  {
-    "role": "Web Development Intern",
-    "company": "Digital Creatives",
-    "slug": "web-development-intern",
-    "type": "Internship",
-    "period": "Jun 2019 - Feb 2020",
-    "location": "Boston, MA",
-    "summary": "Assisted in developing websites and web applications for small businesses.",
-    "description": "As a Web Development Intern at Digital Creatives, I assisted the development team in building websites and web applications for small businesses and startups.\n\nI was responsible for implementing responsive layouts using HTML, CSS, and JavaScript, and maintaining existing client websites. I also participated in client meetings to understand requirements and present progress updates.\n\nThis internship provided me with valuable experience in a professional development environment and improved my technical and communication skills.",
-    "skills": [
+      "GitHub Actions",
+      "Docker",
+      "Tailwind CSS",
       "HTML",
-      "CSS",
-      "JavaScript",
-      "WordPress",
-      "Responsive Design",
-      "Client Communication",
-      "Time Management",
-      "Problem Solving"
+      "CSS"
     ],
     "projects": [
-      "Developed a portfolio website for a local photographer",
-      "Created a WordPress site for a restaurant with online ordering capabilities",
-      "Assisted in building a landing page for a mobile app startup",
-      "Maintained and updated content for multiple client websites"
+      "Developed and maintain personal portfolio website (Next.js, TypeScript)",
+      "Built C-Studio, a zero-setup C IDE for Windows (Electron, TypeScript, React)",
+      "Developing Algis, an agricultural management system (Next.js, TypeScript, Prisma, PostgreSQL - private client project)",
+      "Customized iShowOff, a Rust-based CLI tool, for GitHub profile README",
+      "Developed ITC Hub, an internal communication and project management platform (Next.js, TypeScript, Prisma, PostgreSQL)"
     ]
   }
-  
 ]

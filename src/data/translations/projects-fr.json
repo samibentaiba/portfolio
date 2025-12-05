@@ -42,25 +42,6 @@
     "collaborators": []
   },
   {
-    "title": "Plateforme E-commerce",
-    "slug": "ecommerce-platform",
-    "shortDescription": "Une boutique en ligne complète avec traitement des paiements",
-    "description": "Une plateforme e-commerce moderne construite avec Next.js, comprenant des listes de produits, un panier d'achat, une authentification utilisateur et l'intégration de Stripe pour les paiements.",
-    "image": "/placeholder.svg?height=400&width=800",
-    "technologies": [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "Stripe"
-    ],
-    "timeline": "3 mois (Jan 2023 - Mar 2023)",
-    "liveUrl": "https://example-ecommerce.vercel.app",
-    "githubUrl": "https://github.com/samibentaiba/ecommerce",
-    "personalExperience": "La construction de cette plateforme e-commerce a été une excellente expérience pour l'intégration d'API tierces comme Stripe et la gestion de l'état global pour le panier d'achat. Je me suis concentré sur la création d'une interface utilisateur propre et réactive et d'un processus de paiement sécurisé.",
-    "collaborators": []
-  },
-  {
     "slug": "itc-hub",
     "fetchUrl": "https://itc-hub.vercel.app",
     "title": "ITC Hub",
@@ -85,6 +66,135 @@
     "liveUrl": "https://itc-hub.vercel.app",
     "githubUrl": "https://github.com/samibentaiba/itc-hub",
     "personalExperience": "Le développement d'ITC Hub a été une immersion profonde dans le développement full-stack avec Next.js. Le plus grand défi a été de concevoir le schéma de la base de données relationnelle avec Prisma pour gérer les relations complexes entre les utilisateurs, les départements, les équipes et les tickets. L'implémentation du contrôle d'accès basé sur les rôles (RBAC) avec Next-Auth était une fonctionnalité essentielle pour garantir la sécurité des données. Ce projet a consolidé mes compétences dans la création d'applications web sécurisées, évolutives et riches en données.",
+    "collaborators": []
+  },
+  {
+    "slug": "remdani-dental",
+    "fetchUrl": "https://github.com/ismail-devmaster/finalProjectFe",
+    "title": "Centre Dentaire Remdani",
+    "shortDescription": "Site web pour le Centre Dentaire Remdani.",
+    "description": "Un site web professionnel pour le Centre Dentaire Remdani, présentant les services, les membres de l'équipe et les témoignages de patients. La plateforme offre une interface conviviale permettant aux patients de s'informer sur les soins dentaires et de contacter la clinique.",
+    "image": "/placeholder.svg?height=400&width=800",
+    "technologies": [
+      "React",
+      "Node.js",
+      "Tailwind CSS"
+    ],
+    "timeline": "2024",
+    "liveUrl": "https://ramdani.vercel.app",
+    "githubUrl": "https://github.com/ismail-devmaster/finalProjectFe",
+    "personalExperience": "J'ai collaboré en tant que développeur frontend sur ce projet, travaillant en étroite collaboration avec le développeur backend et le responsable du déploiement. J'ai également contribué au développement backend avec de petits commits, acquérant ainsi une expérience full-stack.",
+    "collaborators": ["Ismail (Backend)", "Zinnedine (Déploiement)"]
+  },
+  {
+    "slug": "sunrise-energy",
+    "fetchUrl": "https://github.com/samibentaiba/sunrise-energy",
+    "title": "Sunrise Energy",
+    "shortDescription": "Plateforme de solutions d'énergie renouvelable (Aperçu client).",
+    "description": "Une plateforme web moderne conçue pour une entreprise d'énergie renouvelable. Ce projet sert d'aperçu client pour démontrer le potentiel d'une présence numérique dans le secteur de l'énergie. Il présente un design propre et écologique et met en valeur les services et solutions.",
+    "image": "/placeholder.svg?height=400&width=800",
+    "technologies": [
+      "Next.js",
+      "TypeScript",
+      "Prisma",
+      "Tailwind CSS"
+    ],
+    "timeline": "1 mois (2024)",
+    "liveUrl": "https://sunrise-energy.vercel.app",
+    "githubUrl": "https://github.com/samibentaiba/sunrise-energy",
+    "personalExperience": "Ce projet m'a permis de me concentrer sur la création d'une interface professionnelle et visuellement attrayante pour un client corporatif. J'ai utilisé Next.js pour les performances et le référencement, garantissant que le site est rapide et facile à découvrir.",
+    "collaborators": []
+  },
+  {
+    "slug": "ai-horizons",
+    "fetchUrl": "https://github.com/samibentaiba/AiHorizons",
+    "title": "AiHorizons",
+    "shortDescription": "Plateforme de conférence et d'événements sur l'IA.",
+    "description": "Une plateforme dynamique pour une conférence sur l'IA, comprenant des calendriers d'événements, des profils de conférenciers et des inscriptions. Ce projet était un défi de développement rapide, livré en seulement 3 jours.",
+    "image": "/placeholder.svg?height=400&width=800",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Vite"
+    ],
+    "timeline": "3 jours (2025)",
+    "liveUrl": "https://ai-horizons.netlify.app",
+    "githubUrl": "https://github.com/samibentaiba/AiHorizons",
+    "personalExperience": "C'était un projet à haute intensité où j'ai collaboré étroitement avec un développeur backend et un designer UI/UX pour livrer un produit soigné dans un délai très court. Cela a testé ma capacité à travailler sous pression et à coordonner efficacement avec une équipe.",
+    "collaborators": ["Raouh Robo (Backend)", "Louai Derradji (UI/UX)"]
+  },
+  {
+    "slug": "itc-talks",
+    "fetchUrl": "https://github.com/samibentaiba/itc-talks",
+    "title": "ITC Talks",
+    "shortDescription": "Plateforme d'événements pour les conférences et présentations ITC.",
+    "description": "Une plateforme dédiée à l'hébergement et à la gestion des conférences ITC. Elle offre un espace aux conférenciers pour partager leurs connaissances et aux participants pour découvrir les événements à venir.",
+    "image": "/placeholder.svg?height=400&width=800",
+    "technologies": [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "timeline": "En cours (2025)",
+    "liveUrl": "https://itc-talks.vercel.app",
+    "githubUrl": "https://github.com/samibentaiba/itc-talks",
+    "personalExperience": "J'ai collaboré avec un designer UI/UX pour donner vie à la vision d'ITC Talks. Je me suis concentré sur la création d'une expérience utilisateur engageante et d'un flux de gestion de contenu fluide.",
+    "collaborators": ["Louai Derradji (UI/UX)"]
+  },
+  {
+    "slug": "itc-programming",
+    "fetchUrl": "https://github.com/samibentaiba/ITCP",
+    "title": "ITCP",
+    "shortDescription": "Site officiel du club de programmation ITC.",
+    "description": "Le site officiel du club de programmation ITC, conçu pour présenter les activités du club, les événements et les ressources pour les membres. Un effort collaboratif pour construire un centre communautaire.",
+    "image": "/placeholder.svg?height=400&width=800",
+    "technologies": [
+      "React",
+      "Vite",
+      "CSS"
+    ],
+    "timeline": "2024",
+    "liveUrl": "https://itc-programming.netlify.app",
+    "githubUrl": "https://github.com/samibentaiba/ITCP",
+    "personalExperience": "J'ai travaillé en tant que développeur frontend dans une équipe avec un développeur backend et un designer UI/UX. Ce projet a amélioré mes compétences en travail d'équipe et ma capacité à intégrer des composants frontend avec des API backend.",
+    "collaborators": ["Mohamed Rebbouh (Backend)", "Louai Derradji (UI/UX)"]
+  },
+  {
+    "slug": "cse-hub",
+    "fetchUrl": "https://github.com/samibentaiba/cse-hub",
+    "title": "CSE Hub",
+    "shortDescription": "Site web du Club Scientifique de l'ESI (CSE).",
+    "description": "Un hub central pour le Club Scientifique de l'ESI (CSE), fournissant des informations sur le club, ses départements et ses événements. C'était mon premier projet en tant qu'ingénieur logiciel.",
+    "image": "/placeholder.svg?height=400&width=800",
+    "technologies": [
+      "React",
+      "Vite"
+    ],
+    "timeline": "2024",
+    "liveUrl": "https://cse-hub.netlify.app/home",
+    "githubUrl": "https://github.com/samibentaiba/cse-hub",
+    "personalExperience": "Mon premier projet significatif en tant que développeur frontend. J'ai collaboré avec un designer UI/UX pour traduire les designs en code, posant les bases de ma carrière en ingénierie logicielle.",
+    "collaborators": ["Louai Derradji (UI/UX)"]
+  },
+  {
+    "slug": "h2-springboot",
+    "fetchUrl": "https://github.com/samibentaiba/H2-SpringBoot",
+    "title": "Microservices & DevOps",
+    "shortDescription": "Microservices Spring Boot avec base de données H2.",
+    "description": "Un projet technique démontrant la mise en œuvre d'une architecture de microservices utilisant Spring Boot et une base de données H2. Se concentre sur la logique backend, la persistance des données et les pratiques DevOps.",
+    "image": "/placeholder.svg?height=400&width=800",
+    "technologies": [
+      "Java",
+      "Spring Boot",
+      "Angular",
+      "H2 Database",
+      "Microservices"
+    ],
+    "timeline": "2025",
+    "liveUrl": null,
+    "githubUrl": "https://github.com/samibentaiba/H2-SpringBoot",
+    "personalExperience": "J'ai élargi mes compétences au backend et au DevOps en travaillant avec Java Spring Boot et les microservices. Ce projet m'a donné une compréhension plus approfondie de l'architecture full-stack et de la gestion de base de données.",
     "collaborators": []
   },
   {

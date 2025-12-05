@@ -8,26 +8,32 @@
       {
         "name": "React",
         "slug": "react",
-        "experience": "3 years",
-        "description": "React is a JavaScript library for building user interfaces. I've used React extensively to build single-page applications, focusing on component-based architecture and state management with hooks and context API."
+        "experience": "2+ years",
+        "description": "React is a JavaScript library for building user interfaces. I've used React extensively to build single-page applications and components within Next.js projects, focusing on component-based architecture and state management with hooks and context API."
       },
       {
         "name": "Next.js",
         "slug": "nextjs",
-        "experience": "2 years",
-        "description": "Next.js is a React framework that enables server-side rendering and static site generation. I've used Next.js to build performant and SEO-friendly web applications, leveraging its file-based routing system and API routes."
+        "experience": "2+ years",
+        "description": "Next.js is a React framework that enables server-side rendering and static site generation. I've used Next.js to build performant and SEO-friendly web applications, leveraging its file-based routing system and API routes in projects like my portfolio, ITC Hub, and Algis."
       },
       {
         "name": "TypeScript",
         "slug": "typescript",
-        "experience": "2 years",
-        "description": "TypeScript is a strongly typed programming language that builds on JavaScript. I use TypeScript in all my projects to ensure type safety and improve developer experience with better tooling and documentation."
+        "experience": "2+ years",
+        "description": "TypeScript is a strongly typed programming language that builds on JavaScript. I use TypeScript in most of my projects (portfolio, c-studio, algis, itc-hub) to ensure type safety and improve developer experience."
       },
       {
         "name": "Tailwind CSS",
         "slug": "tailwind",
-        "experience": "2 years",
-        "description": "Tailwind CSS is a utility-first CSS framework. I use Tailwind CSS to rapidly build custom designs without leaving HTML, focusing on responsive design and component consistency."
+        "experience": "2+ years",
+        "description": "Tailwind CSS is a utility-first CSS framework. I use Tailwind CSS to rapidly build custom designs without leaving HTML, focusing on responsive design and component consistency in my Next.js projects."
+      },
+      {
+        "name": "HTML & CSS",
+        "slug": "html-css",
+        "experience": "3+ years",
+        "description": "Core web technologies for structuring and styling web content. Used in all web-based projects."
       }
     ]
   },
@@ -40,58 +46,64 @@
       {
         "name": "Node.js",
         "slug": "nodejs",
-        "experience": "3 years",
-        "description": "Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. I've used Node.js to build RESTful APIs, microservices, and server-side applications, focusing on performance and scalability."
+        "experience": "2+ years",
+        "description": "Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. I've used Node.js for server-side logic in Next.js applications and for scripting, including within the c-studio Electron project."
       },
       {
         "name": "Express",
         "slug": "express",
-        "experience": "3 years",
-        "description": "Express is a minimal and flexible Node.js web application framework. I've used Express to build RESTful APIs and web servers, with a focus on middleware architecture and routing."
+        "experience": "1+ year",
+        "description": "Express is a minimal and flexible Node.js web application framework. Used for building RESTful APIs."
       },
       {
         "name": "PostgreSQL",
         "slug": "postgresql",
-        "experience": "2 years",
-        "description": "PostgreSQL is an advanced, open-source relational database. I've used PostgreSQL for data storage in various applications, leveraging its robust features for complex queries and data integrity."
+        "experience": "1+ year",
+        "description": "PostgreSQL is an advanced, open-source relational database. I've used PostgreSQL with Prisma for data storage in projects like ITC Hub and Algis."
       },
       {
         "name": "Prisma",
         "slug": "prisma",
-        "experience": "1 year",
-        "description": "Prisma is a next-generation ORM for Node.js and TypeScript. I use Prisma to interact with databases, taking advantage of its type-safety and intuitive API for database operations."
+        "experience": "1+ year",
+        "description": "Prisma is a next-generation ORM for Node.js and TypeScript. I use Prisma to interact with databases (PostgreSQL and SQLite) in projects like ITC Hub and Algis."
+      },
+      {
+        "name": "SQLite",
+        "slug": "sqlite",
+        "experience": "1+ year",
+        "description": "SQLite is a C-language library that implements a small, fast, self-contained, high-reliability, full-featured, SQL database engine. Used for local development in the Algis project."
       }
     ]
   },
   {
-    "category": "DevOps & Tools",
-    "slug": "devops-and-tools",
-    "description": "Streamlining development and deployment processes",
-    "longDescription": "DevOps practices and tools bridge the gap between development and operations, enabling faster and more reliable software delivery. These skills allow me to automate workflows, manage infrastructure, and ensure consistent deployment processes.\n\nBy implementing DevOps practices, I can reduce the time between writing code and deploying it to production, while maintaining high quality and reliability. This area requires knowledge of containerization, CI/CD pipelines, infrastructure as code, and monitoring systems.",
+    "category": "Other Technologies & Tools",
+    "slug": "other-tech-and-tools",
+    "description": "Desktop development, version control, and other tools",
+    "longDescription": "Beyond web development, I have experience with desktop application development using Electron, version control with Git, and exploring languages like Rust.",
     "items": [
       {
-        "name": "Git",
-        "slug": "git",
-        "experience": "4 years",
-        "description": "Git is a distributed version control system. I use Git daily for version control, collaboration, and managing code changes across projects."
+        "name": "Electron",
+        "slug": "electron",
+        "experience": "1 year",
+        "description": "Electron is a framework for creating native applications with web technologies like JavaScript, HTML, and CSS. Used to build the C-Studio IDE."
+      },
+      {
+        "name": "Rust",
+        "slug": "rust",
+        "experience": "<1 year",
+        "description": "Rust is a language focused on performance and safety. Explored through the iShowOff project and interested in its potential for enterprise solutions."
+      },
+      {
+        "name": "Git & GitHub",
+        "slug": "git-github",
+        "experience": "3+ years",
+        "description": "Git is a distributed version control system. I use Git and GitHub daily for version control, collaboration, and managing code changes across projects, including using GitHub Actions for CI/CD."
       },
       {
         "name": "Docker",
         "slug": "docker",
-        "experience": "2 years",
-        "description": "Docker is a platform for developing, shipping, and running applications in containers. I use Docker to create consistent development environments and simplify deployment processes."
-      },
-      {
-        "name": "GitHub Actions",
-        "slug": "github-actions",
-        "experience": "1 year",
-        "description": "GitHub Actions is a CI/CD platform integrated with GitHub. I use GitHub Actions to automate testing, building, and deployment workflows for my projects."
-      },
-      {
-        "name": "Vercel",
-        "slug": "vercel",
-        "experience": "2 years",
-        "description": "Vercel is a deployment and collaboration platform for frontend developers. I use Vercel for deploying and hosting web applications, taking advantage of its serverless functions and edge network."
+        "experience": "1+ year",
+        "description": "Docker is a platform for developing, shipping, and running applications in containers. Used to create consistent development environments."
       }
     ]
   }

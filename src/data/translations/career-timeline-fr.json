@@ -2,7 +2,7 @@
   "branches": [
     {
       "id": "main-career",
-      "name": "Parcours Professionnel Principal",
+      "name": "Développement Logiciel",
       "color": "#00d4ff",
       "points": [
         {
@@ -11,20 +11,12 @@
           "branch": "main-career",
           "milestone": {
             "id": "c1",
-            "title": "Premier Emploi",
-            "description": "Début en tant que Développeur Junior chez TechCorp",
-            "size": "large",
-            "type": "job",
-            "date": "Jan 2020"
-          },
-          "linkedTo": [
-            {
-              "targetId": "os1"
-            },
-            {
-              "targetId": "sk1"
-            }
-          ]
+            "title": "Début de l'apprentissage",
+            "description": "Début de l'apprentissage du développement web (HTML, CSS, JS)",
+            "size": "medium",
+            "type": "skill",
+            "date": "2021-2022"
+          }
         },
         {
           "id": "c2",
@@ -32,20 +24,12 @@
           "branch": "main-career",
           "milestone": {
             "id": "c2",
-            "title": "Promotion au Niveau Intermédiaire",
-            "description": "Prise en charge de projets plus complexes",
+            "title": "React & Node.js",
+            "description": "Concentration sur React et Node.js pour le développement full-stack",
             "size": "medium",
-            "type": "achievement",
-            "date": "Juin 2020"
-          },
-          "linkedTo": [
-            {
-              "targetId": "os2"
-            },
-            {
-              "targetId": "sp1"
-            }
-          ]
+            "type": "skill",
+            "date": "2022-2023"
+          }
         },
         {
           "id": "c3",
@@ -53,178 +37,105 @@
           "branch": "main-career",
           "milestone": {
             "id": "c3",
-            "title": "Direction de Projet Backend",
-            "description": "Architecture de microservices",
+            "title": "Next.js & TypeScript",
+            "description": "Adoption de Next.js et TypeScript pour les projets",
             "size": "large",
-            "type": "project",
-            "date": "Déc 2020"
-          },
-          "linkedTo": [
-            {
-              "targetId": "sp1"
-            },
-            {
-              "targetId": "sk1"
-            }
-          ]
+            "type": "skill",
+            "date": "2023"
+          }
         },
         {
           "id": "c4",
-          "x": 4,
+          "x": 3,
           "branch": "main-career",
           "milestone": {
             "id": "c4",
-            "title": "Développeur Senior",
-            "description": "Responsabilités de chef d'équipe",
+            "title": "Ingénieur Logiciel Junior",
+            "description": "Travail sur des projets freelance/personnels (Portfolio, C-Studio, Algis, ITC Hub)",
             "size": "large",
-            "type": "achievement",
-            "date": "Sep 2021"
+            "type": "job",
+            "date": "2023-Présent"
           },
           "linkedTo": [
-            {
-              "targetId": "sp2"
-            },
-            {
-              "targetId": "sk2"
-            },
-            {
-              "targetId": "os3"
-            }
+            {"targetId": "p1"},
+            {"targetId": "p2"},
+            {"targetId": "p3"},
+            {"targetId": "p4"}
+          ]
+        },
+        {
+          "id": "c5",
+          "x": 3.5,
+          "branch": "main-career",
+          "milestone": {
+            "id": "c5",
+            "title": "Développeur Full Stack @ ITC",
+            "description": "Développement de la plateforme interne ITC Hub",
+            "size": "medium",
+            "type": "job",
+            "date": "Juin 2024 - Sep 2024"
+          },
+          "linkedTo": [
+            {"targetId": "p2"}
           ]
         }
       ]
     },
     {
-      "id": "open-source",
-      "name": "Open Source",
+      "id": "projects",
+      "name": "Projets Clés",
       "color": "#ff006e",
       "points": [
         {
-          "id": "os1",
-          "x": 0,
-          "branch": "open-source",
+          "id": "p1",
+          "x": 3,
+          "branch": "projects",
           "milestone": {
-            "id": "os1",
-            "title": "Première Contribution",
-            "description": "Contribution à la bibliothèque React",
+            "id": "p1",
+            "title": "Portfolio",
+            "description": "Site portfolio personnel (Next.js, TypeScript)",
             "size": "small",
             "type": "project",
-            "date": "Fév 2020"
+            "date": "2023-2024"
           }
         },
         {
-          "id": "os2",
-          "x": 2,
-          "branch": "open-source",
+          "id": "p2",
+          "x": 3.5,
+          "branch": "projects",
           "milestone": {
-            "id": "os2",
-            "title": "Devenu Mainteneur",
-            "description": "Accepté comme mainteneur principal",
-            "size": "large",
-            "type": "achievement",
-            "date": "Août 2020"
+            "id": "p2",
+            "title": "ITC Hub",
+            "description": "Plateforme interne (Next.js, TypeScript, Prisma)",
+            "size": "medium",
+            "type": "project",
+            "date": "2024"
           }
         },
         {
-          "id": "os3",
+          "id": "p3",
           "x": 4,
-          "branch": "open-source",
+          "branch": "projects",
           "milestone": {
-            "id": "os3",
-            "title": "1k Étoiles",
-            "description": "Projet personnel a gagné en popularité",
-            "size": "large",
-            "type": "achievement",
-            "date": "Juin 2021"
-          },
-          "linkedTo": [
-            {
-              "targetId": "sp2"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "speaking",
-      "name": "Conférences & Présentations",
-      "color": "#7209b7",
-      "points": [
-        {
-          "id": "sp1",
-          "x": 1,
-          "branch": "speaking",
-          "milestone": {
-            "id": "sp1",
-            "title": "Première Présentation",
-            "description": "Présentation locale sur React",
-            "size": "small",
-            "type": "achievement",
-            "date": "Mai 2020"
-          }
-        },
-        {
-          "id": "sp2",
-          "x": 3,
-          "branch": "speaking",
-          "milestone": {
-            "id": "sp2",
-            "title": "Conférencier",
-            "description": "Conférence React sur l'optimisation des performances",
-            "size": "large",
-            "type": "achievement",
-            "date": "Oct 2021"
-          },
-          "linkedTo": [
-            {
-              "targetId": "sk2"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "skills",
-      "name": "Développement de Compétences",
-      "color": "#3a0ca3",
-      "points": [
-        {
-          "id": "sk1",
-          "x": 1,
-          "branch": "skills",
-          "milestone": {
-            "id": "sk1",
-            "title": "Maîtrise de TypeScript",
-            "description": "Cours avancé TypeScript terminé",
+            "id": "p3",
+            "title": "C-Studio",
+            "description": "IDE C (Electron, TypeScript, React)",
             "size": "medium",
-            "type": "skill",
-            "date": "Avr 2020"
+            "type": "project",
+            "date": "2024"
           }
         },
         {
-          "id": "sk2",
-          "x": 3,
-          "branch": "skills",
+          "id": "p4",
+          "x": 4.5,
+          "branch": "projects",
           "milestone": {
-            "id": "sk2",
-            "title": "Certification AWS",
-            "description": "Certification AWS Solutions Architect",
+            "id": "p4",
+            "title": "Algis",
+            "description": "Système de gestion agricole (Next.js, TypeScript, Prisma - Client)",
             "size": "large",
-            "type": "skill",
-            "date": "Sep 2021"
-          }
-        },
-        {
-          "id": "sk3",
-          "x": 5,
-          "branch": "skills",
-          "milestone": {
-            "id": "sk3",
-            "title": "Fondamentaux DevOps",
-            "description": "Maîtrise des pipelines CI/CD",
-            "size": "medium",
-            "type": "skill",
-            "date": "Fév 2022"
+            "type": "project",
+            "date": "2024-Présent"
           }
         }
       ]
