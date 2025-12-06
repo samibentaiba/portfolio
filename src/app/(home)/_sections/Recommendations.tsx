@@ -20,7 +20,7 @@ export default function Recommendations() {
       : recommendationsEn;
 
   return (
-    <section id="recommendations" className="w-full mb-6 p-3 sm:p-4">
+    <section id="recommendations" className="w-full scroll-mt-16 px-4 sm:px-0">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
