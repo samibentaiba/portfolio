@@ -12,24 +12,30 @@
           "milestone": {
             "id": "c1",
             "title": "مطور واجهات @ CSE",
-            "description": "انضممت إلى CSE USDB دفعة 2023 كمطور واجهات أمامية. تعاونت مع مصممي UI/UX (Figma) لبناء CSE Hub.",
+            "description": "أول مشروع جماعي. بناء CSE Hub مع React & Vite، التعاون مع مصممي UI/UX.",
             "size": "medium",
             "type": "job",
-            "date": "2023"
-          }
+            "date": "بداية 2024"
+          },
+          "linkedTo": [
+            {"targetId": "p1"}
+          ]
         },
         {
           "id": "c2",
-          "x": 1, 
+          "x": 1,
           "branch": "main-career",
           "milestone": {
             "id": "c2",
-            "title": "أسس Full Stack",
-            "description": "إتقان React و Node.js و TypeScript. البدء في بناء تطبيقات ويب معقدة.",
-            "size": "medium",
-            "type": "skill",
-            "date": "بداية 2024"
-          }
+            "title": "مهندس ITC Hub",
+            "description": "تطوعت كمهندس ومطور Full Stack. تصميم مخطط قاعدة البيانات مع Prisma، تنفيذ RBAC.",
+            "size": "large",
+            "type": "job",
+            "date": "يونيو-سبتمبر 2024"
+          },
+          "linkedTo": [
+            {"targetId": "p2"}
+          ]
         },
         {
           "id": "c3",
@@ -37,40 +43,8 @@
           "branch": "main-career",
           "milestone": {
             "id": "c3",
-            "title": "أول مشروع جماعي",
-            "description": "تسليم CSE Hub. تعلم سير عمل Git والتعاون الجماعي.",
-            "size": "large",
-            "type": "project",
-            "date": "منتصف 2024"
-          },
-          "linkedTo": [
-            {"targetId": "p1"}
-          ]
-        },
-        {
-          "id": "c4",
-          "x": 3,
-          "branch": "main-career",
-          "milestone": {
-            "id": "c4",
-            "title": "مهندس ITC Hub",
-            "description": "تطوعت كمهندس ومطور Full Stack. صممت هندسة النظام وقاعدة البيانات لـ ITC Hub.",
-            "size": "large",
-            "type": "job",
-            "date": "منتصف-أواخر 2024"
-          },
-          "linkedTo": [
-            {"targetId": "p2"}
-          ]
-        },
-        {
-          "id": "c5",
-          "x": 4,
-          "branch": "main-career",
-          "milestone": {
-            "id": "c5",
-            "title": "عمل حر و Next.js",
-            "description": "عمل احترافي للعملاء (Remdani Dental). إتقان Next.js (SSR, API Routes) و SEO.",
+            "title": "عمل حر وعملاء",
+            "description": "مشاريع العملاء: Remdani Dental, Mosquito Killer DZ, COD Simulation. إتقان Next.js و SEO.",
             "size": "large",
             "type": "job",
             "date": "أواخر 2024"
@@ -80,19 +54,69 @@
           ]
         },
         {
+          "id": "c4",
+          "x": 3,
+          "branch": "main-career",
+          "milestone": {
+            "id": "c4",
+            "title": "تطوير Algis",
+            "description": "نظام مؤسسي لوزارة الفلاحة. نمذجة بيانات معقدة، PostgreSQL، التحكم في الوصول.",
+            "size": "large",
+            "type": "project",
+            "date": "2024-الحاضر"
+          },
+          "linkedTo": [
+            {"targetId": "p4"}
+          ]
+        },
+        {
+          "id": "c5",
+          "x": 4,
+          "branch": "main-career",
+          "milestone": {
+            "id": "c5",
+            "title": "C-Studio IDE",
+            "description": "IDE سطح المكتب مع Electron. مترجم MinGW مدمج، طرفية تفاعلية، تجربة بدون إعداد.",
+            "size": "large",
+            "type": "project",
+            "date": "أكتوبر-ديسمبر 2024"
+          },
+          "linkedTo": [
+            {"targetId": "p5"}
+          ]
+        },
+        {
           "id": "c6",
           "x": 5,
           "branch": "main-career",
           "milestone": {
             "id": "c6",
-            "title": "هندسة متقدمة",
-            "description": "استكشاف DevOps والخدمات المصغرة (Spring Boot) وإتقان IDEs (Neovim/VS Code). التوسع في C++ و Rust و Go.",
+            "title": "تعاون سريع",
+            "description": "AiHorizons تم تسليمه في 3 أيام. منصة ITC Talks. إتقان العمل تحت الضغط.",
+            "size": "medium",
+            "type": "project",
+            "date": "2025"
+          },
+          "linkedTo": [
+            {"targetId": "p6"},
+            {"targetId": "p7"}
+          ]
+        },
+        {
+          "id": "c7",
+          "x": 6,
+          "branch": "main-career",
+          "milestone": {
+            "id": "c7",
+            "title": "DevOps والخدمات المصغرة",
+            "description": "Spring Boot, Docker, خطوط CI/CD. استكشاف Rust وهندسة المؤسسات.",
             "size": "medium",
             "type": "skill",
             "date": "2025"
           },
           "linkedTo": [
-            {"targetId": "p4"}
+            {"targetId": "p8"},
+            {"targetId": "s3"}
           ]
         }
       ]
@@ -104,12 +128,12 @@
       "points": [
         {
           "id": "p1",
-          "x": 2,
+          "x": 0,
           "branch": "projects",
           "milestone": {
             "id": "p1",
             "title": "CSE Hub",
-            "description": "مشروع جماعي (React, Vite)",
+            "description": "مشروع جماعي (React, Vite, Figma)",
             "size": "medium",
             "type": "project",
             "date": "2024"
@@ -117,25 +141,25 @@
         },
         {
           "id": "p2",
-          "x": 3,
+          "x": 1,
           "branch": "projects",
           "milestone": {
             "id": "p2",
             "title": "ITC Hub",
-            "description": "منصة داخلية (Full Stack, Prisma)",
-            "size": "medium",
+            "description": "منصة داخلية (Full Stack, Prisma, PostgreSQL)",
+            "size": "large",
             "type": "project",
-            "date": "2024"
+            "date": "يونيو-سبتمبر 2024"
           }
         },
         {
           "id": "p3",
-          "x": 4,
+          "x": 2,
           "branch": "projects",
           "milestone": {
             "id": "p3",
-            "title": "Remdani Dental",
-            "description": "مشروع عميل (Next.js, SEO)",
+            "title": "مشاريع العملاء",
+            "description": "Remdani Dental, Mosquito Killer DZ",
             "size": "medium",
             "type": "project",
             "date": "2024"
@@ -143,14 +167,125 @@
         },
         {
           "id": "p4",
-          "x": 5,
+          "x": 3,
           "branch": "projects",
           "milestone": {
             "id": "p4",
-            "title": "H2 SpringBoot",
-            "description": "تعلم DevOps والخدمات المصغرة",
+            "title": "Algis",
+            "description": "إدارة زراعية (وزارة الفلاحة)",
+            "size": "large",
+            "type": "project",
+            "date": "2024-الحاضر"
+          }
+        },
+        {
+          "id": "p5",
+          "x": 4,
+          "branch": "projects",
+          "milestone": {
+            "id": "p5",
+            "title": "C-Studio",
+            "description": "IDE سطح المكتب (Electron, MinGW, TypeScript)",
+            "size": "large",
+            "type": "project",
+            "date": "أكتوبر-ديسمبر 2024"
+          }
+        },
+        {
+          "id": "p6",
+          "x": 5,
+          "branch": "projects",
+          "milestone": {
+            "id": "p6",
+            "title": "AiHorizons",
+            "description": "منصة مؤتمر الذكاء الاصطناعي (تسليم في 3 أيام)",
             "size": "medium",
             "type": "project",
+            "date": "2025"
+          }
+        },
+        {
+          "id": "p7",
+          "x": 5,
+          "branch": "projects",
+          "milestone": {
+            "id": "p7",
+            "title": "ITC Talks",
+            "description": "منصة الفعاليات (تعاوني)",
+            "size": "medium",
+            "type": "project",
+            "date": "2025"
+          }
+        },
+        {
+          "id": "p8",
+          "x": 6,
+          "branch": "projects",
+          "milestone": {
+            "id": "p8",
+            "title": "Microservices",
+            "description": "Spring Boot, تعلم DevOps",
+            "size": "medium",
+            "type": "project",
+            "date": "2025"
+          }
+        }
+      ]
+    },
+    {
+      "id": "skills",
+      "name": "المهارات والتعلم",
+      "color": "#8b5cf6",
+      "points": [
+        {
+          "id": "s1",
+          "x": 0,
+          "branch": "skills",
+          "milestone": {
+            "id": "s1",
+            "title": "إتقان الواجهات الأمامية",
+            "description": "React, TypeScript, Tailwind CSS, shadcn/ui",
+            "size": "medium",
+            "type": "skill",
+            "date": "2024"
+          }
+        },
+        {
+          "id": "s2",
+          "x": 2,
+          "branch": "skills",
+          "milestone": {
+            "id": "s2",
+            "title": "Full Stack والهندسة",
+            "description": "Next.js, Prisma, PostgreSQL, تصميم الأنظمة",
+            "size": "large",
+            "type": "skill",
+            "date": "منتصف 2024"
+          }
+        },
+        {
+          "id": "s3",
+          "x": 4,
+          "branch": "skills",
+          "milestone": {
+            "id": "s3",
+            "title": "DevOps والتوثيق",
+            "description": "Docker, CI/CD, التوثيق التقني، إتقان Linux",
+            "size": "large",
+            "type": "skill",
+            "date": "أواخر 2024"
+          }
+        },
+        {
+          "id": "s4",
+          "x": 6,
+          "branch": "skills",
+          "milestone": {
+            "id": "s4",
+            "title": "هندسة المؤسسات",
+            "description": "الخدمات المصغرة، Spring Boot، استكشاف Rust",
+            "size": "medium",
+            "type": "skill",
             "date": "2025"
           }
         }

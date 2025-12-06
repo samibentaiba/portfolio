@@ -12,24 +12,30 @@
           "milestone": {
             "id": "c1",
             "title": "Dév Frontend @ CSE",
-            "description": "Rejoint CSE USDB promo 2023 comme Développeur Frontend. Collaboration avec designers UI/UX (Figma) pour CSE Hub.",
+            "description": "Premier projet d'équipe. Construction de CSE Hub avec React & Vite, collaboration avec designers UI/UX.",
             "size": "medium",
             "type": "job",
-            "date": "2023"
-          }
+            "date": "Début 2024"
+          },
+          "linkedTo": [
+            {"targetId": "p1"}
+          ]
         },
         {
           "id": "c2",
-          "x": 1, 
+          "x": 1,
           "branch": "main-career",
           "milestone": {
             "id": "c2",
-            "title": "Fondations Full Stack",
-            "description": "Maîtrise de React, Node.js et TypeScript. Début de la création d'applications web complexes.",
-            "size": "medium",
-            "type": "skill",
-            "date": "Début 2024"
-          }
+            "title": "Architecte ITC Hub",
+            "description": "Bénévole Architecte & Dév Full Stack. Conception schéma BDD avec Prisma, implémentation RBAC.",
+            "size": "large",
+            "type": "job",
+            "date": "Juin-Sep 2024"
+          },
+          "linkedTo": [
+            {"targetId": "p2"}
+          ]
         },
         {
           "id": "c3",
@@ -37,40 +43,8 @@
           "branch": "main-career",
           "milestone": {
             "id": "c3",
-            "title": "Premier Projet d'Équipe",
-            "description": "Livraison du CSE Hub. Apprentissage des workflows Git et de la collaboration d'équipe.",
-            "size": "large",
-            "type": "project",
-            "date": "Mi 2024"
-          },
-          "linkedTo": [
-            {"targetId": "p1"}
-          ]
-        },
-        {
-          "id": "c4",
-          "x": 3,
-          "branch": "main-career",
-          "milestone": {
-            "id": "c4",
-            "title": "Architecte ITC Hub",
-            "description": "Bénévole en tant qu'Architecte & Dév Full Stack. Conception de l'architecture système et base de données pour ITC Hub.",
-            "size": "large",
-            "type": "job",
-            "date": "Mi-Fin 2024"
-          },
-          "linkedTo": [
-            {"targetId": "p2"}
-          ]
-        },
-        {
-          "id": "c5",
-          "x": 4,
-          "branch": "main-career",
-          "milestone": {
-            "id": "c5",
-            "title": "Freelance & Next.js",
-            "description": "Travail client professionnel (Remdani Dental). Maîtrise de Next.js (SSR, Routes API) et SEO.",
+            "title": "Freelance & Clients",
+            "description": "Projets clients: Remdani Dental, Mosquito Killer DZ, COD Simulation. Maîtrise Next.js et SEO.",
             "size": "large",
             "type": "job",
             "date": "Fin 2024"
@@ -80,19 +54,69 @@
           ]
         },
         {
+          "id": "c4",
+          "x": 3,
+          "branch": "main-career",
+          "milestone": {
+            "id": "c4",
+            "title": "Développement Algis",
+            "description": "Système entreprise pour Ministère de l'Agriculture. Modélisation complexe, PostgreSQL, contrôle d'accès.",
+            "size": "large",
+            "type": "project",
+            "date": "2024-Présent"
+          },
+          "linkedTo": [
+            {"targetId": "p4"}
+          ]
+        },
+        {
+          "id": "c5",
+          "x": 4,
+          "branch": "main-career",
+          "milestone": {
+            "id": "c5",
+            "title": "C-Studio IDE",
+            "description": "IDE desktop avec Electron. Compilateur MinGW intégré, terminal interactif, expérience zéro-configuration.",
+            "size": "large",
+            "type": "project",
+            "date": "Oct-Déc 2024"
+          },
+          "linkedTo": [
+            {"targetId": "p5"}
+          ]
+        },
+        {
           "id": "c6",
           "x": 5,
           "branch": "main-career",
           "milestone": {
             "id": "c6",
-            "title": "Ingénierie Avancée",
-            "description": "Exploration DevOps, Microservices (Spring Boot) et maîtrise des IDE (Neovim/VS Code). Ouverture vers C++, Rust & Go.",
+            "title": "Collaboration Rapide",
+            "description": "AiHorizons livré en 3 jours. Plateforme ITC Talks. Maîtrise du travail sous pression.",
+            "size": "medium",
+            "type": "project",
+            "date": "2025"
+          },
+          "linkedTo": [
+            {"targetId": "p6"},
+            {"targetId": "p7"}
+          ]
+        },
+        {
+          "id": "c7",
+          "x": 6,
+          "branch": "main-career",
+          "milestone": {
+            "id": "c7",
+            "title": "DevOps & Microservices",
+            "description": "Spring Boot, Docker, pipelines CI/CD. Exploration de Rust et architecture entreprise.",
             "size": "medium",
             "type": "skill",
             "date": "2025"
           },
           "linkedTo": [
-            {"targetId": "p4"}
+            {"targetId": "p8"},
+            {"targetId": "s3"}
           ]
         }
       ]
@@ -104,12 +128,12 @@
       "points": [
         {
           "id": "p1",
-          "x": 2,
+          "x": 0,
           "branch": "projects",
           "milestone": {
             "id": "p1",
             "title": "CSE Hub",
-            "description": "Projet d'Équipe (React, Vite)",
+            "description": "Projet d'Équipe (React, Vite, Figma)",
             "size": "medium",
             "type": "project",
             "date": "2024"
@@ -117,25 +141,25 @@
         },
         {
           "id": "p2",
-          "x": 3,
+          "x": 1,
           "branch": "projects",
           "milestone": {
             "id": "p2",
             "title": "ITC Hub",
-            "description": "Plateforme Interne (Full Stack, Prisma)",
-            "size": "medium",
+            "description": "Plateforme Interne (Full Stack, Prisma, PostgreSQL)",
+            "size": "large",
             "type": "project",
-            "date": "2024"
+            "date": "Juin-Sep 2024"
           }
         },
         {
           "id": "p3",
-          "x": 4,
+          "x": 2,
           "branch": "projects",
           "milestone": {
             "id": "p3",
-            "title": "Remdani Dental",
-            "description": "Projet Client (Next.js, SEO)",
+            "title": "Projets Clients",
+            "description": "Remdani Dental, Mosquito Killer DZ",
             "size": "medium",
             "type": "project",
             "date": "2024"
@@ -143,14 +167,125 @@
         },
         {
           "id": "p4",
-          "x": 5,
+          "x": 3,
           "branch": "projects",
           "milestone": {
             "id": "p4",
-            "title": "H2 SpringBoot",
-            "description": "Apprentissage DevOps & Microservices",
+            "title": "Algis",
+            "description": "Gestion Agricole (Ministère de l'Agriculture)",
+            "size": "large",
+            "type": "project",
+            "date": "2024-Présent"
+          }
+        },
+        {
+          "id": "p5",
+          "x": 4,
+          "branch": "projects",
+          "milestone": {
+            "id": "p5",
+            "title": "C-Studio",
+            "description": "IDE Desktop (Electron, MinGW, TypeScript)",
+            "size": "large",
+            "type": "project",
+            "date": "Oct-Déc 2024"
+          }
+        },
+        {
+          "id": "p6",
+          "x": 5,
+          "branch": "projects",
+          "milestone": {
+            "id": "p6",
+            "title": "AiHorizons",
+            "description": "Plateforme Conférence IA (livré en 3 jours)",
             "size": "medium",
             "type": "project",
+            "date": "2025"
+          }
+        },
+        {
+          "id": "p7",
+          "x": 5,
+          "branch": "projects",
+          "milestone": {
+            "id": "p7",
+            "title": "ITC Talks",
+            "description": "Plateforme Événements (Collaboratif)",
+            "size": "medium",
+            "type": "project",
+            "date": "2025"
+          }
+        },
+        {
+          "id": "p8",
+          "x": 6,
+          "branch": "projects",
+          "milestone": {
+            "id": "p8",
+            "title": "Microservices",
+            "description": "Spring Boot, Apprentissage DevOps",
+            "size": "medium",
+            "type": "project",
+            "date": "2025"
+          }
+        }
+      ]
+    },
+    {
+      "id": "skills",
+      "name": "Compétences & Apprentissage",
+      "color": "#8b5cf6",
+      "points": [
+        {
+          "id": "s1",
+          "x": 0,
+          "branch": "skills",
+          "milestone": {
+            "id": "s1",
+            "title": "Maîtrise Frontend",
+            "description": "React, TypeScript, Tailwind CSS, shadcn/ui",
+            "size": "medium",
+            "type": "skill",
+            "date": "2024"
+          }
+        },
+        {
+          "id": "s2",
+          "x": 2,
+          "branch": "skills",
+          "milestone": {
+            "id": "s2",
+            "title": "Full Stack & Architecture",
+            "description": "Next.js, Prisma, PostgreSQL, Conception Système",
+            "size": "large",
+            "type": "skill",
+            "date": "Mi 2024"
+          }
+        },
+        {
+          "id": "s3",
+          "x": 4,
+          "branch": "skills",
+          "milestone": {
+            "id": "s3",
+            "title": "DevOps & Documentation",
+            "description": "Docker, CI/CD, Documentation Technique, maîtrise Linux",
+            "size": "large",
+            "type": "skill",
+            "date": "Fin 2024"
+          }
+        },
+        {
+          "id": "s4",
+          "x": 6,
+          "branch": "skills",
+          "milestone": {
+            "id": "s4",
+            "title": "Ingénierie Entreprise",
+            "description": "Microservices, Spring Boot, exploration Rust",
+            "size": "medium",
+            "type": "skill",
             "date": "2025"
           }
         }
