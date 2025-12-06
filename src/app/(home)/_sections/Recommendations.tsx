@@ -20,7 +20,7 @@ export default function Recommendations() {
       : recommendationsEn;
 
   return (
-    <section id="recommendations" className="w-full py-10">
+    <section id="recommendations" className="w-full mb-6 p-3 sm:p-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -51,13 +51,13 @@ export default function Recommendations() {
               <p className="flex-1 text-muted-foreground italic">&quot;{rec.text}&quot;</p>
               
               <div className="flex items-center gap-4 pt-4 border-t">
-                <div>
+                <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
                   <Image
                     src={rec.image}
                     alt={rec.name}
                     width={48}
                     height={48}
-                    className="w-12 h-12 rounded-[50%] justify-center flex align-center"
+                    className="w-full h-full object-cover"
                   />
                 </div>
                 <div>
