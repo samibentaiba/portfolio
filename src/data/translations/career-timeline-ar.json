@@ -2,7 +2,7 @@
   "branches": [
     {
       "id": "main-career",
-      "name": "المسار المهني الرئيسي",
+      "name": "تطوير البرمجيات",
       "color": "#00d4ff",
       "points": [
         {
@@ -11,41 +11,25 @@
           "branch": "main-career",
           "milestone": {
             "id": "c1",
-            "title": "الوظيفة الأولى",
-            "description": "بدأت كمطور مبتدئ في TechCorp",
-            "size": "large",
+            "title": "مطور واجهات @ CSE",
+            "description": "انضممت إلى CSE USDB دفعة 2023 كمطور واجهات أمامية. تعاونت مع مصممي UI/UX (Figma) لبناء CSE Hub.",
+            "size": "medium",
             "type": "job",
-            "date": "يناير 2020"
-          },
-          "linkedTo": [
-            {
-              "targetId": "os1"
-            },
-            {
-              "targetId": "sk1"
-            }
-          ]
+            "date": "2023"
+          }
         },
         {
           "id": "c2",
-          "x": 1,
+          "x": 1, 
           "branch": "main-career",
           "milestone": {
             "id": "c2",
-            "title": "الترقية إلى المستوى المتوسط",
-            "description": "تولي مشاريع أكثر تعقيدًا",
+            "title": "أسس Full Stack",
+            "description": "إتقان React و Node.js و TypeScript. البدء في بناء تطبيقات ويب معقدة.",
             "size": "medium",
-            "type": "achievement",
-            "date": "يونيو 2020"
-          },
-          "linkedTo": [
-            {
-              "targetId": "os2"
-            },
-            {
-              "targetId": "sp1"
-            }
-          ]
+            "type": "skill",
+            "date": "بداية 2024"
+          }
         },
         {
           "id": "c3",
@@ -53,178 +37,121 @@
           "branch": "main-career",
           "milestone": {
             "id": "c3",
-            "title": "قيادة مشروع الواجهة الخلفية",
-            "description": "تصميم بنية الخدمات الصغيرة",
+            "title": "أول مشروع جماعي",
+            "description": "تسليم CSE Hub. تعلم سير عمل Git والتعاون الجماعي.",
             "size": "large",
             "type": "project",
-            "date": "ديسمبر 2020"
+            "date": "منتصف 2024"
           },
           "linkedTo": [
-            {
-              "targetId": "sp1"
-            },
-            {
-              "targetId": "sk1"
-            }
+            {"targetId": "p1"}
           ]
         },
         {
           "id": "c4",
-          "x": 4,
+          "x": 3,
           "branch": "main-career",
           "milestone": {
             "id": "c4",
-            "title": "مطور أول",
-            "description": "مسؤوليات قيادة الفريق",
+            "title": "مهندس ITC Hub",
+            "description": "تطوعت كمهندس ومطور Full Stack. صممت هندسة النظام وقاعدة البيانات لـ ITC Hub.",
             "size": "large",
-            "type": "achievement",
-            "date": "سبتمبر 2021"
+            "type": "job",
+            "date": "منتصف-أواخر 2024"
           },
           "linkedTo": [
-            {
-              "targetId": "sp2"
-            },
-            {
-              "targetId": "sk2"
-            },
-            {
-              "targetId": "os3"
-            }
+            {"targetId": "p2"}
+          ]
+        },
+        {
+          "id": "c5",
+          "x": 4,
+          "branch": "main-career",
+          "milestone": {
+            "id": "c5",
+            "title": "عمل حر و Next.js",
+            "description": "عمل احترافي للعملاء (Remdani Dental). إتقان Next.js (SSR, API Routes) و SEO.",
+            "size": "large",
+            "type": "job",
+            "date": "أواخر 2024"
+          },
+          "linkedTo": [
+            {"targetId": "p3"}
+          ]
+        },
+        {
+          "id": "c6",
+          "x": 5,
+          "branch": "main-career",
+          "milestone": {
+            "id": "c6",
+            "title": "هندسة متقدمة",
+            "description": "استكشاف DevOps والخدمات المصغرة (Spring Boot) وإتقان IDEs (Neovim/VS Code). التوسع في C++ و Rust و Go.",
+            "size": "medium",
+            "type": "skill",
+            "date": "2025"
+          },
+          "linkedTo": [
+            {"targetId": "p4"}
           ]
         }
       ]
     },
     {
-      "id": "open-source",
-      "name": "المصادر المفتوحة",
+      "id": "projects",
+      "name": "مشاريع رئيسية",
       "color": "#ff006e",
       "points": [
         {
-          "id": "os1",
-          "x": 0,
-          "branch": "open-source",
-          "milestone": {
-            "id": "os1",
-            "title": "أول مساهمة",
-            "description": "المساهمة في مكتبة React",
-            "size": "small",
-            "type": "project",
-            "date": "فبراير 2020"
-          }
-        },
-        {
-          "id": "os2",
+          "id": "p1",
           "x": 2,
-          "branch": "open-source",
+          "branch": "projects",
           "milestone": {
-            "id": "os2",
-            "title": "أصبحت مشرفًا",
-            "description": "تم قبولي كمشرف أساسي",
-            "size": "large",
-            "type": "achievement",
-            "date": "أغسطس 2020"
+            "id": "p1",
+            "title": "CSE Hub",
+            "description": "مشروع جماعي (React, Vite)",
+            "size": "medium",
+            "type": "project",
+            "date": "2024"
           }
         },
         {
-          "id": "os3",
+          "id": "p2",
+          "x": 3,
+          "branch": "projects",
+          "milestone": {
+            "id": "p2",
+            "title": "ITC Hub",
+            "description": "منصة داخلية (Full Stack, Prisma)",
+            "size": "medium",
+            "type": "project",
+            "date": "2024"
+          }
+        },
+        {
+          "id": "p3",
           "x": 4,
-          "branch": "open-source",
+          "branch": "projects",
           "milestone": {
-            "id": "os3",
-            "title": "1000 نجمة",
-            "description": "المشروع الشخصي حظي بانتشار واسع",
-            "size": "large",
-            "type": "achievement",
-            "date": "يونيو 2021"
-          },
-          "linkedTo": [
-            {
-              "targetId": "sp2"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "speaking",
-      "name": "التحدث والمؤتمرات",
-      "color": "#7209b7",
-      "points": [
-        {
-          "id": "sp1",
-          "x": 1,
-          "branch": "speaking",
-          "milestone": {
-            "id": "sp1",
-            "title": "أول محاضرة",
-            "description": "عرض تقديمي محلي حول React",
-            "size": "small",
-            "type": "achievement",
-            "date": "مايو 2020"
-          }
-        },
-        {
-          "id": "sp2",
-          "x": 3,
-          "branch": "speaking",
-          "milestone": {
-            "id": "sp2",
-            "title": "متحدث في مؤتمر",
-            "description": "محاضرة في React Conf حول تحسين الأداء",
-            "size": "large",
-            "type": "achievement",
-            "date": "أكتوبر 2021"
-          },
-          "linkedTo": [
-            {
-              "targetId": "sk2"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "skills",
-      "name": "تطوير المهارات",
-      "color": "#3a0ca3",
-      "points": [
-        {
-          "id": "sk1",
-          "x": 1,
-          "branch": "skills",
-          "milestone": {
-            "id": "sk1",
-            "title": "إتقان TypeScript",
-            "description": "إكمال دورة TypeScript المتقدمة",
+            "id": "p3",
+            "title": "Remdani Dental",
+            "description": "مشروع عميل (Next.js, SEO)",
             "size": "medium",
-            "type": "skill",
-            "date": "أبريل 2020"
+            "type": "project",
+            "date": "2024"
           }
         },
         {
-          "id": "sk2",
-          "x": 3,
-          "branch": "skills",
-          "milestone": {
-            "id": "sk2",
-            "title": "شهادة AWS",
-            "description": "شهادة AWS Solutions Architect",
-            "size": "large",
-            "type": "skill",
-            "date": "سبتمبر 2021"
-          }
-        },
-        {
-          "id": "sk3",
+          "id": "p4",
           "x": 5,
-          "branch": "skills",
+          "branch": "projects",
           "milestone": {
-            "id": "sk3",
-            "title": "أساسيات DevOps",
-            "description": "إتقان خطوط CI/CD",
+            "id": "p4",
+            "title": "H2 SpringBoot",
+            "description": "تعلم DevOps والخدمات المصغرة",
             "size": "medium",
-            "type": "skill",
-            "date": "فبراير 2022"
+            "type": "project",
+            "date": "2025"
           }
         }
       ]

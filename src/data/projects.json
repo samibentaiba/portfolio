@@ -1,5 +1,46 @@
 [
   {
+    "slug": "cod-simulation",
+    "fetchUrl": "https://github.com/samibentaiba/calculator",
+    "title": "COD Simulation Dashboard",
+    "shortDescription": "Comprehensive business metrics and ROI calculator for COD e-commerce.",
+    "description": "A comprehensive calculator and dashboard designed for Cash on Delivery (COD) e-commerce businesses. This application helps track business metrics, operational costs, and calculate ROI in real-time. Features include dual UI modes (Guest & Productivity), theme support, and detailed metrics tracking for operations, call center, and shipping.",
+    "image": "/placeholder.svg?height=400&width=800",
+    "technologies": [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Lucide React"
+    ],
+    "timeline": "2024",
+    "liveUrl": "https://calculator-delta-flax.vercel.app",
+    "githubUrl": "https://github.com/samibentaiba/calculator",
+    "personalExperience": "Built this tool to help e-commerce business owners visualize their expenses and profits. It focuses on providing a clear, real-time financial overview.",
+    "collaborators": []
+  },
+  {
+    "slug": "mosquito-killer",
+    "fetchUrl": "https://github.com/samibentaiba/mosquito-killer-2",
+    "title": "Mosquito Killer DZ",
+    "shortDescription": "Landing page for selling mosquito killer devices.",
+    "description": "A high-conversion landing page designed for the Algerian market to sell mosquito killer devices. Features a streamlined order form, product showcase, and integration with local delivery services.",
+    "image": "/placeholder.svg?height=400&width=800",
+    "technologies": [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "System Architecture",
+      "Technical Documentation"
+    ],
+    "timeline": "2024",
+    "liveUrl": "https://mosquito-killer-2.vercel.app",
+    "githubUrl": "https://github.com/samibentaiba/mosquito-killer-2",
+    "personalExperience": "Designed to maximize conversion rates for a local e-commerce product. Focused on speed, mobile responsiveness, and a frictionless checkout process.",
+    "collaborators": []
+  },
+  {
     "slug": "algis",
     "title": "Algis",
     "shortDescription": "Agricultural Management System for Algeria's Ministry of Agriculture.",
@@ -11,8 +52,12 @@
       "TypeScript",
       "Prisma",
       "PostgreSQL",
-      "NextAuth",
-      "Tailwind CSS"
+      "NextAuth.js",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Linux Ecosystem",
+      "System Architecture",
+      "Technical Documentation"
     ],
     "timeline": "Ongoing (2024 - Present)",
     "liveUrl": "https://algis-preview.vercel.app",
@@ -32,7 +77,11 @@
       "TypeScript",
       "React",
       "MinGW-w64",
-      "Node.js"
+      "Node.js",
+      "Windows",
+      "Linux Ecosystem",
+      "System Architecture",
+      "Technical Documentation"
     ],
     "timeline": "2 months (Oct 2024 - Dec 2024)",
     "liveUrl": null,
@@ -56,11 +105,14 @@
       "shadcn/ui",
       "Prisma",
       "PostgreSQL",
-      "Next-Auth",
+      "NextAuth.js",
       "React Hook Form",
       "Zod",
       "Nodemailer",
-      "Recharts"
+      "Recharts",
+      "Linux Ecosystem",
+      "System Architecture",
+      "Technical Documentation"
     ],
     "timeline": "4 months (Jun 2024 - Sep 2024)",
     "liveUrl": "https://itc-hub.vercel.app",
@@ -78,7 +130,8 @@
     "technologies": [
       "React",
       "Node.js",
-      "Tailwind CSS"
+      "Tailwind CSS",
+      "Linux Ecosystem"
     ],
     "timeline": "2024",
     "liveUrl": "https://ramdani.vercel.app",
@@ -97,7 +150,8 @@
       "Next.js",
       "TypeScript",
       "Prisma",
-      "Tailwind CSS"
+      "Tailwind CSS",
+      "shadcn/ui"
     ],
     "timeline": "1 month (2024)",
     "liveUrl": "https://sunrise-energy.vercel.app",
@@ -116,7 +170,8 @@
       "React",
       "TypeScript",
       "Tailwind CSS",
-      "Vite"
+      "Vite",
+      "Figma"
     ],
     "timeline": "3 days (2025)",
     "liveUrl": "https://ai-horizons.netlify.app",
@@ -134,7 +189,9 @@
     "technologies": [
       "Next.js",
       "TypeScript",
-      "Tailwind CSS"
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Figma"
     ],
     "timeline": "Ongoing (2025)",
     "liveUrl": "https://itc-talks.vercel.app",
@@ -152,7 +209,11 @@
     "technologies": [
       "React",
       "Vite",
-      "CSS"
+      "CSS",
+      "Figma",
+      "System Architecture",
+      "Technical Documentation",
+      "Python"
     ],
     "timeline": "2024",
     "liveUrl": "https://itc-programming.netlify.app",
@@ -164,12 +225,13 @@
     "slug": "cse-hub",
     "fetchUrl": "https://github.com/samibentaiba/cse-hub",
     "title": "CSE Hub",
-    "shortDescription": "Scientific Club of ESI (CSE) website.",
-    "description": "A central hub for the Scientific Club of ESI (CSE), providing information about the club, its departments, and events. This was my first project as a software engineer.",
+    "shortDescription": "CSE USDB promo 2023 website.",
+    "description": "A central hub for the CSE USDB promo 2023, providing information about the club, its departments, and events. This was my first project as a software engineer.",
     "image": "/placeholder.svg?height=400&width=800",
     "technologies": [
       "React",
-      "Vite"
+      "Vite",
+      "Figma"
     ],
     "timeline": "2024",
     "liveUrl": "https://cse-hub.netlify.app/home",
@@ -189,7 +251,10 @@
       "Spring Boot",
       "Angular",
       "H2 Database",
-      "Microservices"
+      "Microservices",
+      "Linux Ecosystem",
+      "System Architecture",
+      "Technical Documentation"
     ],
     "timeline": "2025",
     "liveUrl": null,
@@ -207,7 +272,11 @@
     "technologies": [
       "Rust",
       "GitHub Actions",
-      "CI/CD"
+      "CI/CD",
+      "Linux Ecosystem",
+      "IDEs & Editors",
+      "System Architecture",
+      "Technical Documentation"
     ],
     "timeline": "1 month (Apr 2024)",
     "liveUrl": null,

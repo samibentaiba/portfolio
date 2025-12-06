@@ -2,7 +2,7 @@
 "use client";
 
 import Image from "next/image";
-import { memo, useCallback } from "react";
+import { memo, useCallback, useState, useEffect } from "react";
 import {
   Card,
   CardContent,
@@ -21,6 +21,7 @@ import {
 import {
   Project,
 } from "@/types";
+import { getProjectImage } from "@/lib/utils";
 // ────────────────────────────────
 // Projects Section
 // ────────────────────────────────
@@ -81,6 +82,12 @@ const ProjectCard = memo(function ProjectCard({
   router: { push: (path: string) => void };
   t: (key: string) => string;
 }) {
+  const [imgSrc, setImgSrc] = useState(getProjectImage(project));
+
+  useEffect(() => {
+    setImgSrc(getProjectImage(project));
+  }, [project]);
+
   const handleImageClick = useCallback(() => {
     router.push(`/projects/${project.slug}`);
   }, [router, project.slug]);
@@ -117,14 +124,15 @@ const ProjectCard = memo(function ProjectCard({
 
   return (
     <Card className="overflow-hidden transition-all hover:shadow-md h-full flex flex-col">
-      <div className="relative aspect-video overflow-hidden cursor-pointer">
-        <Image
-          src={project.image || "/placeholder.svg?height=200&width=400"}
+        <div className="relative aspect-video overflow-hidden cursor-pointer">
+          <Image
+            src={imgSrc}
           alt={project.title || "Project Image"}
           fill
           onClick={handleImageClick}
           className="object-cover transition-all hover:scale-105"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          onError={() => setImgSrc("/placeholder.svg?height=400&width=800")}
         />
       </div>
       <CardHeader className="p-4 sm:pb-3">

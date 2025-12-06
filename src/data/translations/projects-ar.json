@@ -1,5 +1,46 @@
 [
   {
+    "slug": "cod-simulation",
+    "fetchUrl": "https://github.com/samibentaiba/calculator",
+    "title": "لوحة تحكم محاكاة COD",
+    "shortDescription": "حاسبة شاملة لمقاييس الأعمال وعائد الاستثمار للتجارة الإلكترونية بنظام الدفع عند الاستلام.",
+    "description": "حاسبة ولوحة تحكم شاملة مصممة لشركات التجارة الإلكترونية التي تعمل بنظام الدفع عند الاستلام (COD). يساعد هذا التطبيق في تتبع مقاييس الأعمال والتكاليف التشغيلية وحساب عائد الاستثمار في الوقت الفعلي. تشمل الميزات وضعي واجهة مستخدم مزدوجين (ضيف وإنتاجية)، ودعم السمات، وتتبع تفصيلي للمقاييس للعمليات ومركز الاتصال والشحن.",
+    "image": "/placeholder.svg?height=400&width=800",
+    "technologies": [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Lucide React"
+    ],
+    "timeline": "2024",
+    "liveUrl": "https://calculator-delta-flax.vercel.app",
+    "githubUrl": "https://github.com/samibentaiba/calculator",
+    "personalExperience": "بنيت هذه الأداة لمساعدة أصحاب أعمال التجارة الإلكترونية على تصور نفقاتهم وأرباحهم. تركز على تقديم نظرة عامة مالية واضحة وفورية.",
+    "collaborators": []
+  },
+  {
+    "slug": "mosquito-killer",
+    "fetchUrl": "https://github.com/samibentaiba/mosquito-killer-2",
+    "title": "قاتل البعوض DZ",
+    "shortDescription": "صفحة هبوط لبيع أجهزة قتل البعوض.",
+    "description": "صفحة هبوط عالية التحويل مصممة للسوق الجزائري لبيع أجهزة قتل البعوض. تتميز بنموذج طلب مبسط، وعرض للمنتج، وتكامل مع خدمات التوصيل المحلية.",
+    "image": "/placeholder.svg?height=400&width=800",
+    "technologies": [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "هندسة النظام",
+      "التوثيق التقني"
+    ],
+    "timeline": "2024",
+    "liveUrl": "https://mosquito-killer-2.vercel.app",
+    "githubUrl": "https://github.com/samibentaiba/mosquito-killer-2",
+    "personalExperience": "صممت لتعظيم معدلات التحويل لمنتج تجارة إلكترونية محلي. ركزت على السرعة، والاستجابة للجوال، وعملية دفع خالية من الاحتكاك.",
+    "collaborators": []
+  },
+  {
     "slug": "algis",
     "title": "Algis",
     "shortDescription": "نظام إدارة زراعية لوزارة الفلاحة الجزائرية.",
@@ -11,8 +52,12 @@
       "TypeScript",
       "Prisma",
       "PostgreSQL",
-      "NextAuth",
-      "Tailwind CSS"
+      "NextAuth.js",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "نظام Linux",
+      "هندسة النظام",
+      "التوثيق التقني"
     ],
     "timeline": "مستمر (2024 - الآن)",
     "liveUrl": "https://algis-preview.vercel.app",
@@ -32,7 +77,11 @@
       "TypeScript",
       "React",
       "MinGW-w64",
-      "Node.js"
+      "Node.js",
+      "Windows",
+      "نظام Linux",
+      "هندسة النظام",
+      "التوثيق التقني"
     ],
     "timeline": "شهرين (أكتوبر 2024 - ديسمبر 2024)",
     "liveUrl": null,
@@ -56,11 +105,14 @@
       "shadcn/ui",
       "Prisma",
       "PostgreSQL",
-      "Next-Auth",
+      "NextAuth.js",
       "React Hook Form",
       "Zod",
       "Nodemailer",
-      "Recharts"
+      "Recharts",
+      "نظام Linux",
+      "هندسة النظام",
+      "التوثيق التقني"
     ],
     "timeline": "4 أشهر (يونيو 2024 - سبتمبر 2024)",
     "liveUrl": "https://itc-hub.vercel.app",
@@ -78,7 +130,8 @@
     "technologies": [
       "React",
       "Node.js",
-      "Tailwind CSS"
+      "Tailwind CSS",
+      "نظام Linux"
     ],
     "timeline": "2024",
     "liveUrl": "https://ramdani.vercel.app",
@@ -97,7 +150,8 @@
       "Next.js",
       "TypeScript",
       "Prisma",
-      "Tailwind CSS"
+      "Tailwind CSS",
+      "shadcn/ui"
     ],
     "timeline": "شهر واحد (2024)",
     "liveUrl": "https://sunrise-energy.vercel.app",
@@ -116,7 +170,8 @@
       "React",
       "TypeScript",
       "Tailwind CSS",
-      "Vite"
+      "Vite",
+      "Figma"
     ],
     "timeline": "3 أيام (2025)",
     "liveUrl": "https://ai-horizons.netlify.app",
@@ -134,7 +189,9 @@
     "technologies": [
       "Next.js",
       "TypeScript",
-      "Tailwind CSS"
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Figma"
     ],
     "timeline": "مستمر (2025)",
     "liveUrl": "https://itc-talks.vercel.app",
@@ -152,7 +209,11 @@
     "technologies": [
       "React",
       "Vite",
-      "CSS"
+      "CSS",
+      "Figma",
+      "هندسة النظام",
+      "التوثيق التقني",
+      "Python"
     ],
     "timeline": "2024",
     "liveUrl": "https://itc-programming.netlify.app",
@@ -164,12 +225,13 @@
     "slug": "cse-hub",
     "fetchUrl": "https://github.com/samibentaiba/cse-hub",
     "title": "CSE Hub",
-    "shortDescription": "موقع النادي العلمي للمدرسة الوطنية العليا للإعلام الآلي (CSE).",
-    "description": "مركز رئيسي للنادي العلمي (CSE)، يوفر معلومات حول النادي وأقسامه وفعالياته. كان هذا أول مشروع لي كمهندس برمجيات.",
+    "shortDescription": "موقع CSE USDB promo 2023.",
+    "description": "مركز رئيسي لـ CSE USDB promo 2023، يوفر معلومات حول النادي وأقسامه وفعالياته. كان هذا أول مشروع لي كمهندس برمجيات.",
     "image": "/placeholder.svg?height=400&width=800",
     "technologies": [
       "React",
-      "Vite"
+      "Vite",
+      "Figma"
     ],
     "timeline": "2024",
     "liveUrl": "https://cse-hub.netlify.app/home",
@@ -189,7 +251,10 @@
       "Spring Boot",
       "Angular",
       "H2 Database",
-      "Microservices"
+      "Microservices",
+      "نظام Linux",
+      "هندسة النظام",
+      "التوثيق التقني"
     ],
     "timeline": "2025",
     "liveUrl": null,
@@ -207,7 +272,11 @@
     "technologies": [
       "Rust",
       "GitHub Actions",
-      "CI/CD"
+      "CI/CD",
+      "نظام Linux",
+      "IDEs ومحررات النصوص",
+      "هندسة النظام",
+      "التوثيق التقني"
     ],
     "timeline": "شهر واحد (أبريل 2024)",
     "liveUrl": null,

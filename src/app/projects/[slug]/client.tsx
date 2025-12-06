@@ -1,5 +1,7 @@
 "use client";
 
+import { useState, useEffect } from "react";
+
 import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -8,10 +10,18 @@ import { Calendar, Download, ExternalLink, Github, Users } from "lucide-react";
 import { useLanguage } from "@/components/language-provider";
 import { Skill } from "@/components/skill";
 import { useProject } from "./hook";
+import { getProjectImage } from "@/lib/utils";
 
 export default function ProjectClient() {
   const { t } = useLanguage();
   const { project } = useProject();
+  const [imgSrc, setImgSrc] = useState<string>("");
+
+  useEffect(() => {
+    if (project) {
+      setImgSrc(getProjectImage(project));
+    }
+  }, [project]);
 
   if (!project) {
     return null;
@@ -39,10 +49,12 @@ export default function ProjectClient() {
 
         <div className="relative aspect-video overflow-hidden rounded-lg mb-6 sm:mb-8 w-full">
           <Image
-            src={project.image || "/placeholder.svg?height=400&width=800"}
+            src={imgSrc || "/placeholder.svg?height=400&width=800"}
             alt={project.title}
             fill
+            priority
             className="object-cover"
+            onError={() => setImgSrc("/placeholder.svg?height=400&width=800")}
           />
         </div>
 

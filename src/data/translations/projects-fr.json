@@ -1,5 +1,46 @@
 [
   {
+    "slug": "cod-simulation",
+    "fetchUrl": "https://github.com/samibentaiba/calculator",
+    "title": "Tableau de Bord Simulation COD",
+    "shortDescription": "Calculateur complet de métriques commerciales et de ROI pour le e-commerce COD.",
+    "description": "Un calculateur et tableau de bord complet conçu pour les entreprises de e-commerce en paiement à la livraison (COD). Cette application permet de suivre les métriques commerciales, les coûts opérationnels et de calculer le ROI en temps réel. Les fonctionnalités incluent deux modes d'interface utilisateur (Invité & Productivité), le support des thèmes, et un suivi détaillé des métriques pour les opérations, le centre d'appels et l'expédition.",
+    "image": "/placeholder.svg?height=400&width=800",
+    "technologies": [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Lucide React"
+    ],
+    "timeline": "2024",
+    "liveUrl": "https://calculator-delta-flax.vercel.app",
+    "githubUrl": "https://github.com/samibentaiba/calculator",
+    "personalExperience": "J'ai construit cet outil pour aider les propriétaires d'entreprises de e-commerce à visualiser leurs dépenses et leurs bénéfices. Il se concentre sur la fourniture d'une vue d'ensemble financière claire et en temps réel.",
+    "collaborators": []
+  },
+  {
+    "slug": "mosquito-killer",
+    "fetchUrl": "https://github.com/samibentaiba/mosquito-killer-2",
+    "title": "Mosquito Killer DZ",
+    "shortDescription": "Page de destination pour la vente d'appareils anti-moustiques.",
+    "description": "Une page de destination à fort taux de conversion conçue pour le marché algérien pour vendre des appareils anti-moustiques. Dispose d'un formulaire de commande simplifié, d'une vitrine de produits et d'une intégration avec les services de livraison locaux.",
+    "image": "/placeholder.svg?height=400&width=800",
+    "technologies": [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Architecture Système",
+      "Documentation Technique"
+    ],
+    "timeline": "2024",
+    "liveUrl": "https://mosquito-killer-2.vercel.app",
+    "githubUrl": "https://github.com/samibentaiba/mosquito-killer-2",
+    "personalExperience": "Conçu pour maximiser les taux de conversion pour un produit de e-commerce local. Axé sur la vitesse, la réactivité mobile et un processus de paiement sans friction.",
+    "collaborators": []
+  },
+  {
     "slug": "algis",
     "title": "Algis",
     "shortDescription": "Système de gestion agricole pour le Ministère de l'Agriculture algérien.",
@@ -11,8 +52,12 @@
       "TypeScript",
       "Prisma",
       "PostgreSQL",
-      "NextAuth",
-      "Tailwind CSS"
+      "NextAuth.js",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Écosystème Linux",
+      "Architecture Système",
+      "Documentation Technique"
     ],
     "timeline": "En cours (2024 - Présent)",
     "liveUrl": "https://algis-preview.vercel.app",
@@ -32,7 +77,11 @@
       "TypeScript",
       "React",
       "MinGW-w64",
-      "Node.js"
+      "Node.js",
+      "Windows",
+      "Écosystème Linux",
+      "Architecture Système",
+      "Documentation Technique"
     ],
     "timeline": "2 mois (Oct 2024 - Déc 2024)",
     "liveUrl": null,
@@ -56,11 +105,14 @@
       "shadcn/ui",
       "Prisma",
       "PostgreSQL",
-      "Next-Auth",
+      "NextAuth.js",
       "React Hook Form",
       "Zod",
       "Nodemailer",
-      "Recharts"
+      "Recharts",
+      "Écosystème Linux",
+      "Architecture Système",
+      "Documentation Technique"
     ],
     "timeline": "4 mois (Juin 2024 - Sep 2024)",
     "liveUrl": "https://itc-hub.vercel.app",
@@ -78,7 +130,8 @@
     "technologies": [
       "React",
       "Node.js",
-      "Tailwind CSS"
+      "Tailwind CSS",
+      "Écosystème Linux"
     ],
     "timeline": "2024",
     "liveUrl": "https://ramdani.vercel.app",
@@ -97,7 +150,8 @@
       "Next.js",
       "TypeScript",
       "Prisma",
-      "Tailwind CSS"
+      "Tailwind CSS",
+      "shadcn/ui"
     ],
     "timeline": "1 mois (2024)",
     "liveUrl": "https://sunrise-energy.vercel.app",
@@ -116,7 +170,8 @@
       "React",
       "TypeScript",
       "Tailwind CSS",
-      "Vite"
+      "Vite",
+      "Figma"
     ],
     "timeline": "3 jours (2025)",
     "liveUrl": "https://ai-horizons.netlify.app",
@@ -134,7 +189,9 @@
     "technologies": [
       "Next.js",
       "TypeScript",
-      "Tailwind CSS"
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Figma"
     ],
     "timeline": "En cours (2025)",
     "liveUrl": "https://itc-talks.vercel.app",
@@ -152,7 +209,11 @@
     "technologies": [
       "React",
       "Vite",
-      "CSS"
+      "CSS",
+      "Figma",
+      "Architecture Système",
+      "Documentation Technique",
+      "Python"
     ],
     "timeline": "2024",
     "liveUrl": "https://itc-programming.netlify.app",
@@ -164,12 +225,13 @@
     "slug": "cse-hub",
     "fetchUrl": "https://github.com/samibentaiba/cse-hub",
     "title": "CSE Hub",
-    "shortDescription": "Site web du Club Scientifique de l'ESI (CSE).",
-    "description": "Un hub central pour le Club Scientifique de l'ESI (CSE), fournissant des informations sur le club, ses départements et ses événements. C'était mon premier projet en tant qu'ingénieur logiciel.",
+    "shortDescription": "Site web du CSE USDB promo 2023.",
+    "description": "Un hub central pour le CSE USDB promo 2023, fournissant des informations sur le club, ses départements et ses événements. C'était mon premier projet en tant qu'ingénieur logiciel.",
     "image": "/placeholder.svg?height=400&width=800",
     "technologies": [
       "React",
-      "Vite"
+      "Vite",
+      "Figma"
     ],
     "timeline": "2024",
     "liveUrl": "https://cse-hub.netlify.app/home",
@@ -189,7 +251,10 @@
       "Spring Boot",
       "Angular",
       "H2 Database",
-      "Microservices"
+      "Microservices",
+      "Écosystème Linux",
+      "Architecture Système",
+      "Documentation Technique"
     ],
     "timeline": "2025",
     "liveUrl": null,
@@ -207,7 +272,11 @@
     "technologies": [
       "Rust",
       "GitHub Actions",
-      "CI/CD"
+      "CI/CD",
+      "Écosystème Linux",
+      "IDEs & Éditeurs",
+      "Architecture Système",
+      "Documentation Technique"
     ],
     "timeline": "1 mois (Avr 2024)",
     "liveUrl": null,

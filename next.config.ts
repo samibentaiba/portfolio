@@ -40,6 +40,12 @@ const nextConfig: NextConfig = {
         port: '3000',
         pathname: '/**', // Allow any path on this host
       },
+      {
+        protocol: 'https',
+        hostname: 'image.thum.io',
+        port: '',
+        pathname: '/**',
+      },  
     ],
   },
 };

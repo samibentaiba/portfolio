@@ -28,6 +28,30 @@
         "slug": "tailwind",
         "experience": "سنتان",
         "description": "Tailwind CSS هو إطار عمل CSS يعتمد على الأدوات المساعدة. أستخدم Tailwind CSS لبناء تصاميم مخصصة بسرعة دون مغادرة HTML، مع التركيز على التصميم المتجاوب واتساق المكونات."
+      },
+      {
+        "name": "shadcn/ui",
+        "slug": "shadcn-ui",
+        "experience": "سنة واحدة",
+        "description": "مجموعة من المكونات القابلة لإعادة الاستخدام مبنية باستخدام Radix UI و Tailwind CSS. أستخدمها لبناء واجهات مستخدم سهلة الوصول وقابلة للتخصيص في مشاريع Next.js الخاصة بي."
+      },
+      {
+        "name": "Vite",
+        "slug": "vite",
+        "experience": "سنة واحدة",
+        "description": "Vite هي أداة بناء تهدف إلى توفير تجربة تطوير أسرع وأخف لمشاريع الويب الحديثة. أستخدمها لمشاريع React الخاصة بي."
+      },
+      {
+        "name": "Angular",
+        "slug": "angular",
+        "experience": "أقل من سنة",
+        "description": "Angular هي منصة لبناء تطبيقات الويب للأجهزة المحمولة وسطح المكتب. لدي خبرة بها من خلال مشروع H2-SpringBoot."
+      },
+      {
+        "name": "Electron",
+        "slug": "electron",
+        "experience": "سنة واحدة",
+        "description": "Electron هو إطار عمل لإنشاء تطبيقات أصلية بتقنيات الويب مثل JavaScript و HTML و CSS. استخدمته لبناء C-Studio IDE."
       }
     ]
   },
@@ -60,6 +84,156 @@
         "slug": "prisma",
         "experience": "سنة واحدة",
         "description": "Prisma هو ORM من الجيل التالي لـ Node.js و TypeScript. أستخدم Prisma للتفاعل مع قواعد البيانات، مستفيدًا من أمان النوع وواجهة برمجة التطبيقات البديهية لعمليات قاعدة البيانات."
+      },
+      {
+        "name": "Java",
+        "slug": "java",
+        "experience": "سنة واحدة",
+        "description": "Java هي لغة برمجة كائنية التوجه عالية المستوى. أستخدمها لتطوير الواجهة الخلفية مع Spring Boot."
+      },
+      {
+        "name": "Spring Boot",
+        "slug": "spring-boot",
+        "experience": "سنة واحدة",
+        "description": "Spring Boot هو إطار عمل مفتوح المصدر يعتمد على Java يستخدم لإنشاء خدمات مصغرة. أستخدمه لبناء خدمات خلفية قوية وقابلة للتوسع."
+      },
+      {
+        "name": "Next.js",
+        "slug": "nextjs-backend",
+        "experience": "سنتان",
+        "description": "أستفيد من Next.js للتطوير الشامل (Full Stack)، باستخدام مسارات API وإجراءات الخادم لبناء منطق خلفي آمن وقابل للتوسع مباشرة داخل التطبيق."
+      },
+      {
+        "name": "NextAuth.js",
+        "slug": "next-auth",
+        "experience": "سنة واحدة",
+        "description": "حل مصادقة كامل مفتوح المصدر لتطبيقات Next.js. أستخدمه للتعامل مع مصادقة المستخدم الآمنة وإدارة الجلسات."
+      }
+    ]
+  },
+  {
+    "category": "لغات البرمجة",
+    "slug": "programming-languages",
+    "description": "اللغات التي أنا على دراية بها أو استكشفتها",
+    "longDescription": "لدي أساس قوي في العديد من لغات البرمجة. أنا على دراية تامة بـ C و Bash، حيث استخدمتهما لبرمجة النظام والأتمتة. لقد استكشفت أيضًا مجموعة متنوعة من اللغات الأخرى لتوسيع فهمي للنماذج المختلفة، بما في ذلك C++ و C# و Python و Go و Haskell.",
+    "items": [
+      {
+        "name": "TypeScript",
+        "slug": "typescript",
+        "experience": "متمكن",
+        "description": "لغتي الأساسية لتطوير الويب، مما يضمن أمان النوع وجودة الكود."
+      },
+      {
+        "name": "JavaScript",
+        "slug": "javascript",
+        "experience": "متمكن",
+        "description": "فهم عميق لميزات ES6+ ومفاهيم اللغة الأساسية."
+      },
+      {
+        "name": "C",
+        "slug": "c-lang",
+        "experience": "متمكن",
+        "description": "أنا على دراية تامة بـ C، وأستخدمها لبرمجة النظام وفهم المفاهيم منخفضة المستوى. إنها اللغة الأساسية التي يدعمها C-Studio IDE الخاص بي."
+      },
+      {
+        "name": "Bash",
+        "slug": "bash",
+        "experience": "متمكن",
+        "description": "أستخدم نصوص Bash للأتمتة وإدارة بيئات التطوير."
+      },
+      {
+        "name": "Rust",
+        "slug": "rust",
+        "experience": "أقل من سنة",
+        "description": "Rust هي لغة تركز على الأداء والأمان. استكشفتها من خلال مشروع iShowOff ومهتم بإمكانياتها للحلول المؤسسية."
+      },
+      {
+        "name": "Python",
+        "slug": "python",
+        "experience": "استكشاف",
+        "description": "استكشفت Python لمهام البرمجة النصية ومعالجة البيانات."
+      },
+      {
+        "name": "Go",
+        "slug": "go",
+        "experience": "استكشاف",
+        "description": "استكشفت Go لنموذج التزامن الخاص بها والأداء في أنظمة الواجهة الخلفية."
+      },
+      {
+        "name": "C++",
+        "slug": "cpp",
+        "experience": "استكشاف",
+        "description": "استكشفت C++ لفهم البرمجة الكائنية التوجه على مستوى النظام."
+      },
+      {
+        "name": "C#",
+        "slug": "csharp",
+        "experience": "استكشاف",
+        "description": "استكشفت C# لمفاهيم تطوير سطح المكتب والألعاب."
+      },
+      {
+        "name": "Haskell",
+        "slug": "haskell",
+        "experience": "استكشاف",
+        "description": "استكشفت Haskell لفهم نماذج البرمجة الوظيفية."
+      }
+    ]
+  },
+  {
+    "category": "أنظمة التشغيل",
+    "slug": "operating-systems",
+    "description": "إتقان بيئات Unix وإدارة الأنظمة",
+    "longDescription": "لدي خبرة واسعة في أنظمة تشغيل مختلفة، مع تركيز قوي على البيئات القائمة على Unix. لقد أتقنت نظام Linux، وأتنقل بسهولة بين التوزيعات المبنية على Debian و Arch و Fedora. بينما أفضل Unix للتطوير، أحافظ على كفاءتي في Windows للتعاون في التصميم.",
+    "items": [
+      {
+        "name": "نظام Linux",
+        "slug": "linux",
+        "experience": "إتقان",
+        "description": "إتقان عميق لتوزيعات مثل Arch و Ubuntu و Fedora و Debian و Kali و Mint و Nix. متمكن من البرمجة النصية للصدفة (Shell Scripting) وتكوين النظام."
+      },
+      {
+        "name": "أنظمة Unix",
+        "slug": "unix",
+        "experience": "متمكن",
+        "description": "خبرة في macOS و OpenBSD، مع الاستفادة من استقرارها وفلسفة Unix لبيئات تطوير قوية."
+      },
+      {
+        "name": "Windows",
+        "slug": "windows",
+        "experience": "متمكن",
+        "description": "يستخدم بشكل أساسي للتعاون في التصميم (Figma) واختبار التوافق، مع إدارة قيود التطوير بتكوينات مخصصة."
+      }
+    ]
+  },
+  {
+    "category": "الهندسة المعمارية والتوثيق",
+    "slug": "architecture-documentation",
+    "description": "تصميم أنظمة قابلة للتوسع وتوثيق التفاصيل التقنية",
+    "longDescription": "أؤمن بأن البرمجيات العظيمة تبدأ بتصميم قوي ويتم صيانتها من خلال توثيق واضح. أستخدم أدوات مرئية لرسم معماريات النظام وأنماط التصميم، مما يضمن أن كل مكون مفهوم جيدًا وقابل للتوسع. يتضمن نهجي تحليلًا عميقًا للكود المصدري وإنشاء أدلة شاملة للصيانة المستقبلية.",
+    "items": [
+      {
+        "name": "هندسة النظام",
+        "slug": "system-architecture",
+        "experience": "تطبيق",
+        "description": "تصميم أنظمة قابلة للتوسع، وخدمات مصغرة، ومخططات قواعد البيانات. أستخدم أدوات مثل Excalidraw و Figma لتصور تدفقات الكود وأنماط التصميم والقرارات المعمارية."
+      },
+      {
+        "name": "Microservices",
+        "slug": "microservices",
+        "experience": "تطبيق",
+        "description": "تصميم التطبيقات كمجموعة من الخدمات المترابطة بشكل فضفاض. استكشفت هذه البنية في مشروع H2-SpringBoot."
+      },
+      {
+        "name": "التوثيق التقني",
+        "slug": "technical-documentation",
+        "experience": "تطبيق",
+        "description": "إنشاء توثيق شامل للكود وواجهات برمجة التطبيقات وتصاميم النظام باستخدام Obsidian. أركز على شرح 'السبب' وراء القرارات التقنية لتسهيل الصيانة والتأهيل."
+      },
+      {
+        "name": "تحليل الكود المصدري",
+        "slug": "source-code-analysis",
+        "experience": "تطبيق",
+        "description": "الغوص العميق في قواعد الكود المعقدة والتوثيق (مثل نواة WordPress) لفهم أفضل الممارسات، والهندسة العكسية للمنطق، وتنفيذ حلول قوية."
       }
     ]
   },
@@ -76,22 +250,40 @@
         "description": "Git هو نظام التحكم في الإصدارات الموزع. أستخدم Git يوميًا للتحكم في الإصدارات والتعاون وإدارة تغييرات الكود عبر المشاريع."
       },
       {
+        "name": "GitHub Actions",
+        "slug": "github-actions",
+        "experience": "سنة واحدة",
+        "description": "أتمتة سير عمل البرمجيات باستخدام خطوط أنابيب CI/CD مباشرة في GitHub. أستخدمها للاختبار والنشر الآلي."
+      },
+      {
+        "name": "CI/CD",
+        "slug": "ci-cd",
+        "experience": "تطبيق",
+        "description": "ممارسات التكامل المستمر والنشر المستمر لأتمتة عملية تسليم البرمجيات."
+      },
+      {
         "name": "Docker",
         "slug": "docker",
         "experience": "سنتان",
         "description": "Docker هي منصة لتطوير وشحن وتشغيل التطبيقات في حاويات. أستخدم Docker لإنشاء بيئات تطوير متسقة وتبسيط عمليات النشر."
       },
       {
-        "name": "GitHub Actions",
-        "slug": "github-actions",
-        "experience": "سنة واحدة",
-        "description": "GitHub Actions هي منصة CI/CD متكاملة مع GitHub. أستخدم GitHub Actions لأتمتة الاختبار والبناء وسير عمل النشر لمشاريعي."
-      },
-      {
         "name": "Vercel",
         "slug": "vercel",
         "experience": "سنتان",
         "description": "Vercel هي منصة نشر وتعاون لمطوري الواجهة الأمامية. أستخدم Vercel لنشر واستضافة تطبيقات الويب، مستفيدًا من وظائفها بدون خادم وشبكة الحافة."
+      },
+      {
+        "name": "Figma",
+        "slug": "figma",
+        "experience": "تعاوني",
+        "description": "تعلمت من خلال التعاون مع مصممي UI/UX لتنفيذ تصاميم دقيقة وفهم أنظمة التصميم."
+      },
+      {
+        "name": "IDEs ومحررات النصوص",
+        "slug": "ides-editors",
+        "experience": "إتقان",
+        "description": "إتقان Neovim و VS Code و Nano مع اختصارات مخصصة وضبط LSP وملفات تعريف. خبرة في JetBrains و Emacs و CodeBlocks. أحتفظ بتكوين Neovim مخصص (github.com/samibentaiba/nvim)."
       }
     ]
   }

@@ -1,21 +1,21 @@
 [
   {
-    "role": "Développeur Full Stack",
-    "company": "ITC",
+    "role": "Développeur Full Stack & Architecte",
+    "company": "ITC (Donation Proposée)",
     "slug": "itc-developer",
-    "type": "Contrat",
+    "type": "Bénévolat",
     "period": "Juin 2024 - Sep 2024",
     "location": "À distance",
-    "summary": "Développement de 'ITC Hub', une plateforme interne complète pour la gestion des départements et des équipes.",
-    "description": "Conception et construction de 'ITC Hub', un outil interne pour rationaliser la communication et la gestion de projet. J'étais responsable du développement full-stack en utilisant Next.js et TypeScript. Les principales réalisations incluent la conception d'un schéma de base de données relationnelle complexe avec Prisma, la mise en œuvre du contrôle d'accès basé sur les rôles (RBAC) avec Next-Auth pour une gestion sécurisée des utilisateurs, et la création d'une interface utilisateur réactive avec Tailwind CSS.",
+    "summary": "Conception et développement de 'ITC Hub' comme projet de donation.",
+    "description": "Architecture et construction de 'ITC Hub' en tant que projet de donation destiné au club. J'ai géré tout le cycle de vie de l'ingénierie logicielle, de la conception du système et de l'architecture de la base de données à l'implémentation full-stack utilisant Next.js et TypeScript. Bien que le projet n'ait pas été finalement adopté, il a démontré des capacités de développement de niveau entreprise.",
     "skills": [
       "Next.js",
       "TypeScript",
       "Prisma",
       "PostgreSQL",
-      "Next-Auth",
-      "Tailwind CSS",
-      "Conception de système"
+      "Architecture Système",
+      "Conception BDD",
+      "Tailwind CSS"
     ],
     "projects": [
       "ITC Hub - Plateforme de communication et de gestion interne"
@@ -28,8 +28,8 @@
     "type": "Temps plein",
     "period": "2023 - Présent",
     "location": "À distance",
-    "summary": "Développement d'applications web et de bureau, avec un accent sur JavaScript/TypeScript full-stack et l'exploration de Rust.",
-    "description": "En tant qu'Ingénieur Logiciel Junior, je développe divers projets, notamment un site web portfolio, l'IDE C-Studio et le système de gestion agricole Algis pour un client. Je me concentre sur l'utilisation de technologies web modernes comme Next.js, React, TypeScript et Node.js, ainsi que Prisma pour la gestion de base de données. J'acquiers également de l'expérience avec Rust à travers des projets comme iShowOff et j'explore l'architecture logicielle et la gestion de paquets.",
+    "summary": "Développement d'applications web et desktop, livraison de projets clients et création d'outils open-source.",
+    "description": "En tant qu'ingénieur logiciel junior, je livre des solutions web de haute qualité pour des clients, telles que la page de destination 'Mosquito Killer DZ' et le site web 'Remdani Dental Center'. Je construis également des outils complexes comme 'COD Simulation' pour l'analyse e-commerce et 'C-Studio', un IDE de bureau. Ma stack inclut Next.js, React et TypeScript, avec un accent sur la performance et l'expérience utilisateur.",
     "skills": [
       "TypeScript",
       "JavaScript",
@@ -38,22 +38,55 @@
       "Node.js",
       "Prisma",
       "PostgreSQL",
-      "SQLite",
       "Electron",
       "Rust",
-      "Git",
-      "GitHub Actions",
-      "Docker",
-      "Tailwind CSS",
-      "HTML",
-      "CSS"
+      "Tailwind CSS"
     ],
     "projects": [
-      "Développement et maintenance du site portfolio personnel (Next.js, TypeScript)",
-      "Création de C-Studio, un IDE C sans configuration pour Windows (Electron, TypeScript, React)",
-      "Développement d'Algis, un système de gestion agricole (Next.js, TypeScript, Prisma, PostgreSQL - projet client privé)",
-      "Personnalisation d'iShowOff, un outil CLI basé sur Rust, pour le README du profil GitHub",
-      "Développement d'ITC Hub, une plateforme de communication interne et de gestion de projet (Next.js, TypeScript, Prisma, PostgreSQL)"
+      "Mosquito Killer DZ - Page de destination à haute conversion",
+      "COD Simulation - Calculateur de ROI e-commerce",
+      "Remdani Dental Center - Site web de clinique",
+      "Sunrise Energy - Aperçu client entreprise",
+      "C-Studio - IDE de bureau pour la programmation C",
+      "Algis - Système de gestion agricole"
+    ]
+  },
+  {
+    "role": "Membre Actif & Développeur",
+    "company": "Club de Programmation ITC",
+    "slug": "itc-member",
+    "type": "Bénévolat",
+    "period": "2024 - Présent",
+    "location": "Alger, Algérie",
+    "summary": "Collaboration sur les projets du club et mentorat des membres.",
+    "description": "Contributeur actif à la présence numérique du club. J'ai collaboré sur le site officiel de l'ITCP et la plateforme d'événements 'ITC Talks'. Je participe également à des sessions de mentorat et des ateliers techniques.",
+    "skills": [
+      "React",
+      "Next.js",
+      "Travail d'équipe",
+      "Mentorat"
+    ],
+    "projects": [
+      "Site Web ITCP",
+      "Plateforme ITC Talks"
+    ]
+  },
+  {
+    "role": "Développeur Frontend",
+    "company": "CSE USDB promo 2023",
+    "slug": "cse-developer",
+    "type": "Bénévolat",
+    "period": "2024",
+    "location": "Alger, Algérie",
+    "summary": "Contribution au développement du CSE Hub.",
+    "description": "J'ai travaillé en tant que développeur Frontend sur le projet 'CSE Hub'. J'ai collaboré étroitement avec des designers UI/UX pour implémenter des interfaces pixel-perfect en utilisant React et Vite. C'était mon premier grand projet d'ingénierie logicielle en équipe.",
+    "skills": [
+      "React",
+      "Vite",
+      "Collaboration"
+    ],
+    "projects": [
+      "CSE Hub"
     ]
   }
 ]

@@ -1,21 +1,21 @@
 [
   {
-    "role": "Full Stack Developer",
-    "company": "ITC",
+    "role": "Full Stack Developer & Architect",
+    "company": "ITC (Proposed Donation)",
     "slug": "itc-developer",
-    "type": "Contract",
+    "type": "Volunteering",
     "period": "Jun 2024 - Sep 2024",
     "location": "Remote",
-    "summary": "Developed 'ITC Hub', a comprehensive internal platform for department and team management.",
-    "description": "Designed and built 'ITC Hub', an internal tool to streamline communication and project management. I was responsible for the full-stack development using Next.js and TypeScript. Key achievements include designing a complex relational database schema with Prisma, implementing Role-Based Access Control (RBAC) with Next-Auth for secure user management, and creating a responsive UI with Tailwind CSS.",
+    "summary": "Designed and developed 'ITC Hub' as a comprehensive internal platform donation.",
+    "description": "Architected and built 'ITC Hub' as a donation project intended for the club. I handled the entire software engineering lifecycle, from system design and database architecture to full-stack implementation using Next.js and TypeScript. Key achievements include designing a complex relational database schema with Prisma, implementing Role-Based Access Control (RBAC), and creating a responsive UI. Although the project was not ultimately adopted, it demonstrated enterprise-level development capabilities.",
     "skills": [
       "Next.js",
       "TypeScript",
       "Prisma",
       "PostgreSQL",
-      "Next-Auth",
-      "Tailwind CSS",
-      "System Design"
+      "System Architecture",
+      "Database Design",
+      "Tailwind CSS"
     ],
     "projects": [
       "ITC Hub - Internal communication and management platform"
@@ -28,8 +28,8 @@
     "type": "Full-time",
     "period": "2023 - Present",
     "location": "Remote",
-    "summary": "Developing web and desktop applications, focusing on full-stack JavaScript/TypeScript and exploring Rust.",
-    "description": "As a Junior Software Engineer, I am developing various projects, including a portfolio website, the C-Studio IDE, and the Algis agricultural management system for a client. My focus is on using modern web technologies like Next.js, React, TypeScript, and Node.js, along with Prisma for database management. I am also gaining experience with Rust through projects like iShowOff and exploring software architecture and package management.",
+    "summary": "Developing web and desktop applications, delivering client projects, and building open-source tools.",
+    "description": "As a Junior Software Engineer, I deliver high-quality web solutions for clients, such as the 'Mosquito Killer DZ' landing page and 'Remdani Dental Center' website. I also build complex tools like 'COD Simulation' for e-commerce analytics and 'C-Studio', a desktop IDE. My stack includes Next.js, React, and TypeScript, with a focus on performance and user experience.",
     "skills": [
       "TypeScript",
       "JavaScript",
@@ -38,22 +38,55 @@
       "Node.js",
       "Prisma",
       "PostgreSQL",
-      "SQLite",
       "Electron",
       "Rust",
-      "Git",
-      "GitHub Actions",
-      "Docker",
-      "Tailwind CSS",
-      "HTML",
-      "CSS"
+      "Tailwind CSS"
     ],
     "projects": [
-      "Developed and maintain personal portfolio website (Next.js, TypeScript)",
-      "Built C-Studio, a zero-setup C IDE for Windows (Electron, TypeScript, React)",
-      "Developing Algis, an agricultural management system (Next.js, TypeScript, Prisma, PostgreSQL - private client project)",
-      "Customized iShowOff, a Rust-based CLI tool, for GitHub profile README",
-      "Developed ITC Hub, an internal communication and project management platform (Next.js, TypeScript, Prisma, PostgreSQL)"
+      "Mosquito Killer DZ - High-conversion landing page",
+      "COD Simulation - E-commerce ROI calculator",
+      "Remdani Dental Center - Clinic website",
+      "Sunrise Energy - Corporate client preview",
+      "C-Studio - Desktop IDE for C programming",
+      "Algis - Agricultural management system"
+    ]
+  },
+  {
+    "role": "Active Member & Developer",
+    "company": "ITC Programming Club",
+    "slug": "itc-member",
+    "type": "Volunteering",
+    "period": "2024 - Present",
+    "location": "Algiers, Algeria",
+    "summary": "Collaborating on club projects and mentoring members.",
+    "description": "Active contributor to the club's digital presence. Collaborated on the official ITCP website and the 'ITC Talks' event platform. I also participate in mentoring sessions and technical workshops.",
+    "skills": [
+      "React",
+      "Next.js",
+      "Teamwork",
+      "Mentoring"
+    ],
+    "projects": [
+      "ITCP Website",
+      "ITC Talks Platform"
+    ]
+  },
+  {
+    "role": "Frontend Developer",
+    "company": "CSE USDB promo 2023",
+    "slug": "cse-developer",
+    "type": "Volunteering",
+    "period": "2024",
+    "location": "Algiers, Algeria",
+    "summary": "Contributed to the development of the CSE Hub.",
+    "description": "Worked as a Frontend Developer on the 'CSE Hub' project. Collaborated closely with UI/UX designers to implement pixel-perfect interfaces using React and Vite. This was my first major team-based software engineering project.",
+    "skills": [
+      "React",
+      "Vite",
+      "Collaboration"
+    ],
+    "projects": [
+      "CSE Hub"
     ]
   }
 ]

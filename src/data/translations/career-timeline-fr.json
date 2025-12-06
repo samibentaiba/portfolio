@@ -11,24 +11,24 @@
           "branch": "main-career",
           "milestone": {
             "id": "c1",
-            "title": "Début de l'apprentissage",
-            "description": "Début de l'apprentissage du développement web (HTML, CSS, JS)",
+            "title": "Dév Frontend @ CSE",
+            "description": "Rejoint CSE USDB promo 2023 comme Développeur Frontend. Collaboration avec designers UI/UX (Figma) pour CSE Hub.",
             "size": "medium",
-            "type": "skill",
-            "date": "2021-2022"
+            "type": "job",
+            "date": "2023"
           }
         },
         {
           "id": "c2",
-          "x": 1,
+          "x": 1, 
           "branch": "main-career",
           "milestone": {
             "id": "c2",
-            "title": "React & Node.js",
-            "description": "Concentration sur React et Node.js pour le développement full-stack",
+            "title": "Fondations Full Stack",
+            "description": "Maîtrise de React, Node.js et TypeScript. Début de la création d'applications web complexes.",
             "size": "medium",
             "type": "skill",
-            "date": "2022-2023"
+            "date": "Début 2024"
           }
         },
         {
@@ -37,12 +37,15 @@
           "branch": "main-career",
           "milestone": {
             "id": "c3",
-            "title": "Next.js & TypeScript",
-            "description": "Adoption de Next.js et TypeScript pour les projets",
+            "title": "Premier Projet d'Équipe",
+            "description": "Livraison du CSE Hub. Apprentissage des workflows Git et de la collaboration d'équipe.",
             "size": "large",
-            "type": "skill",
-            "date": "2023"
-          }
+            "type": "project",
+            "date": "Mi 2024"
+          },
+          "linkedTo": [
+            {"targetId": "p1"}
+          ]
         },
         {
           "id": "c4",
@@ -50,33 +53,46 @@
           "branch": "main-career",
           "milestone": {
             "id": "c4",
-            "title": "Ingénieur Logiciel Junior",
-            "description": "Travail sur des projets freelance/personnels (Portfolio, C-Studio, Algis, ITC Hub)",
+            "title": "Architecte ITC Hub",
+            "description": "Bénévole en tant qu'Architecte & Dév Full Stack. Conception de l'architecture système et base de données pour ITC Hub.",
             "size": "large",
             "type": "job",
-            "date": "2023-Présent"
+            "date": "Mi-Fin 2024"
           },
           "linkedTo": [
-            {"targetId": "p1"},
-            {"targetId": "p2"},
-            {"targetId": "p3"},
-            {"targetId": "p4"}
+            {"targetId": "p2"}
           ]
         },
         {
           "id": "c5",
-          "x": 3.5,
+          "x": 4,
           "branch": "main-career",
           "milestone": {
             "id": "c5",
-            "title": "Développeur Full Stack @ ITC",
-            "description": "Développement de la plateforme interne ITC Hub",
-            "size": "medium",
+            "title": "Freelance & Next.js",
+            "description": "Travail client professionnel (Remdani Dental). Maîtrise de Next.js (SSR, Routes API) et SEO.",
+            "size": "large",
             "type": "job",
-            "date": "Juin 2024 - Sep 2024"
+            "date": "Fin 2024"
           },
           "linkedTo": [
-            {"targetId": "p2"}
+            {"targetId": "p3"}
+          ]
+        },
+        {
+          "id": "c6",
+          "x": 5,
+          "branch": "main-career",
+          "milestone": {
+            "id": "c6",
+            "title": "Ingénierie Avancée",
+            "description": "Exploration DevOps, Microservices (Spring Boot) et maîtrise des IDE (Neovim/VS Code). Ouverture vers C++, Rust & Go.",
+            "size": "medium",
+            "type": "skill",
+            "date": "2025"
+          },
+          "linkedTo": [
+            {"targetId": "p4"}
           ]
         }
       ]
@@ -88,25 +104,25 @@
       "points": [
         {
           "id": "p1",
-          "x": 3,
+          "x": 2,
           "branch": "projects",
           "milestone": {
             "id": "p1",
-            "title": "Portfolio",
-            "description": "Site portfolio personnel (Next.js, TypeScript)",
-            "size": "small",
+            "title": "CSE Hub",
+            "description": "Projet d'Équipe (React, Vite)",
+            "size": "medium",
             "type": "project",
-            "date": "2023-2024"
+            "date": "2024"
           }
         },
         {
           "id": "p2",
-          "x": 3.5,
+          "x": 3,
           "branch": "projects",
           "milestone": {
             "id": "p2",
             "title": "ITC Hub",
-            "description": "Plateforme interne (Next.js, TypeScript, Prisma)",
+            "description": "Plateforme Interne (Full Stack, Prisma)",
             "size": "medium",
             "type": "project",
             "date": "2024"
@@ -118,8 +134,8 @@
           "branch": "projects",
           "milestone": {
             "id": "p3",
-            "title": "C-Studio",
-            "description": "IDE C (Electron, TypeScript, React)",
+            "title": "Remdani Dental",
+            "description": "Projet Client (Next.js, SEO)",
             "size": "medium",
             "type": "project",
             "date": "2024"
@@ -127,15 +143,15 @@
         },
         {
           "id": "p4",
-          "x": 4.5,
+          "x": 5,
           "branch": "projects",
           "milestone": {
             "id": "p4",
-            "title": "Algis",
-            "description": "Système de gestion agricole (Next.js, TypeScript, Prisma - Client)",
-            "size": "large",
+            "title": "H2 SpringBoot",
+            "description": "Apprentissage DevOps & Microservices",
+            "size": "medium",
             "type": "project",
-            "date": "2024-Présent"
+            "date": "2025"
           }
         }
       ]
