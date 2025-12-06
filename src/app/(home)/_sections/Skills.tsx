@@ -1,5 +1,5 @@
 
-// src/app/(home)/_sections/Projects.tsx
+// src/app/(home)/_sections/Skills.tsx
 "use client";
 
 import Link from "next/link";
@@ -11,22 +11,34 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import {
   useSkillsData,
 } from "../hook";
 import {
-  Skill as SkillType,
   SkillCategory,
 } from "@/types";
+
+// Featured categories to show on homepage
+const FEATURED_CATEGORIES = ["development-operations", "architecture-documentation"];
+
 // ────────────────────────────────
-// Skills Section
+// Skills Section (Homepage - Featured Categories Only)
 // ────────────────────────────────
 const Skills = memo(function Skills() {
   const { t, skills } = useSkillsData();
 
   if (skills.length === 0) {
+    return null;
+  }
+
+  // Filter to only show featured categories
+  const featuredSkills = skills.filter((category) =>
+    FEATURED_CATEGORIES.includes(category.slug)
+  );
+
+  if (featuredSkills.length === 0) {
     return null;
   }
 
@@ -37,20 +49,38 @@ const Skills = memo(function Skills() {
       aria-labelledby="skills-heading"
     >
       <div className="space-y-6">
-        <div>
-          <h2
-            id="skills-heading"
-            className="text-2xl sm:text-3xl font-bold tracking-tighter"
-          >
-            {t("skills.title")}
-          </h2>
-          <p className="text-sm sm:text-base text-muted-foreground">
-            {t("skills.subtitle")}
-          </p>
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div>
+            <h2
+              id="skills-heading"
+              className="text-2xl sm:text-3xl font-bold tracking-tighter"
+            >
+              {t("skills.title")}
+            </h2>
+            <p className="text-sm sm:text-base text-muted-foreground">
+              {t("skills.subtitle")}
+            </p>
+          </div>
+          <Button asChild variant="outline" size="sm">
+            <Link href="/skills" className="flex items-center gap-1">
+              {t("skills.viewAll")}
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </Button>
         </div>
-        <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {skills.map((category: SkillCategory) => (
-            <SkillCard key={category.slug} category={category} t={t} />
+
+        {/* Soft Skills Foundation Description */}
+        <Card className="bg-muted/50 border-dashed">
+          <CardContent className="p-4 sm:p-6">
+            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+              {t("skills.narrative")}
+            </p>
+          </CardContent>
+        </Card>
+
+        <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2">
+          {featuredSkills.map((category: SkillCategory) => (
+            <SkillCategoryCard key={category.slug} category={category} />
           ))}
         </div>
       </div>
@@ -58,50 +88,29 @@ const Skills = memo(function Skills() {
   );
 });
 
-const SkillCard = memo(function SkillCard({
+const SkillCategoryCard = memo(function SkillCategoryCard({
   category,
-  t,
 }: {
   category: SkillCategory;
-  t: (key: string) => string;
 }) {
   return (
-    <Card className="overflow-hidden transition-all hover:shadow-md">
-      <CardHeader className="p-4 sm:pb-3">
-        <CardTitle className="text-lg sm:text-xl">
-          {category.category}
-        </CardTitle>
-        <CardDescription className="text-xs sm:text-sm">
-          {category.description}
-        </CardDescription>
-      </CardHeader>
-      <CardContent className="p-4 pt-0 sm:pt-0">
-        <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4">
-          {category.items.map((skill: SkillType) => (
-            <Link
-              href={`/skills/${skill.slug}`}
-              key={skill.slug}
-              aria-label={`Learn more about ${skill.name}`}
-            >
-              <Badge
-                variant="outline"
-                className="text-xs cursor-pointer hover:bg-muted transition-colors"
-              >
-                {skill.name}
-              </Badge>
-            </Link>
-          ))}
-        </div>
-        <Link
-          href={`/categories/${category.slug}`}
-          className="text-xs sm:text-sm text-primary flex items-center hover:underline"
-          aria-label={`Learn more about ${category.category}`}
-        >
-          {t("skills.learnMore")} {category.category.toLowerCase()}
-          <ArrowRight className="ml-1 h-3 w-3 sm:h-4 sm:w-4" />
-        </Link>
-      </CardContent>
-    </Card>
+    <Link href={`/categories/${category.slug}`}>
+      <Card className="overflow-hidden transition-all hover:shadow-md h-full">
+        <CardHeader className="p-4 sm:pb-3">
+          <CardTitle className="text-lg sm:text-xl">
+            {category.category}
+          </CardTitle>
+          <CardDescription className="text-xs sm:text-sm">
+            {category.description}
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="p-4 pt-0 sm:pt-0">
+          <p className="text-xs text-muted-foreground">
+            {category.items.length} {category.items.length === 1 ? "skill" : "skills"}
+          </p>
+        </CardContent>
+      </Card>
+    </Link>
   );
 });
 

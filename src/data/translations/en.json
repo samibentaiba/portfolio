@@ -26,7 +26,9 @@
     "description": "Description",
     "projectsUsing": "Projects Using This Skill",
     "projectsApplied": "Projects where I've applied",
-    "clickToView": "Click to view details"
+    "clickToView": "Click to view details",
+    "viewAll": "View All Skills",
+    "narrative": "All my technical skills are built upon a foundation of soft skills—problem-solving, adaptability, and continuous learning. This mindset led me to develop expertise in Architecture & Documentation for designing robust systems, and Development Operations for streamlined delivery. Explore all skills on the dedicated page."
   },
   "experiences": {
     "title": "Experiences",
@@ -36,7 +38,9 @@
     "skillsUsed": "Skills Used",
     "skillsApplied": "Technical and soft skills applied in this role",
     "projects": "Projects",
-    "keyProjects": "Key projects completed during this period"
+    "keyProjects": "Key projects completed during this period",
+    "viewAll": "View All Experiences",
+    "narrative": "As a software engineer, I bring more than just technical skills. My journey has taught me the importance of fast learning to adapt to new technologies, problem-solving under pressure, and thriving in diverse environments. I communicate fluently in multiple languages and have navigated challenging situations that have shaped my resilience and collaborative spirit."
   },
   "projects": {
     "title": "Projects",
@@ -50,7 +54,8 @@
     "collaborators": "Collaborators",
     "soloProject": "Solo project",
     "personalExperience": "Personal Experience",
-    "download": "Download"
+    "download": "Download",
+    "viewAll": "View All Projects"
   },
   "educations": {
     "title": "Education",

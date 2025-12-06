@@ -26,7 +26,9 @@
     "description": "Description",
     "projectsUsing": "Projets Utilisant Cette Compétence",
     "projectsApplied": "Projets où j'ai appliqué",
-    "clickToView": "Cliquez pour voir les détails"
+    "clickToView": "Cliquez pour voir les détails",
+    "viewAll": "Voir toutes les Compétences",
+    "narrative": "Toutes mes compétences techniques reposent sur des compétences humaines—résolution de problèmes, adaptabilité et apprentissage continu. Cet état d'esprit m'a permis de développer une expertise en Architecture & Documentation pour concevoir des systèmes robustes, et en Opérations de Développement pour une livraison optimisée. Découvrez toutes les compétences sur la page dédiée."
   },
   "experiences": {
     "title": "Expériences",
@@ -36,7 +38,9 @@
     "skillsUsed": "Compétences Utilisées",
     "skillsApplied": "Compétences techniques et personnelles appliquées dans ce rôle",
     "projects": "Projets",
-    "keyProjects": "Projets clés réalisés pendant cette période"
+    "keyProjects": "Projets clés réalisés pendant cette période",
+    "viewAll": "Voir toutes les Expériences",
+    "narrative": "En tant qu'ingénieur logiciel, j'apporte plus que des compétences techniques. Mon parcours m'a appris l'importance de l'apprentissage rapide pour m'adapter aux nouvelles technologies, de la résolution de problèmes sous pression et de l'épanouissement dans des environnements variés. Je communique couramment en plusieurs langues et j'ai traversé des situations difficiles qui ont façonné ma résilience et mon esprit collaboratif."
   },
   "projects": {
     "title": "Projets",
@@ -50,7 +54,8 @@
     "collaborators": "Collaborateurs",
     "soloProject": "Projet solo",
     "personalExperience": "Expérience Personnelle",
-    "download": "Télécharger"
+    "download": "Télécharger",
+    "viewAll": "Voir tous les Projets"
   },
   "educations": {
     "title": "Éducation",

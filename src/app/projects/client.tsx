@@ -1,9 +1,9 @@
-// src/app/(home)/_sections/Projects.tsx
+// src/app/projects/client.tsx
 "use client";
 
 import Image from "next/image";
 import Link from "next/link";
-import { memo, useCallback, useState, useEffect } from "react";
+import { useState, useEffect, useCallback, memo } from "react";
 import {
   Card,
   CardContent,
@@ -13,72 +13,48 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { LuGithub } from "react-icons/lu";
-import { Download, ExternalLink, ArrowRight } from "lucide-react";
-
-import {
-  useProjectsData,
-} from "../hook";
-import {
-  Project,
-} from "@/types";
+import { Download, ExternalLink, ArrowLeft } from "lucide-react";
+import { useProjectsData } from "../(home)/hook";
+import { Project } from "@/types";
 import { getProjectImage } from "@/lib/utils";
 
-// Featured project slugs
-const FEATURED_PROJECTS = ["algis", "c-studio", "itc-hub"];
-
-// ────────────────────────────────
-// Projects Section (Homepage - 3 Featured Only)
-// ────────────────────────────────
-const Projects = memo(function Projects() {
+export default function ProjectsListClient() {
   const { t, projects, isLoading, router } = useProjectsData();
 
   if (isLoading) {
     return (
-      <section id="projects" className="w-full scroll-mt-16 px-4 sm:px-0">
-        <div className="text-center py-10">
-          <div className="animate-pulse">Loading projects...</div>
-        </div>
-      </section>
+      <div className="container py-8">
+        <div className="animate-pulse">Loading projects...</div>
+      </div>
     );
   }
 
-  // Filter to only show featured projects
-  const featuredProjects = projects.filter((p) => FEATURED_PROJECTS.includes(p.slug));
-
-  if (featuredProjects.length === 0) {
+  if (projects.length === 0) {
     return null;
   }
 
   return (
-    <section
-      id="projects"
-      className="w-full scroll-mt-16 px-4 sm:px-0"
-      aria-labelledby="projects-heading"
-    >
-      <div className="space-y-6">
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-          <div>
-            <h2
-              id="projects-heading"
-              className="text-2xl sm:text-3xl font-bold tracking-tighter"
-            >
-              {t("projects.title")}
-            </h2>
-            <p className="text-sm sm:text-base text-muted-foreground">
-              {t("projects.subtitle")}
-            </p>
-          </div>
-          <Button asChild variant="outline" size="sm">
-            <Link href="/projects" className="flex items-center gap-1">
-              {t("projects.viewAll")}
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </Button>
+    <div className="container py-8 sm:py-12 px-4 sm:px-6">
+      <div className="max-w-6xl mx-auto">
+        {/* Header */}
+        <div className="mb-8">
+          <Link
+            href="/#projects"
+            className="text-primary hover:underline mb-4 inline-flex items-center gap-1 text-sm sm:text-base"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            {t("navigation.backToHome")}
+          </Link>
+          <h1 className="text-3xl sm:text-4xl font-bold mb-2">
+            {t("projects.title")}
+          </h1>
+          <p className="text-muted-foreground">{t("projects.subtitle")}</p>
         </div>
-        <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {featuredProjects.map((project) => (
+
+        {/* All Projects */}
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {projects.map((project) => (
             <ProjectCard
               key={project.slug}
               project={project}
@@ -88,9 +64,9 @@ const Projects = memo(function Projects() {
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
-});
+}
 
 const ProjectCard = memo(function ProjectCard({
   project,
@@ -143,9 +119,9 @@ const ProjectCard = memo(function ProjectCard({
 
   return (
     <Card className="overflow-hidden transition-all hover:shadow-md h-full flex flex-col">
-        <div className="relative aspect-video overflow-hidden cursor-pointer">
-          <Image
-            src={imgSrc}
+      <div className="relative aspect-video overflow-hidden cursor-pointer">
+        <Image
+          src={imgSrc}
           alt={project.title || "Project Image"}
           fill
           onClick={handleImageClick}
@@ -209,5 +185,3 @@ const ProjectCard = memo(function ProjectCard({
     </Card>
   );
 });
-
-export default Projects

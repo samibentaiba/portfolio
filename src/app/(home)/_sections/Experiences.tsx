@@ -1,4 +1,4 @@
-// src/app/(home)/client.tsx
+// src/app/(home)/_sections/Experiences.tsx
 
 "use client";
 
@@ -11,15 +11,17 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Calendar, MapPin } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Calendar, MapPin, ArrowRight } from "lucide-react";
 import {
   useExperiencesData,
 } from "../hook";
 import {
   Experience,
 } from "@/types";
+
 // ────────────────────────────────
-// Experiences Section
+// Experiences Section (Homepage - Summary + Soft Skills Narrative)
 // ────────────────────────────────
 const Experiences = memo(function Experiences() {
   const { t, experiences } = useExperiencesData();
@@ -35,19 +37,38 @@ const Experiences = memo(function Experiences() {
       aria-labelledby="experiences-heading"
     >
       <div className="space-y-6">
-        <div>
-          <h2
-            id="experiences-heading"
-            className="text-2xl sm:text-3xl font-bold tracking-tighter"
-          >
-            {t("experiences.title")}
-          </h2>
-          <p className="text-sm sm:text-base text-muted-foreground">
-            {t("experiences.subtitle")}
-          </p>
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div>
+            <h2
+              id="experiences-heading"
+              className="text-2xl sm:text-3xl font-bold tracking-tighter"
+            >
+              {t("experiences.title")}
+            </h2>
+            <p className="text-sm sm:text-base text-muted-foreground">
+              {t("experiences.subtitle")}
+            </p>
+          </div>
+          <Button asChild variant="outline" size="sm">
+            <Link href="/experiences" className="flex items-center gap-1">
+              {t("experiences.viewAll")}
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </Button>
         </div>
+
+        {/* Software Engineer Narrative */}
+        <Card className="bg-muted/50 border-dashed">
+          <CardContent className="p-4 sm:p-6">
+            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+              {t("experiences.narrative")}
+            </p>
+          </CardContent>
+        </Card>
+
+        {/* Experience Cards (Limited to 2) */}
         <div className="flex flex-col gap-6">
-          {experiences.map((experience: Experience) => (
+          {experiences.slice(0, 2).map((experience: Experience) => (
             <ExperienceCard key={experience.slug} experience={experience} />
           ))}
         </div>
