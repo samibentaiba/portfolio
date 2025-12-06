@@ -1,5 +1,73 @@
 [
   {
+    "category": "Development Operations",
+    "slug": "development-operations",
+    "description": "Integrating OS, Frontend, Backend, and Languages to manage complex state and workflows.",
+    "longDescription": "Development Operations uses all skills of Operating Systems, Frontend, Backend, Programming Languages, and other technologies. It handles the work of other people because of the complex state it can get and deals with many fields.",
+    "items": [
+      {
+        "name": "Pipeline Manipulation",
+        "slug": "pipeline-manipulation",
+        "experience": "Applied",
+        "description": "Using ngrok for exposing local servers and manipulating pipelines for webhook testing. Used effectively in the AiHorizons project."
+      },
+      {
+        "name": "Microservices",
+        "slug": "microservices",
+        "experience": "Applied",
+        "description": "Designing applications as a collection of loosely coupled services. I explored this architecture in the H2-SpringBoot project."
+      },
+      {
+        "name": "Git & GitHub",
+        "slug": "git-github",
+        "experience": "3+ years",
+        "description": "Git is a distributed version control system. I use Git and GitHub daily for version control, collaboration, and managing code changes across projects, including using GitHub Actions for CI/CD."
+      },
+      {
+        "name": "GitHub Actions",
+        "slug": "github-actions",
+        "experience": "1+ year",
+        "description": "Automating software workflows with CI/CD pipelines directly in GitHub. I use it for automated testing and deployment."
+      },
+      {
+        "name": "CI/CD",
+        "slug": "ci-cd",
+        "experience": "Applied",
+        "description": "Continuous Integration and Continuous Deployment practices to automate the software delivery process."
+      },
+      {
+        "name": "Docker",
+        "slug": "docker",
+        "experience": "1+ year",
+        "description": "Docker is a platform for developing, shipping, and running applications in containers. Used to create consistent development environments."
+      },
+      {
+        "name": "Vercel",
+        "slug": "vercel",
+        "experience": "2+ years",
+        "description": "Vercel is a deployment and collaboration platform for frontend developers. I use Vercel to deploy and host web applications, leveraging its serverless functions and edge network."
+      },
+      {
+        "name": "Linux Ecosystem",
+        "slug": "linux",
+        "experience": "Mastered",
+        "description": "Deep mastery of distributions like Arch, Ubuntu, Fedora, Debian, Kali, Mint, and Nix. Proficient in shell scripting and system configuration."
+      },
+      {
+        "name": "Unix Systems",
+        "slug": "unix",
+        "experience": "Familiar",
+        "description": "Experience with macOS and OpenBSD, leveraging their stability and Unix philosophy for robust development environments."
+      },
+      {
+        "name": "Windows",
+        "slug": "windows",
+        "experience": "Proficient",
+        "description": "Used primarily for design collaboration (Figma) and compatibility testing, managing development limitations with custom configurations."
+      }
+    ]
+  },
+  {
     "category": "Frontend Development",
     "slug": "frontend-development",
     "description": "Building responsive and accessible user interfaces",
@@ -188,32 +256,12 @@
         "slug": "haskell",
         "experience": "Explored",
         "description": "Explored Haskell to understand functional programming paradigms."
-      }
-    ]
-  },
-  {
-    "category": "Operating Systems",
-    "slug": "operating-systems",
-    "description": "Mastery of Unix-based environments and system administration",
-    "longDescription": "I have extensive experience with various operating systems, with a strong focus on Unix-based environments. I have mastered the Linux ecosystem, navigating comfortably across Debian, Arch, and Fedora based distributions. While I prefer Unix for development, I maintain proficiency in Windows for design collaboration.",
-    "items": [
+      },
       {
-        "name": "Linux Ecosystem",
-        "slug": "linux",
+        "name": "IDEs & Editors",
+        "slug": "ides-editors",
         "experience": "Mastered",
-        "description": "Deep mastery of distributions like Arch, Ubuntu, Fedora, Debian, Kali, Mint, and Nix. Proficient in shell scripting and system configuration."
-      },
-      {
-        "name": "Unix Systems",
-        "slug": "unix",
-        "experience": "Familiar",
-        "description": "Experience with macOS and OpenBSD, leveraging their stability and Unix philosophy for robust development environments."
-      },
-      {
-        "name": "Windows",
-        "slug": "windows",
-        "experience": "Proficient",
-        "description": "Used primarily for design collaboration (Figma) and compatibility testing, managing development limitations with custom configurations."
+        "description": "Mastery of Neovim, VS Code, and Nano with custom keybinds, LSP tuning, and profiles. Experienced with JetBrains, Emacs, and CodeBlocks. I maintain a custom Neovim config (github.com/samibentaiba/nvim)."
       }
     ]
   },
@@ -224,16 +272,16 @@
     "longDescription": "I believe that great software starts with a solid design and is maintained through clear documentation. I use visual tools to map out system architectures and design patterns, ensuring that every component is well-understood and scalable. My approach involves deep source code analysis and creating comprehensive guides for future maintenance.",
     "items": [
       {
+        "name": "Figma",
+        "slug": "figma",
+        "experience": "Collaborative",
+        "description": "Learned through collaboration with UI/UX designers to implement pixel-perfect designs and understand design systems."
+      },
+      {
         "name": "System Architecture",
         "slug": "system-architecture",
         "experience": "Applied",
         "description": "Designing scalable systems, microservices, and database schemas. I use tools like Excalidraw and Figma to visualize code flows, design patterns, and architectural decisions."
-      },
-      {
-        "name": "Microservices",
-        "slug": "microservices",
-        "experience": "Applied",
-        "description": "Designing applications as a collection of loosely coupled services. I explored this architecture in the H2-SpringBoot project."
       },
       {
         "name": "Technical Documentation",
@@ -246,50 +294,6 @@
         "slug": "source-code-analysis",
         "experience": "Applied",
         "description": "Deep dive into complex codebases and documentation (e.g., WordPress core) to understand best practices, reverse engineer logic, and implement robust solutions."
-      }
-    ]
-  },
-  {
-    "category": "Other Technologies & Tools",
-    "slug": "other-tech-and-tools",
-    "description": "Version control, containerization, and other development tools",
-    "longDescription": "Beyond web development, I have experience with version control using Git and creating consistent environments with Docker.",
-    "items": [
-      {
-        "name": "Git & GitHub",
-        "slug": "git-github",
-        "experience": "3+ years",
-        "description": "Git is a distributed version control system. I use Git and GitHub daily for version control, collaboration, and managing code changes across projects, including using GitHub Actions for CI/CD."
-      },
-      {
-        "name": "GitHub Actions",
-        "slug": "github-actions",
-        "experience": "1+ year",
-        "description": "Automating software workflows with CI/CD pipelines directly in GitHub. I use it for automated testing and deployment."
-      },
-      {
-        "name": "CI/CD",
-        "slug": "ci-cd",
-        "experience": "Applied",
-        "description": "Continuous Integration and Continuous Deployment practices to automate the software delivery process."
-      },
-      {
-        "name": "Docker",
-        "slug": "docker",
-        "experience": "1+ year",
-        "description": "Docker is a platform for developing, shipping, and running applications in containers. Used to create consistent development environments."
-      },
-      {
-        "name": "Figma",
-        "slug": "figma",
-        "experience": "Collaborative",
-        "description": "Learned through collaboration with UI/UX designers to implement pixel-perfect designs and understand design systems."
-      },
-      {
-        "name": "IDEs & Editors",
-        "slug": "ides-editors",
-        "experience": "Mastered",
-        "description": "Mastery of Neovim, VS Code, and Nano with custom keybinds, LSP tuning, and profiles. Experienced with JetBrains, Emacs, and CodeBlocks. I maintain a custom Neovim config (github.com/samibentaiba/nvim)."
       }
     ]
   }

@@ -171,7 +171,8 @@
       "TypeScript",
       "Tailwind CSS",
       "Vite",
-      "Figma"
+      "Figma",
+      "Manipulation de Pipelines"
     ],
     "timeline": "3 jours (2025)",
     "liveUrl": "https://ai-horizons.netlify.app",
@@ -245,7 +246,7 @@
     "title": "Microservices & DevOps",
     "shortDescription": "Microservices Spring Boot avec base de données H2.",
     "description": "Un projet technique démontrant la mise en œuvre d'une architecture de microservices utilisant Spring Boot et une base de données H2. Se concentre sur la logique backend, la persistance des données et les pratiques DevOps.",
-    "image": "/placeholder.svg?height=400&width=800",
+    "image": "/Microservices.jpg",
     "technologies": [
       "Java",
       "Spring Boot",

@@ -107,3 +107,13 @@ export interface CareerBranch {
 export interface CareerTimelineData {
   branches: CareerBranch[];
 }
+
+export interface Recommendation {
+  id: string;
+  name: string;
+  role: string;
+  company?: string;
+  image: string;
+  text: string;
+  linkedin?: string;
+}

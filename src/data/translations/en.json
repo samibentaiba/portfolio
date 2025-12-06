@@ -143,5 +143,9 @@
     "light": "Light",
     "dark": "Dark",
     "system": "System"
+  },
+  "recommendations": {
+    "title": "Friends & Colleagues",
+    "subtitle": "Talented people I trust and recommend."
   }
 }

@@ -1,5 +1,73 @@
 [
   {
+    "category": "Opérations de Développement (DevOps)",
+    "slug": "development-operations",
+    "description": "Intégrer les systèmes d'exploitation, le frontend, le backend et les langages pour gérer des états et des flux de travail complexes.",
+    "longDescription": "Les opérations de développement utilisent toutes les compétences des systèmes d'exploitation, du frontend, du backend, des langages de programmation et d'autres technologies. Elles gèrent le travail d'autres personnes en raison de l'état complexe qu'elles peuvent atteindre et traitent de nombreux domaines.",
+    "items": [
+      {
+        "name": "Manipulation de Pipelines",
+        "slug": "pipeline-manipulation",
+        "experience": "Appliqué",
+        "description": "Utilisation de ngrok pour exposer des serveurs locaux et manipuler des pipelines pour les tests de webhooks. Utilisé efficacement dans le projet AiHorizons."
+      },
+      {
+        "name": "Microservices",
+        "slug": "microservices",
+        "experience": "Appliqué",
+        "description": "Conception d'applications comme une collection de services faiblement couplés. J'ai exploré cette architecture dans le projet H2-SpringBoot."
+      },
+      {
+        "name": "Git & GitHub",
+        "slug": "git-github",
+        "experience": "3+ ans",
+        "description": "Git est un système de contrôle de version distribué. J'utilise Git et GitHub quotidiennement pour le contrôle de version, la collaboration et la gestion des changements de code à travers les projets, y compris l'utilisation de GitHub Actions pour le CI/CD."
+      },
+      {
+        "name": "GitHub Actions",
+        "slug": "github-actions",
+        "experience": "1+ an",
+        "description": "Automatisation des flux de travail logiciels avec des pipelines CI/CD directement dans GitHub. Je l'utilise pour les tests et le déploiement automatisés."
+      },
+      {
+        "name": "CI/CD",
+        "slug": "ci-cd",
+        "experience": "Appliqué",
+        "description": "Pratiques d'Intégration Continue et de Déploiement Continu pour automatiser le processus de livraison de logiciels."
+      },
+      {
+        "name": "Docker",
+        "slug": "docker",
+        "experience": "1+ an",
+        "description": "Docker est une plateforme pour développer, expédier et exécuter des applications dans des conteneurs. Utilisé pour créer des environnements de développement cohérents."
+      },
+      {
+        "name": "Vercel",
+        "slug": "vercel",
+        "experience": "2+ ans",
+        "description": "Vercel est une plateforme de déploiement et de collaboration pour les développeurs frontend. J'utilise Vercel pour déployer et héberger des applications web, en tirant parti de ses fonctions sans serveur et de son réseau edge."
+      },
+      {
+        "name": "Écosystème Linux",
+        "slug": "linux",
+        "experience": "Maîtrisé",
+        "description": "Maîtrise approfondie des distributions comme Arch, Ubuntu, Fedora, Debian, Kali, Mint et Nix. Compétent en scripting shell et configuration système."
+      },
+      {
+        "name": "Systèmes Unix",
+        "slug": "unix",
+        "experience": "Familier",
+        "description": "Expérience avec macOS et OpenBSD, tirant parti de leur stabilité et de la philosophie Unix pour des environnements de développement robustes."
+      },
+      {
+        "name": "Windows",
+        "slug": "windows",
+        "experience": "Compétent",
+        "description": "Utilisé principalement pour la collaboration design (Figma) et les tests de compatibilité, gérant les limitations de développement avec des configurations personnalisées."
+      }
+    ]
+  },
+  {
     "category": "Développement Frontend",
     "slug": "frontend-development",
     "description": "Création d'interfaces utilisateur réactives et accessibles",
@@ -188,32 +256,12 @@
         "slug": "haskell",
         "experience": "Exploré",
         "description": "Exploré Haskell pour comprendre les paradigmes de programmation fonctionnelle."
-      }
-    ]
-  },
-  {
-    "category": "Systèmes d'Exploitation",
-    "slug": "operating-systems",
-    "description": "Maîtrise des environnements Unix et de l'administration système",
-    "longDescription": "J'ai une vaste expérience avec divers systèmes d'exploitation, avec un fort accent sur les environnements Unix. J'ai maîtrisé l'écosystème Linux, naviguant confortablement entre les distributions basées sur Debian, Arch et Fedora. Bien que je préfère Unix pour le développement, je maintiens une compétence sous Windows pour la collaboration en design.",
-    "items": [
+      },
       {
-        "name": "Écosystème Linux",
-        "slug": "linux",
+        "name": "IDEs & Éditeurs",
+        "slug": "ides-editors",
         "experience": "Maîtrisé",
-        "description": "Maîtrise approfondie des distributions comme Arch, Ubuntu, Fedora, Debian, Kali, Mint et Nix. Compétent en scripting shell et configuration système."
-      },
-      {
-        "name": "Systèmes Unix",
-        "slug": "unix",
-        "experience": "Familier",
-        "description": "Expérience avec macOS et OpenBSD, tirant parti de leur stabilité et de la philosophie Unix pour des environnements de développement robustes."
-      },
-      {
-        "name": "Windows",
-        "slug": "windows",
-        "experience": "Compétent",
-        "description": "Utilisé principalement pour la collaboration design (Figma) et les tests de compatibilité, gérant les limitations de développement avec des configurations personnalisées."
+        "description": "Maîtrise de Neovim, VS Code et Nano avec des raccourcis personnalisés, réglage LSP et profils. Expérimenté avec JetBrains, Emacs et CodeBlocks. Je maintiens une config Neovim personnalisée (github.com/samibentaiba/nvim)."
       }
     ]
   },
@@ -224,16 +272,16 @@
     "longDescription": "Je crois qu'un excellent logiciel commence par une conception solide et est maintenu grâce à une documentation claire. J'utilise des outils visuels pour cartographier les architectures système et les modèles de conception, en veillant à ce que chaque composant soit bien compris et évolutif. Mon approche implique une analyse approfondie du code source et la création de guides complets pour la maintenance future.",
     "items": [
       {
+        "name": "Figma",
+        "slug": "figma",
+        "experience": "Collaboratif",
+        "description": "Appris grâce à la collaboration avec des designers UI/UX pour implémenter des designs pixel-perfect et comprendre les systèmes de design."
+      },
+      {
         "name": "Architecture Système",
         "slug": "system-architecture",
         "experience": "Appliqué",
         "description": "Conception de systèmes évolutifs, de microservices et de schémas de base de données. J'utilise des outils comme Excalidraw et Figma pour visualiser les flux de code, les modèles de conception et les décisions architecturales."
-      },
-      {
-        "name": "Microservices",
-        "slug": "microservices",
-        "experience": "Appliqué",
-        "description": "Conception d'applications comme une collection de services faiblement couplés. J'ai exploré cette architecture dans le projet H2-SpringBoot."
       },
       {
         "name": "Documentation Technique",
@@ -246,50 +294,6 @@
         "slug": "source-code-analysis",
         "experience": "Appliqué",
         "description": "Plongée profonde dans des bases de code complexes et de la documentation (par exemple, le cœur de WordPress) pour comprendre les meilleures pratiques, faire de l'ingénierie inverse et mettre en œuvre des solutions robustes."
-      }
-    ]
-  },
-  {
-    "category": "Autres Technologies & Outils",
-    "slug": "other-tech-and-tools",
-    "description": "Contrôle de version, conteneurisation et autres outils de développement",
-    "longDescription": "Au-delà du développement web, j'ai de l'expérience avec le contrôle de version utilisant Git et la création d'environnements cohérents avec Docker.",
-    "items": [
-      {
-        "name": "Git & GitHub",
-        "slug": "git-github",
-        "experience": "3+ ans",
-        "description": "Git est un système de contrôle de version distribué. J'utilise Git et GitHub quotidiennement pour le contrôle de version, la collaboration et la gestion des changements de code à travers les projets, y compris l'utilisation de GitHub Actions pour le CI/CD."
-      },
-      {
-        "name": "GitHub Actions",
-        "slug": "github-actions",
-        "experience": "1+ an",
-        "description": "Automatisation des flux de travail logiciels avec des pipelines CI/CD directement dans GitHub. Je l'utilise pour les tests et le déploiement automatisés."
-      },
-      {
-        "name": "CI/CD",
-        "slug": "ci-cd",
-        "experience": "Appliqué",
-        "description": "Pratiques d'Intégration Continue et de Déploiement Continu pour automatiser le processus de livraison de logiciels."
-      },
-      {
-        "name": "Docker",
-        "slug": "docker",
-        "experience": "1+ an",
-        "description": "Docker est une plateforme pour développer, expédier et exécuter des applications dans des conteneurs. Utilisé pour créer des environnements de développement cohérents."
-      },
-      {
-        "name": "Figma",
-        "slug": "figma",
-        "experience": "Collaboratif",
-        "description": "Appris grâce à la collaboration avec des designers UI/UX pour implémenter des designs pixel-perfect et comprendre les systèmes de design."
-      },
-      {
-        "name": "IDEs & Éditeurs",
-        "slug": "ides-editors",
-        "experience": "Maîtrisé",
-        "description": "Maîtrise de Neovim, VS Code et Nano avec des raccourcis personnalisés, réglage LSP et profils. Expérimenté avec JetBrains, Emacs et CodeBlocks. Je maintiens une config Neovim personnalisée (github.com/samibentaiba/nvim)."
       }
     ]
   }
