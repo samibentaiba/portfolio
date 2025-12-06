@@ -115,7 +115,7 @@ export const MenuDrop: React.FC<MenuDropProps> = ({
               </p>
               <div className="flex items-center gap-4">
                 <Link
-                  href="https://github.com"
+                  href="https://github.com/samibentaiba"
                   target="_blank"
                   rel="noreferrer"
                   className="text-muted-foreground hover:text-foreground"
@@ -124,7 +124,7 @@ export const MenuDrop: React.FC<MenuDropProps> = ({
                   <span className="sr-only">GitHub</span>
                 </Link>
                 <Link
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/samibentaibalinkedin.com"
                   target="_blank"
                   rel="noreferrer"
                   className="text-muted-foreground hover:text-foreground"
