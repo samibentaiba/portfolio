@@ -9,7 +9,7 @@ import fs from 'fs';
 import path from 'path';
 import { Packer } from 'docx';
 import { generateResumeDoc } from '../src/lib/resume-generator';
-import { convertDocxToPdf } from '../src/lib/convertDocxToPdf';
+import { generatePdf } from '../src/lib/pdf-generator';
 
 // Import your data
 import { 
@@ -61,39 +61,31 @@ async function generateResume(language: 'en' | 'fr' | 'ar') {
   const projects = getProjectsData(language);
   const educations = getEducationsData(language);
 
-  // Create DOCX document
+  // 1. Generate DOCX
   const doc = generateResumeDoc(personal, skills, experiences, projects, educations, translate, language);
-
-  // Generate DOCX buffer
   const docxBuffer = await Packer.toBuffer(doc);
 
-  // Create temp directory if it doesn't exist
-  const tempDir = path.join(process.cwd(), 'temp');
-  if (!fs.existsSync(tempDir)) {
-    fs.mkdirSync(tempDir, { recursive: true });
-  }
-
-  // Save temporary DOCX file
-  const tempDocxPath = path.join(tempDir, `resume.${language}.docx`);
-  fs.writeFileSync(tempDocxPath, docxBuffer);
-
-  // Convert to PDF
-  console.log(`Converting ${language.toUpperCase()} DOCX to PDF...`);
-  const pdfBuffer = await convertDocxToPdf(tempDocxPath);
-
-  // Save PDF to public directory
+  // Ensure public directory exists
   const publicDir = path.join(process.cwd(), 'public');
   if (!fs.existsSync(publicDir)) {
     fs.mkdirSync(publicDir, { recursive: true });
   }
 
-  const pdfPath = path.join(publicDir, `resume.${language}.pdf`);
-  fs.writeFileSync(pdfPath, pdfBuffer);
+  // Save DOCX file
+  const docxPath = path.join(publicDir, `resume.${language}.docx`);
+  fs.writeFileSync(docxPath, docxBuffer);
+  console.log(`✅ ${language.toUpperCase()} DOCX generated: ${docxPath}`);
 
-  // Clean up temp DOCX file
-  fs.unlinkSync(tempDocxPath);
-
-  console.log(`✅ ${language.toUpperCase()} resume generated: ${pdfPath}`);
+  // 2. Generate PDF (using Puppeteer)
+  try {
+    console.log(`Generating ${language.toUpperCase()} PDF...`);
+    const pdfBuffer = await generatePdf(personal, skills, experiences, projects, educations, translate, language);
+    const pdfPath = path.join(publicDir, `resume.${language}.pdf`);
+    fs.writeFileSync(pdfPath, pdfBuffer);
+    console.log(`✅ ${language.toUpperCase()} PDF generated: ${pdfPath}`);
+  } catch (error) {
+    console.error(`❌ Failed to generate PDF for ${language.toUpperCase()}:`, error);
+  }
 }
 
 async function main() {
@@ -107,9 +99,9 @@ async function main() {
 
     console.log('\n✅ All resumes generated successfully!');
     console.log('Files created:');
-    console.log('  - public/resume.en.pdf');
-    console.log('  - public/resume.fr.pdf');
-    console.log('  - public/resume.ar.pdf');
+    console.log('  - public/resume.en.docx & .pdf');
+    console.log('  - public/resume.fr.docx & .pdf');
+    console.log('  - public/resume.ar.docx & .pdf');
   } catch (error) {
     console.error('❌ Error generating resumes:', error);
     process.exit(1);
