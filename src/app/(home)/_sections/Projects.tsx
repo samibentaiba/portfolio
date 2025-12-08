@@ -154,8 +154,8 @@ const ProjectCard = memo(function ProjectCard({
           onError={() => setImgSrc("/placeholder.svg?height=400&width=800")}
         />
         {project.status && (
-          <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-            <div className="bg-amber-500/90 text-black px-3 py-2 rounded-md flex items-center gap-2 max-w-[90%]" title={project.statusReason}>
+          <div className="absolute inset-0 bg-black/40 flex items-center justify-center cursor-pointer" onClick={handleImageClick}>
+            <div className="bg-amber-500/90 text-black px-3 py-2 rounded-md flex items-center gap-2 max-w-[90%] pointer-events-none" title={project.statusReason}>
               <AlertTriangle className="h-4 w-4 flex-shrink-0" />
               <span className="text-xs sm:text-sm font-medium truncate">{project.status}</span>
             </div>
