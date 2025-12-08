@@ -6,7 +6,7 @@ import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { Calendar, Download, ExternalLink, Github, Users } from "lucide-react";
+import { AlertTriangle, Calendar, Download, ExternalLink, Github, Users } from "lucide-react";
 import { useLanguage } from "@/components/language-provider";
 import { Skill } from "@/components/skill";
 import { useProject } from "./hook";
@@ -46,6 +46,20 @@ export default function ProjectClient() {
             ))}
           </div>
         </div>
+
+        {project.status && (
+          <div className="bg-amber-500/20 border border-amber-500/50 rounded-lg p-4 mb-6 sm:mb-8">
+            <div className="flex items-start gap-3">
+              <AlertTriangle className="h-5 w-5 text-amber-500 flex-shrink-0 mt-0.5" />
+              <div>
+                <p className="font-medium text-amber-500">{project.status}</p>
+                {project.statusReason && (
+                  <p className="text-sm text-muted-foreground mt-1">{project.statusReason}</p>
+                )}
+              </div>
+            </div>
+          </div>
+        )}
 
         <div className="relative aspect-video overflow-hidden rounded-lg mb-6 sm:mb-8 w-full">
           <Image

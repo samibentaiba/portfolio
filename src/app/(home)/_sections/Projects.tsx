@@ -15,7 +15,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { LuGithub } from "react-icons/lu";
-import { Download, ExternalLink, ArrowRight } from "lucide-react";
+import { Download, ExternalLink, ArrowRight, AlertTriangle } from "lucide-react";
 
 import {
   useProjectsData,
@@ -153,6 +153,14 @@ const ProjectCard = memo(function ProjectCard({
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           onError={() => setImgSrc("/placeholder.svg?height=400&width=800")}
         />
+        {project.status && (
+          <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+            <div className="bg-amber-500/90 text-black px-3 py-2 rounded-md flex items-center gap-2 max-w-[90%]" title={project.statusReason}>
+              <AlertTriangle className="h-4 w-4 flex-shrink-0" />
+              <span className="text-xs sm:text-sm font-medium truncate">{project.status}</span>
+            </div>
+          </div>
+        )}
       </div>
       <CardHeader className="p-4 sm:pb-3">
         <CardTitle className="text-lg sm:text-xl">{project.title}</CardTitle>

@@ -38,6 +38,10 @@ export interface Project {
   description?: string;
   image?: string;
 
+  // Status for projects that are temporarily unavailable
+  status?: string;
+  statusReason?: string;
+
   // These are optional and can be added manually
   technologies: string[]; // Keep this, user can add manually
   timeline?: string;

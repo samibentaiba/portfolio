@@ -148,6 +148,8 @@
     "shortDescription": "منصة حلول الطاقة المتجددة (معاينة للعميل).",
     "description": "منصة ويب حديثة مصممة لشركة طاقة متجددة. يخدم هذا المشروع كمعاينة للعميل لإظهار إمكانات التواجد الرقمي في قطاع الطاقة. يتميز بتصميم نظيف وصديق للبيئة ويعرض الخدمات والحلول.",
     "image": "/placeholder.svg?height=400&width=800",
+    "status": "المعاينة غير متوفرة",
+    "statusReason": "تم تعطيل معاينة المشروع مؤقتًا بسبب مفاوضات تعاقدية غير محسومة مع العميل.",
     "technologies": [
       "Next.js",
       "TypeScript",
@@ -156,7 +158,7 @@
       "shadcn/ui"
     ],
     "timeline": "شهر واحد (2024)",
-    "liveUrl": "https://sunrise-energy.vercel.app",
+    "liveUrl": null,
     "githubUrl": "https://github.com/samibentaiba/sunrise-energy",
     "personalExperience": "سمح لي هذا المشروع بالتركيز على إنشاء واجهة احترافية وجذابة بصريًا لعميل مؤسسي. استخدمت Next.js للأداء وتحسين محركات البحث، مما يضمن أن الموقع سريع وسهل الاكتشاف.",
     "collaborators": []

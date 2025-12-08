@@ -148,6 +148,8 @@
     "shortDescription": "Renewable energy solutions platform (Client Preview).",
     "description": "A modern web platform designed for a renewable energy company. This project serves as a client preview to demonstrate the potential for a digital presence in the energy sector. It features a clean, eco-friendly design and showcases services and solutions.",
     "image": "/placeholder.svg?height=400&width=800",
+    "status": "Preview Unavailable",
+    "statusReason": "The project preview has been temporarily disabled due to unresolved contract negotiations with the client.",
     "technologies": [
       "Next.js",
       "TypeScript",
@@ -156,7 +158,7 @@
       "shadcn/ui"
     ],
     "timeline": "1 month (2024)",
-    "liveUrl": "https://sunrise-energy.vercel.app",
+    "liveUrl": null,
     "githubUrl": "https://github.com/samibentaiba/sunrise-energy",
     "personalExperience": "This project allowed me to focus on creating a professional and visually appealing interface for a corporate client. I utilized Next.js for performance and SEO, ensuring the site is fast and discoverable.",
     "collaborators": []
