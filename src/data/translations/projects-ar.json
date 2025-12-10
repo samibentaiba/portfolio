@@ -87,7 +87,7 @@
     ],
     "timeline": "شهرين (أكتوبر 2024 - ديسمبر 2024)",
     "liveUrl": null,
-    "downloadUrl": "https://github.com/samibentaiba/c-studio/releases/download/v1.3.0/c-studio-win32-x64-1.3.0.zip",
+    "downloadUrl": "https://github.com/samibentaiba/c-studio/releases/download/v1.4.3/C-Studio-Setup-1.4.3.exe",
     "githubUrl": "https://github.com/samibentaiba/c-studio",
     "personalExperience": "كان بناء C-Studio رحلة مثيرة في تطوير تطبيقات سطح المكتب باستخدام Electron. كان التحدي الأكبر هو تجميع مترجم MinGW وضمان عمله بسلاسة دون أي إعداد للنظام. ركزت على إنشاء تجربة سهلة الاستخدام للمبتدئين الذين يتعلمون برمجة C، مع ميزات مثل التجميع الفوري ودعم الطرفية التفاعلية.",
     "collaborators": []
