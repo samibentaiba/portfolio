@@ -87,7 +87,7 @@
     ],
     "timeline": "2 mois (Oct 2024 - Déc 2024)",
     "liveUrl": null,
-    "downloadUrl": "https://github.com/samibentaiba/c-studio/releases/download/v1.4.3/C-Studio-Setup-1.4.3.exe",
+    "downloadUrl": "https://github.com/samibentaiba/c-studio/releases/download/v1.5.0/C-Studio-Setup-1.5.0.exe",
     "githubUrl": "https://github.com/samibentaiba/c-studio",
     "personalExperience": "Construire C-Studio a été un voyage passionnant dans le développement d'applications de bureau avec Electron. Le plus grand défi était d'intégrer le compilateur MinGW et de s'assurer qu'il fonctionne parfaitement sans aucune configuration système. Je me suis concentré sur la création d'une expérience conviviale pour les débutants apprenant la programmation C, avec des fonctionnalités comme la compilation instantanée et le support du terminal interactif.",
     "collaborators": []
