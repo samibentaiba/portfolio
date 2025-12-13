@@ -200,7 +200,7 @@ export function Wrapper({ children }: { children: React.ReactNode }) {
       enableSystem
       disableTransitionOnChange
     >
-      <div className="h-screen w-screen">
+      <div className="h-screen w-full">
         <canvas
           ref={canvasRef}
           className="fixed inset-0 z-0 h-full w-full bg-background"
