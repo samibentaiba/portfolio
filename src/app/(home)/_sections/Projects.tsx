@@ -15,14 +15,16 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { LuGithub } from "react-icons/lu";
-import { Download, ExternalLink, ArrowRight, AlertTriangle } from "lucide-react";
+import {
+  Download,
+  ExternalLink,
+  ArrowRight,
+  AlertTriangle,
+  CheckCircle,
+} from "lucide-react";
 
-import {
-  useProjectsData,
-} from "../hook";
-import {
-  Project,
-} from "@/types";
+import { useProjectsData } from "../hook";
+import { Project } from "@/types";
 import { getProjectImage } from "@/lib/utils";
 
 // Featured project slugs
@@ -45,7 +47,9 @@ const Projects = memo(function Projects() {
   }
 
   // Filter to only show featured projects
-  const featuredProjects = projects.filter((p) => FEATURED_PROJECTS.includes(p.slug));
+  const featuredProjects = projects.filter((p) =>
+    FEATURED_PROJECTS.includes(p.slug)
+  );
 
   if (featuredProjects.length === 0) {
     return null;
@@ -143,9 +147,9 @@ const ProjectCard = memo(function ProjectCard({
 
   return (
     <Card className="overflow-hidden transition-all hover:shadow-md h-full flex flex-col">
-        <div className="relative aspect-video overflow-hidden cursor-pointer">
-          <Image
-            src={imgSrc}
+      <div className="relative aspect-video overflow-hidden cursor-pointer">
+        <Image
+          src={imgSrc}
           alt={project.title || "Project Image"}
           fill
           onClick={handleImageClick}
@@ -154,11 +158,31 @@ const ProjectCard = memo(function ProjectCard({
           onError={() => setImgSrc("/placeholder.svg?height=400&width=800")}
         />
         {project.status && (
-          <div className="absolute inset-0 bg-black/40 flex items-center justify-center cursor-pointer" onClick={handleImageClick}>
-            <div className="bg-amber-500/90 text-black px-3 py-2 rounded-md flex items-center gap-2 max-w-[90%] pointer-events-none" title={project.statusReason}>
-              <AlertTriangle className="h-4 w-4 flex-shrink-0" />
-              <span className="text-xs sm:text-sm font-medium truncate">{project.status}</span>
-            </div>
+          <div
+            className="absolute inset-0 bg-black/40 flex items-center justify-center cursor-pointer"
+            onClick={handleImageClick}
+          >
+            {project.status.toLowerCase().includes("available") ? (
+              <div
+                className="bg-emerald-500/90 text-white px-3 py-2 rounded-md flex items-center gap-2 max-w-[90%] pointer-events-none"
+                title={project.statusReason}
+              >
+                <CheckCircle className="h-4 w-4 flex-shrink-0" />
+                <span className="text-xs sm:text-sm font-medium truncate">
+                  {project.status}
+                </span>
+              </div>
+            ) : (
+              <div
+                className="bg-amber-500/90 text-black px-3 py-2 rounded-md flex items-center gap-2 max-w-[90%] pointer-events-none"
+                title={project.statusReason}
+              >
+                <AlertTriangle className="h-4 w-4 flex-shrink-0" />
+                <span className="text-xs sm:text-sm font-medium truncate">
+                  {project.status}
+                </span>
+              </div>
+            )}
           </div>
         )}
       </div>
@@ -218,4 +242,4 @@ const ProjectCard = memo(function ProjectCard({
   );
 });
 
-export default Projects
+export default Projects;

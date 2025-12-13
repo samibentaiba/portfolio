@@ -46,8 +46,9 @@
     "shortDescription": "Agricultural Management System for Algeria's Ministry of Agriculture.",
     "description": "Algis is a comprehensive Agricultural Management System designed for the National Office of Agricultural Development (Ministry of Agriculture and Rural Development). It digitizes and streamlines management of Agricultural Production Units (UAPs) across Algeria, centralizing scattered Excel data into a relational database with role-based access control, livestock tracking, equipment management, and production analytics. Uses PostgreSQL for hosted versions and SQLite for local development. A potential enterprise upgrade using Rust, MySQL, HTMX, and jQuery is being proposed to the client.",
     "image": "/placeholder.svg?height=400&width=800",
-    "status": "Preview Unavailable",
-    "statusReason": "The project preview has been temporarily disabled due to unresolved contract negotiations with the client.",
+    "fetchUrl": "https://algis-preview.vercel.app",
+    "status": "Free Trial Available",
+    "statusReason": "A temporary free trial is available. Full access requires payment.",
     "technologies": [
       "Next.js",
       "React",
@@ -129,12 +130,7 @@
     "shortDescription": "Website for Remdani Dental Center.",
     "description": "A professional website for Remdani Dental Center, showcasing services, team members, and patient testimonials. The platform provides a user-friendly interface for patients to learn about dental care and contact the clinic.",
     "image": "/placeholder.svg?height=400&width=800",
-    "technologies": [
-      "React",
-      "Node.js",
-      "Tailwind CSS",
-      "Linux Ecosystem"
-    ],
+    "technologies": ["React", "Node.js", "Tailwind CSS", "Linux Ecosystem"],
     "timeline": "2024",
     "liveUrl": "https://ramdani.vercel.app",
     "githubUrl": "https://github.com/ismail-devmaster/finalProjectFe",
@@ -233,11 +229,7 @@
     "shortDescription": "CSE USDB promo 2023 website.",
     "description": "A central hub for the CSE USDB promo 2023, providing information about the club, its departments, and events. This was my first project as a software engineer.",
     "image": "/placeholder.svg?height=400&width=800",
-    "technologies": [
-      "React",
-      "Vite",
-      "Figma"
-    ],
+    "technologies": ["React", "Vite", "Figma"],
     "timeline": "2024",
     "liveUrl": "https://cse-hub.netlify.app/home",
     "githubUrl": "https://github.com/samibentaiba/cse-hub",

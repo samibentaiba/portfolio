@@ -6,7 +6,15 @@ import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { AlertTriangle, Calendar, Download, ExternalLink, Github, Users } from "lucide-react";
+import {
+  AlertTriangle,
+  Calendar,
+  CheckCircle,
+  Download,
+  ExternalLink,
+  Github,
+  Users,
+} from "lucide-react";
 import { useLanguage } from "@/components/language-provider";
 import { Skill } from "@/components/skill";
 import { useProject } from "./hook";
@@ -47,19 +55,38 @@ export default function ProjectClient() {
           </div>
         </div>
 
-        {project.status && (
-          <div className="bg-amber-500/20 border border-amber-500/50 rounded-lg p-4 mb-6 sm:mb-8">
-            <div className="flex items-start gap-3">
-              <AlertTriangle className="h-5 w-5 text-amber-500 flex-shrink-0 mt-0.5" />
-              <div>
-                <p className="font-medium text-amber-500">{project.status}</p>
-                {project.statusReason && (
-                  <p className="text-sm text-muted-foreground mt-1">{project.statusReason}</p>
-                )}
+        {project.status &&
+          (project.status.toLowerCase().includes("available") ? (
+            <div className="bg-emerald-500/20 border border-emerald-500/50 rounded-lg p-4 mb-6 sm:mb-8">
+              <div className="flex items-start gap-3">
+                <CheckCircle className="h-5 w-5 text-emerald-500 flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-medium text-emerald-500">
+                    {project.status}
+                  </p>
+                  {project.statusReason && (
+                    <p className="text-sm text-muted-foreground mt-1">
+                      {project.statusReason}
+                    </p>
+                  )}
+                </div>
               </div>
             </div>
-          </div>
-        )}
+          ) : (
+            <div className="bg-amber-500/20 border border-amber-500/50 rounded-lg p-4 mb-6 sm:mb-8">
+              <div className="flex items-start gap-3">
+                <AlertTriangle className="h-5 w-5 text-amber-500 flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-medium text-amber-500">{project.status}</p>
+                  {project.statusReason && (
+                    <p className="text-sm text-muted-foreground mt-1">
+                      {project.statusReason}
+                    </p>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
 
         <div className="relative aspect-video overflow-hidden rounded-lg mb-6 sm:mb-8 w-full">
           <Image
@@ -86,11 +113,7 @@ export default function ProjectClient() {
             </a>
           )}
           {project.downloadUrl && (
-            <a
-              href={project.downloadUrl}
-              download
-              className="w-full sm:w-auto"
-            >
+            <a href={project.downloadUrl} download className="w-full sm:w-auto">
               <Button className="gap-2 w-full sm:w-auto">
                 <Download className="h-4 w-4" /> {t("projects.download")}
               </Button>
@@ -149,12 +172,12 @@ export default function ProjectClient() {
                     {project.collaborators.map(
                       (collaborator: string, index: number) => (
                         <li key={index}>{collaborator}</li>
-                      ),
+                      )
                     )}
                   </ul>
                 ) : (
                   <p className="text-muted-foreground">
-                    {t('projects.soloProject')}
+                    {t("projects.soloProject")}
                   </p>
                 )}
               </div>

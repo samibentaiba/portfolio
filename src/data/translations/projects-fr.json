@@ -46,8 +46,9 @@
     "shortDescription": "Système de gestion agricole pour le Ministère de l'Agriculture algérien.",
     "description": "Algis est un système de gestion agricole complet conçu pour l'Office National du Développement Agricole (Ministère de l'Agriculture et du Développement Rural). Il numérise et rationalise la gestion des Unités de Production Agricole (UAP) à travers l'Algérie, en centralisant les données Excel dispersées dans une base de données relationnelle avec contrôle d'accès basé sur les rôles, suivi du bétail, gestion des équipements et analyses de production. Utilise PostgreSQL pour les versions hébergées et SQLite pour le développement local. Une mise à niveau entreprise potentielle utilisant Rust, MySQL, HTMX et jQuery est proposée au client.",
     "image": "/placeholder.svg?height=400&width=800",
-    "status": "Aperçu Non Disponible",
-    "statusReason": "L'aperçu du projet a été temporairement désactivé en raison de négociations contractuelles non résolues avec le client.",
+    "fetchUrl": "https://algis-preview.vercel.app",
+    "status": "Essai Gratuit Disponible",
+    "statusReason": "Un essai gratuit temporaire est disponible. L'accès complet nécessite un paiement.",
     "technologies": [
       "Next.js",
       "React",
@@ -129,12 +130,7 @@
     "shortDescription": "Site web pour le Centre Dentaire Remdani.",
     "description": "Un site web professionnel pour le Centre Dentaire Remdani, présentant les services, les membres de l'équipe et les témoignages de patients. La plateforme offre une interface conviviale permettant aux patients de s'informer sur les soins dentaires et de contacter la clinique.",
     "image": "/placeholder.svg?height=400&width=800",
-    "technologies": [
-      "React",
-      "Node.js",
-      "Tailwind CSS",
-      "Écosystème Linux"
-    ],
+    "technologies": ["React", "Node.js", "Tailwind CSS", "Écosystème Linux"],
     "timeline": "2024",
     "liveUrl": "https://ramdani.vercel.app",
     "githubUrl": "https://github.com/ismail-devmaster/finalProjectFe",
@@ -233,11 +229,7 @@
     "shortDescription": "Site web du CSE USDB promo 2023.",
     "description": "Un hub central pour le CSE USDB promo 2023, fournissant des informations sur le club, ses départements et ses événements. C'était mon premier projet en tant qu'ingénieur logiciel.",
     "image": "/placeholder.svg?height=400&width=800",
-    "technologies": [
-      "React",
-      "Vite",
-      "Figma"
-    ],
+    "technologies": ["React", "Vite", "Figma"],
     "timeline": "2024",
     "liveUrl": "https://cse-hub.netlify.app/home",
     "githubUrl": "https://github.com/samibentaiba/cse-hub",
