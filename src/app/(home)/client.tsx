@@ -27,12 +27,13 @@ const FocusSection = ({
 
   return (
     <div
+      id={id}
       className={cn(
-        "snap-section min-h-screen flex flex-col py-20 transition-all duration-700 ease-in-out",
+        "snap-section min-h-screen flex flex-col py-10 transition-[opacity,filter] duration-700 ease-in-out",
         center ? "justify-center" : "justify-start",
         isActive
-          ? "opacity-100 scale-100 blur-0 grayscale-0 pointer-events-auto"
-          : "opacity-0 scale-95 blur-sm grayscale pointer-events-none",
+          ? "opacity-100 blur-0 grayscale-0 pointer-events-auto"
+          : "opacity-0 blur-sm grayscale pointer-events-none",
         className
       )}
     >
@@ -57,10 +58,10 @@ export default function HomeClient() {
         <FocusSection id="projects">
           <Projects />
         </FocusSection>
-        <FocusSection id="career-timeline">
+        <FocusSection id="career-timeline" >
           <CareerTimeline />
         </FocusSection>
-        <FocusSection id="contact" center>
+        <FocusSection id="contact">
           <Contact />
         </FocusSection>
         <FocusSection id="recommendations" center>

@@ -20,7 +20,7 @@ import { SkillCategory } from "@/types";
 const FEATURED_CATEGORIES = [
   "development-operations",
   "architecture-documentation",
-  "programming-languages"
+  "programming-languages",
 ];
 
 // ────────────────────────────────
@@ -44,15 +44,14 @@ const Skills = memo(function Skills() {
 
   return (
     <motion.section
-      id="skills"
-      className="w-full scroll-mt-16 px-4 sm:px-0"
+      className="w-full scroll-mt-16 px-4 py-15 sm:px-0"
       aria-labelledby="skills-heading"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      <div className="space-y-6">
+      <div className="space-y-8">
         <motion.div
           className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
           initial={{ opacity: 0, y: 20 }}

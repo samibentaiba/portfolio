@@ -26,7 +26,6 @@ const Contact = memo(function Contact() {
 
   return (
     <motion.section
-      id="contact"
       className="w-full scroll-mt-16 px-4 sm:px-0 py-8 sm:py-12"
       aria-labelledby="contact-heading"
       initial={{ opacity: 0, y: 30 }}

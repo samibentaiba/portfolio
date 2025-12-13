@@ -58,8 +58,7 @@ const Projects = memo(function Projects() {
 
   return (
     <motion.section
-      id="projects"
-      className="w-full scroll-mt-16 px-4 sm:px-0"
+      className="w-full scroll-mt-16 px-4 sm:px-0 py-8 sm:py-12"
       aria-labelledby="projects-heading"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}

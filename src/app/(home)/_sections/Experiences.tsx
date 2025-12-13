@@ -29,8 +29,7 @@ const Experiences = memo(function Experiences() {
 
   return (
     <motion.section
-      id="experiences"
-      className="w-full scroll-mt-16 px-4 sm:px-0"
+      className="w-full scroll-mt-16 px-4 sm:px-0 py-8 sm:py-12"
       aria-labelledby="experiences-heading"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}

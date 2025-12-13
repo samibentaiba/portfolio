@@ -419,7 +419,7 @@ function Footer() {
   const { isRtl } = useRTL();
 
   return (
-    <footer className="w-full hidden md:flex items-center justify-center border-t py-6 md:py-0">
+    <footer className="w-full hidden md:flex items-center justify-center border-t py-6 md:py-0 snap-end snap-always">
       <div
         className={cn(
           "container flex flex-col items-center justify-between gap-4 md:h-16 md:flex-row px-4 sm:px-6",
