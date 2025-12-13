@@ -46,7 +46,7 @@
     "shortDescription": "Système de gestion agricole pour le Ministère de l'Agriculture algérien.",
     "description": "Algis est un système de gestion agricole complet conçu pour l'Office National du Développement Agricole (Ministère de l'Agriculture et du Développement Rural). Il numérise et rationalise la gestion des Unités de Production Agricole (UAP) à travers l'Algérie, en centralisant les données Excel dispersées dans une base de données relationnelle avec contrôle d'accès basé sur les rôles, suivi du bétail, gestion des équipements et analyses de production. Utilise PostgreSQL pour les versions hébergées et SQLite pour le développement local. Une mise à niveau entreprise potentielle utilisant Rust, MySQL, HTMX et jQuery est proposée au client.",
     "image": "/placeholder.svg?height=400&width=800",
-    "fetchUrl": "https://algis-preview.vercel.app",
+    "liveUrl": "https://algis-preview.vercel.app",
     "status": "Essai Gratuit Disponible",
     "statusReason": "Un essai gratuit temporaire est disponible. L'accès complet nécessite un paiement.",
     "technologies": [
@@ -63,7 +63,6 @@
       "Documentation Technique"
     ],
     "timeline": "En cours (2024 - Présent)",
-    "liveUrl": null,
     "githubUrl": null,
     "personalExperience": "Travailler sur Algis pour un client du secteur agricole a été une expérience enrichissante. Le projet implique une modélisation de données complexe avec Prisma pour gérer les UAP, le bétail, les machines, les cultures et leurs relations. Je construis un tableau de bord moderne full-stack qui remplace les flux de travail manuels basés sur Excel par une application web dynamique avec authentification et contrôle d'accès basé sur les rôles. Le dépôt est privé en raison des conditions de service du client.",
     "collaborators": []
