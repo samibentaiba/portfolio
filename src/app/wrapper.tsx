@@ -28,6 +28,8 @@ function RTLWrapper({ children }: { children: React.ReactNode }) {
 }
 
 export function Wrapper({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
+  const [activeSection, setActiveSection] = useState<string | null>(null);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const foregroundColorRef = useRef("rgba(255, 255, 255, 0.5)");
 
@@ -124,60 +126,6 @@ export function Wrapper({ children }: { children: React.ReactNode }) {
     };
   }, []);
 
-  return (
-    <ThemeProvider
-      attribute="class"
-      defaultTheme="system"
-      enableSystem
-      disableTransitionOnChange
-    >
-      <div className="h-screen w-screen">
-        <canvas
-          ref={canvasRef}
-          className="fixed inset-0 z-0 h-full w-full bg-background"
-        />
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-          className="relative z-10"
-        >
-          <LanguageProvider>
-            <RTLWrapper>
-              <div className="flex flex-col min-h-screen">
-                <Header />
-                <div id="/" className="flex-1 py-8">
-                  {children}
-                </div>
-                <Footer />
-                <ScrollHandler />
-              </div>
-            </RTLWrapper>
-          </LanguageProvider>
-        </motion.div>
-      </div>
-    </ThemeProvider>
-  );
-}
-
-function Header() {
-  const pathname = usePathname();
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState<string | null>(null);
-  const { t } = useLanguage();
-  const { scrollToSection } = useScroll();
-  const { isRtl } = useRTL();
-
-  const buttonRef = useRef<HTMLButtonElement>(null);
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
-  };
-
-  const handleNavClick = (section: string) => {
-    scrollToSection(section);
-    setMobileMenuOpen(false);
-  };
-
   // Section detection using scroll position
   useEffect(() => {
     if (pathname !== "/") {
@@ -244,6 +192,61 @@ function Header() {
       window.removeEventListener("resize", handleScroll);
     };
   }, [pathname]);
+
+  return (
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="system"
+      enableSystem
+      disableTransitionOnChange
+    >
+      <div className="h-screen w-screen">
+        <canvas
+          ref={canvasRef}
+          className="fixed inset-0 z-0 h-full w-full bg-background"
+        />
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          className="relative z-10"
+        >
+          <LanguageProvider>
+            <RTLWrapper>
+              <ScrollProvider activeSection={activeSection}>
+                <div className="flex flex-col min-h-screen">
+                  <Header activeSection={activeSection} />
+                  <div id="/" className="flex-1 py-8">
+                    {children}
+                  </div>
+                  <Footer />
+                  <ScrollHandler />
+                </div>
+              </ScrollProvider>
+            </RTLWrapper>
+          </LanguageProvider>
+        </motion.div>
+      </div>
+    </ThemeProvider>
+  );
+}
+
+function Header({ activeSection }: { activeSection: string | null }) {
+  const pathname = usePathname();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t } = useLanguage();
+  const { scrollToSection } = useScroll();
+  const { isRtl } = useRTL();
+
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
+  const handleNavClick = (section: string) => {
+    scrollToSection(section);
+    setMobileMenuOpen(false);
+  };
 
   // Theme-aware shadow classes for navbar items
   const navItemClass = cn(
