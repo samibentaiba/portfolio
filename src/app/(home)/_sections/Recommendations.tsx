@@ -9,7 +9,6 @@ import recommendationsAr from "@/data/translations/recommendations-ar.json";
 import { Recommendation } from "@/types";
 import { Quote } from "lucide-react";
 
-
 export default function Recommendations() {
   const { language, t } = useLanguage();
 
@@ -25,7 +24,7 @@ export default function Recommendations() {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, margin: "-10%" }}
         transition={{ duration: 0.5 }}
         className="space-y-12"
       >
@@ -45,7 +44,7 @@ export default function Recommendations() {
               key={rec.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-10%" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="flex flex-col p-6 space-y-4 border rounded-xl bg-card text-card-foreground shadow-sm"
             >

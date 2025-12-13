@@ -48,7 +48,7 @@ const Skills = memo(function Skills() {
       aria-labelledby="skills-heading"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
+      viewport={{ once: true, margin: "-10%" }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <div className="space-y-8">
@@ -56,7 +56,7 @@ const Skills = memo(function Skills() {
           className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: "-10%" }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
           <div>
@@ -82,7 +82,7 @@ const Skills = memo(function Skills() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: "-10%" }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <Card className="bg-muted/50 border-dashed">
@@ -98,7 +98,7 @@ const Skills = memo(function Skills() {
           className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: "-10%" }}
           variants={{
             hidden: { opacity: 0 },
             visible: {

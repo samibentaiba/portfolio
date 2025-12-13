@@ -795,28 +795,34 @@ const CareerTimeline = memo(function CareerTimeline({
   );
 });
 
+import { motion } from "framer-motion";
+
 // Section Component (Default Export)
 export default function CareerTimelineSection() {
   const { t, getCareerTimelineData } = useLanguage();
   const { branches } = getCareerTimelineData();
 
   return (
-    <section
+    <motion.section
       className="w-full scroll-mt-16 px-4 sm:px-0 career-timeline"
       aria-labelledby="career-timeline-heading"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-10%" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
     >
-        <div className="py-6">
-          <h2
-            id="career-timeline-heading"
-            className="text-2xl sm:text-3xl font-bold tracking-tighter"
-          >
-            {t("careerTimeline.title")}
-          </h2>
-          <p className="text-sm sm:text-base text-muted-foreground">
-            {t("careerTimeline.subtitle")}
-          </p>
-        </div>
-        <CareerTimeline branches={branches} />
-    </section>
+      <div className="py-6">
+        <h2
+          id="career-timeline-heading"
+          className="text-2xl sm:text-3xl font-bold tracking-tighter"
+        >
+          {t("careerTimeline.title")}
+        </h2>
+        <p className="text-sm sm:text-base text-muted-foreground">
+          {t("careerTimeline.subtitle")}
+        </p>
+      </div>
+      <CareerTimeline branches={branches} />
+    </motion.section>
   );
 }
