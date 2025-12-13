@@ -20,6 +20,7 @@ import { SkillCategory } from "@/types";
 const FEATURED_CATEGORIES = [
   "development-operations",
   "architecture-documentation",
+  "programming-languages"
 ];
 
 // ────────────────────────────────

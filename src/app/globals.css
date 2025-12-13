@@ -220,4 +220,22 @@
   overflow-y: auto;
 }
 
+/* Smooth scroll-snap for homepage sections */
+.snap-container {
+  scroll-snap-type: y mandatory;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+.snap-section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+/* Ensure smooth scrolling and snapping globally */
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  scroll-padding-top: 5rem; /* Account for fixed header height (approx 80px) */
+}
 

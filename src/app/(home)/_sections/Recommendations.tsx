@@ -33,7 +33,8 @@ export default function Recommendations() {
             {t("recommendations.title") || "Recommendations"}
           </h2>
           <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-            {t("recommendations.subtitle") || "What people say about working with me."}
+            {t("recommendations.subtitle") ||
+              "What people say about working with me."}
           </p>
         </div>
 
@@ -48,8 +49,10 @@ export default function Recommendations() {
               className="flex flex-col p-6 space-y-4 border rounded-xl bg-card text-card-foreground shadow-sm"
             >
               <Quote className="w-8 h-8 text-primary/40" />
-              <p className="flex-1 text-muted-foreground italic">&quot;{rec.text}&quot;</p>
-              
+              <p className="flex-1 text-muted-foreground italic">
+                &quot;{rec.text}&quot;
+              </p>
+
               <div className="flex items-center gap-4 pt-4 border-t">
                 <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
                   <Image
