@@ -13,12 +13,9 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar, MapPin, ArrowRight } from "lucide-react";
-import {
-  useExperiencesData,
-} from "../hook";
-import {
-  Experience,
-} from "@/types";
+import { motion } from "framer-motion";
+import { useExperiencesData } from "../hook";
+import { Experience } from "@/types";
 
 // ────────────────────────────────
 // Experiences Section (Homepage - Summary + Soft Skills Narrative)
@@ -31,13 +28,23 @@ const Experiences = memo(function Experiences() {
   }
 
   return (
-    <section
+    <motion.section
       id="experiences"
       className="w-full scroll-mt-16 px-4 sm:px-0"
       aria-labelledby="experiences-heading"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <div className="space-y-6">
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <motion.div
+          className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >
           <div>
             <h2
               id="experiences-heading"
@@ -55,65 +62,103 @@ const Experiences = memo(function Experiences() {
               <ArrowRight className="h-4 w-4" />
             </Link>
           </Button>
-        </div>
+        </motion.div>
 
         {/* Software Engineer Narrative */}
-        <Card className="bg-muted/50 border-dashed">
-          <CardContent className="p-4 sm:p-6">
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-              {t("experiences.narrative")}
-            </p>
-          </CardContent>
-        </Card>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          <Card className="bg-muted/50 border-dashed">
+            <CardContent className="p-4 sm:p-6">
+              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                {t("experiences.narrative")}
+              </p>
+            </CardContent>
+          </Card>
+        </motion.div>
 
         {/* Experience Cards (Limited to 2) */}
-        <div className="flex flex-col gap-6">
-          {experiences.slice(0, 2).map((experience: Experience) => (
-            <ExperienceCard key={experience.slug} experience={experience} />
-          ))}
-        </div>
+        <motion.div
+          className="flex flex-col gap-6"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: { staggerChildren: 0.15, delayChildren: 0.3 },
+            },
+          }}
+        >
+          {experiences
+            .slice(0, 2)
+            .map((experience: Experience, index: number) => (
+              <ExperienceCard
+                key={experience.slug}
+                experience={experience}
+                index={index}
+              />
+            ))}
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 });
 
 const ExperienceCard = memo(function ExperienceCard({
   experience,
+  index,
 }: {
   experience: Experience;
+  index: number;
 }) {
   return (
-    <Link
-      href={`/experiences/${experience.slug}`}
-      aria-label={`View details about ${experience.role}`}
+    <motion.div
+      variants={{
+        hidden: { opacity: 0, x: index % 2 === 0 ? -30 : 30 },
+        visible: {
+          opacity: 1,
+          x: 0,
+          transition: { duration: 0.5, ease: "easeOut" },
+        },
+      }}
     >
-      <Card className="overflow-hidden transition-all hover:shadow-md">
-        <CardHeader className="p-4 sm:pb-3">
-          <CardTitle className="text-lg sm:text-xl">
-            {experience.role}
-          </CardTitle>
-          <CardDescription className="text-xs sm:text-sm">
-            {experience.company}
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="p-4 pt-0 sm:pt-0">
-          <div className="flex gap-4 text-xs sm:text-sm text-muted-foreground mb-3 sm:mb-4 flex-wrap">
-            <div className="flex items-center">
-              <Calendar className="mr-1 h-3 w-3" aria-hidden="true" />
-              <span>{experience.period}</span>
+      <Link
+        href={`/experiences/${experience.slug}`}
+        aria-label={`View details about ${experience.role}`}
+      >
+        <Card className="overflow-hidden transition-all hover:shadow-md">
+          <CardHeader className="p-4 sm:pb-3">
+            <CardTitle className="text-lg sm:text-xl">
+              {experience.role}
+            </CardTitle>
+            <CardDescription className="text-xs sm:text-sm">
+              {experience.company}
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="p-4 pt-0 sm:pt-0">
+            <div className="flex gap-4 text-xs sm:text-sm text-muted-foreground mb-3 sm:mb-4 flex-wrap">
+              <div className="flex items-center">
+                <Calendar className="mr-1 h-3 w-3" aria-hidden="true" />
+                <span>{experience.period}</span>
+              </div>
+              <div className="flex items-center">
+                <MapPin className="mr-1 h-3 w-3" aria-hidden="true" />
+                <span>{experience.location}</span>
+              </div>
             </div>
-            <div className="flex items-center">
-              <MapPin className="mr-1 h-3 w-3" aria-hidden="true" />
-              <span>{experience.location}</span>
-            </div>
-          </div>
-          <p className="text-xs sm:text-sm line-clamp-2 sm:line-clamp-none">
-            {experience.summary}
-          </p>
-        </CardContent>
-      </Card>
-    </Link>
+            <p className="text-xs sm:text-sm line-clamp-2 sm:line-clamp-none">
+              {experience.summary}
+            </p>
+          </CardContent>
+        </Card>
+      </Link>
+    </motion.div>
   );
 });
 
-export default Experiences
+export default Experiences;

@@ -2,10 +2,7 @@
 "use client";
 
 import { memo } from "react";
-import {
-  Card,
-  CardContent,
-} from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -18,26 +15,29 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { ReloadIcon } from "@radix-ui/react-icons";
-import {
-  useContactForm,
-} from "../hook";
+import { motion } from "framer-motion";
+import { useContactForm } from "../hook";
 
 // ────────────────────────────────
 // Contact Section
 // ────────────────────────────────
 const Contact = memo(function Contact() {
   return (
-    <section
+    <motion.section
       id="contact"
       className="w-full scroll-mt-16 px-4 sm:px-0 py-8 sm:py-12"
       aria-labelledby="contact-heading"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <Card>
         <CardContent className="p-6">
           <ContactForm />
         </CardContent>
       </Card>
-    </section>
+    </motion.section>
   );
 });
 
@@ -208,4 +208,4 @@ const ContactForm = memo(function ContactForm() {
     </Form>
   );
 });
-export default Contact
+export default Contact;

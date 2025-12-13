@@ -22,6 +22,7 @@ import {
   AlertTriangle,
   CheckCircle,
 } from "lucide-react";
+import { motion } from "framer-motion";
 
 import { useProjectsData } from "../hook";
 import { Project } from "@/types";
@@ -56,13 +57,23 @@ const Projects = memo(function Projects() {
   }
 
   return (
-    <section
+    <motion.section
       id="projects"
       className="w-full scroll-mt-16 px-4 sm:px-0"
       aria-labelledby="projects-heading"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <div className="space-y-6">
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <motion.div
+          className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >
           <div>
             <h2
               id="projects-heading"
@@ -80,8 +91,20 @@ const Projects = memo(function Projects() {
               <ArrowRight className="h-4 w-4" />
             </Link>
           </Button>
-        </div>
-        <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
+        </motion.div>
+        <motion.div
+          className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: { staggerChildren: 0.12, delayChildren: 0.2 },
+            },
+          }}
+        >
           {featuredProjects.map((project) => (
             <ProjectCard
               key={project.slug}
@@ -90,9 +113,9 @@ const Projects = memo(function Projects() {
               t={t}
             />
           ))}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 });
 
@@ -146,99 +169,111 @@ const ProjectCard = memo(function ProjectCard({
   );
 
   return (
-    <Card className="overflow-hidden transition-all hover:shadow-md h-full flex flex-col">
-      <div className="relative aspect-video overflow-hidden cursor-pointer">
-        <Image
-          src={imgSrc}
-          alt={project.title || "Project Image"}
-          fill
-          onClick={handleImageClick}
-          className="object-cover transition-all hover:scale-105"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          onError={() => setImgSrc("/placeholder.svg?height=400&width=800")}
-        />
-        {project.status && (
-          <div
-            className="absolute inset-0 bg-black/40 flex items-center justify-center cursor-pointer"
+    <motion.div
+      variants={{
+        hidden: { opacity: 0, scale: 0.9, y: 20 },
+        visible: {
+          opacity: 1,
+          scale: 1,
+          y: 0,
+          transition: { duration: 0.4, ease: "easeOut" },
+        },
+      }}
+    >
+      <Card className="overflow-hidden transition-all hover:shadow-md h-full flex flex-col">
+        <div className="relative aspect-video overflow-hidden cursor-pointer">
+          <Image
+            src={imgSrc}
+            alt={project.title || "Project Image"}
+            fill
             onClick={handleImageClick}
-          >
-            {project.status.toLowerCase().includes("available") ? (
-              <div
-                className="bg-emerald-500/90 text-white px-3 py-2 rounded-md flex items-center gap-2 max-w-[90%] pointer-events-none"
-                title={project.statusReason}
-              >
-                <CheckCircle className="h-4 w-4 flex-shrink-0" />
-                <span className="text-xs sm:text-sm font-medium truncate">
-                  {project.status}
-                </span>
-              </div>
-            ) : (
-              <div
-                className="bg-amber-500/90 text-black px-3 py-2 rounded-md flex items-center gap-2 max-w-[90%] pointer-events-none"
-                title={project.statusReason}
-              >
-                <AlertTriangle className="h-4 w-4 flex-shrink-0" />
-                <span className="text-xs sm:text-sm font-medium truncate">
-                  {project.status}
-                </span>
-              </div>
-            )}
-          </div>
-        )}
-      </div>
-      <CardHeader className="p-4 sm:pb-3">
-        <CardTitle className="text-lg sm:text-xl">{project.title}</CardTitle>
-        <CardDescription className="text-xs sm:text-sm line-clamp-2">
-          {project.shortDescription}
-        </CardDescription>
-      </CardHeader>
-      <CardContent className="p-4 pt-0 sm:pt-0 flex-1">
-        <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4">
-          {project.technologies.slice(0, 5).map((tech) => (
-            <Badge key={tech} variant="outline" className="text-xs">
-              {tech}
-            </Badge>
-          ))}
-          {project.technologies.length > 5 && (
-            <Badge variant="outline" className="text-xs">
-              +{project.technologies.length - 5}
-            </Badge>
+            className="object-cover transition-all hover:scale-105"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            onError={() => setImgSrc("/placeholder.svg?height=400&width=800")}
+          />
+          {project.status && (
+            <div
+              className="absolute inset-0 bg-black/40 flex items-center justify-center cursor-pointer"
+              onClick={handleImageClick}
+            >
+              {project.status.toLowerCase().includes("available") ? (
+                <div
+                  className="bg-emerald-500/90 text-white px-3 py-2 rounded-md flex items-center gap-2 max-w-[90%] pointer-events-none"
+                  title={project.statusReason}
+                >
+                  <CheckCircle className="h-4 w-4 flex-shrink-0" />
+                  <span className="text-xs sm:text-sm font-medium truncate">
+                    {project.status}
+                  </span>
+                </div>
+              ) : (
+                <div
+                  className="bg-amber-500/90 text-black px-3 py-2 rounded-md flex items-center gap-2 max-w-[90%] pointer-events-none"
+                  title={project.statusReason}
+                >
+                  <AlertTriangle className="h-4 w-4 flex-shrink-0" />
+                  <span className="text-xs sm:text-sm font-medium truncate">
+                    {project.status}
+                  </span>
+                </div>
+              )}
+            </div>
           )}
         </div>
-      </CardContent>
-      <CardFooter className="flex justify-between border-t p-3 sm:p-4">
-        {project.liveUrl && (
-          <button
-            onClick={handleLiveClick}
-            className="text-xs sm:text-sm text-muted-foreground hover:text-foreground flex items-center transition-colors"
-            aria-label={`View live site for ${project.title}`}
-          >
-            <ExternalLink className="mr-1 h-3 w-3" aria-hidden="true" />
-            {t("navigation.live")}
-          </button>
-        )}
-        {project.downloadUrl && (
-          <button
-            onClick={handleDownloadClick}
-            className="text-xs sm:text-sm text-muted-foreground hover:text-foreground flex items-center transition-colors"
-            aria-label={`Download ${project.title}`}
-          >
-            <Download className="mr-1 h-3 w-3" aria-hidden="true" />
-            {t("projects.download")}
-          </button>
-        )}
-        {project.githubUrl && (
-          <button
-            onClick={handleGithubClick}
-            className="text-xs sm:text-sm text-muted-foreground hover:text-foreground flex items-center transition-colors"
-            aria-label={`View code for ${project.title}`}
-          >
-            <LuGithub className="mr-1 h-3 w-3" aria-hidden="true" />
-            Code
-          </button>
-        )}
-      </CardFooter>
-    </Card>
+        <CardHeader className="p-4 sm:pb-3">
+          <CardTitle className="text-lg sm:text-xl">{project.title}</CardTitle>
+          <CardDescription className="text-xs sm:text-sm line-clamp-2">
+            {project.shortDescription}
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="p-4 pt-0 sm:pt-0 flex-1">
+          <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4">
+            {project.technologies.slice(0, 5).map((tech) => (
+              <Badge key={tech} variant="outline" className="text-xs">
+                {tech}
+              </Badge>
+            ))}
+            {project.technologies.length > 5 && (
+              <Badge variant="outline" className="text-xs">
+                +{project.technologies.length - 5}
+              </Badge>
+            )}
+          </div>
+        </CardContent>
+        <CardFooter className="flex justify-between border-t p-3 sm:p-4">
+          {project.liveUrl && (
+            <button
+              onClick={handleLiveClick}
+              className="text-xs sm:text-sm text-muted-foreground hover:text-foreground flex items-center transition-colors"
+              aria-label={`View live site for ${project.title}`}
+            >
+              <ExternalLink className="mr-1 h-3 w-3" aria-hidden="true" />
+              {t("navigation.live")}
+            </button>
+          )}
+          {project.downloadUrl && (
+            <button
+              onClick={handleDownloadClick}
+              className="text-xs sm:text-sm text-muted-foreground hover:text-foreground flex items-center transition-colors"
+              aria-label={`Download ${project.title}`}
+            >
+              <Download className="mr-1 h-3 w-3" aria-hidden="true" />
+              {t("projects.download")}
+            </button>
+          )}
+          {project.githubUrl && (
+            <button
+              onClick={handleGithubClick}
+              className="text-xs sm:text-sm text-muted-foreground hover:text-foreground flex items-center transition-colors"
+              aria-label={`View code for ${project.title}`}
+            >
+              <LuGithub className="mr-1 h-3 w-3" aria-hidden="true" />
+              Code
+            </button>
+          )}
+        </CardFooter>
+      </Card>
+    </motion.div>
   );
 });
 
