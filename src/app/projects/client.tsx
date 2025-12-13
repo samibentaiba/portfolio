@@ -58,6 +58,22 @@ export default function ProjectsListClient() {
           <p className="text-muted-foreground">{t("projects.subtitle")}</p>
         </motion.div>
 
+        {/* Projects Narrative */}
+        <motion.div
+          className="mb-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >
+          <Card className="bg-muted/50 border-dashed">
+            <CardContent className="p-4 sm:p-6">
+              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                {t("projects.narrative")}
+              </p>
+            </CardContent>
+          </Card>
+        </motion.div>
+
         {/* All Projects */}
         <motion.div
           className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"

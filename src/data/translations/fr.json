@@ -3,6 +3,8 @@
     "skills": "Compétences",
     "experiences": "Expériences",
     "projects": "Projets",
+    "career": "Carrière",
+    "recommendations": "Recommandations",
     "contact": "me contacter",
     "backToHome": "Retour à l'Accueil",
     "next": "Suivante",
@@ -55,7 +57,8 @@
     "soloProject": "Projet solo",
     "personalExperience": "Expérience Personnelle",
     "download": "Télécharger",
-    "viewAll": "Voir tous les Projets"
+    "viewAll": "Voir tous les Projets",
+    "narrative": "En appliquant mes compétences techniques et en acquérant de l'expérience, mes capacités de résolution de problèmes s'améliorent continuellement et mon temps de livraison diminue avec chaque projet. Cette croissance me permet de relever des projets plus ambitieux pour mes clients et de contribuer significativement à la communauté open-source."
   },
   "educations": {
     "title": "Éducation",
@@ -133,9 +136,9 @@
     "rights": "Tous droits réservés."
   },
   "careerTimeline": {
-    "title": "Chronologie de Carrière",
+    "title": "Chronologie de carrière",
     "subtitle": "Survolez les jalons pour voir les détails. La taille des nœuds représente l'importance.",
-    "showBranches": "Afficher les Branches",
+    "showBranches": "Afficher les branches",
     "filterBySize": "Filtrer par Taille",
     "small": "Petit",
     "medium": "Moyen",

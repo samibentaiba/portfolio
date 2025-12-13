@@ -162,6 +162,7 @@ export function Wrapper({ children }: { children: React.ReactNode }) {
 function Header() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string | null>(null);
   const { t } = useLanguage();
   const { scrollToSection } = useScroll();
   const { isRtl } = useRTL();
@@ -176,6 +177,99 @@ function Header() {
     setMobileMenuOpen(false);
   };
 
+  // Section detection using scroll position
+  useEffect(() => {
+    if (pathname !== "/") {
+      setActiveSection(null);
+      return;
+    }
+
+    const sections = [
+      "hero",
+      "skills",
+      "experiences",
+      "projects",
+      "career-timeline",
+      "contact",
+      "recommendations",
+    ];
+
+    const handleScroll = () => {
+      const threshold = 300; // Detection threshold from top of viewport
+
+      // Find the section whose top is closest to (but above) the threshold
+      let activeId: string | null = null;
+
+      // Special case: if near bottom of page, select last section (recommendations)
+      const scrollBottom = window.scrollY + window.innerHeight;
+      const pageHeight = document.documentElement.scrollHeight;
+      if (pageHeight - scrollBottom < 100) {
+        activeId = sections[sections.length - 1]; // Last section
+      } else {
+        // Go through sections in reverse order to find the one that's passed the threshold
+        for (let i = sections.length - 1; i >= 0; i--) {
+          const sectionId = sections[i];
+          const element = document.getElementById(sectionId);
+          if (!element) continue;
+
+          const rect = element.getBoundingClientRect();
+
+          // If this section's top has crossed the threshold (scrolled into view)
+          if (rect.top <= threshold) {
+            activeId = sectionId;
+            break;
+          }
+        }
+      }
+
+      // Special case: if at very top, show hero
+      if (window.scrollY < 100 || !activeId) {
+        activeId = "hero";
+      }
+
+      setActiveSection(activeId);
+    };
+
+    // Run on mount and with a small delay for initial render
+    setTimeout(handleScroll, 100);
+    handleScroll();
+
+    // Add scroll listener
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, [pathname]);
+
+  // Theme-aware shadow classes for navbar items
+  const navItemClass = cn(
+    "flex items-center text-xs sm:text-sm font-medium text-muted-foreground transition-all duration-200",
+    "hover:text-foreground hover:[text-shadow:_0_1px_8px_rgba(0,0,0,0.4)] dark:hover:[text-shadow:_0_1px_8px_rgba(255,255,255,0.4)]"
+  );
+
+  const navItemActiveClass = cn(
+    "text-foreground [text-shadow:_0_1px_8px_rgba(0,0,0,0.4)] dark:[text-shadow:_0_1px_8px_rgba(255,255,255,0.4)]"
+  );
+
+  // Check if a section is active (either by scroll detection on homepage or by current page path)
+  const isActive = (section: string) => {
+    // On homepage, use scroll-based detection
+    if (pathname === "/") {
+      return activeSection === section;
+    }
+    // On other pages, check if the pathname starts with the section name
+    // e.g., /projects, /projects/algis -> "projects" is active
+    // e.g., /skills, /skills/react -> "skills" is active
+    // e.g., /experiences, /experiences/itc-developer -> "experiences" is active
+    if (pathname.startsWith(`/${section}`)) {
+      return true;
+    }
+    return false;
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 w-full border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/80 flex flex-col items-center justify-center">
       <div className="flex w-full max-w-[1920px] h-14 sm:h-16 md:h-18 items-center px-3 sm:px-4 md:px-6 justify-between">
@@ -185,16 +279,25 @@ function Header() {
             className="cursor-pointer"
             aria-label="Go to top"
           >
-            <BentaidevLogo />
+            <BentaidevLogo
+              isActive={
+                activeSection === "hero" || (pathname === "/" && !activeSection)
+              }
+            />
           </button>
 
           {/* Desktop navigation */}
-          <nav className={cn("hidden md:flex gap-3 md:gap-6 ml-3 md:ml-6", isRtl && "flex-row-reverse mr-3 md:mr-6 ml-0")}>
+          <nav
+            className={cn(
+              "hidden md:flex gap-3 md:gap-6 ml-3 md:ml-6",
+              isRtl && "flex-row-reverse mr-3 md:mr-6 ml-0"
+            )}
+          >
             <button
               onClick={() => handleNavClick("skills")}
               className={cn(
-                "flex items-center text-xs sm:text-sm font-medium text-muted-foreground transition-colors hover:text-foreground",
-                pathname === "/#skills" && "text-foreground"
+                navItemClass,
+                isActive("skills") && navItemActiveClass
               )}
             >
               {t("navigation.skills")}
@@ -202,8 +305,8 @@ function Header() {
             <button
               onClick={() => handleNavClick("experiences")}
               className={cn(
-                "flex items-center text-xs sm:text-sm font-medium text-muted-foreground transition-colors hover:text-foreground",
-                pathname === "/#experiences" && "text-foreground"
+                navItemClass,
+                isActive("experiences") && navItemActiveClass
               )}
             >
               {t("navigation.experiences")}
@@ -211,25 +314,48 @@ function Header() {
             <button
               onClick={() => handleNavClick("projects")}
               className={cn(
-                "flex items-center text-xs sm:text-sm font-medium text-muted-foreground transition-colors hover:text-foreground",
-                pathname === "/#projects" && "text-foreground"
+                navItemClass,
+                isActive("projects") && navItemActiveClass
               )}
             >
               {t("navigation.projects")}
             </button>
             <button
+              onClick={() => handleNavClick("career-timeline")}
+              className={cn(
+                navItemClass,
+                isActive("career-timeline") && navItemActiveClass
+              )}
+            >
+              {t("navigation.career")}
+            </button>
+            <button
               onClick={() => handleNavClick("contact")}
               className={cn(
-                "flex items-center text-xs sm:text-sm font-medium text-muted-foreground transition-colors hover:text-foreground",
-                pathname === "/#contact" && "text-foreground"
+                navItemClass,
+                isActive("contact") && navItemActiveClass
               )}
             >
               {t("navigation.contact")}
             </button>
+            <button
+              onClick={() => handleNavClick("recommendations")}
+              className={cn(
+                navItemClass,
+                isActive("recommendations") && navItemActiveClass
+              )}
+            >
+              {t("navigation.recommendations")}
+            </button>
           </nav>
         </div>
 
-        <div className={cn("flex items-center gap-1 sm:gap-2", isRtl && "flex-row-reverse")}>
+        <div
+          className={cn(
+            "flex items-center gap-1 sm:gap-2",
+            isRtl && "flex-row-reverse"
+          )}
+        >
           <ThemeToggle />
           <LanguageToggle />
 
@@ -256,16 +382,25 @@ function Header() {
         mobileMenuOpen={mobileMenuOpen}
         setMobileMenuOpen={setMobileMenuOpen}
         buttonRef={buttonRef}
+        activeSection={activeSection}
       />
     </header>
   );
 }
 
-const BentaidevLogo = () => {
+const BentaidevLogo = ({ isActive }: { isActive?: boolean }) => {
   const { isRtl } = useRTL();
   return (
-    <div className="inline-flex items-center justify-center">
-      <div className={cn("text-2xl font-bold tracking-wider flex items-center", isRtl && "flex-row-reverse")}>
+    <div className="inline-flex items-center justify-center group">
+      <div
+        className={cn(
+          "text-2xl font-bold tracking-wider flex items-center transition-all duration-200",
+          "group-hover:[text-shadow:_0_1px_12px_rgba(0,0,0,0.5)] dark:group-hover:[text-shadow:_0_1px_12px_rgba(255,255,255,0.5)]",
+          isActive &&
+            "[text-shadow:_0_1px_12px_rgba(0,0,0,0.5)] dark:[text-shadow:_0_1px_12px_rgba(255,255,255,0.5)]",
+          isRtl && "flex-row-reverse"
+        )}
+      >
         <span className="bg-foreground text-background rounded flex items-center justify-center h-6 w-0 mr-1 pr-[11] pl-[13]">
           B
         </span>
@@ -281,11 +416,18 @@ function Footer() {
 
   return (
     <footer className="w-full hidden md:flex items-center justify-center border-t py-6 md:py-0">
-      <div className={cn("container flex flex-col items-center justify-between gap-4 md:h-16 md:flex-row px-4 sm:px-6", isRtl && "md:flex-row-reverse")}>
+      <div
+        className={cn(
+          "container flex flex-col items-center justify-between gap-4 md:h-16 md:flex-row px-4 sm:px-6",
+          isRtl && "md:flex-row-reverse"
+        )}
+      >
         <p className="text-xs sm:text-sm text-muted-foreground text-center md:text-left">
           © {new Date().getFullYear()} Sami Bentaiba. {t("footer.rights")}
         </p>
-        <div className={cn("flex items-center gap-4", isRtl && "flex-row-reverse")}>
+        <div
+          className={cn("flex items-center gap-4", isRtl && "flex-row-reverse")}
+        >
           <Link
             href={"https://www.linkedin.com/in/samibentaiba"}
             target="_blank"

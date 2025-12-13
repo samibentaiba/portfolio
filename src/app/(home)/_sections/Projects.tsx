@@ -92,6 +92,23 @@ const Projects = memo(function Projects() {
             </Link>
           </Button>
         </motion.div>
+
+        {/* Projects Narrative */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          <Card className="bg-muted/50 border-dashed">
+            <CardContent className="p-4 sm:p-6">
+              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                {t("projects.narrative")}
+              </p>
+            </CardContent>
+          </Card>
+        </motion.div>
+
         <motion.div
           className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3"
           initial="hidden"

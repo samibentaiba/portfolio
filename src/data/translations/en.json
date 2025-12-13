@@ -3,7 +3,9 @@
     "skills": "Skills",
     "experiences": "Experiences",
     "projects": "Projects",
-    "contact": "contact me",
+    "career": "Career",
+    "recommendations": "Recommendations",
+    "contact": "Contact me",
     "backToHome": "Back to Home",
     "next": "Next",
     "previous": "Previous",
@@ -14,7 +16,7 @@
   },
   "hero": {
     "viewProjects": "View Projects",
-    "contactMe": "Contact Me",
+    "contactMe": "Contact me",
     "resume": "Resume"
   },
   "skills": {
@@ -55,7 +57,8 @@
     "soloProject": "Solo project",
     "personalExperience": "Personal Experience",
     "download": "Download",
-    "viewAll": "View All Projects"
+    "viewAll": "View All Projects",
+    "narrative": "By applying my technical skills and gaining experience, my problem-solving abilities continue to improve and my delivery time decreases with each project. This growth enables me to take on more challenging projects for clients and contribute meaningfully to the open-source community."
   },
   "educations": {
     "title": "Education",
@@ -79,10 +82,10 @@
     "skillsInCategory": "Skills in this category"
   },
   "contact": {
-    "title": "Contact Me",
+    "title": "Contact me",
     "subtitle": "Have a project in mind? Let's work together to bring your ideas to life.",
     "form": {
-      "title": "Send Me a Message",
+      "title": "Send me a message",
       "description": "Fill out the form below and I'll get back to you as soon as possible.",
       "firstName": "First Name",
       "firstNamePlaceholder": "Enter your first name",
@@ -133,10 +136,10 @@
     "rights": "All rights reserved."
   },
   "careerTimeline": {
-    "title": "Career Timeline",
+    "title": "Career timeline",
     "subtitle": "Hover over milestones to see details. Node sizes represent importance.",
-    "showBranches": "Show Branches",
-    "filterBySize": "Filter by Size",
+    "showBranches": "Show branches",
+    "filterBySize": "Filter by size",
     "small": "Small",
     "medium": "Medium",
     "large": "Large",

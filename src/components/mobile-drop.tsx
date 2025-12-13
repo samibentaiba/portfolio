@@ -16,12 +16,14 @@ interface MenuDropProps {
   mobileMenuOpen: boolean;
   setMobileMenuOpen: (state: boolean) => void;
   buttonRef: React.RefObject<HTMLButtonElement | null>;
+  activeSection?: string | null;
 }
 
 export const MenuDrop: React.FC<MenuDropProps> = ({
   mobileMenuOpen,
   setMobileMenuOpen,
   buttonRef,
+  activeSection,
 }) => {
   const pathname = usePathname();
   const { scrollToSection } = useScroll();
@@ -52,6 +54,28 @@ export const MenuDrop: React.FC<MenuDropProps> = ({
     };
   }, [mobileMenuOpen, setMobileMenuOpen, buttonRef]);
 
+  // Check if a section is active (either by scroll detection on homepage or by current page path)
+  const isActive = (section: string) => {
+    // On homepage, use scroll-based detection
+    if (pathname === "/" && activeSection) {
+      return activeSection === section;
+    }
+    // On other pages, check if the pathname starts with the section name
+    if (pathname.startsWith(`/${section}`)) {
+      return true;
+    }
+    return false;
+  };
+
+  // Theme-aware shadow classes
+  const navItemClass = cn(
+    "flex py-3 text-sm font-medium text-muted-foreground transition-all duration-200 text-left",
+    "hover:text-foreground hover:[text-shadow:_0_1px_8px_rgba(0,0,0,0.4)] dark:hover:[text-shadow:_0_1px_8px_rgba(255,255,255,0.4)]"
+  );
+
+  const navItemActiveClass =
+    "text-foreground [text-shadow:_0_1px_8px_rgba(0,0,0,0.4)] dark:[text-shadow:_0_1px_8px_rgba(255,255,255,0.4)]";
+
   return (
     <>
       {mobileMenuOpen && (
@@ -64,8 +88,8 @@ export const MenuDrop: React.FC<MenuDropProps> = ({
             <button
               onClick={() => handleNavClick("skills")}
               className={cn(
-                "flex py-3 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground text-left",
-                pathname === "/#skills" && "text-foreground"
+                navItemClass,
+                isActive("skills") && navItemActiveClass
               )}
             >
               {t("navigation.skills")}
@@ -73,8 +97,8 @@ export const MenuDrop: React.FC<MenuDropProps> = ({
             <button
               onClick={() => handleNavClick("experiences")}
               className={cn(
-                "flex py-3 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground text-left",
-                pathname === "/#experiences" && "text-foreground"
+                navItemClass,
+                isActive("experiences") && navItemActiveClass
               )}
             >
               {t("navigation.experiences")}
@@ -82,20 +106,38 @@ export const MenuDrop: React.FC<MenuDropProps> = ({
             <button
               onClick={() => handleNavClick("projects")}
               className={cn(
-                "flex py-3 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground text-left",
-                pathname === "/#projects" && "text-foreground"
+                navItemClass,
+                isActive("projects") && navItemActiveClass
               )}
             >
               {t("navigation.projects")}
             </button>
             <button
+              onClick={() => handleNavClick("career-timeline")}
+              className={cn(
+                navItemClass,
+                isActive("career-timeline") && navItemActiveClass
+              )}
+            >
+              {t("navigation.career")}
+            </button>
+            <button
               onClick={() => handleNavClick("contact")}
               className={cn(
-                "flex py-3 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground text-left",
-                pathname === "/#contact" && "text-foreground"
+                navItemClass,
+                isActive("contact") && navItemActiveClass
               )}
             >
               {t("navigation.contact")}
+            </button>
+            <button
+              onClick={() => handleNavClick("recommendations")}
+              className={cn(
+                navItemClass,
+                isActive("recommendations") && navItemActiveClass
+              )}
+            >
+              {t("navigation.recommendations")}
             </button>
           </nav>
 

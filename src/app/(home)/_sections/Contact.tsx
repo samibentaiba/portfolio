@@ -22,6 +22,8 @@ import { useContactForm } from "../hook";
 // Contact Section
 // ────────────────────────────────
 const Contact = memo(function Contact() {
+  const { t } = useContactForm();
+
   return (
     <motion.section
       id="contact"
@@ -32,11 +34,31 @@ const Contact = memo(function Contact() {
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      <Card>
-        <CardContent className="p-6">
-          <ContactForm />
-        </CardContent>
-      </Card>
+      <div className="space-y-6">
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >
+          <h2
+            id="contact-heading"
+            className="text-2xl sm:text-3xl font-bold tracking-tighter"
+          >
+            {t("contact.title")}
+          </h2>
+          <p className="text-sm sm:text-base text-muted-foreground">
+            {t("contact.subtitle")}
+          </p>
+        </motion.div>
+
+        <Card>
+          <CardContent className="p-6">
+            <ContactForm />
+          </CardContent>
+        </Card>
+      </div>
     </motion.section>
   );
 });
