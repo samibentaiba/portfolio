@@ -14,10 +14,12 @@ const FocusSection = ({
   id,
   children,
   className,
+  center = false,
 }: {
   id: string;
   children: React.ReactNode;
   className?: string;
+  center?: boolean;
 }) => {
   const { activeSection } = useScrollContext();
   // Default to true if no active section (initial load) or if it matches
@@ -26,7 +28,8 @@ const FocusSection = ({
   return (
     <div
       className={cn(
-        "snap-section min-h-screen flex flex-col justify-center py-20 transition-all duration-700 ease-in-out",
+        "snap-section min-h-screen flex flex-col py-20 transition-all duration-700 ease-in-out",
+        center ? "justify-center" : "justify-start",
         isActive
           ? "opacity-100 scale-100 blur-0 grayscale-0 pointer-events-auto"
           : "opacity-0 scale-95 blur-sm grayscale pointer-events-none",
@@ -41,7 +44,7 @@ const FocusSection = ({
 export default function HomeClient() {
   return (
     <main className="flex flex-col items-center justify-center w-full">
-      <FocusSection id="hero" className="w-full">
+      <FocusSection id="hero" className="w-full" center>
         <Hero />
       </FocusSection>
       <div className="w-full max-w-6xl mx-auto">
@@ -57,10 +60,10 @@ export default function HomeClient() {
         <FocusSection id="career-timeline">
           <CareerTimeline />
         </FocusSection>
-        <FocusSection id="contact">
+        <FocusSection id="contact" center>
           <Contact />
         </FocusSection>
-        <FocusSection id="recommendations">
+        <FocusSection id="recommendations" center>
           <Recommendations />
         </FocusSection>
       </div>

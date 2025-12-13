@@ -239,3 +239,10 @@ html {
   scroll-padding-top: 5rem; /* Account for fixed header height (approx 80px) */
 }
 
+/* On touch devices, use proximity snapping to allow scrolling through tall sections */
+@media (pointer: coarse) {
+  html {
+    scroll-snap-type: y proximity;
+  }
+}
+
