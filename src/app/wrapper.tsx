@@ -19,6 +19,7 @@ import Link from "next/link";
 import { LuGithub } from "react-icons/lu";
 import { LuLinkedin } from "react-icons/lu";
 import { useRTL } from "@/hooks/use-rtl";
+import { ScrollProvider } from "@/components/scroll-context";
 
 // RTL wrapper component
 function RTLWrapper({ children }: { children: React.ReactNode }) {
