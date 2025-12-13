@@ -130,8 +130,11 @@ export function Wrapper({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     if (pathname !== "/") {
       setActiveSection(null);
+      document.documentElement.classList.remove("snap-scrolling");
       return;
     }
+
+    document.documentElement.classList.add("snap-scrolling");
 
     const sections = [
       "hero",

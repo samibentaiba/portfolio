@@ -235,15 +235,17 @@
 /* Ensure smooth scrolling and snapping globally */
 html {
   scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
   scroll-padding-top: 5rem; /* Account for fixed header height (approx 80px) */
   overflow-x: hidden;
 }
 
+.snap-scrolling {
+  scroll-snap-type: y mandatory;
+}
 
 /* On touch devices, use proximity snapping to allow scrolling through tall sections */
 @media (pointer: coarse) {
-  html {
+  .snap-scrolling {
     scroll-snap-type: y proximity;
   }
 }
