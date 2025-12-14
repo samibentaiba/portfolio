@@ -47,10 +47,16 @@ export function useResume() {
   ]);
 
   // Generate DOCX on-demand (keeps original functionality)
-  const generateDocx = async () => {
+  const generateDocx = async (
+    p: Personal | null = personal,
+    s: SkillCategory[] = skills,
+    e: Experience[] = experiences,
+    pr: Project[] = projects,
+    ed: Education[] = educations
+  ) => {
     setIsGenerating(true);
     try {
-      const doc = generateResumeDoc(personal, skills, experiences, projects, educations, t, language);
+      const doc = generateResumeDoc(p, s, e, pr, ed, t, language);
       const blob = await Packer.toBlob(doc);
       saveAs(blob, `resume_${language}.docx`);
     } catch (error) {
@@ -73,13 +79,27 @@ export function useResume() {
 
   return {
     t,
+    language,
     skills,
     experiences,
     projects,
     isGenerating,
     educations,
     personal,
-    handleDownload: generateDocx, // DOCX generation on-demand
+    handleDownload: (
+      filteredPersonal?: Personal | null,
+      filteredSkills?: SkillCategory[],
+      filteredExperiences?: Experience[],
+      filteredProjects?: Project[],
+      filteredEducations?: Education[]
+    ) =>
+      generateDocx(
+        filteredPersonal || personal,
+        filteredSkills || skills,
+        filteredExperiences || experiences,
+        filteredProjects || projects,
+        filteredEducations || educations
+      ),
     handleDownloadPdf: downloadStaticPdf, // Static PDF download
   };
 }

@@ -12,7 +12,8 @@
     "of": "sur",
     "title": "Titre",
     "experience": "Expérience",
-    "live": "En ligne"
+    "live": "En ligne",
+    "Download": "Télécharger"
   },
   "hero": {
     "viewProjects": "Voir les Projets",
@@ -74,6 +75,8 @@
     "print": "Imprimer",
     "generating": "Génération en cours...",
     "summary": "Résumé",
+    "targetRole": "Rôle Cible",
+    "filterDescription": "Filtrer le contenu du CV pour un poste spécifique",
     "at": "à",
     "education": "Éducation"
   },
@@ -155,5 +158,13 @@
   "recommendations": {
     "title": "Amis & Collègues",
     "subtitle": "Personnes talentueuses que je recommande."
+  },
+  "roles": {
+    "Software Engineer": "Ingénieur Logiciel",
+    "Front End Developer": "Développeur Front End",
+    "Back End Developer": "Développeur Back End",
+    "Full Stack Developer": "Développeur Full Stack",
+    "DevOps Engineer": "Ingénieur DevOps",
+    "Software Architect": "Architecte Logiciel"
   }
 }

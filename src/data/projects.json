@@ -11,7 +11,9 @@
       "TypeScript",
       "Tailwind CSS",
       "shadcn/ui",
-      "Lucide React"
+      "Lucide React",
+      "Frontend",
+      "Software Engineer"
     ],
     "timeline": "2024",
     "liveUrl": "https://calculator-delta-flax.vercel.app",
@@ -32,7 +34,9 @@
       "Tailwind CSS",
       "shadcn/ui",
       "System Architecture",
-      "Technical Documentation"
+      "Technical Documentation",
+      "Frontend",
+      "Software Engineer"
     ],
     "timeline": "2024",
     "liveUrl": "https://mosquito-killer-2.vercel.app",
@@ -60,7 +64,10 @@
       "shadcn/ui",
       "Linux Ecosystem",
       "System Architecture",
-      "Technical Documentation"
+      "Technical Documentation",
+      "Full Stack",
+      "Backend",
+      "Software Engineer"
     ],
     "timeline": "Ongoing (2024 - Present)",
     "githubUrl": null,
@@ -83,7 +90,9 @@
       "Windows",
       "Linux Ecosystem",
       "System Architecture",
-      "Technical Documentation"
+      "Technical Documentation",
+      "Software Engineer",
+      "Desktop Development"
     ],
     "timeline": "2 months (Oct 2024 - Dec 2024)",
     "liveUrl": null,
@@ -114,7 +123,10 @@
       "Recharts",
       "Linux Ecosystem",
       "System Architecture",
-      "Technical Documentation"
+      "Technical Documentation",
+      "Full Stack",
+      "Backend",
+      "Software Architect"
     ],
     "timeline": "4 months (Jun 2024 - Sep 2024)",
     "liveUrl": "https://itc-hub.vercel.app",
@@ -129,7 +141,13 @@
     "shortDescription": "Website for Remdani Dental Center.",
     "description": "A professional website for Remdani Dental Center, showcasing services, team members, and patient testimonials. The platform provides a user-friendly interface for patients to learn about dental care and contact the clinic.",
     "image": "/placeholder.svg?height=400&width=800",
-    "technologies": ["React", "Node.js", "Tailwind CSS", "Linux Ecosystem"],
+    "technologies": [
+      "React",
+      "Node.js",
+      "Tailwind CSS",
+      "Linux Ecosystem",
+      "Frontend"
+    ],
     "timeline": "2024",
     "liveUrl": "https://ramdani.vercel.app",
     "githubUrl": "https://github.com/ismail-devmaster/finalProjectFe",
@@ -150,7 +168,9 @@
       "TypeScript",
       "Prisma",
       "Tailwind CSS",
-      "shadcn/ui"
+      "shadcn/ui",
+      "Frontend",
+      "Software Engineer"
     ],
     "timeline": "1 month (2024)",
     "liveUrl": null,
@@ -171,7 +191,8 @@
       "Tailwind CSS",
       "Vite",
       "Figma",
-      "Pipeline Manipulation"
+      "Pipeline Manipulation",
+      "Frontend"
     ],
     "timeline": "3 days (2025)",
     "liveUrl": "https://ai-horizons.netlify.app",
@@ -191,7 +212,8 @@
       "TypeScript",
       "Tailwind CSS",
       "shadcn/ui",
-      "Figma"
+      "Figma",
+      "Frontend"
     ],
     "timeline": "Ongoing (2025)",
     "liveUrl": "https://itc-talks.vercel.app",
@@ -213,7 +235,8 @@
       "Figma",
       "System Architecture",
       "Technical Documentation",
-      "Python"
+      "Python",
+      "Frontend"
     ],
     "timeline": "2024",
     "liveUrl": "https://itc-programming.netlify.app",
@@ -228,7 +251,7 @@
     "shortDescription": "CSE USDB promo 2023 website.",
     "description": "A central hub for the CSE USDB promo 2023, providing information about the club, its departments, and events. This was my first project as a software engineer.",
     "image": "/placeholder.svg?height=400&width=800",
-    "technologies": ["React", "Vite", "Figma"],
+    "technologies": ["React", "Vite", "Figma", "Frontend"],
     "timeline": "2024",
     "liveUrl": "https://cse-hub.netlify.app/home",
     "githubUrl": "https://github.com/samibentaiba/cse-hub",
@@ -250,7 +273,9 @@
       "Microservices",
       "Linux Ecosystem",
       "System Architecture",
-      "Technical Documentation"
+      "Technical Documentation",
+      "Backend",
+      "DevOps"
     ],
     "timeline": "2025",
     "liveUrl": null,
@@ -272,7 +297,8 @@
       "Linux Ecosystem",
       "IDEs & Editors",
       "System Architecture",
-      "Technical Documentation"
+      "Technical Documentation",
+      "DevOps"
     ],
     "timeline": "1 month (Apr 2024)",
     "liveUrl": null,

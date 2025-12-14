@@ -12,7 +12,8 @@
     "of": "of",
     "title": "title",
     "experience": "Experience",
-    "live": "Live"
+    "live": "Live",
+    "download": "Download"
   },
   "hero": {
     "viewProjects": "View Projects",
@@ -75,7 +76,9 @@
     "generating": "Generating...",
     "at": "at",
     "education": "Education",
-    "summary": "Summary"
+    "summary": "Summary",
+    "targetRole": "Target Role",
+    "filterDescription": "Filter resume content for a specific job"
   },
   "categories": {
     "overview": "Overview",
@@ -155,5 +158,13 @@
   "recommendations": {
     "title": "Friends & Colleagues",
     "subtitle": "Talented people I trust and recommend."
+  },
+  "roles": {
+    "Software Engineer": "Software Engineer",
+    "Front End Developer": "Front End Developer",
+    "Back End Developer": "Back End Developer",
+    "Full Stack Developer": "Full Stack Developer",
+    "DevOps Engineer": "DevOps Engineer",
+    "Software Architect": "Software Architect"
   }
 }

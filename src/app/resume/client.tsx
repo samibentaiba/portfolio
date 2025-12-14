@@ -3,14 +3,28 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardFooter } from "@/components/ui/card";
-import { ArrowLeft, ExternalLink, ChevronLeft, ChevronRight, FileIcon, FileText, Download } from "lucide-react";
+import {
+  ArrowLeft,
+  ExternalLink,
+  ChevronLeft,
+  ChevronRight,
+  FileIcon,
+  FileText,
+  Download,
+} from "lucide-react";
 import Link from "next/link";
-import { useEffect, useState, memo, useCallback } from "react";
+import { useEffect, useState, memo, useMemo } from "react";
 import type { ReactElement } from "react";
 import { LuGithub } from "react-icons/lu";
 import { useResume, useResumePagination } from "./hook";
 import { ResumeSection } from "./utils";
-import type { Education, Experience, Personal, Project, SkillCategory } from "@/types";
+import type {
+  Education,
+  Experience,
+  Personal,
+  Project,
+  SkillCategory,
+} from "@/types";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 
 interface Props {
@@ -21,12 +35,25 @@ interface Props {
   isGenerating: boolean;
   personal: Personal | null;
   educations: Education[];
-  handleDownload: () => void;
-  handleDownloadPdf: () => void;
+  selectedRole: ResumeRole;
+  language: string;
 }
+
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { RESUME_ROLES, ResumeRole } from "@/lib/resume-roles";
+
+import { filterResumeData } from "@/lib/resume-filter";
 
 export default function ResumeClient() {
   const resume = useResume();
+  const [selectedRole, setSelectedRole] =
+    useState<ResumeRole>("Software Engineer");
 
   const {
     t,
@@ -36,22 +63,105 @@ export default function ResumeClient() {
     isGenerating,
     personal,
     educations,
-    handleDownload,
-    handleDownloadPdf,
+    language,
   } = resume;
 
+  // Filter data based on selected role
+  const { filteredExperiences, filteredProjects, filteredSkills } = useMemo(
+    () => filterResumeData(selectedRole, experiences, projects, skills),
+    [selectedRole, experiences, projects, skills]
+  );
+
   return (
-    <ResumeContent
-      t={t}
-      experiences={experiences}
-      projects={projects}
-      skills={skills}
-      personal={personal}
-      educations={educations}
-      isGenerating={isGenerating}
-      handleDownload={handleDownload}
-      handleDownloadPdf={handleDownloadPdf}
-    />
+    <div className="flex flex-col items-center w-full min-h-screen">
+      {/* Print Styles */}
+      <style jsx global>{`
+        @media print {
+          @page {
+            margin: 0;
+            size: auto;
+          }
+          body {
+            background: white;
+          }
+          .no-print {
+            display: none !important;
+          }
+          .print-content {
+            box-shadow: none !important;
+            border: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            max-width: 100% !important;
+            width: 100% !important;
+          }
+          /* Hide the pagination controls and footer in print */
+          .print-hidden {
+            display: none !important;
+          }
+        }
+      `}</style>
+
+      <main className="container py-8 sm:py-12 px-4 sm:px-6 flex justify-center items-start flex-1">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-8">
+          {/* Sidebar Controls - Hidden in Print */}
+          <div className="flex flex-col gap-6 no-print h-fit lg:sticky lg:top-8">
+            <Link
+              href="/"
+              className="text-primary hover:underline flex items-center gap-1 w-fit"
+              aria-label="Back to home"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              {t("navigation.backToHome") || "Back to Home"}
+            </Link>
+
+            <div className="flex flex-col gap-4 bg-muted/30 p-6 rounded-lg border">
+              <div className="space-y-1">
+                <h3 className="font-medium text-sm">
+                  {t("resume.targetRole") || "Target Role"}
+                </h3>
+                <p className="text-xs text-muted-foreground">
+                  {t("resume.filterDescription") ||
+                    "Filter resume content for a specific job"}
+                </p>
+              </div>
+              <Select
+                value={selectedRole}
+                onValueChange={(value) => setSelectedRole(value as ResumeRole)}
+              >
+                <SelectTrigger className="w-full">
+                  <SelectValue placeholder="Select a role">
+                    {t(`roles.${selectedRole}`) || selectedRole}
+                  </SelectValue>
+                </SelectTrigger>
+                <SelectContent>
+                  {RESUME_ROLES.map((role) => (
+                    <SelectItem key={role} value={role}>
+                      {t(`roles.${role}`) || role}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+          </div>
+
+          {/* Main Content */}
+          <div className="w-full max-w-3xl mx-auto lg:mx-0 py-8">
+            <ResumeContent
+              t={t}
+              experiences={filteredExperiences}
+              projects={filteredProjects}
+              skills={filteredSkills}
+              personal={personal}
+              educations={educations}
+              isGenerating={isGenerating}
+              selectedRole={selectedRole}
+              language={language}
+            />
+          </div>
+        </div>
+      </main>
+    </div>
   );
 }
 
@@ -63,8 +173,8 @@ const ResumeContent = memo(function ResumeContent({
   isGenerating,
   personal,
   educations,
-  handleDownload,
-  handleDownloadPdf,
+  selectedRole,
+  language,
 }: Props) {
   const [resumeSections, setResumeSections] = useState<ReactElement[]>([]);
   const [pageHeight, setPageHeight] = useState(550);
@@ -86,12 +196,9 @@ const ResumeContent = memo(function ResumeContent({
         );
 
         sections.push(
-          <div key="summary" className="flex flex-col space-y-2">
-            <h2 className="text-xl font-semibold">
-              {t("resume.summary") || "Summary"}:
-            </h2>
+          <ResumeSection key="summary" title={t("resume.summary") || "Summary"}>
             <p className="text-sm text-muted-foreground">{personal.summary}</p>
-          </div>
+          </ResumeSection>
         );
       }
 
@@ -101,7 +208,9 @@ const ResumeContent = memo(function ResumeContent({
           sections.push(
             <ResumeSection
               key={`exp-${exp.slug}-${i}`}
-              title={i === 0 ? t("experiences.title") || "Experience" : undefined}
+              title={
+                i === 0 ? t("experiences.title") || "Experience" : undefined
+              }
             >
               <div className="space-y-1">
                 <p className="font-medium">
@@ -140,30 +249,43 @@ const ResumeContent = memo(function ResumeContent({
             >
               <div className="space-y-4">
                 {chunk.map((project, i) => (
-                  <div key={`project-${project.slug}-${chunkIndex}-${i}`} className="space-y-1">
+                  <div
+                    key={`project-${project.slug}-${chunkIndex}-${i}`}
+                    className="space-y-1"
+                  >
                     <p className="font-medium">{project.title}</p>
                     <p className="text-xs text-muted-foreground">
-                      {project.timeline} · {project.technologies.slice(0, 5).join(", ")}
-                      {project.technologies.length > 5 && ` +${project.technologies.length - 5} more`}
+                      {project.timeline} ·{" "}
+                      {project.technologies.slice(0, 5).join(", ")}
+                      {project.technologies.length > 5 &&
+                        ` +${project.technologies.length - 5} more`}
                     </p>
                     <p className="text-sm">{project.description}</p>
-                    {project.collaborators && project.collaborators.length > 0 && (
-                      <p className="text-xs text-muted-foreground">
-                        {t("projects.collaborators") || "Collaborators"}:{" "}
-                        {project.collaborators.join(", ")}
-                      </p>
-                    )}
-                    <CardFooter className="flex justify-start gap-4 p-0 pt-2">
+                    {project.collaborators &&
+                      project.collaborators.length > 0 && (
+                        <p className="text-xs text-muted-foreground">
+                          {t("projects.collaborators") || "Collaborators"}:{" "}
+                          {project.collaborators.join(", ")}
+                        </p>
+                      )}
+                    <CardFooter className="flex justify-start gap-4 p-0 pt-2 print-hidden">
                       {project.liveUrl && (
                         <button
                           onClick={(e) => {
                             e.stopPropagation();
-                            window.open(project.liveUrl, "_blank", "noopener,noreferrer");
+                            window.open(
+                              project.liveUrl,
+                              "_blank",
+                              "noopener,noreferrer"
+                            );
                           }}
                           className="text-xs text-muted-foreground hover:text-foreground flex items-center"
                           aria-label={`View live site for ${project.title}`}
                         >
-                          <ExternalLink className="mr-1 h-3 w-3" aria-hidden="true" />
+                          <ExternalLink
+                            className="mr-1 h-3 w-3"
+                            aria-hidden="true"
+                          />
                           {t("navigation.live")}
                         </button>
                       )}
@@ -171,13 +293,40 @@ const ResumeContent = memo(function ResumeContent({
                         <button
                           onClick={(e) => {
                             e.stopPropagation();
-                            window.open(project.githubUrl, "_blank", "noopener,noreferrer");
+                            window.open(
+                              project.githubUrl,
+                              "_blank",
+                              "noopener,noreferrer"
+                            );
                           }}
                           className="text-xs text-muted-foreground hover:text-foreground flex items-center"
                           aria-label={`View code for ${project.title}`}
                         >
-                          <LuGithub className="mr-1 h-3 w-3" aria-hidden="true" />
+                          <LuGithub
+                            className="mr-1 h-3 w-3"
+                            aria-hidden="true"
+                          />
                           Code
+                        </button>
+                      )}
+                      {project.downloadUrl && (
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            window.open(
+                              project.downloadUrl,
+                              "_blank",
+                              "noopener,noreferrer"
+                            );
+                          }}
+                          className="text-xs text-muted-foreground hover:text-foreground flex items-center"
+                          aria-label={`Download ${project.title}`}
+                        >
+                          <Download
+                            className="mr-1 h-3 w-3"
+                            aria-hidden="true"
+                          />
+                          {t("navigation.download") || "Download"}
                         </button>
                       )}
                     </CardFooter>
@@ -252,7 +401,7 @@ const ResumeContent = memo(function ResumeContent({
 
       setResumeSections(sections);
     } catch (error) {
-      console.error('Error generating resume sections:', error);
+      console.error("Error generating resume sections:", error);
     } finally {
       setIsGeneratingContent(false);
     }
@@ -292,14 +441,6 @@ const ResumeContent = memo(function ResumeContent({
     }
   }, [resumeSections, setCurrentPage, isGeneratingContent]);
 
-  const handleDownloadClick = useCallback(() => {
-    handleDownload();
-  }, [handleDownload]);
-
-  const handlePdfClick = useCallback(() => {
-    handleDownloadPdf();
-  }, [handleDownloadPdf]);
-
   if (isGeneratingContent) {
     return (
       <main className="container py-8 sm:py-12 px-4 sm:px-6 flex justify-center items-center min-h-screen">
@@ -312,125 +453,118 @@ const ResumeContent = memo(function ResumeContent({
   }
 
   return (
-    <main className="container py-8 sm:py-12 px-4 sm:px-6 flex justify-center items-center min-h-screen">
-      <div className="max-w-2xl w-full flex flex-col gap-6 mx-auto">
-        <div className="flex justify-between items-center">
-          <Link
-            href="/"
-            className="text-primary hover:underline flex items-center gap-1"
-            aria-label="Back to home"
+    <>
+      {resumeSections.length === 0 ? (
+        <Alert>
+          <AlertDescription>
+            No resume content available. Please check your data files.
+          </AlertDescription>
+        </Alert>
+      ) : (
+        <Card className="p-8 flex flex-col shadow-lg print-content">
+          <div
+            ref={containerRef}
+            className="space-y-6 max-h-[750px] min-h-[600px] overflow-hidden print:max-h-none print:overflow-visible"
+            aria-live="polite"
+            aria-label={`Resume page ${currentPage} of ${totalPages}`}
           >
-            <ArrowLeft className="h-4 w-4" />
-            {t("navigation.backToHome") || "Back to Home"}
-          </Link>
-        </div>
-
-        {resumeSections.length === 0 ? (
-          <Alert>
-            <AlertDescription>
-              No resume content available. Please check your data files.
-            </AlertDescription>
-          </Alert>
-        ) : (
-          <>
-            <Card className="p-8 flex flex-col shadow-lg">
-              <div
-                ref={containerRef}
-                className="space-y-6 max-h-[750px] min-h-[600px] overflow-hidden"
-                aria-live="polite"
-                aria-label={`Resume page ${currentPage} of ${totalPages}`}
-              >
-                {currentPageContent.map((section, index) => (
-                  <div key={`page-${currentPage}-section-${index}`}>{section}</div>
-                ))}
-              </div>
-
-              <div
-                ref={measureRef}
-                aria-hidden="true"
-                className="invisible absolute -z-50 h-0 overflow-hidden pointer-events-none"
-              >
-                {resumeSections.map((section, index) => (
-                  <div key={`measure-${index}`}>{section}</div>
-                ))}
-              </div>
-
-              <div className="flex items-center flex-col justify-between">
-                <div className="flex items-center w-full md:justify-between justify-center pt-4 mt-4">
-                  <div className="flex items-center gap-2">
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      onClick={goToPrevPage}
-                      disabled={currentPage === 1}
-                      aria-label="Go to previous page"
-                    >
-                      <ChevronLeft className="h-4 w-4 mr-1" />
-                      {t("navigation.previous")}
-                    </Button>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      onClick={goToNextPage}
-                      disabled={currentPage === totalPages}
-                      aria-label="Go to next page"
-                    >
-                      {t("navigation.next")}
-                      <ChevronRight className="h-4 w-4 ml-1" />
-                    </Button>
-                  </div>
-                  <span className="text-sm hidden md:flex lg:flex text-muted-foreground">
-                    Page {currentPage} {t("navigation.of")} {totalPages}
-                  </span>
+            {/* In print, show ALL sections, not just current page */}
+            <div className="hidden print:block">
+              {resumeSections.map((section, index) => (
+                <div key={`print-section-${index}`}>{section}</div>
+              ))}
+            </div>
+            {/* In screen, show paginated content */}
+            <div className="block print:hidden">
+              {currentPageContent.map((section, index) => (
+                <div key={`page-${currentPage}-section-${index}`}>
+                  {section}
                 </div>
-                <span className="text-sm md:hidden lg:hidden text-muted-foreground mt-2">
-                  Page {currentPage} {t("navigation.of")} {totalPages}
-                </span>
-              </div>
+              ))}
+            </div>
+          </div>
 
-              <div className="mt-6 flex flex-col sm:flex-row gap-3">
+          <div
+            ref={measureRef}
+            aria-hidden="true"
+            className="invisible absolute -z-50 h-0 overflow-hidden pointer-events-none"
+          >
+            {resumeSections.map((section, index) => (
+              <div key={`measure-${index}`}>{section}</div>
+            ))}
+          </div>
+
+          <div className="flex items-center flex-col justify-between print-hidden">
+            <div className="flex items-center w-full md:justify-between justify-center pt-4 mt-4">
+              <div className="flex items-center gap-2">
                 <Button
-                  onClick={handleDownloadClick}
-                  className="flex items-center gap-2 flex-1"
-                  disabled={isGenerating}
-                  aria-label="Download resume as DOCX"
+                  variant="outline"
+                  size="sm"
+                  onClick={goToPrevPage}
+                  disabled={currentPage === 1}
+                  aria-label="Go to previous page"
                 >
-                  {isGenerating ? (
-                    <>
-                      <Download className="h-4 w-4 animate-pulse" />
-                      {t("resume.generating") || "Generating..."}
-                    </>
-                  ) : (
-                    <>
-                      <FileText className="h-4 w-4" />
-                      {t("resume.downloadDocx") || "Download as DOCX"}
-                    </>
-                  )}
+                  <ChevronLeft className="h-4 w-4 mr-1" />
+                  {t("navigation.previous")}
                 </Button>
                 <Button
-                  onClick={handlePdfClick}
-                  className="flex items-center gap-2 flex-1"
                   variant="outline"
-                  disabled={isGenerating}
-                  aria-label="Download resume as PDF"
+                  size="sm"
+                  onClick={goToNextPage}
+                  disabled={currentPage === totalPages}
+                  aria-label="Go to next page"
                 >
-                  {isGenerating ? (
-                    <>
-                      <Download className="h-4 w-4 animate-pulse" />
-                      {t("resume.generating") || "Generating..."}
-                    </>
-                  ) : (
-                    <>
-                      <FileIcon className="h-4 w-4" />
-                      {t("resume.downloadPdf") || "Download as PDF"}
-                    </>
-                  )}
+                  {t("navigation.next")}
+                  <ChevronRight className="h-4 w-4 ml-1" />
                 </Button>
               </div>
-            </Card>
-          </>
-        )}
-      </div>
-    </main>
+              <span className="text-sm hidden md:flex lg:flex text-muted-foreground">
+                Page {currentPage} {t("navigation.of")} {totalPages}
+              </span>
+            </div>
+            <span className="text-sm md:hidden lg:hidden text-muted-foreground mt-2">
+              Page {currentPage} {t("navigation.of")} {totalPages}
+            </span>
+          </div>
+
+          <div className="mt-6 flex flex-col sm:flex-row gap-3 print-hidden">
+            <Button variant="outline" className="flex-1" asChild>
+              <a
+                href={`/resumes/${selectedRole.replace(
+                  /\s+/g,
+                  "_"
+                )}_Resume_${language}.docx`}
+                download={`${selectedRole.replace(
+                  /\s+/g,
+                  "_"
+                )}_Resume_${language}.docx`}
+                className="flex items-center justify-center gap-2"
+              >
+                <FileText className="h-4 w-4" />
+                {t("resume.downloadDocx") || "Download DOCX"}
+              </a>
+            </Button>
+            <Button className="flex-1" asChild>
+              <a
+                href={`/resumes/${selectedRole.replace(
+                  /\s+/g,
+                  "_"
+                )}_Resume_${language}.pdf`}
+                download={`${selectedRole.replace(
+                  /\s+/g,
+                  "_"
+                )}_Resume_${language}.pdf`}
+                className="flex items-center justify-center gap-2"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FileIcon className="h-4 w-4" />
+                {t("resume.downloadPdf") || "Download PDF"}
+              </a>
+            </Button>
+          </div>
+        </Card>
+      )}
+    </>
   );
 });

@@ -48,6 +48,7 @@ export const createSkillsSection = (
   t: TranslateFunction,
   isRtl: boolean
 ) => {
+  if (skills.length === 0) return [];
   const skillsParagraphs = skills.flatMap((group) => [
     new Paragraph({
       children: [
@@ -99,6 +100,7 @@ export const createExperienceSection = (
   t: TranslateFunction,
   isRtl: boolean
 ) => {
+  if (experiences.length === 0) return [];
   const experienceParagraphs = experiences.flatMap((exp) => [
     new Paragraph({
       children: [new TextRun({ text: exp.role, bold: true })],
@@ -146,6 +148,7 @@ export const createProjectsSection = (
   t: TranslateFunction,
   isRtl: boolean
 ): Paragraph[] => {
+  if (projects.length === 0) return [];
   const projectParagraphs = projects.flatMap((project) => {
     const technologies =
       project.technologies && project.technologies.length > 0
@@ -212,6 +215,7 @@ export const createEducationSection = (
   t: TranslateFunction,
   isRtl: boolean
 ): Paragraph[] => {
+  if (educations.length === 0) return [];
   const educationParagraphs = educations.flatMap((education) => [
     new Paragraph({
       children: [new TextRun({ text: `${education.degree}`, bold: true })],

@@ -12,7 +12,8 @@
     "of": "من",
     "title": "العنوان",
     "experience": "الخبرة",
-    "live": "مباشر"
+    "live": "مباشر",
+    "download": "تحميل"
   },
   "hero": {
     "viewProjects": "عرض المشاريع",
@@ -75,7 +76,9 @@
     "generating": "جارٍ الإنشاء...",
     "at": "في",
     "education": "التعليم",
-    "summary": "الملخص"
+    "summary": "الملخص",
+    "targetRole": "الدور المستهدف",
+    "filterDescription": "تصفية محتوى السيرة الذاتية لوظيفة محددة"
   },
   "categories": {
     "overview": "نظرة عامة",
@@ -155,5 +158,13 @@
   "recommendations": {
     "title": "أصدقاء وزملاء",
     "subtitle": "أشخاص موهوبون أثق بهم وأوصي بهم."
+  },
+  "roles": {
+    "Software Engineer": "مهندس برمجيات",
+    "Front End Developer": "مطور واجهة أمامية",
+    "Back End Developer": "مطور واجهة خلفية",
+    "Full Stack Developer": "مطور شامل (Full Stack)",
+    "DevOps Engineer": "مهندس DevOps",
+    "Software Architect": "معماري برمجيات"
   }
 }

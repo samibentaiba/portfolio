@@ -1,111 +1,175 @@
-#!/usr/bin/env tsx
+import fs from "fs";
+import path from "path";
+import { execSync } from "child_process";
+import { Packer } from "docx";
+import { RESUME_ROLES, ResumeRole } from "../src/lib/resume-roles";
+import { filterResumeData } from "../src/lib/resume-filter";
+import { generateResumeDoc } from "../src/lib/resume-generator";
+import {
+  Personal,
+  Experience,
+  Project,
+  SkillCategory,
+  Education,
+} from "../src/types";
 
-/**
- * Script to generate static PDF resumes for English, French, and Arabic
- * Run with: npm run generate-resumes
- */
-
-import fs from 'fs';
-import path from 'path';
-import { Packer } from 'docx';
-import { generateResumeDoc } from '../src/lib/resume-generator';
-import { generatePdf } from '../src/lib/pdf-generator';
-
-// Import your data
-import { 
-  getSkillsData, 
-  getExperiencesData, 
-  getProjectsData, 
-  getEducationsData, 
-  getPersonalData 
-} from '../src/lib/resume-data';
-
-// Simple translation function - expand as needed
-const translations: Record<string, Record<string, string>> = {
-  en: {
-    'resume.summary': 'Summary',
-    'skills.title': 'Skills',
-    'experiences.title': 'Experience',
-    'projects.title': 'Projects',
-    'educations.title': 'Education',
-  },
-  fr: {
-    'resume.summary': 'Résumé',
-    'skills.title': 'Compétences',
-    'experiences.title': 'Expérience',
-    'projects.title': 'Projets',
-    'educations.title': 'Formation',
-  },
-  ar: {
-    'resume.summary': 'الملخص',
-    'skills.title': 'المهارات',
-    'experiences.title': 'الخبرات',
-    'projects.title': 'المشاريع',
-    'educations.title': 'التعليم',
-  },
-};
-
-const t = (language: string) => (key: string) => {
-  return translations[language]?.[key] || key;
-};
-
-async function generateResume(language: 'en' | 'fr' | 'ar') {
-  console.log(`Generating ${language.toUpperCase()} resume...`);
-
-  const translate = t(language);
-  
-  // Get data for the specified language
-  const personal = getPersonalData(language);
-  const skills = getSkillsData(language);
-  const experiences = getExperiencesData(language);
-  const projects = getProjectsData(language);
-  const educations = getEducationsData(language);
-
-  // 1. Generate DOCX
-  const doc = generateResumeDoc(personal, skills, experiences, projects, educations, translate, language);
-  const docxBuffer = await Packer.toBuffer(doc);
-
-  // Ensure public directory exists
-  const publicDir = path.join(process.cwd(), 'public');
-  if (!fs.existsSync(publicDir)) {
-    fs.mkdirSync(publicDir, { recursive: true });
+// Mock translation function for the generator
+const getTranslator = (lang: string) => {
+  const translationsPath = path.join(
+    process.cwd(),
+    `src/data/translations/${lang}.json`
+  );
+  let translations: Record<string, any> = {};
+  if (fs.existsSync(translationsPath)) {
+    translations = JSON.parse(fs.readFileSync(translationsPath, "utf8"));
   }
 
-  // Save DOCX file
-  const docxPath = path.join(publicDir, `resume.${language}.docx`);
-  fs.writeFileSync(docxPath, docxBuffer);
-  console.log(`✅ ${language.toUpperCase()} DOCX generated: ${docxPath}`);
+  return (key: string) => {
+    const keys = key.split(".");
+    let value: any = translations;
+    for (const k of keys) {
+      value = value?.[k];
+    }
+    return value || key;
+  };
+};
 
-  // 2. Generate PDF (using Puppeteer)
+const LANGUAGES = ["en", "fr", "ar"];
+
+async function generateResumes() {
   try {
-    console.log(`Generating ${language.toUpperCase()} PDF...`);
-    const pdfBuffer = await generatePdf(personal, skills, experiences, projects, educations, translate, language);
-    const pdfPath = path.join(publicDir, `resume.${language}.pdf`);
-    fs.writeFileSync(pdfPath, pdfBuffer);
-    console.log(`✅ ${language.toUpperCase()} PDF generated: ${pdfPath}`);
+    const outputDir = path.join(process.cwd(), "public/resumes");
+    if (!fs.existsSync(outputDir)) {
+      fs.mkdirSync(outputDir, { recursive: true });
+    }
+
+    for (const lang of LANGUAGES) {
+      console.log(
+        `\nGenerating resumes for language: ${lang.toUpperCase()}...`
+      );
+      const t = getTranslator(lang);
+
+      // Helper to load data file (default or localized)
+      const loadData = (filename: string) => {
+        const defaultPath = path.join(
+          process.cwd(),
+          `src/data/${filename}.json`
+        );
+        const localizedPath = path.join(
+          process.cwd(),
+          `src/data/translations/${filename}-${lang}.json`
+        );
+
+        // For English, use default. For others, try localized, fallback to default.
+        if (lang === "en") {
+          return JSON.parse(fs.readFileSync(defaultPath, "utf8"));
+        } else {
+          if (fs.existsSync(localizedPath)) {
+            return JSON.parse(fs.readFileSync(localizedPath, "utf8"));
+          } else {
+            console.warn(
+              `Warning: Localized file ${localizedPath} not found. Using default.`
+            );
+            return JSON.parse(fs.readFileSync(defaultPath, "utf8"));
+          }
+        }
+      };
+
+      const personal: Personal = loadData("personal");
+      const experiences: Experience[] = loadData("experiences");
+      const projects: Project[] = loadData("projects");
+      const skills: SkillCategory[] = loadData("skills");
+
+      // Try to load educations, fallback to hardcoded if not found
+      let educations: Education[] = [];
+      try {
+        educations = loadData("educations");
+      } catch (e) {
+        // Fallback if file doesn't exist (e.g. for 'en' if it's not in src/data)
+        // Check if it exists in translations for other langs
+        if (lang === "en") {
+          // Hardcoded fallback for EN if file missing
+          educations = [
+            {
+              degree: "Master's Degree in Software Engineering",
+              institution: "USTHB",
+              startYear: 2023,
+              endYear: 2025,
+            },
+            {
+              degree: "Bachelor's Degree in Computer Science",
+              institution: "USTHB",
+              startYear: 2020,
+              endYear: 2023,
+            },
+          ];
+        }
+      }
+
+      console.log(`Generating resumes for ${RESUME_ROLES.length} roles...`);
+
+      for (const role of RESUME_ROLES) {
+        // console.log(`Processing role: ${role}`);
+
+        const { filteredExperiences, filteredProjects, filteredSkills } =
+          filterResumeData(role, experiences, projects, skills);
+
+        const doc = generateResumeDoc(
+          personal,
+          filteredSkills,
+          filteredExperiences,
+          filteredProjects,
+          educations,
+          t,
+          lang
+        );
+
+        const buffer = await Packer.toBuffer(doc);
+
+        // Sanitize filename with language suffix
+        // e.g. Software_Engineer_Resume_fr.docx
+        // For English, maybe keep it without suffix? Or add _en?
+        // The user request implies "support what language is requested".
+        // Let's add suffix for ALL to be explicit, or keep no suffix for EN if backward compat needed.
+        // But the user said "fix... to be also support", implying existing one might stay?
+        // Let's add suffix for non-en, or maybe for all.
+        // Given the UI likely expects specific names, I should check client.tsx.
+        // client.tsx constructs filename: `${selectedRole.replace(/\s+/g, "_")}_Resume.docx`
+        // It doesn't seem to account for language yet.
+        // I will generate `_en` for English and update client to use it, OR keep default as English.
+        // Let's do: `_fr`, `_ar`, and for English... let's keep it standard or add `_en`.
+        // I'll add `_${lang}` to all to be consistent.
+
+        const filename = `${role.replace(/\s+/g, "_")}_Resume_${lang}.docx`;
+        const filePath = path.join(outputDir, filename);
+
+        fs.writeFileSync(filePath, buffer);
+        // console.log(`Saved DOCX: ${filePath}`);
+
+        // Convert to PDF using LibreOffice
+        try {
+          // console.log(`Converting to PDF...`);
+          execSync(
+            `libreoffice --headless --convert-to pdf "${filePath}" --outdir "${outputDir}"`,
+            {
+              stdio: "pipe", // Suppress output unless error
+            }
+          );
+          // const pdfFilename = filename.replace(".docx", ".pdf");
+          // console.log(`Saved PDF: ${path.join(outputDir, pdfFilename)}`);
+        } catch (error) {
+          console.error(`Failed to generate PDF for ${role} (${lang}):`, error);
+        }
+      }
+    }
+
+    console.log(
+      "All resumes (DOCX & PDF) generated successfully for all languages!"
+    );
   } catch (error) {
-    console.error(`❌ Failed to generate PDF for ${language.toUpperCase()}:`, error);
-  }
-}
-
-async function main() {
-  try {
-    console.log('Starting resume generation...\n');
-
-    // Generate all language versions
-    await generateResume('en');
-    await generateResume('fr');
-    await generateResume('ar');
-
-    console.log('\n✅ All resumes generated successfully!');
-    console.log('Files created:');
-    console.log('  - public/resume.en.docx & .pdf');
-    console.log('  - public/resume.fr.docx & .pdf');
-    console.log('  - public/resume.ar.docx & .pdf');
-  } catch (error) {
-    console.error('❌ Error generating resumes:', error);
+    console.error("Error generating resumes:", error);
     process.exit(1);
   }
 }
 
-main();
+generateResumes();

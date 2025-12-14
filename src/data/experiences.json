@@ -6,8 +6,8 @@
     "type": "Volunteering",
     "period": "Jun 2024 - Sep 2024",
     "location": "Remote",
-    "summary": "Designed and developed 'ITC Hub' as a comprehensive internal platform donation.",
-    "description": "Architected and built 'ITC Hub' as a donation project intended for the club. I handled the entire software engineering lifecycle, from system design and database architecture to full-stack implementation using Next.js and TypeScript. Key achievements include designing a complex relational database schema with Prisma, implementing Role-Based Access Control (RBAC), and creating a responsive UI. Although the project was not ultimately adopted, it demonstrated enterprise-level development capabilities.",
+    "summary": "Architected and developed 'ITC Hub', a comprehensive internal management platform, demonstrating enterprise-level system design.",
+    "description": "Led the end-to-end development of 'ITC Hub', a complex internal platform designed to streamline club operations. Acting as both Lead Architect and Full Stack Developer, I designed a scalable relational database schema using Prisma and PostgreSQL, implemented secure Role-Based Access Control (RBAC) with NextAuth.js, and built a responsive, type-safe frontend with Next.js and TypeScript. This project showcased my ability to handle the entire software lifecycle, from system architecture and database design to deployment and UI implementation.",
     "skills": [
       "Next.js",
       "TypeScript",
@@ -15,21 +15,23 @@
       "PostgreSQL",
       "System Architecture",
       "Database Design",
-      "Tailwind CSS"
+      "Tailwind CSS",
+      "Software Architect",
+      "Backend",
+      "Frontend",
+      "Full Stack"
     ],
-    "projects": [
-      "ITC Hub - Internal communication and management platform"
-    ]
+    "projects": ["ITC Hub - Internal communication and management platform"]
   },
   {
-    "role": "Junior Software Engineer",
+    "role": "Software Engineer",
     "company": "Self-employed/Freelance",
-    "slug": "junior-software-engineer",
+    "slug": "software-engineer",
     "type": "Full-time",
     "period": "2023 - Present",
     "location": "Remote",
-    "summary": "Developing web and desktop applications, delivering client projects, and building open-source tools.",
-    "description": "As a Junior Software Engineer, I deliver high-quality web solutions for clients, such as the 'Mosquito Killer DZ' landing page and 'Remdani Dental Center' website. I also build complex tools like 'COD Simulation' for e-commerce analytics and 'C-Studio', a desktop IDE. My stack includes Next.js, React, and TypeScript, with a focus on performance and user experience.",
+    "summary": "Delivering high-quality web and desktop solutions, from e-commerce platforms to developer tools.",
+    "description": "As a versatile Software Engineer, I architect and build robust applications for diverse client needs. My portfolio includes high-conversion landing pages like 'Mosquito Killer DZ', complex analytical tools like 'COD Simulation' for e-commerce ROI, and 'C-Studio', a cross-platform desktop IDE built with Electron. I leverage a modern stack including Next.js, React, Node.js, and Rust to deliver performant, scalable, and user-centric solutions. My work involves full-cycle development, including requirements gathering, UI/UX implementation, backend logic, and CI/CD automation.",
     "skills": [
       "TypeScript",
       "JavaScript",
@@ -40,7 +42,12 @@
       "PostgreSQL",
       "Electron",
       "Rust",
-      "Tailwind CSS"
+      "Tailwind CSS",
+      "CI/CD",
+      "DevOps",
+      "Software Engineer",
+      "Frontend",
+      "Backend"
     ],
     "projects": [
       "Mosquito Killer DZ - High-conversion landing page",
@@ -58,18 +65,18 @@
     "type": "Volunteering",
     "period": "2024 - Present",
     "location": "Algiers, Algeria",
-    "summary": "Collaborating on club projects and mentoring members.",
-    "description": "Active contributor to the club's digital presence. Collaborated on the official ITCP website and the 'ITC Talks' event platform. I also participate in mentoring sessions and technical workshops.",
+    "summary": "Contributing to club digital infrastructure and mentoring junior developers.",
+    "description": "Key contributor to the club's technical projects, including the official ITCP website and the 'ITC Talks' event platform. I actively participate in code reviews, mentor new members on modern web technologies (React, Next.js), and collaborate on open-source initiatives. This role has honed my teamwork, communication, and collaborative coding skills.",
     "skills": [
       "React",
       "Next.js",
       "Teamwork",
-      "Mentoring"
+      "Mentoring",
+      "Code Review",
+      "Collaboration",
+      "Frontend"
     ],
-    "projects": [
-      "ITCP Website",
-      "ITC Talks Platform"
-    ]
+    "projects": ["ITCP Website", "ITC Talks Platform"]
   },
   {
     "role": "Frontend Developer",
@@ -78,15 +85,16 @@
     "type": "Volunteering",
     "period": "2024",
     "location": "Algiers, Algeria",
-    "summary": "Contributed to the development of the CSE Hub.",
-    "description": "Worked as a Frontend Developer on the 'CSE Hub' project. Collaborated closely with UI/UX designers to implement pixel-perfect interfaces using React and Vite. This was my first major team-based software engineering project.",
+    "summary": "Developed the frontend for the CSE Hub, ensuring pixel-perfect design implementation.",
+    "description": "Served as a core Frontend Developer for the 'CSE Hub' project. I collaborated closely with UI/UX designers to translate Figma prototypes into responsive, interactive React components using Vite. I focused on component reusability, performance optimization, and ensuring a seamless user experience across devices.",
     "skills": [
       "React",
       "Vite",
-      "Collaboration"
+      "Collaboration",
+      "UI/UX",
+      "Frontend",
+      "Responsive Design"
     ],
-    "projects": [
-      "CSE Hub"
-    ]
+    "projects": ["CSE Hub"]
   }
 ]
