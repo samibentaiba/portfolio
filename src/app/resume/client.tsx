@@ -32,7 +32,7 @@ interface Props {
   experiences: Experience[];
   projects: Project[];
   skills: SkillCategory[];
-  isGenerating: boolean;
+
   personal: Personal | null;
   educations: Education[];
   selectedRole: ResumeRole;
@@ -60,7 +60,7 @@ export default function ResumeClient() {
     experiences,
     projects,
     skills,
-    isGenerating,
+
     personal,
     educations,
     language,
@@ -154,7 +154,6 @@ export default function ResumeClient() {
               skills={filteredSkills}
               personal={personal}
               educations={educations}
-              isGenerating={isGenerating}
               selectedRole={selectedRole}
               language={language}
             />
@@ -170,7 +169,7 @@ const ResumeContent = memo(function ResumeContent({
   experiences,
   projects,
   skills,
-  isGenerating,
+
   personal,
   educations,
   selectedRole,
