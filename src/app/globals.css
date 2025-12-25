@@ -229,7 +229,6 @@
 
 .snap-section {
   scroll-snap-align: start;
-  scroll-snap-stop: always;
 }
 
 /* Ensure smooth scrolling and snapping globally */
