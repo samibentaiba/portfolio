@@ -33,7 +33,7 @@ const FocusSection = ({
         center ? "justify-center" : "justify-start",
         isActive
           ? "opacity-100 md:blur-0 md:grayscale-0 pointer-events-auto"
-          : "opacity-0 md:blur-sm md:grayscale pointer-events-none",
+          : "opacity-100 md:opacity-0 md:blur-sm md:grayscale pointer-events-auto md:pointer-events-none",
         className
       )}
     >

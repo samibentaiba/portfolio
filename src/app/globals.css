@@ -245,7 +245,7 @@ html {
 /* On touch devices, use proximity snapping to allow scrolling through tall sections */
 @media (pointer: coarse) {
   .snap-scrolling {
-    scroll-snap-type: y proximity;
+    scroll-snap-type: none;
   }
 }
 
