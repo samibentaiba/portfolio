@@ -32,8 +32,8 @@ const FocusSection = ({
         "snap-section min-h-screen flex flex-col py-10 transition-[opacity,filter] duration-700 ease-in-out",
         center ? "justify-center" : "justify-start",
         isActive
-          ? "opacity-100 blur-0 grayscale-0 pointer-events-auto"
-          : "opacity-0 blur-sm grayscale pointer-events-none",
+          ? "opacity-100 md:blur-0 md:grayscale-0 pointer-events-auto"
+          : "opacity-0 md:blur-sm md:grayscale pointer-events-none",
         className
       )}
     >
@@ -58,7 +58,7 @@ export default function HomeClient() {
         <FocusSection id="projects">
           <Projects />
         </FocusSection>
-        <FocusSection id="career-timeline" >
+        <FocusSection id="career-timeline">
           <CareerTimeline />
         </FocusSection>
         <FocusSection id="contact">
