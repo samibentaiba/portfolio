@@ -83,14 +83,14 @@ export interface CareerMilestone {
   id: string;
   title: string;
   description: string;
-  size: 'small' | 'medium' | 'large';
-  type: 'achievement' | 'job' | 'project' | 'skill';
+  size: "small" | "medium" | "large";
+  type: "achievement" | "job" | "project" | "skill";
   date?: string;
 }
 
 export interface CareerLink {
   targetId: string;
-  type?: 'merge';
+  type?: "merge";
 }
 
 export interface CareerPoint {
@@ -120,4 +120,27 @@ export interface Recommendation {
   image: string;
   text: string;
   linkedin?: string;
+}
+
+// Theme conversion helpers for NextAuth/Prisma compatibility
+export function themeFromPrisma(theme: string | null | undefined): string {
+  if (!theme) return "system";
+  // Convert Prisma theme value to next-themes format
+  const themeMap: Record<string, string> = {
+    LIGHT: "light",
+    DARK: "dark",
+    SYSTEM: "system",
+  };
+  return themeMap[theme.toUpperCase()] || theme.toLowerCase();
+}
+
+export function themeToPrisma(theme: string | null | undefined): string {
+  if (!theme) return "SYSTEM";
+  // Convert next-themes format to Prisma value
+  const themeMap: Record<string, string> = {
+    light: "LIGHT",
+    dark: "DARK",
+    system: "SYSTEM",
+  };
+  return themeMap[theme.toLowerCase()] || theme.toUpperCase();
 }

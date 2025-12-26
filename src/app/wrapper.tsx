@@ -15,6 +15,7 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import { useScroll } from "@/hooks/use-scroll";
 import MenuDrop from "@/components/mobile-drop";
 import { ThemeProvider } from "@/components/theme-provider";
+import { AuthProvider } from "@/components/auth-provider";
 import Link from "next/link";
 import { LuGithub } from "react-icons/lu";
 import { LuLinkedin } from "react-icons/lu";
@@ -197,40 +198,42 @@ export function Wrapper({ children }: { children: React.ReactNode }) {
   }, [pathname]);
 
   return (
-    <ThemeProvider
-      attribute="class"
-      defaultTheme="system"
-      enableSystem
-      disableTransitionOnChange
-    >
-      <div className="h-screen w-full">
-        <canvas
-          ref={canvasRef}
-          className="fixed inset-0 z-0 h-full w-full bg-background"
-        />
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-          className="relative z-10"
-        >
-          <LanguageProvider>
-            <RTLWrapper>
-              <ScrollProvider activeSection={activeSection}>
-                <div className="flex flex-col min-h-screen">
-                  <Header activeSection={activeSection} />
-                  <div id="/" className="flex-1 py-8">
-                    {children}
+    <AuthProvider>
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="system"
+        enableSystem
+        disableTransitionOnChange
+      >
+        <div className="h-screen w-full">
+          <canvas
+            ref={canvasRef}
+            className="fixed inset-0 z-0 h-full w-full bg-background"
+          />
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+            className="relative z-10"
+          >
+            <LanguageProvider>
+              <RTLWrapper>
+                <ScrollProvider activeSection={activeSection}>
+                  <div className="flex flex-col min-h-screen">
+                    <Header activeSection={activeSection} />
+                    <div id="/" className="flex-1 py-8">
+                      {children}
+                    </div>
+                    <Footer />
+                    <ScrollHandler />
                   </div>
-                  <Footer />
-                  <ScrollHandler />
-                </div>
-              </ScrollProvider>
-            </RTLWrapper>
-          </LanguageProvider>
-        </motion.div>
-      </div>
-    </ThemeProvider>
+                </ScrollProvider>
+              </RTLWrapper>
+            </LanguageProvider>
+          </motion.div>
+        </div>
+      </ThemeProvider>
+    </AuthProvider>
   );
 }
 
