@@ -90,9 +90,10 @@ export default function AdminClient({
     }
   };
 
-  const copyApiKey = (apiKey: string) => {
-    navigator.clipboard.writeText(apiKey);
-    setMessage("API key copied to clipboard");
+  const copySlug = (slug: string) => {
+    const url = `${window.location.origin}/api/admin/verify?slug=${slug}`;
+    navigator.clipboard.writeText(url);
+    setMessage("API URL copied to clipboard");
     setTimeout(() => setMessage(null), 2000);
   };
 
@@ -223,20 +224,14 @@ export default function AdminClient({
                               {project.status}
                             </Badge>
                           </div>
-                          <p className="text-sm text-muted-foreground">
-                            Slug:{" "}
-                            <code className="bg-muted px-1 rounded">
-                              {project.slug}
-                            </code>
-                          </p>
                           <div className="flex items-center gap-2">
                             <code className="text-xs bg-muted px-2 py-1 rounded">
-                              {project.apiKey.slice(0, 12)}...
+                              /api/admin/verify?slug={project.slug}
                             </code>
                             <button
-                              onClick={() => copyApiKey(project.apiKey)}
+                              onClick={() => copySlug(project.slug)}
                               className="text-muted-foreground hover:text-foreground transition-colors"
-                              title="Copy API Key"
+                              title="Copy API URL"
                             >
                               <Copy className="w-4 h-4" />
                             </button>
@@ -334,21 +329,23 @@ export default function AdminClient({
           <Card>
             <CardContent className="p-4 space-y-3">
               <p className="text-sm text-muted-foreground">
-                Projects verify access by calling:
+                Projects verify access by calling (no API key needed):
               </p>
               <code className="block bg-muted p-3 rounded-md text-sm">
-                GET /api/admin/verify?apiKey=YOUR_API_KEY
+                GET /api/admin/verify?slug=your-project-slug
               </code>
               <div className="text-xs text-muted-foreground space-y-1">
                 <p>
-                  Returns{" "}
-                  <code className="bg-muted px-1 rounded">{`{ allowed: true, response: "yes" }`}</code>{" "}
-                  if accepted
+                  <span className="text-green-500">✓ Accepted:</span>{" "}
+                  <code className="bg-muted px-1 rounded">{`{ allowed: true, response: "yes" }`}</code>
                 </p>
                 <p>
-                  Returns{" "}
-                  <code className="bg-muted px-1 rounded">{`{ allowed: false, destroy: true }`}</code>{" "}
-                  if rejected
+                  <span className="text-red-500">✗ Rejected:</span>{" "}
+                  <code className="bg-muted px-1 rounded">{`{ allowed: false, destroy: true }`}</code>
+                </p>
+                <p>
+                  <span className="text-yellow-500">⏳ Pending:</span>{" "}
+                  <code className="bg-muted px-1 rounded">{`{ allowed: false, response: "pending" }`}</code>
                 </p>
               </div>
             </CardContent>
