@@ -1,8 +1,17 @@
 [
   {
-    "degree": "B.S. in Computer Science",
-    "institution": "University of Technology",
-    "startYear": 2015,
-    "endYear": 2019
+    "degree": "Bachelor's in Mathematics & Computer Science",
+    "institution": "USDB - Saad Dahlab University of Blida 1",
+    "startYear": 2023,
+    "endYear": 2029,
+    "status": "In Progress"
+  },
+  {
+    "degree": "Baccalaureate - Technical Mathematics (Mechanical Engineering)",
+    "institution": "High School",
+    "startYear": 2019,
+    "endYear": 2023,
+    "status": "Completed",
+    "grade": "15/20"
   }
 ]
