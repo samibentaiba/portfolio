@@ -1,8 +1,26 @@
 [
   {
-    "degree": "بكالوريوس العلوم في علوم الحاسوب",
-    "institution": "جامعة التكنولوجيا",
-    "startYear": 2015,
-    "endYear": 2019
+    "degree": "بكالوريوس في الرياضيات وعلوم الحاسوب",
+    "institution": "جامعة سعد دحلب البليدة 1",
+    "startYear": 2023,
+    "endYear": 2029,
+    "status": "قيد التقدم"
+  },
+  {
+    "degree": "شهادة البكالوريا - رياضيات تقني (هندسة ميكانيكية)",
+    "institution": "الثانوية",
+    "startYear": 2019,
+    "endYear": 2023,
+    "status": "مكتمل",
+    "grade": "15/20",
+    "certificateUrl": "/certificates/Bachelor.png"
+  },
+  {
+    "degree": "شهادة ITC Tech",
+    "institution": "نادي ITC",
+    "startYear": 2024,
+    "endYear": 2024,
+    "status": "مكتمل",
+    "certificateUrl": "/certificates/itc-tech.png"
   }
 ]

@@ -12,6 +12,15 @@
     "startYear": 2019,
     "endYear": 2023,
     "status": "Completed",
-    "grade": "15/20"
+    "grade": "15/20",
+    "certificateUrl": "/certificates/Bachelor.png"
+  },
+  {
+    "degree": "ITC Tech Certificate",
+    "institution": "ITC Club",
+    "startYear": 2024,
+    "endYear": 2024,
+    "status": "Completed",
+    "certificateUrl": "/certificates/itc-tech.png"
   }
 ]

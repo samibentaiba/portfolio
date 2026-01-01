@@ -78,7 +78,8 @@
     "education": "التعليم",
     "summary": "الملخص",
     "targetRole": "الدور المستهدف",
-    "filterDescription": "تصفية محتوى السيرة الذاتية لوظيفة محددة"
+    "filterDescription": "تصفية محتوى السيرة الذاتية لوظيفة محددة",
+    "viewCertificate": "عرض الشهادة"
   },
   "categories": {
     "overview": "نظرة عامة",

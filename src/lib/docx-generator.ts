@@ -225,12 +225,30 @@ export const createEducationSection = (
     new Paragraph({
       children: [
         new TextRun({
-          text: `${education.institution}, ${education.startYear}-${education.endYear}`,
+          text: `${education.institution}, ${education.startYear}-${
+            education.endYear
+          }${education.status ? ` · ${education.status}` : ""}${
+            education.grade ? ` · ${education.grade}` : ""
+          }`,
         }),
       ],
-      spacing: { after: 100 },
+      spacing: { after: education.certificateUrl ? 50 : 100 },
       alignment: isRtl ? AlignmentType.RIGHT : AlignmentType.LEFT,
     }),
+    ...(education.certificateUrl
+      ? [
+          new Paragraph({
+            children: [
+              new TextRun({
+                text: `Certificate: https://bentaidev.vercel.app${education.certificateUrl}`,
+                italics: true,
+              }),
+            ],
+            spacing: { after: 100 },
+            alignment: isRtl ? AlignmentType.RIGHT : AlignmentType.LEFT,
+          }),
+        ]
+      : []),
   ]);
 
   return [

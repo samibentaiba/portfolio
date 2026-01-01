@@ -1,8 +1,26 @@
 [
   {
-    "degree": "Licence en Informatique",
-    "institution": "Université de Technologie",
-    "startYear": 2015,
-    "endYear": 2019
+    "degree": "Licence en Mathématiques et Informatique",
+    "institution": "USDB - Université Saad Dahlab de Blida 1",
+    "startYear": 2023,
+    "endYear": 2029,
+    "status": "En cours"
+  },
+  {
+    "degree": "Baccalauréat - Mathématiques Techniques (Génie Mécanique)",
+    "institution": "Lycée",
+    "startYear": 2019,
+    "endYear": 2023,
+    "status": "Terminé",
+    "grade": "15/20",
+    "certificateUrl": "/certificates/Bachelor.png"
+  },
+  {
+    "degree": "Certificat ITC Tech",
+    "institution": "Club ITC",
+    "startYear": 2024,
+    "endYear": 2024,
+    "status": "Terminé",
+    "certificateUrl": "/certificates/itc-tech.png"
   }
 ]

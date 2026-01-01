@@ -387,11 +387,24 @@ const ResumeContent = memo(function ResumeContent({
               {t("resume.education") || "Education"}
             </h2>
             {educations.map((edu, index) => (
-              <div key={`education-${index}`}>
+              <div key={`education-${index}`} className="space-y-1">
                 <p className="font-medium">{edu.degree}</p>
                 <p className="text-sm text-muted-foreground">
                   {edu.institution} · {edu.startYear}-{edu.endYear}
+                  {edu.status && ` · ${edu.status}`}
+                  {edu.grade && ` · ${edu.grade}`}
                 </p>
+                {edu.certificateUrl && (
+                  <a
+                    href={edu.certificateUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs text-primary hover:underline flex items-center gap-1 print-hidden"
+                  >
+                    <Download className="h-3 w-3" />
+                    {t("resume.viewCertificate") || "View Certificate"}
+                  </a>
+                )}
               </div>
             ))}
           </div>

@@ -78,7 +78,8 @@
     "education": "Education",
     "summary": "Summary",
     "targetRole": "Target Role",
-    "filterDescription": "Filter resume content for a specific job"
+    "filterDescription": "Filter resume content for a specific job",
+    "viewCertificate": "View Certificate"
   },
   "categories": {
     "overview": "Overview",

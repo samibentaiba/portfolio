@@ -57,6 +57,9 @@ export interface Education {
   institution: string;
   startYear: number;
   endYear: number;
+  status?: string;
+  grade?: string;
+  certificateUrl?: string; // Path to certificate file in /public/certificates/
 }
 export interface Personal {
   name: string;

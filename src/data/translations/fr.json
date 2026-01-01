@@ -78,7 +78,8 @@
     "targetRole": "Rôle Cible",
     "filterDescription": "Filtrer le contenu du CV pour un poste spécifique",
     "at": "à",
-    "education": "Éducation"
+    "education": "Éducation",
+    "viewCertificate": "Voir le Certificat"
   },
   "categories": {
     "overview": "Aperçu",
