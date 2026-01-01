@@ -15,11 +15,9 @@
             "description": "First team project as Frontend Developer. Built CSE Hub with React & Vite, collaborating with UI/UX designers.",
             "size": "medium",
             "type": "job",
-            "date": "Early 2024"
+            "date": "Oct 2024"
           },
-          "linkedTo": [
-            {"targetId": "p1"}
-          ]
+          "linkedTo": [{ "targetId": "p1" }]
         },
         {
           "id": "c2",
@@ -31,11 +29,9 @@
             "description": "Volunteered as Architect & Full Stack Dev for ITC. Designed database schema with Prisma, implemented RBAC.",
             "size": "large",
             "type": "job",
-            "date": "Jun-Sep 2024"
+            "date": "Jul 2025"
           },
-          "linkedTo": [
-            {"targetId": "p2"}
-          ]
+          "linkedTo": [{ "targetId": "p2" }]
         },
         {
           "id": "c3",
@@ -47,11 +43,9 @@
             "description": "Professional client projects: Remdani Dental, Mosquito Killer DZ, COD Simulation. Mastered Next.js and SEO.",
             "size": "large",
             "type": "job",
-            "date": "Late 2024"
+            "date": "Feb-Jun 2025"
           },
-          "linkedTo": [
-            {"targetId": "p3"}
-          ]
+          "linkedTo": [{ "targetId": "p3" }]
         },
         {
           "id": "c4",
@@ -63,11 +57,9 @@
             "description": "Enterprise system for Ministry of Agriculture. Complex data modeling, PostgreSQL, role-based access.",
             "size": "large",
             "type": "project",
-            "date": "2024-Present"
+            "date": "Jul 2025-Present"
           },
-          "linkedTo": [
-            {"targetId": "p4"}
-          ]
+          "linkedTo": [{ "targetId": "p4" }]
         },
         {
           "id": "c5",
@@ -79,11 +71,9 @@
             "description": "Built desktop IDE with Electron. Bundled MinGW compiler, interactive terminal, zero-setup experience.",
             "size": "large",
             "type": "project",
-            "date": "Oct-Dec 2024"
+            "date": "Dec 2025"
           },
-          "linkedTo": [
-            {"targetId": "p5"}
-          ]
+          "linkedTo": [{ "targetId": "p5" }]
         },
         {
           "id": "c6",
@@ -97,10 +87,7 @@
             "type": "project",
             "date": "2025"
           },
-          "linkedTo": [
-            {"targetId": "p6"},
-            {"targetId": "p7"}
-          ]
+          "linkedTo": [{ "targetId": "p6" }, { "targetId": "p7" }]
         },
         {
           "id": "c7",
@@ -114,10 +101,7 @@
             "type": "skill",
             "date": "2025"
           },
-          "linkedTo": [
-            {"targetId": "p8"},
-            {"targetId": "s3"}
-          ]
+          "linkedTo": [{ "targetId": "p8" }, { "targetId": "s3" }]
         }
       ]
     },
@@ -136,7 +120,7 @@
             "description": "Team Project (React, Vite, Figma)",
             "size": "medium",
             "type": "project",
-            "date": "2024"
+            "date": "Oct 2024"
           }
         },
         {
@@ -149,7 +133,7 @@
             "description": "Internal Platform (Full Stack, Prisma, PostgreSQL)",
             "size": "large",
             "type": "project",
-            "date": "Jun-Sep 2024"
+            "date": "Jul 2025"
           }
         },
         {
@@ -162,7 +146,7 @@
             "description": "Remdani Dental, Mosquito Killer DZ",
             "size": "medium",
             "type": "project",
-            "date": "2024"
+            "date": "Feb-Jun 2025"
           }
         },
         {
@@ -175,7 +159,7 @@
             "description": "Agricultural Management (Ministry of Agriculture)",
             "size": "large",
             "type": "project",
-            "date": "2024-Present"
+            "date": "Jul 2025-Present"
           }
         },
         {
@@ -188,7 +172,7 @@
             "description": "Desktop IDE (Electron, MinGW, TypeScript)",
             "size": "large",
             "type": "project",
-            "date": "Oct-Dec 2024"
+            "date": "Dec 2025"
           }
         },
         {
@@ -247,7 +231,7 @@
             "description": "React, TypeScript, Tailwind CSS, shadcn/ui",
             "size": "medium",
             "type": "skill",
-            "date": "2024"
+            "date": "Oct 2024"
           }
         },
         {
@@ -260,7 +244,7 @@
             "description": "Next.js, Prisma, PostgreSQL, System Design",
             "size": "large",
             "type": "skill",
-            "date": "Mid 2024"
+            "date": "Feb 2025"
           }
         },
         {
@@ -273,7 +257,7 @@
             "description": "Docker, CI/CD, Technical Documentation, Linux mastery",
             "size": "large",
             "type": "skill",
-            "date": "Late 2024"
+            "date": "Dec 2024"
           }
         },
         {

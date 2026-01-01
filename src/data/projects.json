@@ -15,7 +15,7 @@
       "Frontend",
       "Software Engineer"
     ],
-    "timeline": "2024",
+    "timeline": "Jun 2025",
     "liveUrl": "https://calculator-delta-flax.vercel.app",
     "githubUrl": "https://github.com/samibentaiba/calculator",
     "personalExperience": "Built this tool to help e-commerce business owners visualize their expenses and profits. It focuses on providing a clear, real-time financial overview.",
@@ -38,7 +38,7 @@
       "Frontend",
       "Software Engineer"
     ],
-    "timeline": "2024",
+    "timeline": "Jun 2025",
     "liveUrl": "https://mosquito-killer-2.vercel.app",
     "githubUrl": "https://github.com/samibentaiba/mosquito-killer-2",
     "personalExperience": "Designed to maximize conversion rates for a local e-commerce product. Focused on speed, mobile responsiveness, and a frictionless checkout process.",
@@ -69,7 +69,7 @@
       "Backend",
       "Software Engineer"
     ],
-    "timeline": "Ongoing (2024 - Present)",
+    "timeline": "Ongoing (Jul 2025 - Present)",
     "githubUrl": null,
     "personalExperience": "Working on Algis for a client in the agricultural sector has been a rewarding experience. The project involves complex data modeling with Prisma to handle UAPs, livestock, machinery, crops, and their relationships. I'm building a modern full-stack dashboard that replaces manual Excel-based workflows with a dynamic web application featuring authentication and role-based access. The repository is private due to client terms of service.",
     "collaborators": []
@@ -94,7 +94,7 @@
       "Software Engineer",
       "Desktop Development"
     ],
-    "timeline": "2 months (Oct 2024 - Dec 2024)",
+    "timeline": "Dec 2025",
     "liveUrl": null,
     "downloadUrl": "https://github.com/samibentaiba/c-studio/releases/download/v1.5.1/C-Studio-Setup-1.5.1.exe",
     "githubUrl": "https://github.com/samibentaiba/c-studio",
@@ -128,7 +128,7 @@
       "Backend",
       "Software Architect"
     ],
-    "timeline": "4 months (Jun 2024 - Sep 2024)",
+    "timeline": "Jul 2025",
     "liveUrl": "https://itc-hub.vercel.app",
     "githubUrl": "https://github.com/samibentaiba/itc-hub",
     "personalExperience": "Developing ITC Hub was a deep dive into full-stack Next.js development. The biggest challenge was designing the relational database schema with Prisma to handle complex relationships between users, departments, teams, and tickets. Implementing role-based access control (RBAC) with Next-Auth was a critical feature to ensure data security. This project solidified my skills in building secure, scalable, and data-intensive web applications.",
@@ -148,7 +148,7 @@
       "Linux Ecosystem",
       "Frontend"
     ],
-    "timeline": "2024",
+    "timeline": "Feb 2025",
     "liveUrl": "https://ramdani.vercel.app",
     "githubUrl": "https://github.com/ismail-devmaster/finalProjectFe",
     "personalExperience": "Collaborated as a Frontend Developer on this project, working closely with the backend developer and deployment lead. I also contributed to the backend development with small commits, gaining exposure to the full stack.",
@@ -172,7 +172,7 @@
       "Frontend",
       "Software Engineer"
     ],
-    "timeline": "1 month (2024)",
+    "timeline": "2025",
     "liveUrl": null,
     "githubUrl": "https://github.com/samibentaiba/sunrise-energy",
     "personalExperience": "This project allowed me to focus on creating a professional and visually appealing interface for a corporate client. I utilized Next.js for performance and SEO, ensuring the site is fast and discoverable.",
@@ -194,7 +194,7 @@
       "Pipeline Manipulation",
       "Frontend"
     ],
-    "timeline": "3 days (2025)",
+    "timeline": "Feb 2025",
     "liveUrl": "https://ai-horizons.netlify.app",
     "githubUrl": "https://github.com/samibentaiba/AiHorizons",
     "personalExperience": "This was a high-intensity project where I collaborated closely with a backend developer and a UI/UX designer to deliver a polished product in a very short timeframe. It tested my ability to work under pressure and coordinate effectively with a team.",
@@ -215,7 +215,7 @@
       "Figma",
       "Frontend"
     ],
-    "timeline": "Ongoing (2025)",
+    "timeline": "Mar 2025",
     "liveUrl": "https://itc-talks.vercel.app",
     "githubUrl": "https://github.com/samibentaiba/itc-talks",
     "personalExperience": "Collaborated with a UI/UX designer to bring the vision of ITC Talks to life. Focused on creating an engaging user experience and a seamless content management flow.",
@@ -238,7 +238,7 @@
       "Python",
       "Frontend"
     ],
-    "timeline": "2024",
+    "timeline": "Dec 2024",
     "liveUrl": "https://itc-programming.netlify.app",
     "githubUrl": "https://github.com/samibentaiba/ITCP",
     "personalExperience": "Worked as a Frontend Developer in a team with a backend developer and a UI/UX designer. This project enhanced my teamwork skills and my ability to integrate frontend components with backend APIs.",
@@ -252,7 +252,7 @@
     "description": "A central hub for the CSE USDB promo 2023, providing information about the club, its departments, and events. This was my first project as a software engineer.",
     "image": "/placeholder.svg?height=400&width=800",
     "technologies": ["React", "Vite", "Figma", "Frontend"],
-    "timeline": "2024",
+    "timeline": "Oct 2024",
     "liveUrl": "https://cse-hub.netlify.app/home",
     "githubUrl": "https://github.com/samibentaiba/cse-hub",
     "personalExperience": "My first significant project as a Frontend Developer. I collaborated with a UI/UX designer to translate designs into code, laying the foundation for my career in software engineering.",
@@ -277,7 +277,7 @@
       "Backend",
       "DevOps"
     ],
-    "timeline": "2025",
+    "timeline": "Dec 2024",
     "liveUrl": null,
     "githubUrl": "https://github.com/samibentaiba/H2-SpringBoot",
     "personalExperience": "Expanded my skillset into backend and DevOps by working with Java Spring Boot and microservices. This project gave me a deeper understanding of full-stack architecture and database management.",
@@ -300,7 +300,7 @@
       "Technical Documentation",
       "DevOps"
     ],
-    "timeline": "1 month (Apr 2024)",
+    "timeline": "Mar 2025",
     "liveUrl": null,
     "githubUrl": "https://github.com/samibentaiba/ishowoff",
     "personalExperience": "This was a valuable learning experience with GitHub Actions. By forking and customizing this project, I gained hands-on experience with CI/CD pipelines, automated releases, and integrating dynamic content into my GitHub profile README.",

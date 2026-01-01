@@ -20,13 +20,13 @@
       {
         "name": "Git & GitHub",
         "slug": "git-github",
-        "experience": "3+ years",
+        "experience": "1+ year",
         "description": "Git is a distributed version control system. I use Git and GitHub daily for version control, collaboration, and managing code changes across projects, including using GitHub Actions for CI/CD."
       },
       {
         "name": "GitHub Actions",
         "slug": "github-actions",
-        "experience": "1+ year",
+        "experience": "<1 year",
         "description": "Automating software workflows with CI/CD pipelines directly in GitHub. I use it for automated testing and deployment."
       },
       {
@@ -38,13 +38,13 @@
       {
         "name": "Docker",
         "slug": "docker",
-        "experience": "1+ year",
+        "experience": "<1 year",
         "description": "Docker is a platform for developing, shipping, and running applications in containers. Used to create consistent development environments."
       },
       {
         "name": "Vercel",
         "slug": "vercel",
-        "experience": "2+ years",
+        "experience": "<1 year",
         "description": "Vercel is a deployment and collaboration platform for frontend developers. I use Vercel to deploy and host web applications, leveraging its serverless functions and edge network."
       },
       {
@@ -76,25 +76,25 @@
       {
         "name": "React",
         "slug": "react",
-        "experience": "2+ years",
+        "experience": "1+ year",
         "description": "React is a JavaScript library for building user interfaces. I've used React extensively to build single-page applications and components within Next.js projects, focusing on component-based architecture and state management with hooks and context API."
       },
       {
         "name": "Next.js",
         "slug": "nextjs",
-        "experience": "2+ years",
+        "experience": "<1 year",
         "description": "Next.js is a React framework that enables server-side rendering and static site generation. I've used Next.js to build performant and SEO-friendly web applications, leveraging its file-based routing system and API routes in projects like my portfolio, ITC Hub, and Algis."
       },
       {
         "name": "TypeScript",
         "slug": "typescript",
-        "experience": "2+ years",
+        "experience": "<1 year",
         "description": "TypeScript is a strongly typed programming language that builds on JavaScript. I use TypeScript in most of my projects (portfolio, c-studio, algis, itc-hub) to ensure type safety and improve developer experience."
       },
       {
         "name": "Tailwind CSS",
         "slug": "tailwind",
-        "experience": "2+ years",
+        "experience": "<1 year",
         "description": "Tailwind CSS is a utility-first CSS framework. I use Tailwind CSS to rapidly build custom designs without leaving HTML, focusing on responsive design and component consistency in my Next.js projects."
       },
       {
@@ -106,7 +106,7 @@
       {
         "name": "HTML & CSS",
         "slug": "html-css",
-        "experience": "3+ years",
+        "experience": "1+ year",
         "description": "Core web technologies for structuring and styling web content. Used in all web-based projects."
       },
       {
@@ -138,7 +138,7 @@
       {
         "name": "Node.js",
         "slug": "nodejs",
-        "experience": "2+ years",
+        "experience": "1+ year",
         "description": "Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. I've used Node.js for server-side logic in Next.js applications and for scripting, including within the c-studio Electron project."
       },
       {
@@ -150,44 +150,50 @@
       {
         "name": "PostgreSQL",
         "slug": "postgresql",
-        "experience": "1+ year",
+        "experience": "<1 year",
         "description": "PostgreSQL is an advanced, open-source relational database. I've used PostgreSQL with Prisma for data storage in projects like ITC Hub and Algis."
       },
       {
         "name": "Prisma",
         "slug": "prisma",
-        "experience": "1+ year",
+        "experience": "<1 year",
         "description": "Prisma is a next-generation ORM for Node.js and TypeScript. I use Prisma to interact with databases (PostgreSQL and SQLite) in projects like ITC Hub and Algis."
       },
       {
         "name": "SQLite",
         "slug": "sqlite",
-        "experience": "1+ year",
+        "experience": "<1 year",
         "description": "SQLite is a C-language library that implements a small, fast, self-contained, high-reliability, full-featured, SQL database engine. Used for local development in the Algis project."
       },
       {
         "name": "Java",
         "slug": "java",
-        "experience": "1+ year",
+        "experience": "<1 year",
         "description": "Java is a high-level, class-based, object-oriented programming language. I use it for backend development with Spring Boot."
       },
       {
         "name": "Spring Boot",
         "slug": "spring-boot",
-        "experience": "1+ year",
+        "experience": "<1 year",
         "description": "Spring Boot is an open source Java-based framework used to create a micro Service. I use it to build robust and scalable backend services."
       },
       {
         "name": "Next.js",
         "slug": "nextjs-backend",
-        "experience": "2+ years",
+        "experience": "<1 year",
         "description": "I leverage Next.js for full-stack development, utilizing API Routes and Server Actions to build secure and scalable backend logic directly within the application."
       },
       {
         "name": "NextAuth.js",
         "slug": "next-auth",
-        "experience": "1+ year",
+        "experience": "<1 year",
         "description": "A complete open-source authentication solution for Next.js applications. I use it to handle secure user authentication and session management."
+      },
+      {
+        "name": "Laravel",
+        "slug": "laravel",
+        "experience": "Explored",
+        "description": "Explored Laravel, a PHP web application framework, for building robust and elegant backend applications with its expressive syntax and powerful features."
       }
     ]
   },
@@ -256,6 +262,12 @@
         "slug": "haskell",
         "experience": "Explored",
         "description": "Explored Haskell to understand functional programming paradigms."
+      },
+      {
+        "name": "PHP",
+        "slug": "php",
+        "experience": "Explored",
+        "description": "Explored PHP for server-side web development and understanding dynamic web applications."
       },
       {
         "name": "IDEs & Editors",
