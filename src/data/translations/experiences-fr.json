@@ -17,9 +17,7 @@
       "Conception BDD",
       "Tailwind CSS"
     ],
-    "projects": [
-      "ITC Hub - Plateforme de communication et de gestion interne"
-    ]
+    "projects": ["ITC Hub - Plateforme de communication et de gestion interne"]
   },
   {
     "role": "Ingénieur Logiciel Junior",
@@ -46,9 +44,9 @@
       "Mosquito Killer DZ - Page de destination à haute conversion",
       "COD Simulation - Calculateur de ROI e-commerce",
       "Remdani Dental Center - Site web de clinique",
-      "Sunrise Energy - Aperçu client entreprise",
+      "Sunrise Energy - Freelance (Annulé)",
       "C-Studio - IDE de bureau pour la programmation C",
-      "Algis - Système de gestion agricole"
+      "Algis - Freelance (Suspendu)"
     ]
   },
   {
@@ -60,16 +58,8 @@
     "location": "Alger, Algérie",
     "summary": "Collaboration sur les projets du club et mentorat des membres.",
     "description": "Contributeur actif à la présence numérique du club. J'ai collaboré sur le site officiel de l'ITCP et la plateforme d'événements 'ITC Talks'. Je participe également à des sessions de mentorat et des ateliers techniques.",
-    "skills": [
-      "React",
-      "Next.js",
-      "Travail d'équipe",
-      "Mentorat"
-    ],
-    "projects": [
-      "Site Web ITCP",
-      "Plateforme ITC Talks"
-    ]
+    "skills": ["React", "Next.js", "Travail d'équipe", "Mentorat"],
+    "projects": ["Site Web ITCP", "Plateforme ITC Talks"]
   },
   {
     "role": "Développeur Frontend",
@@ -80,13 +70,7 @@
     "location": "Alger, Algérie",
     "summary": "Contribution au développement du CSE Hub.",
     "description": "J'ai travaillé en tant que développeur Frontend sur le projet 'CSE Hub'. J'ai collaboré étroitement avec des designers UI/UX pour implémenter des interfaces pixel-perfect en utilisant React et Vite. C'était mon premier grand projet d'ingénierie logicielle en équipe.",
-    "skills": [
-      "React",
-      "Vite",
-      "Collaboration"
-    ],
-    "projects": [
-      "CSE Hub"
-    ]
+    "skills": ["React", "Vite", "Collaboration"],
+    "projects": ["CSE Hub"]
   }
 ]

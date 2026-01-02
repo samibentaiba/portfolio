@@ -47,12 +47,12 @@
   {
     "slug": "algis",
     "title": "Algis",
-    "shortDescription": "Agricultural Management System for Algeria's Ministry of Agriculture.",
+    "shortDescription": "Freelance Agricultural Management System for Algeria's Ministry of Agriculture.",
     "description": "Algis is a comprehensive Agricultural Management System designed for the National Office of Agricultural Development (Ministry of Agriculture and Rural Development). It digitizes and streamlines management of Agricultural Production Units (UAPs) across Algeria, centralizing scattered Excel data into a relational database with role-based access control, livestock tracking, equipment management, and production analytics. Uses PostgreSQL for hosted versions and SQLite for local development. A potential enterprise upgrade using Rust, MySQL, HTMX, and jQuery is being proposed to the client.",
     "image": "/placeholder.svg?height=400&width=800",
     "liveUrl": "https://algis-preview.vercel.app",
-    "status": "Free Trial Available",
-    "statusReason": "A temporary free trial is available. Full access requires payment.",
+    "status": "Development Suspended",
+    "statusReason": "Project suspended due to client non-payment issues.",
     "technologies": [
       "Next.js",
       "React",
@@ -71,7 +71,7 @@
     ],
     "timeline": "Ongoing (Jul 2025 - Present)",
     "githubUrl": null,
-    "personalExperience": "Working on Algis for a client in the agricultural sector has been a rewarding experience. The project involves complex data modeling with Prisma to handle UAPs, livestock, machinery, crops, and their relationships. I'm building a modern full-stack dashboard that replaces manual Excel-based workflows with a dynamic web application featuring authentication and role-based access. The repository is private due to client terms of service.",
+    "personalExperience": "This was a freelance project for a client in the agricultural sector. The project involves complex data modeling with Prisma to handle UAPs, livestock, machinery, crops, and their relationships. I'm building a modern full-stack dashboard that replaces manual Excel-based workflows with a dynamic web application featuring authentication and role-based access. The repository is private due to client terms of service.",
     "collaborators": []
   },
   {
@@ -158,11 +158,11 @@
     "slug": "sunrise-energy",
     "fetchUrl": "https://github.com/samibentaiba/sunrise-energy",
     "title": "Sunrise Energy",
-    "shortDescription": "Renewable energy solutions platform (Client Preview).",
+    "shortDescription": "Freelance renewable energy solutions platform (Client Preview).",
     "description": "A modern web platform designed for a renewable energy company. This project serves as a client preview to demonstrate the potential for a digital presence in the energy sector. It features a clean, eco-friendly design and showcases services and solutions.",
     "image": "/placeholder.svg?height=400&width=800",
-    "status": "Preview Unavailable",
-    "statusReason": "The project preview has been temporarily disabled due to unresolved contract negotiations with the client.",
+    "status": "Cancelled",
+    "statusReason": "Project cancelled due to client non-payment issues.",
     "technologies": [
       "Next.js",
       "TypeScript",
@@ -175,7 +175,7 @@
     "timeline": "2025",
     "liveUrl": null,
     "githubUrl": "https://github.com/samibentaiba/sunrise-energy",
-    "personalExperience": "This project allowed me to focus on creating a professional and visually appealing interface for a corporate client. I utilized Next.js for performance and SEO, ensuring the site is fast and discoverable.",
+    "personalExperience": "This freelance project allowed me to focus on creating a professional and visually appealing interface for a corporate client. I utilized Next.js for performance and SEO, ensuring the site is fast and discoverable.",
     "collaborators": []
   },
   {
