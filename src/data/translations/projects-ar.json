@@ -150,7 +150,9 @@
       "TypeScript",
       "Prisma",
       "Tailwind CSS",
-      "shadcn/ui"
+      "shadcn/ui",
+      "Full Stack",
+      "CMS"
     ],
     "timeline": "شهر واحد (2024)",
     "liveUrl": null,

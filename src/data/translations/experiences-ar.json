@@ -69,15 +69,22 @@
     "projects": ["Algis - نظام الإدارة الزراعية"]
   },
   {
-    "role": "مطور واجهة أمامية (مستقل)",
+    "role": "مطور Full Stack (مستقل)",
     "company": "Sunrise Energy",
     "slug": "sunrise-energy-freelance",
     "type": "عمل حر",
     "period": "2025 (ملغى)",
     "location": "عن بعد",
-    "summary": "تصميم منصة ويب حديثة لشركة طاقة متجددة (معاينة للعميل).",
+    "summary": "تصميم منصة ويب حديثة تعتمد على نظام إدارة المحتوى (CMS) لشركة طاقة متجددة (معاينة للعميل).",
     "description": "منصة ويب حديثة مصممة لشركة طاقة متجددة. خدم هذا المشروع كمعاينة للعميل لإظهار إمكانات التواجد الرقمي في قطاع الطاقة. يتميز بتصميم نظيف وصديق للبيئة. تم إلغاء المشروع بسبب مشاكل عدم الدفع من قبل العميل.",
-    "skills": ["Next.js", "TypeScript", "Prisma", "Tailwind CSS", "shadcn/ui"],
+    "skills": [
+      "Next.js",
+      "TypeScript",
+      "Prisma",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "CMS"
+    ],
     "projects": ["Sunrise Energy - منصة الحلول المتجددة"]
   },
   {

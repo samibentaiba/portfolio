@@ -69,15 +69,22 @@
     "projects": ["Algis - Système de Gestion Agricole"]
   },
   {
-    "role": "Développeur Frontend (Freelance)",
+    "role": "Développeur Full Stack (Freelance)",
     "company": "Sunrise Energy",
     "slug": "sunrise-energy-freelance",
     "type": "Freelance",
     "period": "2025 (Annulé)",
     "location": "À distance",
-    "summary": "Conception d'une plateforme web moderne pour une entreprise d'énergie renouvelable (Aperçu Client).",
+    "summary": "Conception d'une plateforme web moderne pilotée par CMS pour une entreprise d'énergie renouvelable (Aperçu Client).",
     "description": "Une plateforme web moderne conçue pour une entreprise d'énergie renouvelable. Ce projet servait d'aperçu client pour démontrer le potentiel d'une présence numérique dans le secteur de l'énergie. Il présente un design propre et écologique. Le projet a été annulé en raison de problèmes de non-paiement du client.",
-    "skills": ["Next.js", "TypeScript", "Prisma", "Tailwind CSS", "shadcn/ui"],
+    "skills": [
+      "Next.js",
+      "TypeScript",
+      "Prisma",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "CMS"
+    ],
     "projects": ["Sunrise Energy - Plateforme de Solutions Renouvelables"]
   },
   {
