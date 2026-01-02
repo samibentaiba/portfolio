@@ -44,10 +44,41 @@
       "Mosquito Killer DZ - Page de destination à haute conversion",
       "COD Simulation - Calculateur de ROI e-commerce",
       "Remdani Dental Center - Site web de clinique",
-      "Sunrise Energy - Freelance (Annulé)",
-      "C-Studio - IDE de bureau pour la programmation C",
-      "Algis - Freelance (Suspendu)"
+      "C-Studio - IDE de bureau pour la programmation C"
     ]
+  },
+  {
+    "role": "Développeur Full Stack (Freelance)",
+    "company": "Algis (Ministère de l'Agriculture)",
+    "slug": "algis-freelance",
+    "type": "Freelance",
+    "period": "Juil 2025 - Présent (Suspendu)",
+    "location": "À distance",
+    "summary": "Développement d'un système complet de gestion agricole pour l'Office National du Développement Agricole.",
+    "description": "Algis est un système de gestion agricole complet conçu pour l'Office National du Développement Agricole (Ministère de l'Agriculture et du Développement Rural). Il numérise et rationalise la gestion des Unités de Production Agricole (UAP) à travers l'Algérie, en centralisant les données Excel dispersées dans une base de données relationnelle avec contrôle d'accès basé sur les rôles, suivi du bétail, gestion des équipements et analyses de production.",
+    "skills": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Prisma",
+      "PostgreSQL",
+      "NextAuth.js",
+      "Tailwind CSS",
+      "Architecture Système"
+    ],
+    "projects": ["Algis - Système de Gestion Agricole"]
+  },
+  {
+    "role": "Développeur Frontend (Freelance)",
+    "company": "Sunrise Energy",
+    "slug": "sunrise-energy-freelance",
+    "type": "Freelance",
+    "period": "2025 (Annulé)",
+    "location": "À distance",
+    "summary": "Conception d'une plateforme web moderne pour une entreprise d'énergie renouvelable (Aperçu Client).",
+    "description": "Une plateforme web moderne conçue pour une entreprise d'énergie renouvelable. Ce projet servait d'aperçu client pour démontrer le potentiel d'une présence numérique dans le secteur de l'énergie. Il présente un design propre et écologique. Le projet a été annulé en raison de problèmes de non-paiement du client.",
+    "skills": ["Next.js", "TypeScript", "Prisma", "Tailwind CSS", "shadcn/ui"],
+    "projects": ["Sunrise Energy - Plateforme de Solutions Renouvelables"]
   },
   {
     "role": "Membre Actif & Développeur",
