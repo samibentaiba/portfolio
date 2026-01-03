@@ -13,6 +13,7 @@ import {
   Download,
   ExternalLink,
   Github,
+  ImageIcon,
   Users,
 } from "lucide-react";
 import { useLanguage } from "@/components/language-provider";
@@ -145,6 +146,34 @@ export default function ProjectClient() {
             </p>
           </CardContent>
         </Card>
+
+        {project.gallery && project.gallery.length > 0 && (
+          <Card className="mb-6 sm:mb-8">
+            <CardHeader className="p-4 sm:p-6">
+              <CardTitle className="text-lg sm:text-xl flex items-center gap-2">
+                <ImageIcon className="h-5 w-5" />
+                {t("projects.gallery") || "Project Gallery"}
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="px-4 pb-4 sm:px-6 sm:pb-6 pt-0">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {project.gallery.map((image, index) => (
+                  <div
+                    key={index}
+                    className="relative aspect-[3/4] overflow-hidden rounded-lg border bg-muted"
+                  >
+                    <Image
+                      src={image}
+                      alt={`${project.title} screenshot ${index + 1}`}
+                      fill
+                      className="object-cover hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        )}
 
         <div className="grid gap-6 sm:gap-8 md:grid-cols-2">
           <Card>

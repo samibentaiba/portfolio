@@ -57,23 +57,25 @@
     ]
   },
   {
-    "role": "Full Stack Developer (Freelance)",
+    "role": "Lead Developer & Architect (Freelance)",
     "company": "Algis (Ministry of Agriculture)",
     "slug": "algis-freelance",
     "type": "Freelance",
     "period": "Jul 2025 - Present (Suspended)",
     "location": "Remote",
-    "summary": "Developing a comprehensive Agricultural Management System for the National Office of Agricultural Development.",
-    "description": "Algis is a comprehensive Agricultural Management System designed for the National Office of Agricultural Development (Ministry of Agriculture and Rural Development). It digitizes and streamlines management of Agricultural Production Units (UAPs) across Algeria, centralizing scattered Excel data into a relational database with role-based access control, livestock tracking, equipment management, and production analytics. Uses PostgreSQL for hosted versions and SQLite for local development.",
+    "summary": "Architected and built a comprehensive Agricultural Management System for the National Office of Agricultural Development.",
+    "description": "As the Lead Developer and Architect for ALGIS, I designed and implemented a large-scale farm management platform to digitize Algeria's agricultural sector. I architected a layered monolith using Next.js 15 and Prisma, managing a complex database with 35+ models. Key contributions include implementing a robust RBAC system, integrating 3D visualizations with React Three Fiber, developing a custom SEO system, and ensuring reliability with over 800 integration tests. I also handled the integration of the Chargily payment gateway and designed the system for multi-tenancy to support various Agricultural Production Units (UAPs).",
     "skills": [
       "Next.js",
       "React",
       "TypeScript",
       "Prisma",
       "PostgreSQL",
-      "NextAuth.js",
-      "Tailwind CSS",
-      "System Architecture"
+      "System Architecture",
+      "Testing (Vitest)",
+      "React Three Fiber",
+      "Payment Integration",
+      "DevOps"
     ],
     "projects": ["Algis - Agricultural Management System"]
   },

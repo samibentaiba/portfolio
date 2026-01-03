@@ -48,7 +48,7 @@
     "slug": "algis",
     "title": "Algis",
     "shortDescription": "Freelance Agricultural Management System for Algeria's Ministry of Agriculture.",
-    "description": "Algis is a comprehensive Agricultural Management System designed for the National Office of Agricultural Development (Ministry of Agriculture and Rural Development). It digitizes and streamlines management of Agricultural Production Units (UAPs) across Algeria, centralizing scattered Excel data into a relational database with role-based access control, livestock tracking, equipment management, and production analytics. Uses PostgreSQL for hosted versions and SQLite for local development. A potential enterprise upgrade using Rust, MySQL, HTMX, and jQuery is being proposed to the client.",
+    "description": "ALGIS (Algerian Agriculture General Information System) is a comprehensive farm management platform designed to digitize the Algerian agricultural sector. It replaces paper-based workflows with a centralized digital system for managing Agricultural Production Units (UAPs). Key features include detailed tracking of vegetal and animal production, resource and inventory management, financial analytics with real-time ROI calculation, and workforce payroll. The system supports role-based access control (Admin, Manager, User) and features interactive 3D visualizations of farm data.",
     "image": "/placeholder.svg?height=400&width=800",
     "liveUrl": "https://algis-preview.vercel.app",
     "status": "Development Suspended",
@@ -62,6 +62,8 @@
       "NextAuth.js",
       "Tailwind CSS",
       "shadcn/ui",
+      "React Three Fiber",
+      "Chargily Pay",
       "Linux Ecosystem",
       "System Architecture",
       "Technical Documentation",
@@ -71,8 +73,16 @@
     ],
     "timeline": "Ongoing (Jul 2025 - Present)",
     "githubUrl": null,
-    "personalExperience": "This was a freelance project for a client in the agricultural sector. The project involves complex data modeling with Prisma to handle UAPs, livestock, machinery, crops, and their relationships. I'm building a modern full-stack dashboard that replaces manual Excel-based workflows with a dynamic web application featuring authentication and role-based access. The repository is private due to client terms of service.",
-    "collaborators": []
+    "personalExperience": "As the lead developer, I architected this layered monolith using Next.js and Prisma. I designed a complex database schema with over 35 models to handle the intricate relationships between crops, livestock, machinery, and finances. I implemented a robust testing strategy with over 800 integration tests, a custom SEO system, and integrated the Chargily payment gateway. I also built immersive 3D visualizations using React Three Fiber to represent agricultural data geographically.",
+    "collaborators": [],
+    "gallery": [
+      "/images/projects/algis/1.jpeg",
+      "/images/projects/algis/2.jpeg",
+      "/images/projects/algis/3.jpeg",
+      "/images/projects/algis/4.jpeg",
+      "/images/projects/algis/5.jpeg",
+      "/images/projects/algis/6.jpeg"
+    ]
   },
   {
     "slug": "c-studio",

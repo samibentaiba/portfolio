@@ -50,6 +50,7 @@ export interface Project {
   githubUrl?: string;
   personalExperience?: string;
   collaborators?: string[];
+  gallery?: string[];
 }
 
 export interface Education {

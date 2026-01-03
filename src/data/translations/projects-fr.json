@@ -44,7 +44,7 @@
     "slug": "algis",
     "title": "Algis",
     "shortDescription": "Système de gestion agricole freelance pour le Ministère de l'Agriculture algérien.",
-    "description": "Algis est un système de gestion agricole complet conçu pour l'Office National du Développement Agricole (Ministère de l'Agriculture et du Développement Rural). Il numérise et rationalise la gestion des Unités de Production Agricole (UAP) à travers l'Algérie, en centralisant les données Excel dispersées dans une base de données relationnelle avec contrôle d'accès basé sur les rôles, suivi du bétail, gestion des équipements et analyses de production. Utilise PostgreSQL pour les versions hébergées et SQLite pour le développement local. Une mise à niveau entreprise potentielle utilisant Rust, MySQL, HTMX et jQuery est proposée au client.",
+    "description": "ALGIS (Système d'Information Générale de l'Agriculture Algérienne) est une plateforme complète de gestion agricole conçue pour numériser le secteur agricole algérien. Elle remplace les flux de travail papier par un système numérique centralisé pour la gestion des Unités de Production Agricole (UAP). Les fonctionnalités clés incluent le suivi détaillé de la production végétale et animale, la gestion des ressources et des stocks, l'analyse financière avec calcul du ROI en temps réel et la paie de la main-d'œuvre. Le système prend en charge le contrôle d'accès basé sur les rôles et propose des visualisations 3D interactives des données agricoles.",
     "image": "/placeholder.svg?height=400&width=800",
     "liveUrl": "https://algis-preview.vercel.app",
     "status": "Développement Suspendu",
@@ -58,13 +58,15 @@
       "NextAuth.js",
       "Tailwind CSS",
       "shadcn/ui",
+      "React Three Fiber",
+      "Chargily Pay",
       "Écosystème Linux",
       "Architecture Système",
       "Documentation Technique"
     ],
     "timeline": "En cours (2024 - Présent)",
     "githubUrl": null,
-    "personalExperience": "C'était un projet freelance pour un client du secteur agricole. Le projet implique une modélisation de données complexe avec Prisma pour gérer les UAP, le bétail, les machines, les cultures et leurs relations. Je construis un tableau de bord moderne full-stack qui remplace les flux de travail manuels basés sur Excel par une application web dynamique avec authentification et contrôle d'accès basé sur les rôles. Le dépôt est privé en raison des conditions de service du client.",
+    "personalExperience": "En tant que développeur principal, j'ai architecturé ce monolithe en couches en utilisant Next.js et Prisma. J'ai conçu un schéma de base de données complexe avec plus de 35 modèles pour gérer les relations complexes entre les cultures, le bétail, les machines et les finances. J'ai mis en œuvre une stratégie de test robuste avec plus de 800 tests d'intégration, un système SEO personnalisé et intégré la passerelle de paiement Chargily. J'ai également créé des visualisations 3D immersives utilisant React Three Fiber pour représenter géographiquement les données agricoles.",
     "collaborators": []
   },
   {
