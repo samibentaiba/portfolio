@@ -1,5 +1,30 @@
 [
   {
+    "slug": "sawa9li-to-foorweb",
+    "title": "Sawa9li to Foorweb",
+    "shortDescription": "Chrome extension to automate product imports from Sawa9li to Foorweb stores.",
+    "description": "A powerful Chrome extension designed for e-commerce sellers to automate product imports from Sawa9li marketplace to Foorweb stores. Features include batch product selection with visual feedback, automatic import with real-time status tracking, smart category management (all products, VIP products, trending products), manual and automatic import modes, duplicate product detection, and comprehensive settings panel. Built with a modern dark UI optimized for the Arabic market.",
+    "image": "/images/projects/sawa9li-to-foorweb.png",
+    "technologies": [
+      "Chrome Extension",
+      "TypeScript",
+      "React",
+      "Vitest",
+      "Web Automation",
+      "E-commerce",
+      "Browser Extension",
+      "Software Engineer"
+    ],
+    "timeline": "Jan 2025",
+    "liveUrl": null,
+    "downloadUrl": "/downloads/sawa9li-to-foorweb.zip",
+    "githubUrl": null,
+    "status": "Available for Purchase",
+    "statusReason": "This is a private, paid extension available by permission only.",
+    "personalExperience": "Built this extension to solve a real pain point for e-commerce sellers managing multiple storefronts. The biggest challenge was handling the complex DOM interactions for batch product selection and ensuring reliable automatic imports with proper error handling. Implemented comprehensive testing with Vitest and designed a sleek dark UI that matches the Foorweb admin aesthetic.",
+    "collaborators": []
+  },
+  {
     "slug": "cod-simulation",
     "fetchUrl": "https://github.com/samibentaiba/calculator",
     "title": "COD Simulation Dashboard",

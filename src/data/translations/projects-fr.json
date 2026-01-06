@@ -1,5 +1,29 @@
 [
   {
+    "slug": "sawa9li-to-foorweb",
+    "title": "Sawa9li to Foorweb",
+    "shortDescription": "Extension Chrome pour automatiser l'importation de produits de Sawa9li vers les boutiques Foorweb.",
+    "description": "Une extension Chrome puissante conçue pour les vendeurs e-commerce afin d'automatiser l'importation de produits du marketplace Sawa9li vers les boutiques Foorweb. Les fonctionnalités incluent la sélection par lots de produits avec retour visuel, l'importation automatique avec suivi de statut en temps réel, la gestion intelligente des catégories (tous les produits, produits VIP, produits tendance), les modes d'importation manuel et automatique, la détection des produits dupliqués, et un panneau de paramètres complet. Construite avec une interface utilisateur sombre moderne optimisée pour le marché arabe.",
+    "image": "/images/projects/sawa9li-to-foorweb.png",
+    "technologies": [
+      "Extension Chrome",
+      "TypeScript",
+      "React",
+      "Vitest",
+      "Automatisation Web",
+      "E-commerce",
+      "Extension Navigateur"
+    ],
+    "timeline": "Jan 2025",
+    "liveUrl": null,
+    "downloadUrl": "/downloads/sawa9li-to-foorweb.zip",
+    "githubUrl": null,
+    "status": "Disponible à l'achat",
+    "statusReason": "Il s'agit d'une extension privée et payante disponible uniquement sur autorisation.",
+    "personalExperience": "J'ai construit cette extension pour résoudre un vrai problème pour les vendeurs e-commerce gérant plusieurs vitrines. Le plus grand défi était de gérer les interactions DOM complexes pour la sélection de produits par lots et d'assurer des importations automatiques fiables avec une gestion appropriée des erreurs. J'ai implémenté des tests complets avec Vitest et conçu une interface utilisateur sombre élégante qui correspond à l'esthétique de l'admin Foorweb.",
+    "collaborators": []
+  },
+  {
     "slug": "cod-simulation",
     "fetchUrl": "https://github.com/samibentaiba/calculator",
     "title": "Tableau de Bord Simulation COD",
