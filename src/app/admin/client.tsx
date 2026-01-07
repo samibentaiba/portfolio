@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
 import {
   CheckCircle,
   XCircle,
@@ -12,6 +13,9 @@ import {
   Copy,
   RefreshCw,
   ExternalLink,
+  Users,
+  Trash2,
+  UserPlus,
 } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -33,6 +37,14 @@ interface AvailableProject {
   liveUrl: string | null;
 }
 
+interface Sawa9liUser {
+  id: string;
+  email: string;
+  isActivated: boolean;
+  createdAt: string;
+  lastLogin: string;
+}
+
 interface AdminClientProps {
   user: {
     email: string;
@@ -40,16 +52,22 @@ interface AdminClientProps {
   };
   initialProjects: ProjectAccess[];
   availableProjects: AvailableProject[];
+  initialSawa9liUsers: Sawa9liUser[];
 }
 
 export default function AdminClient({
   user,
   initialProjects,
   availableProjects,
+  initialSawa9liUsers,
 }: AdminClientProps) {
   const [loading, setLoading] = useState(false);
   const [projects, setProjects] = useState<ProjectAccess[]>(initialProjects);
+  const [sawa9liUsers, setSawa9liUsers] =
+    useState<Sawa9liUser[]>(initialSawa9liUsers);
   const [message, setMessage] = useState<string | null>(null);
+  const [newUserEmail, setNewUserEmail] = useState("");
+  const [newUserPassword, setNewUserPassword] = useState("");
 
   const fetchProjects = async () => {
     setLoading(true);
@@ -109,6 +127,109 @@ export default function AdminClient({
       if (data.success) {
         setMessage(`Project "${name}" added`);
         fetchProjects();
+      } else {
+        setMessage(`Error: ${data.error}`);
+      }
+    } catch (error) {
+      setMessage(`Failed: ${error}`);
+    } finally {
+      setLoading(false);
+      setTimeout(() => setMessage(null), 3000);
+    }
+  };
+
+  const fetchSawa9liUsers = async () => {
+    setLoading(true);
+    try {
+      const res = await fetch("/api/admin/sawa9li-users");
+      const data = await res.json();
+      if (data.success) {
+        setSawa9liUsers(data.users || []);
+      }
+    } catch (error) {
+      console.error("Failed to fetch Sawa9li users:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleUserAction = async (
+    userId: string,
+    action: "activate" | "deactivate"
+  ) => {
+    setLoading(true);
+    setMessage(null);
+    try {
+      const res = await fetch("/api/admin/sawa9li-users", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ userId, action }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setMessage(`User ${action}d successfully`);
+        fetchSawa9liUsers();
+      } else {
+        setMessage(`Error: ${data.error}`);
+      }
+    } catch (error) {
+      setMessage(`Failed: ${error}`);
+    } finally {
+      setLoading(false);
+      setTimeout(() => setMessage(null), 3000);
+    }
+  };
+
+  const handleDeleteUser = async (userId: string, email: string) => {
+    if (!confirm(`Are you sure you want to delete user "${email}"?`)) return;
+
+    setLoading(true);
+    try {
+      const res = await fetch("/api/admin/sawa9li-users", {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ userId }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setMessage(`User "${email}" deleted`);
+        fetchSawa9liUsers();
+      } else {
+        setMessage(`Error: ${data.error}`);
+      }
+    } catch (error) {
+      setMessage(`Failed: ${error}`);
+    } finally {
+      setLoading(false);
+      setTimeout(() => setMessage(null), 3000);
+    }
+  };
+
+  const createUser = async () => {
+    if (!newUserEmail || !newUserPassword) {
+      setMessage("Error: Email and password are required");
+      setTimeout(() => setMessage(null), 3000);
+      return;
+    }
+
+    setLoading(true);
+    setMessage(null);
+    try {
+      const res = await fetch("/api/admin/sawa9li-users", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: newUserEmail,
+          password: newUserPassword,
+          isActivated: true,
+        }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setMessage(`User "${newUserEmail}" created and activated`);
+        setNewUserEmail("");
+        setNewUserPassword("");
+        fetchSawa9liUsers();
       } else {
         setMessage(`Error: ${data.error}`);
       }
@@ -316,6 +437,155 @@ export default function AdminClient({
               </div>
             </CardContent>
           </Card>
+        </motion.section>
+
+        {/* Sawa9li Extension Users */}
+        <motion.section
+          className="space-y-4"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.25 }}
+        >
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <Users className="w-5 h-5 text-primary" />
+              <h2 className="text-xl font-bold tracking-tighter">
+                Sawa9li Extension Users
+              </h2>
+            </div>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={fetchSawa9liUsers}
+              disabled={loading}
+            >
+              <RefreshCw
+                className={`w-4 h-4 mr-2 ${loading ? "animate-spin" : ""}`}
+              />
+              Refresh
+            </Button>
+          </div>
+
+          {/* Create User Form */}
+          <Card>
+            <CardContent className="p-4">
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Input
+                  type="email"
+                  placeholder="Email"
+                  value={newUserEmail}
+                  onChange={(e) => setNewUserEmail(e.target.value)}
+                  className="flex-1"
+                />
+                <Input
+                  type="password"
+                  placeholder="Password"
+                  value={newUserPassword}
+                  onChange={(e) => setNewUserPassword(e.target.value)}
+                  className="flex-1"
+                />
+                <Button
+                  onClick={createUser}
+                  disabled={loading || !newUserEmail || !newUserPassword}
+                  className="bg-primary"
+                >
+                  <UserPlus className="w-4 h-4 mr-2" />
+                  Create User
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+
+          {sawa9liUsers.length === 0 ? (
+            <Card>
+              <CardContent className="p-8 text-center text-muted-foreground">
+                No Sawa9li extension users registered yet.
+              </CardContent>
+            </Card>
+          ) : (
+            <div className="space-y-3">
+              {sawa9liUsers.map((sUser, index) => (
+                <motion.div
+                  key={sUser.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.05 }}
+                >
+                  <Card>
+                    <CardContent className="p-4">
+                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                        <div className="flex-1 space-y-1">
+                          <div className="flex items-center gap-2 flex-wrap">
+                            <h3 className="font-medium">{sUser.email}</h3>
+                            <Badge
+                              variant="outline"
+                              className={`text-xs ${
+                                sUser.isActivated
+                                  ? "border-green-500 text-green-600 dark:text-green-400"
+                                  : "border-yellow-500 text-yellow-600 dark:text-yellow-400"
+                              }`}
+                            >
+                              {sUser.isActivated ? (
+                                <CheckCircle className="w-3 h-3 mr-1" />
+                              ) : (
+                                <Clock className="w-3 h-3 mr-1" />
+                              )}
+                              {sUser.isActivated ? "Active" : "Pending"}
+                            </Badge>
+                          </div>
+                          <div className="text-xs text-muted-foreground">
+                            Registered:{" "}
+                            {new Date(sUser.createdAt).toLocaleDateString()}
+                            {" • "}
+                            Last login:{" "}
+                            {new Date(sUser.lastLogin).toLocaleDateString()}
+                          </div>
+                        </div>
+                        <div className="flex gap-2">
+                          {sUser.isActivated ? (
+                            <Button
+                              size="sm"
+                              variant="outline"
+                              onClick={() =>
+                                handleUserAction(sUser.id, "deactivate")
+                              }
+                              disabled={loading}
+                              className="border-yellow-500 text-yellow-600 hover:bg-yellow-500/10"
+                            >
+                              <XCircle className="w-4 h-4 mr-1" />
+                              Deactivate
+                            </Button>
+                          ) : (
+                            <Button
+                              size="sm"
+                              onClick={() =>
+                                handleUserAction(sUser.id, "activate")
+                              }
+                              disabled={loading}
+                              className="bg-green-600 hover:bg-green-500 text-white"
+                            >
+                              <CheckCircle className="w-4 h-4 mr-1" />
+                              Activate
+                            </Button>
+                          )}
+                          <Button
+                            size="sm"
+                            variant="destructive"
+                            onClick={() =>
+                              handleDeleteUser(sUser.id, sUser.email)
+                            }
+                            disabled={loading}
+                          >
+                            <Trash2 className="w-4 h-4" />
+                          </Button>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          )}
         </motion.section>
 
         {/* API Info */}

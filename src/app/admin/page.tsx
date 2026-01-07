@@ -30,6 +30,18 @@ export default async function AdminPage() {
     orderBy: { createdAt: "desc" },
   });
 
+  // Fetch Sawa9li extension users
+  const sawa9liUsers = await prisma.sawa9liUser.findMany({
+    orderBy: { createdAt: "desc" },
+    select: {
+      id: true,
+      email: true,
+      isActivated: true,
+      createdAt: true,
+      lastLogin: true,
+    },
+  });
+
   // Get available projects from projects.json
   const availableProjects = projects.map((p) => ({
     slug: p.slug,
@@ -55,6 +67,13 @@ export default async function AdminPage() {
         createdAt: p.createdAt.toISOString(),
       }))}
       availableProjects={availableProjects}
+      initialSawa9liUsers={sawa9liUsers.map((u) => ({
+        id: u.id,
+        email: u.email,
+        isActivated: u.isActivated,
+        createdAt: u.createdAt.toISOString(),
+        lastLogin: u.lastLogin.toISOString(),
+      }))}
     />
   );
 }

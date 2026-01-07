@@ -78,3 +78,13 @@ model ProjectAccess {
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
 }
+
+// User model for Sawa9li to Foorweb Extension
+model Sawa9liUser {
+  id          String   @id @default(cuid())
+  email       String   @unique
+  password    String
+  isActivated Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  lastLogin   DateTime @updatedAt // Using updatedAt as initial value, updated on login
+}
