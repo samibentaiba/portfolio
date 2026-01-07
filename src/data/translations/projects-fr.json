@@ -1,26 +1,25 @@
 [
   {
     "slug": "sawa9li-to-foorweb",
-    "title": "Sawa9li to Foorweb",
-    "shortDescription": "Extension Chrome pour automatiser l'importation de produits de Sawa9li vers les boutiques Foorweb.",
-    "description": "Une extension Chrome puissante conçue pour les vendeurs e-commerce afin d'automatiser l'importation de produits du marketplace Sawa9li vers les boutiques Foorweb. Les fonctionnalités incluent la sélection par lots de produits avec retour visuel, l'importation automatique avec suivi de statut en temps réel, la gestion intelligente des catégories (tous les produits, produits VIP, produits tendance), les modes d'importation manuel et automatique, la détection des produits dupliqués, et un panneau de paramètres complet. Construite avec une interface utilisateur sombre moderne optimisée pour le marché arabe.",
+    "title": "E-commerce Bridge",
+    "shortDescription": "Outil d'automatisation pour synchroniser les produits entre les plateformes e-commerce.",
+    "description": "Une solution d'automatisation avancée conçue pour les professionnels du e-commerce afin de faciliter la synchronisation des catalogues de produits entre différentes plateformes. Les fonctionnalités incluent la sélection par lots, le suivi en temps réel, la gestion intelligente des catégories, et des outils d'analyse pour optimiser les flux de travail. L'outil vise à réduire le travail manuel et à améliorer l'efficacité opérationnelle.",
     "image": "/images/projects/sawa9li-to-foorweb.png",
     "technologies": [
-      "Extension Chrome",
+      "Extension Navigateur",
       "TypeScript",
       "React",
       "Vitest",
       "Automatisation Web",
-      "E-commerce",
-      "Extension Navigateur"
+      "E-commerce"
     ],
     "timeline": "Jan 2025",
     "liveUrl": null,
-    "downloadUrl": "https://github.com/samibentaiba/portfolio/releases/download/sawa9li-1.0.0/sawa9li-to-foorweb.zip",
+    "downloadUrl": null,
     "githubUrl": null,
-    "status": "Disponible à l'achat",
-    "statusReason": "Il s'agit d'une extension privée et payante disponible uniquement sur autorisation.",
-    "personalExperience": "J'ai construit cette extension pour résoudre un vrai problème pour les vendeurs e-commerce gérant plusieurs vitrines. Le plus grand défi était de gérer les interactions DOM complexes pour la sélection de produits par lots et d'assurer des importations automatiques fiables avec une gestion appropriée des erreurs. J'ai implémenté des tests complets avec Vitest et conçu une interface utilisateur sombre élégante qui correspond à l'esthétique de l'admin Foorweb.",
+    "status": "Projet Confidentiel",
+    "statusReason": "Ce projet est classé comme sensible. Le téléchargement et le code source ne sont pas disponibles pour le public.",
+    "personalExperience": "J'ai développé cet outil pour répondre aux besoins d'automatisation dans le secteur du e-commerce. Le défi principal était de créer une interface intuitive capable de gérer des flux de données complexes tout en assurant une fiabilité maximale. L'accent a été mis sur la performance et l'expérience utilisateur pour les tâches répétitives.",
     "collaborators": []
   },
   {

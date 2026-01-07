@@ -15,6 +15,7 @@ import {
   Github,
   ImageIcon,
   Users,
+  Lock,
 } from "lucide-react";
 import { useLanguage } from "@/components/language-provider";
 import { Skill } from "@/components/skill";
@@ -65,6 +66,22 @@ export default function ProjectClient() {
                   <p className="font-medium text-emerald-500">
                     {project.status}
                   </p>
+                  {project.statusReason && (
+                    <p className="text-sm text-muted-foreground mt-1">
+                      {project.statusReason}
+                    </p>
+                  )}
+                </div>
+              </div>
+            </div>
+          ) : project.status.toLowerCase().includes("confidentiel") ||
+            project.status.includes("سري") ||
+            project.status.toLowerCase().includes("sensitive") ? (
+            <div className="bg-red-500/20 border border-red-500/50 rounded-lg p-4 mb-6 sm:mb-8">
+              <div className="flex items-start gap-3">
+                <Lock className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-medium text-red-500">{project.status}</p>
                   {project.statusReason && (
                     <p className="text-sm text-muted-foreground mt-1">
                       {project.statusReason}
