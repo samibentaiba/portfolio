@@ -67,6 +67,7 @@
     "embla-carousel": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
     "file-saver": "^2.0.5",
+    "firebase-admin": "^13.6.0",
     "framer-motion": "^12.10.0",
     "input-otp": "^1.4.2",
     "jsonwebtoken": "^9.0.3",

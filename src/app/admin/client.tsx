@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -16,6 +17,7 @@ import {
   Users,
   Trash2,
   UserPlus,
+  ArrowRight,
 } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -277,6 +279,32 @@ export default function AdminClient({
             {message}
           </motion.div>
         )}
+
+        {/* Firebase Extension Users Link */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.08 }}
+        >
+          <Link href="/admin/extension-users">
+            <Card className="group hover:border-primary/50 transition-colors cursor-pointer">
+              <CardContent className="p-4 flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="p-2 rounded-lg bg-orange-500/10">
+                    <Users className="w-5 h-5 text-orange-500" />
+                  </div>
+                  <div>
+                    <h3 className="font-medium">Firebase Extension Users</h3>
+                    <p className="text-sm text-muted-foreground">
+                      Manage Sawa9li browser extension users stored in Firebase
+                    </p>
+                  </div>
+                </div>
+                <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+              </CardContent>
+            </Card>
+          </Link>
+        </motion.div>
 
         {/* Registered Projects */}
         <motion.section
