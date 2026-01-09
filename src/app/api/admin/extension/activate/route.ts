@@ -6,11 +6,7 @@
 import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
-import {
-  adminAuth,
-  adminDb,
-  ACTIVATED_USERS_COLLECTION,
-} from "@/lib/firebase-admin";
+import { adminDb, ACTIVATED_USERS_COLLECTION } from "@/lib/firebase-admin";
 
 export async function POST(req: Request) {
   try {
@@ -31,16 +27,23 @@ export async function POST(req: Request) {
 
     const emailLower = email.toLowerCase().trim();
 
-    // Get user UID from Firebase Auth
-    const userRecord = await adminAuth.getUserByEmail(emailLower);
-
-    // Add to activatedUsers collection (use UID as document ID)
-    await adminDb
+    // Check if already activated
+    const existingSnapshot = await adminDb
       .collection(ACTIVATED_USERS_COLLECTION)
-      .doc(userRecord.uid)
-      .set({
-        email: emailLower,
-      });
+      .where("email", "==", emailLower)
+      .get();
+
+    if (!existingSnapshot.empty) {
+      return NextResponse.json(
+        { success: false, error: "User is already activated" },
+        { status: 400 }
+      );
+    }
+
+    // Add to activatedUsers collection with auto-generated ID
+    await adminDb.collection(ACTIVATED_USERS_COLLECTION).add({
+      email: emailLower,
+    });
 
     return NextResponse.json({
       success: true,
@@ -48,15 +51,6 @@ export async function POST(req: Request) {
     });
   } catch (error: unknown) {
     console.error("Failed to activate user:", error);
-
-    const firebaseError = error as { code?: string };
-    if (firebaseError.code === "auth/user-not-found") {
-      return NextResponse.json(
-        { success: false, error: "User not found in Firebase Auth" },
-        { status: 404 }
-      );
-    }
-
     return NextResponse.json(
       { success: false, error: "Failed to activate user" },
       { status: 500 }

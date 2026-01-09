@@ -654,32 +654,36 @@ export default function ExtensionUsersClient({
                               </Button>
                             )}
 
-                            {extUser.isActivated && (
-                              <Tooltip>
-                                <TooltipTrigger asChild>
-                                  <Button
-                                    size="sm"
-                                    variant="outline"
-                                    onClick={() =>
-                                      handleResetDevice(extUser.email)
-                                    }
-                                    disabled={actionLoading === extUser.email}
-                                  >
-                                    {actionLoading === extUser.email ? (
-                                      <Loader2 className="w-4 h-4 mr-1 animate-spin" />
-                                    ) : (
-                                      <Smartphone className="w-4 h-4 mr-1" />
-                                    )}
-                                    Reset Device
-                                  </Button>
-                                </TooltipTrigger>
-                                <TooltipContent>
-                                  {extUser.deviceId
-                                    ? "Clear device lock - allows user to login on a new device"
-                                    : "No device registered yet"}
-                                </TooltipContent>
-                              </Tooltip>
-                            )}
+                            <Tooltip>
+                              <TooltipTrigger asChild>
+                                <Button
+                                  size="sm"
+                                  variant="outline"
+                                  onClick={() =>
+                                    handleResetDevice(extUser.email)
+                                  }
+                                  disabled={
+                                    actionLoading === extUser.email ||
+                                    !extUser.deviceId
+                                  }
+                                  className={
+                                    !extUser.deviceId ? "opacity-50" : ""
+                                  }
+                                >
+                                  {actionLoading === extUser.email ? (
+                                    <Loader2 className="w-4 h-4 mr-1 animate-spin" />
+                                  ) : (
+                                    <Smartphone className="w-4 h-4 mr-1" />
+                                  )}
+                                  Reset Device
+                                </Button>
+                              </TooltipTrigger>
+                              <TooltipContent>
+                                {extUser.deviceId
+                                  ? "Clear device lock - allows user to login on a new device"
+                                  : "No device registered"}
+                              </TooltipContent>
+                            </Tooltip>
 
                             <Button
                               size="sm"

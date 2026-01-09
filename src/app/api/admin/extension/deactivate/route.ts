@@ -1,16 +1,12 @@
 /**
  * POST /api/admin/extension/deactivate
- * Removes user from activatedUsers Firestore collection
+ * Removes user from activatedUsers Firestore collection (finds by email field)
  */
 
 import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
-import {
-  adminAuth,
-  adminDb,
-  ACTIVATED_USERS_COLLECTION,
-} from "@/lib/firebase-admin";
+import { adminDb, ACTIVATED_USERS_COLLECTION } from "@/lib/firebase-admin";
 
 export async function POST(req: Request) {
   try {
@@ -31,14 +27,25 @@ export async function POST(req: Request) {
 
     const emailLower = email.toLowerCase().trim();
 
-    // Get user UID from Firebase Auth
-    const userRecord = await adminAuth.getUserByEmail(emailLower);
-
-    // Remove from activatedUsers collection
-    await adminDb
+    // Find document by email field (not by document ID)
+    const snapshot = await adminDb
       .collection(ACTIVATED_USERS_COLLECTION)
-      .doc(userRecord.uid)
-      .delete();
+      .where("email", "==", emailLower)
+      .get();
+
+    if (snapshot.empty) {
+      return NextResponse.json(
+        { success: false, error: "User not found in activatedUsers" },
+        { status: 404 }
+      );
+    }
+
+    // Delete all matching documents (should be just one)
+    const batch = adminDb.batch();
+    snapshot.docs.forEach((doc) => {
+      batch.delete(doc.ref);
+    });
+    await batch.commit();
 
     return NextResponse.json({
       success: true,
@@ -46,15 +53,6 @@ export async function POST(req: Request) {
     });
   } catch (error: unknown) {
     console.error("Failed to deactivate user:", error);
-
-    const firebaseError = error as { code?: string };
-    if (firebaseError.code === "auth/user-not-found") {
-      return NextResponse.json(
-        { success: false, error: "User not found in Firebase Auth" },
-        { status: 404 }
-      );
-    }
-
     return NextResponse.json(
       { success: false, error: "Failed to deactivate user" },
       { status: 500 }

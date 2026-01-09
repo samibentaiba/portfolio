@@ -1,16 +1,13 @@
 /**
  * POST /api/admin/extension/reset-device
- * Clears the deviceId field from a user's activatedUsers document
+ * Clears the deviceId field from a user's activatedUsers document (finds by email field)
+ * Works for any user, activated or not
  */
 
 import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
-import {
-  adminAuth,
-  adminDb,
-  ACTIVATED_USERS_COLLECTION,
-} from "@/lib/firebase-admin";
+import { adminDb, ACTIVATED_USERS_COLLECTION } from "@/lib/firebase-admin";
 import { FieldValue } from "firebase-admin/firestore";
 
 export async function POST(req: Request) {
@@ -32,29 +29,28 @@ export async function POST(req: Request) {
 
     const emailLower = email.toLowerCase().trim();
 
-    // Get user UID from Firebase Auth
-    const userRecord = await adminAuth.getUserByEmail(emailLower);
-
-    // Check if user document exists
-    const userDoc = await adminDb
+    // Find document by email field (not by document ID)
+    const snapshot = await adminDb
       .collection(ACTIVATED_USERS_COLLECTION)
-      .doc(userRecord.uid)
+      .where("email", "==", emailLower)
       .get();
 
-    if (!userDoc.exists) {
+    if (snapshot.empty) {
       return NextResponse.json(
-        { success: false, error: "User is not activated" },
-        { status: 400 }
+        {
+          success: false,
+          error: "User not found in activatedUsers collection",
+        },
+        { status: 404 }
       );
     }
 
-    // Remove deviceId field (set to delete)
-    await adminDb
-      .collection(ACTIVATED_USERS_COLLECTION)
-      .doc(userRecord.uid)
-      .update({
-        deviceId: FieldValue.delete(),
-      });
+    // Update all matching documents to remove deviceId (should be just one)
+    const batch = adminDb.batch();
+    snapshot.docs.forEach((doc) => {
+      batch.update(doc.ref, { deviceId: FieldValue.delete() });
+    });
+    await batch.commit();
 
     return NextResponse.json({
       success: true,
@@ -62,15 +58,6 @@ export async function POST(req: Request) {
     });
   } catch (error: unknown) {
     console.error("Failed to reset device:", error);
-
-    const firebaseError = error as { code?: string };
-    if (firebaseError.code === "auth/user-not-found") {
-      return NextResponse.json(
-        { success: false, error: "User not found in Firebase Auth" },
-        { status: 404 }
-      );
-    }
-
     return NextResponse.json(
       { success: false, error: "Failed to reset device" },
       { status: 500 }

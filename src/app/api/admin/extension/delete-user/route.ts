@@ -32,16 +32,28 @@ export async function DELETE(req: Request) {
     const emailLower = email.toLowerCase().trim();
 
     // Get user UID from Firebase Auth
-    const userRecord = await adminAuth.getUserByEmail(emailLower);
-
-    // Delete from Firestore first (if exists)
+    let userRecord;
     try {
-      await adminDb
-        .collection(ACTIVATED_USERS_COLLECTION)
-        .doc(userRecord.uid)
-        .delete();
+      userRecord = await adminAuth.getUserByEmail(emailLower);
     } catch {
-      // Ignore if document doesn't exist
+      return NextResponse.json(
+        { success: false, error: "User not found in Firebase Auth" },
+        { status: 404 }
+      );
+    }
+
+    // Delete from Firestore (find by email field)
+    const snapshot = await adminDb
+      .collection(ACTIVATED_USERS_COLLECTION)
+      .where("email", "==", emailLower)
+      .get();
+
+    if (!snapshot.empty) {
+      const batch = adminDb.batch();
+      snapshot.docs.forEach((doc) => {
+        batch.delete(doc.ref);
+      });
+      await batch.commit();
     }
 
     // Delete from Firebase Auth
@@ -53,15 +65,6 @@ export async function DELETE(req: Request) {
     });
   } catch (error: unknown) {
     console.error("Failed to delete user:", error);
-
-    const firebaseError = error as { code?: string };
-    if (firebaseError.code === "auth/user-not-found") {
-      return NextResponse.json(
-        { success: false, error: "User not found in Firebase Auth" },
-        { status: 404 }
-      );
-    }
-
     return NextResponse.json(
       { success: false, error: "Failed to delete user" },
       { status: 500 }
